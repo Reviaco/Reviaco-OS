@@ -1,0 +1,1 @@
+﻿<?php $dir = "JS/"; print_r(scandir($dir)); ?>

@@ -1,0 +1,42 @@
+﻿<html>
+<head><title>Update Time</title>
+<script>
+    function UpdateTime(){
+        
+        var today = new Date();
+        var hour = today.getHours();
+        var mins = today.getMinutes();
+        var secs = today.getSeconds();
+
+        if (secs <=9){
+            secs = "0" + secs
+
+        }
+
+        var out = hour + ":" + mins + ":" + secs;
+
+document.getElementById("body").innerHTML = out;
+
+        setTimeout("UpdateTime()", 1000) 
+
+}
+</script>
+<style>
+span  {
+          background-color: red;
+          position: absolute;
+          top:6px;
+          height: 50%;
+          width: 50%;
+}
+</style>
+
+
+</head>
+
+<body onload="UpdateTime()">
+
+<span id="body" style="position:absolute;"></span>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+.H1  {
+           left: 160px;
+           position: fixed;
+           top: 50px;
+}
+
+.H1default  {
+             color: #FFFFFF;
+             font-size: 90px;
+             font-weight: lighter;
+}
+
+.customization  {
+                 color: #FFFFFF;
+                 font-size: 40px;
+                 font-weight: lighter;
+}
+
+.settings  {
+                 color: #FFFFFF;
+                 font-size: 40px;
+                 font-weight: lighter;
+}
+         
+

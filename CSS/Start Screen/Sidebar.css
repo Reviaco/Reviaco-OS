@@ -1,0 +1,37 @@
+.sidebar  {
+           position: fixed;
+           top: 0px;
+           right: 0px;
+           text-align: center;
+           height: 100%;
+           max-width: 90px;
+           background-color: #000000;
+}
+
+.sidebar_toggle  {
+                  position: fixed;
+                  bottom: 0px;
+                  right: 0px;
+                  height: 20px;
+                  width: 10px;
+}
+
+.sidebar_buttons  {
+                   position: absolute;
+                   left: 0px;
+                   text-align: center; 
+                   height: 80px;
+                   width: 100%;
+}
+
+.sidebar_share_button  {
+                        top: 35%;
+}
+
+.sidebar_start_button  {
+                        top: 45%;
+}
+
+.sidebar_settings_button  {
+                           top: 56%;
+}

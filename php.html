@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+<style>
+body  {
+       background-color: #F5FFFA;
+}
+.tile  {width:100px; height: 80px;float: left;margin: 5px;}
+</style>
+<script src="JS/Random Colour/randomColor.js"></script>
+<script src="JS/PleaseJS/Please.js"></script>
+<script src="JS/Polymer/components/webcomponentsjs/webcomponents.js"></script>
+<link rel="import" href="JS/Polymer/components/font-roboto/roboto.html">
+<link rel="import" href="JS/Polymer/components/core-header-panel/core-header-panel.html">
+<link rel="import" href="JS/Polymer/components/core-scroll-header-panel/core-scroll-header-panel.html">
+<link rel="import" href="JS/Polymer/components/core-toolbar/core-toolbar.html">
+<link rel="import" href="JS/Polymer/components/paper-tabs/paper-tabs.html">
+<link rel="import" href="JS/Polymer/components/core-icon-button/core-icon-button.html">
+<link rel="import" href="JS/Polymer/components/core-ajax/core-ajax.html">
+
+<link rel="import" href="JS/Polymer/components/core-drawer-panel/core-drawer-panel.html">
+<link rel="import" href="JS/Polymer/components/core-toolbar/core-toolbar.html">
+<link rel="import" href="JS/Polymer/components/core-icons/core-icons.html">
+<link rel="import" href="JS/Polymer/components/core-icons/social-icons.html">
+<link rel="import" href="JS/Polymer/components/core-image/core-image.html">
+<link rel="import" href="JS/Polymer/components/core-dropdown-menu/core-dropdown-menu.html">
+<link rel="import" href="JS/Polymer/components/core-overlay/core-overlay.html">
+<link rel="import" href="JS/Polymer/components/core-menu/core-menu.html">
+<link rel="import" href="JS/Polymer/components/core-meta/core-meta.html">
+<link rel="import" href="JS/Polymer/components/core-transition/core-transition.html">
+<link rel="import" href="JS/Polymer/components/core-dropdown/core-dropdown.html">
+<link rel="import" href="JS/Polymer/components/core-dropdown/core-dropdown-base.html">
+<link rel="import" href="JS/Polymer/components/core-transition/core-transition-css.html">
+<link rel="import" href="JS/Polymer/components/core-image/core-image.html">
+<link rel="import" href="JS/Polymer/components/core-localstorage/core-localstorage.html">
+<link rel="import" href="JS/Polymer/components/core-selector/core-selector.html">
+<link rel="import" href="JS/Polymer/components/core-item/core-item.html">
+<link rel="import" href="JS/Polymer/components/core-header-panel/core-header-panel.html">
+<link rel="import" href="JS/Polymer/components/core-scroll-header-panel/core-scroll-header-panel.html">
+<link rel="import" href="JS/Polymer/components/font-roboto/roboto.html">
+<link rel="import" href="JS/Polymer/components/paper-fab/paper-fab.html">
+<link rel="import" href="JS/Polymer/components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="JS/Polymer/components/paper-icon-button/paper-icon-button.html">
+<link rel="import" href="JS/Polymer/components/paper-spinner/paper-spinner.html">
+<link rel="import" href="JS/Polymer/components/paper-toast/paper-toast.html">
+<link rel="import" href="JS/Polymer/components/core-style/core-style.html">
+<style shim-shadowdom="">
+
+
+
+
+    core-scroll-header-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: #eee;
+    }
+
+    /* background for toolbar when it is at its full size */
+    core-scroll-header-panel::shadow #headerBg {
+      background-image: url(bg3.jpg);
+    }
+
+    /* background for toolbar when it is condensed */
+    core-scroll-header-panel::shadow #condensedHeaderBg {
+      background-color: tomato;
+    }
+
+    core-toolbar {
+      color: #f1f1f1;
+      fill: #f1f1f1;
+      background-color: transparent;
+    }
+
+    .title {
+      -webkit-transform-origin: 0;
+      transform-origin: 0;
+      font-size: 40px;
+    }
+
+    .content {
+      padding: 8px;
+    }
+  html,body {
+    height: 100%;
+    margin: 0;
+    background-color: #E5E5E5;
+    font-family: 'RobotoDraft', sans-serif;
+  }
+  .chip-container {
+        position: absolute;
+        top: 275px;
+        right: 0;
+        left: 0;
+        text-align: center;
+      }
+
+      .chip {
+        display: inline-block;
+        position: relative;
+        border-radius: 3px;
+        float: left;
+        margin: 5px;
+        width: 33%;
+        height: 280px;
+        overflow: hidden;
+        text-align: start;
+        background-color: #fff;
+        box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
+        
+      }
+
+      .chip-top {
+        width: 100%;
+        height: 200px;
+      }
+
+      .chip-bottom {
+        padding: 8px;
+        line-height: 1.5;
+      }
+
+      .chip-album-title {
+        font-weight: bold;
+      }
+
+
+  #tabs {
+
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+	text-transform: uppercase;
+background-color: deepskyblue;
+  }
+  .container {
+    width: 80%;
+    margin: 50px auto;
+  }
+.mainContainer  {
+                 padding: 20px 10px;
+}
+.player  {
+          position: fixed;
+          bottom:0px;
+          height: 100%;
+          width: 100%;
+          background-color: #FFFFFF;
+          z-index: 100000;
+}
+  @media (min-width: 481px) {
+    #tabs {
+      width: 200px;
+    }
+
+  }
+
+  </style>
+
+</head>
+<body fullbleed layout vertical>
+
+<core-header-panel mode="scroll">
+    <core-toolbar id="navheader" class="tall coverimg">
+    </core-toolbar>
+  </core-header-panel>
+
+  <core-scroll-header-panel id="scrollheader" main="" condenses="" keepcondensedheader="" on-trackstart="{{ onRefreshStart }}" on-tracky="{{ onMainAreaTrack }}" on-trackend="{{ onRefreshUp }}" touch-action="pan-x">
+    <core-toolbar id="mainheader" class="tall ">
+        <paper-icon-button icon="arrow-back" class="selected-item" on-tap="{{ deselectAll }}" role="button" tabindex="0" aria-label="arrow-back"></paper-icon-button>
+
+        <div flex=""></div>
+        <span class="bottom indent title" style="transform: scale(0.75) translateZ(0px);">
+          Inbox
+        </span>
+
+        <paper-icon-button icon="archive" class="selected-item" on-tap="{{ archiveAll }}" role="button" tabindex="0" aria-label="archive"></paper-icon-button>
+        <paper-icon-button icon="delete" class="selected-item" role="button" tabindex="0" aria-label="delete"></paper-icon-button>
+        <paper-icon-button icon="mail" class="selected-item" role="button" tabindex="0" aria-label="mail"></paper-icon-button>
+
+   </core-toolbar>
+      </core-selector>
+     </div>
+<div id="mainContainer" class="mainContainer" >
+
+    
+  </div>
+<div class="player">
+
+</div>
+  </core-scroll-header-panel>
+  </core-header-panel>
+
+
+
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "backend/Customers_MYSQL.php";
+
+xmlhttp.onreadystatechange=function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        myFunction(xmlhttp.responseText);
+    }
+}
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(response) {
+    var arr = JSON.parse(response);
+    var i;
+    var out = "<div>";
+
+    for(i = 0; i < arr.length; i++) {
+var colors = randomColor({hue: 'random',luminosity: 'light'});
+var colorss = Please.make_color({
+	golden: true,
+	saturation: 0.8, //set your saturation manually
+	value: 1.0 //set your value manually
+});
+var colors = ["gold","tomato","aqua","deepskyblue","lime","magenta","cyan"];
+var random = Math.floor((Math.random() * colors.length)+.0000000009),
+    color = colors[random];
+        out += "<a href=\"\ "+arr[i].Source+"\"\ "+"<div class=\"chip\""+" hero-id=\"Tycho-Fragments\""+">" +"<div class=\"chip-top\""+" style=\"background-color: \ "+color+ "\;\""+"></div>" +
+        "<div class=\"chip-bottom\""+">"+"<div class=\"chip-album-title\""+">"+arr[i].Name+"</div>"+"<div class=\"chip-artist\""+">"+arr[i].City+"</div>"+"</div>"+"</div>";
+       
+    }
+    out += "</a></div>";
+    document.getElementById("mainContainer").innerHTML = out;
+}
+</script>
+
+</body>
+</html>
