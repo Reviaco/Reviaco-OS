@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 $a = filesize("c:/xampp/htdocs/SunshineOS/AHmedd/Data");
 $b = filesize("c:/xampp/htdocs/SunshineOS/AHmedd/Pictures");
 $c = filesize("c:/xampp/htdocs/SunshineOS/AHmedd/Sounds");
@@ -600,7 +600,7 @@ z-index: 1003; display: none; opacity: 1; transform: scaleX(1); top: 10%; positi
               </paper-button>
               </paper-button>
               </li>
-              <paper-button id="About" class="Button" ng-click="clickIconMorph9()">
+              <paper-button id="2" class="Button" ng-click="clickIconMorph9()" color="red">
                 <div class="Button1">
                   <ng-md-icon icon="info" style="fill: #8bc34a" size="25"></ng-md-icon>About</div>
               </paper-button>
@@ -959,14 +959,16 @@ z-index: 1003; display: none; opacity: 1; transform: scaleX(1); top: 10%; positi
           });
           $(document).ready(function() {
     
-            $("#About").click(function() {
+$(document).on("click", "paper-button", function( event ){
+
+
     
        $("#demo").dragend({
-        scrollToPage: 2
+        scrollToPage: event.currentTarget.id
       });
     
                 $("#header").css({
-                  background: "#8bc34a"
+                  background: event.currentTarget.color
                 });
     
             });
@@ -1131,6 +1133,18 @@ if (annyang) {
         document.getElementById("hg").innerHTML = out;
       }
     </script>
+<script>
+    var terms = 
+var kill = "sudo timedatectl set-timezone" + terms ;
+  $.ajax({
+  method: "POST",
+  url: "backend/ajax.php",
+  data: { dataString: kill}
+})
+  .done(function( msg ) {
+    alert( "Data Saved: " + msg );
+  });
+</script>
 </body>
 
-</html>
+</html>   

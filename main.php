@@ -67,6 +67,7 @@ else
 
 ﻿<html>
 <head>
+    
  <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.6.0/annyang.min.js"></script>
   <script src="JS/Polymer/bower_components/webcomponentsjs/webcomponents.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
@@ -224,7 +225,26 @@ else
   <script type="text/javascript" src="https://www.google.com/jsapi"></script>
   <script type="text/javascript" src="JS/keypress.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.0.0/annyang.min.js"></script>
+<script>            function UpdateTime(){
+        var today = new Date();
+        var hour = today.getHours();
+        var mins = today.getMinutes();
+        var secs = today.getSeconds();
 
+        if (secs <=9){
+            secs = "0" + secs
+        }
+
+        var out = hour + ":" + mins + ":" + secs;
+
+
+
+        setTimeout("UpdateDate()", 1000) 
+
+
+
+document.getElementById("clock").innerHTML = out;
+}</script>
 
 
 <script>
@@ -275,23 +295,115 @@ display: none;
 }
 h1 {
   position: absolute;
-  left: 45%;
+  left: 40%;
   top: 45%;
  color: #ffffff;
+    font-size: 50px;
 }
 
 .foldUnfold {
   -webkit-animation: foldUnfold 2000ms linear both;
   animation: foldUnfold 2000ms linear both;
 }
+.back  {
+    background-image: url('images/triangle.png');
+    height:20px;
+    width:17px;
+    position: fixed;
+    bottom:3%;
+    display: flex;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    left: 15%;
+    
+}
+    .home  {
+        background-image: url('images/circle.png'); 
+
+        
+            height:18px;
+    width:19px;
+    position: fixed;
+    bottom:3%;
+    display: flex;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    left: 48%;
+        
+    }
+    .bar  {
+   
+                background-image: url('images/gradient.png'); 
+
+        
+            height:64px;
+    width:100%;
+    position: fixed;
+    bottom:0%;
+    display: flex;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+
+    }
+    
+    .menu  {
+
+                background-image: url('images/square.png'); 
+
+        
+            height:16px;
+    width:17px;
+    position: fixed;
+    bottom:3%;
+    display: flex;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    right: 15%;
+    }
+.status_bottom  {
+        
+    
+        
+    background-color: #263238;
+    border-redius: 3px;
+position: fixed;
+    height: 461px;
+
+    right: 0px;
+    top:  10%;
+    width:  344px;
+    display: flex;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+}
 
 
-
-
-
-
-
-
+.status_top  {
+    background-color: #384248;
+    position: fixed;
+    box-shadow: 0px 1px 5px 0.00px rgba(0, 0, 0, 0.5);
+    width: 95%;
+    height: 70px;
+       display: flex;
+    z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+    top: 0px;
+    left: 2.5%;
+    right: 2.5%;
+    
+    
+}
+    .clockA  {
+          
+        height: 11px;
+        left:50px;
+        width: 38px;
+        position: absolute;
+        top: 20%;
+        color: #ffffff;
+    }
+.date  {
+             height: 14px;
+        left:50px;
+        width: 135px;
+        position: absolute;
+        top: 25%;
+        color: #ffffff;
+    }
 
 .splat {
   -webkit-animation: splat 865ms linear both;
@@ -312,6 +424,7 @@ position: fixed;
 top: 4%;
 width: 100%;
 height: 100%;
+    margin:auto auto auto 0;
 }
 .power_cover  {
 position: relative;
@@ -333,143 +446,39 @@ display: none;
 }
 </style>
 <link href="CSS/Normalize/normalize.css" rel="stylesheet" />
-<script>
-var proto = Object.create(HTMLElement.prototype, {
-createdCallback: {
-value: function() {
-var t = document.querySelector('#sdtemplate');
-var clone = document.importNode(t.content, true);
-this.appendChild(clone);
-}
-}
-});
-document.registerElement('x-foo-from-template', {prototype: proto});
-</script>
-<script>
-var proto = Object.create(HTMLElement.prototype, {
-createdCallback: {
-value: function() {
-var t = document.querySelector('#ctemplate');
-var clone = document.importNode(t.content, true);
-this.appendChild(clone);
-}
-}
-});
-document.registerElement('clock-digital', {prototype: proto});
 
-            function UpdateTime(){
-        var today = new Date();
-        var hour = today.getHours();
-        var mins = today.getMinutes();
-        var secs = today.getSeconds();
-
-        if (secs <=9){
-            secs = "0" + secs
-        }
-
-        var out = hour + ":" + mins + ":" + secs;
-
-
-
-        setTimeout("UpdateTime()", 1000) 
-
-
-
-document.getElementById("clock").innerHTML = out;
-}
-</script>
-<style>
-#app  {
-          position: fixed;
-bottom: 0px;
-
-          height:94.5%;
-          width: 100%;
-}
-#clock  {
-          position: absolute;
-          right: 1%;
-          top:1%;
-
-}
-</style>
 
 
        
 </head>
-<body onload="UpdateTime()" onkeypress="my()" ng-app="demoapp" ng-controller="democtrl" class="ng-scope">
+<body onload="UpdateTime(); UpdateDate();" onkeypress="my()" ng-app="demoapp" ng-controller="democtrl" class="ng-scope">
 <div class="splash">
 
 <h1 class="tlt"><?php echo $message; ?></h1>
 </div>
 <div class="contents">
-<template id="sdtemplate">
-<style>
-.div  {
-          background-color: cyan;
-          position: absolute;
-          top:0px;
-          height: 5%;
-          width: 100%;
-  z-index: -10;
-}
-</style>
-<div class="div"></div>
-</template>
-<template id="ctemplate">
 
-<style>
-.div  {
-                    background-color: cyan;
-          position: absolute;
-          top:6px;
-          height: 50%;
-          width: 50%;
-}
-</style>
-
-
-</template>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>
- (function($) {
 
-   // This variable is available only inside this plugin
-   var text = "Hello World";
-
-    $.fn.helloWorld = function(options) {
-
-        // Plugin options default values
-        var settings = $.extend({
-            color: "white",
-            fontStyle: "Roboto",
-        }, options );
-
-        return this.each( function() {
-            $(this).text(text);
-            $(this).css("color", settings.color);
-            $(this).css("font-style", settings.fontStyle);
-        });
-
-    }
-
-}(jQuery)); 
-</script>
-<script>
-$(document).ready(function(){
-$("clock-digital").helloWorld();
-});
-</script>
-
-<x-foo-from-template>
-<clock-digital id="clock">
-</clock-digital>
 
 
         <p id="level"></p>
 
 </x-foo-from-template>
+    <div class="status_top"></div>
+    <div class="back"></div>
+        <div class="home"></div>
+        <div class="menu"></div>
+        <div class="bar"></div>
+            <div class="status_top">
+                <x-foo-from-template> 
+        <clock-digital id="clock" class="clockA">
+</clock-digital> 
+                </x-foo-from-template>
+    </div>
+    <div id="date" class="date">
+        </div>
 <div class="power bounceOut animated"><div class="power_cover"></div><iron-a11y-keys target="{{}}" keys="up down left right" on-keys-pressed="myFunction()"></iron-a11y-keys>
 <div class="power_menu"><ul>
             <ul class="ul1">
@@ -497,7 +506,7 @@ $("clock-digital").helloWorld();
                 </li>
             </ul></div>
 </div>
-<iframe id="frame-id" src="https://localhost/home.html">
+<iframe id="frame-id" src="http://localhost/home.html">
 </iframe>
 </div>
     <script>
@@ -608,10 +617,10 @@ if (annyang) {
       });
       $( window ).load(function() {
 
-       $("body > *").not("body > .splash").css({
+       $("body > *").not("body > script, style, .splash").css({
               display: "block"
             });;
-          $("#splash").remove();
+          $(".splash").remove();
 
 
       });
@@ -619,5 +628,28 @@ if (annyang) {
     </script>
   <script src="http://jschr.github.io/textillate/assets/jquery.lettering.js"></script>
 <script src="http://jschr.github.io/textillate/jquery.textillate.js"></script>
+<script>            function UpdateDate(){
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1;
+        var yyy = today.getFullYear();
+if(dd<10) {
+    dd='0'+dd
+} 
+
+if(mm<10) {
+    mm='0'+mm
+} 
+
+        var out = mm+'/'+dd+'/'+yyyy;
+
+
+
+        setTimeout("UpdateDate()", 1000) 
+
+
+
+document.getElementById("date").innerHTML = d.toDateString();
+}</script>
 </body>
 </html>
