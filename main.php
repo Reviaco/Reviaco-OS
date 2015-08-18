@@ -1059,17 +1059,20 @@ var kill = "killall " + terms ;
 $("iframe").removeClass('bounceIn');
 
 $( "iframe" ).addClass('animated fadeOutDownBig');
-                 var i = 0;
+                 var i = localStorage.getItem("top");
+var y = parseInt(i) + 5;
                  $("iframe").css({
               width: "50%",
                      height: "50%",
                      left: "25%",
                      right: "25%",
-                top: "25%"
+                top: y
                      
             });
 
+localStorage.setItem("top", y);
     });
+localStorage.setItem("top", "30");
             });
 </script> 
             <script>
