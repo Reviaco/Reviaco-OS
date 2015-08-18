@@ -248,7 +248,7 @@ else
         <link href="demo/style/demos.css" type="text/css" rel="stylesheet">
         <script src="demo/script/index.js"></script>
         <script src="demo/script/demos.js"></script>
-
+  
 
 
         <link rel="import" href="JS/Polymer/bower_components/neon-animation/animations/scale-up-animation.html">
@@ -429,7 +429,7 @@ else
                 height: 100px;
                 display: flex;
                 z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
-                top: 0px;
+                top: -25px;
                 Left: 2.5%;
                 Right: 2.5%;
             }
@@ -478,6 +478,8 @@ else
                 top: 165px;
                 left: 0px;
                 background: #eeeeee;
+            }
+            .current  {
             }
             
             .command {
@@ -804,7 +806,7 @@ $('#app1').addClass('animated bounceIn');
       $(document).ready(function() {
 $(document).on("click", "img", function( event ){
 
-$( "hgg" ).append( "<iframe  id=\""+ event.currentTarget.id + "_iframe\"" + "src=\"http://localhost/Apps/"+ event.currentTarget.id + "/\"" + "></iframe>" );
+$( "hgg" ).append( "<iframe  class=\"current\"" + "id=\""+ event.currentTarget.id + "_iframe\"" + "src=\"http://localhost/Apps/"+ event.currentTarget.id + "/\"" + "></iframe>" );
 
 $("#"+ event.currentTarget.id + "_iframe").addClass('animated bounceIn');
           $("#"+ event.currentTarget.id + "_iframe").fadeIn( 400 );
@@ -1056,11 +1058,47 @@ var kill = "killall " + terms ;
 
 $("iframe").removeClass('bounceIn');
 
-$("iframe").addClass('animated fadeOutDownBig');
+$( "iframe" ).addClass('animated fadeOutDownBig');
+                 var i = 0;
+                 $("iframe").css({
+              width: "50%",
+                     height: "50%",
+                     left: "25%",
+                     right: "25%",
+                top: "25%"
+                     
+            });
 
     });
             });
-</script>     
+</script> 
+            <script>
+
+      $(document).ready(function() {
+ $(document).on("click", ".menu", function(){
+
+$("iframe").removeClass('fadeOutDownBig');
+
+$("iframe").addClass('animated fadeInUpBig');
+           $(document).ready(function() {
+$('iframe').on('click', function( event ){
+$("#"+ event.currentTarget.id + "").addClass('current');
+
+                 $("#"+ event.currentTarget.id + "").animate({
+              width: "100%",
+                     height: "100%",
+                     left: "0px",
+                     right: "0px",
+                top: "0px",
+                     bottom: "0px"
+                     
+            });
+              });
+                         });
+
+    });
+            });
+</script>
     </body>
 
     </html>
