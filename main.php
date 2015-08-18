@@ -68,7 +68,7 @@ else
 
     <html>
 
-    <head>
+     <head>
 
         <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.6.0/annyang.min.js"></script>
         <script src="JS/Polymer/bower_components/webcomponentsjs/webcomponents.min.js"></script>
@@ -408,7 +408,20 @@ else
                 z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
             }
             
-            .status_top {
+            .status_topA {
+                
+                position: fixed;
+  
+                width: 95%;
+                height: 100px;
+                display: flex;
+                z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+                top: 20px;
+                Left: 2.5%;
+                Right: 2.5%;
+            }
+            
+           .status_topB {
                 background-color: #384248;
                 position: fixed;
                 box-shadow: 0px 1px 5px 0.00px rgba(0, 0, 0, 0.5);
@@ -416,11 +429,10 @@ else
                 height: 100px;
                 display: flex;
                 z-index: 999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
-                top: 10px;
-                left: 2.5%;
-                right: 2.5%;
+                top: 0px;
+                Left: 2.5%;
+                Right: 2.5%;
             }
-            
             .clockA {
                 height: 11px;
                 left: 50px;
@@ -657,8 +669,9 @@ iframe  {
             <div class="bar1"></div>
 
                     <div id="content-scroller" class="dragdealer">
-                <div class="handle status_top">
+                <div class="handle status_topA">
 
+<div class="handle status_topB">
                     <div id="clock" class="clockA">
                     </div>
 
@@ -666,6 +679,7 @@ iframe  {
 
                     <div id="date" class="date">
                     </div>
+</div>
 
                 </div>
 
@@ -1035,6 +1049,18 @@ var kill = "killall " + terms ;
                 }
             </script>
             </div>
+<script>
+
+      $(document).ready(function() {
+ $(document).on("click", ".home", function(){
+
+$("iframe").removeClass('bounceIn');
+
+$("iframe").addClass('animated fadeOutDownBig');
+
+    });
+            });
+</script>     
     </body>
 
     </html>
