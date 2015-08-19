@@ -602,6 +602,8 @@ iframe  {
                 height: 100%;
                 margin: auto auto auto 0;
                     z-index: 999;
+        border-style: solid;
+    border-width: 10px;
 }
 
             
@@ -1060,8 +1062,8 @@ $("iframe").removeClass('bounceIn');
 
 $( "iframe" ).addClass('animated fadeOutDownBig');
                  var i = localStorage.getItem("top");
-var y = parseInt(i) + 5;
-                 $("iframe").css({
+var y = parseInt(i) + 15;
+                 $(".current").css({
               width: "50%",
                      height: "50%",
                      left: "25%",
@@ -1069,7 +1071,7 @@ var y = parseInt(i) + 5;
                 top: y
                      
             });
-
+$( "iframe" ).removeClass('current');
 localStorage.setItem("top", y);
     });
 localStorage.setItem("top", "30");
@@ -1086,7 +1088,9 @@ $("iframe").addClass('animated fadeInUpBig');
            $(document).ready(function() {
 $('iframe').on('click', function( event ){
 $("#"+ event.currentTarget.id + "").addClass('current');
-
+                 var a = localStorage.getItem("top");
+var z = parseInt(a) - 15;
+    localStorage.setItem("top", z);
                  $("#"+ event.currentTarget.id + "").animate({
               width: "100%",
                      height: "100%",
@@ -1096,6 +1100,7 @@ $("#"+ event.currentTarget.id + "").addClass('current');
                      bottom: "0px"
                      
             });
+    $( "iframe:not(.current)" ).addClass('animated fadeOutDownBig');
               });
                          });
 
