@@ -1,5 +1,5 @@
 <?php
-    $app = $_POST['dataString'];
+    $app = 'catt';
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 /*** begin the session ***/
@@ -63,11 +63,42 @@ else
         $message = 'We are unable to process your request. Please try again later"';
     }
 }
+$link = mysqli_connect("localhost", "root", "root", $phpro_username);
+ 
+// Check connection
+if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+}
+ 
+// Attempt insert query execution
+$sql = "INSERT INTO Apps (Name) VALUES ('$app')";
+if(mysqli_query($link, $sql)){
+    echo "Records added successfully.";
+} else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+}
+ 
+// Close connection
+mysqli_close($link);
 
-$conn = new mysqli("localhost", "root", "root", $phpro_username);
-INSERT INTO Apps (Name)
-VALUES ($app);
-shell_exec('unzip ~/Users/ $phpro_username/Downloads/$app/$app.zip && mv -Ri Users/ $phpro_username/Downloads/$app/$app/ ~/Users/ $phpro_username/Apps/ && sudo apt-get install $app');
+
+$command = "mkdir /var/www/html/Users/$phpro_username/Downloads/$app/$app/ && unzip /var/www/html/Users/Admin/Downloads/$app/catt.zip -d /var/www/html/Users/Admin/Downloads/$app/$app/ && cp -a /var/www/html/Users/$phpro_username/Downloads/$app/$app/ /var/www/html/Users/$phpro_username/Apps/";
+$command .= " $param1 $param2 $param3 2>&1";
+
+
+
+$pid = popen( $command,"r");
+
+
+while( !feof( $pid ) )
+{
+ fread($pid, 256);
+ flush();
+ ob_flush();
+ usleep(100000);
+}
+pclose($pid);
+
 $conn->close();
 
 

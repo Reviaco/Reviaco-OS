@@ -1056,11 +1056,11 @@ var kill = "killall " + terms ;
 <script>
 
       $(document).ready(function() {
- $(document).on("click", ".home", function(){
+$( ".home" ).click(function() {
 
 $("iframe").removeClass('bounceIn');
 
-$( "iframe" ).addClass('animated fadeOutDownBig');
+$( ".current" ).addClass('animated fadeOutDownBig');
                  var i = localStorage.getItem("top");
 var y = parseInt(i) + 15;
                  $(".current").css({
@@ -1071,7 +1071,7 @@ var y = parseInt(i) + 15;
                 top: y
                      
             });
-$( "iframe" ).removeClass('current');
+$( ".current" ).removeClass('current');
 localStorage.setItem("top", y);
     });
 localStorage.setItem("top", "30");
@@ -1086,8 +1086,10 @@ $("iframe").removeClass('fadeOutDownBig');
 
 $("iframe").addClass('animated fadeInUpBig');
            $(document).ready(function() {
-$('iframe').on('click', function( event ){
-$("#"+ event.currentTarget.id + "").addClass('current');
+$( "iframe" ).click(function() {
+
+    var d = document.getElementById(event.currentTarget.id);
+d.className = " current ";
                  var a = localStorage.getItem("top");
 var z = parseInt(a) - 15;
     localStorage.setItem("top", z);
@@ -1100,7 +1102,7 @@ var z = parseInt(a) - 15;
                      bottom: "0px"
                      
             });
-    $( "iframe:not(.current)" ).addClass('animated fadeOutDownBig');
+    $( "iframe:not(.current)" ).removeClass('fadeInUpBig').addClass('fadeOutDownBig');
               });
                          });
 
