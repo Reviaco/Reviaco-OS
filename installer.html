@@ -130,20 +130,31 @@ left: 3%;
 color: #ffffff;
 font-size: 30px;
 }
-.instllBtn  {
+.installBtn  {
 position : fixed;
 width: 64px;
-top: 35%;
-left: 10%;
+top: 26%;
+right: 10%;
 height: 64px;
-background-image: url('');
+background-image: url("./Images/install.png");
+    background-size: 100% 100%;
 }
 </style>
 </head>
 <body>
 <div class='cover'><p class='title'>Appp</p></div>
 <div class='subcover'><p class='subtitle'></p></div>
-<div class='installBtn'></div>
+<div class='installBtn' id="catt"></div>
+    <script>
+        $( ".installBtn" ).click(function() {
+        var app = document.getElementsByClassName('install').id;
+    $.ajax({
+  method: "POST",
+  url: "backend/installer.php",
+  data: { dataString: app}
+});
+            });
+    </script>
 </body>
 </html>
 
