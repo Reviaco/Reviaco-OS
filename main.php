@@ -533,60 +533,204 @@ else
             }
             
             .clock {
-                position: relative;
-                width: 350px;
-                height: 350px;
-                background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IiIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U5MWU2MyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U5MWU2MyIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
-                background-size: 100%;
-                background-image: -webkit-radial-gradient(center, ellipse cover, #e91e63 0%, #e91e63 100%);
-                background-image: radial-gradient(ellipse cover at center, #e91e63 0%, #e91e63 100%);
-                border-radius: 100%;
-                box-shadow: 2px 3px 10px #bbb;
-                -ms-transform: rotate(180deg);
-                -webkit-transform: rotate(180deg);
-                transform: rotate(180deg);
-                margin: auto;
-                border: 35px solid #9c27b0;
-                right: 0;
-                top: 10px;
-            }
-            
-            .clock:after {
-                content: '';
-                position: absolute;
-                width: 55px;
-                height: 55px;
-                border-radius: 100%;
-                margin: auto;
-                left: 0;
-                right: 0;
-                top: 0;
-                bottom: 0;
-                background: #6237B4;
-            }
-            
-            .minute,
-            .hour {
-                position: absolute;
-                width: 30px;
-                background: #fff;
-                height: 125px;
-                border-radius: 30px;
-                -webkit-transition: 0.3s;
-                transition: 0.3s;
-                box-shadow: -1px 0 #7E5FBE, -5px 0px 10px #7E5FBE;
-                -ms-transform-origin: 50% 0%;
-                -webkit-transform-origin: 50% 0%;
-                transform-origin: 50% 0%;
-                left: 0;
-                margin: auto;
-                right: 0;
-                top: 50%;
-            }
-            
-            .hour {
-                height: 95px;
-            }
+  position: relative;
+  width: 350px;
+  height: 350px;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHJhZGlhbEdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IiIgcj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2U5MWU2MyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2U5MWU2MyIvPjwvcmFkaWFsR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-radial-gradient(center, ellipse cover, #e91e63 0%, #e91e63 100%);
+  background-image: radial-gradient(ellipse cover at center, #e91e63 0%, #e91e63 100%);
+  border-radius: 100%;
+  box-shadow: 2px 3px 10px #bbb;
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin: auto;
+  border: 35px solid #9c27b0;
+
+  right: 0;
+  top: 10px;
+
+}
+.clock:after {
+  content: '';
+  position: absolute;
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #6237B4;
+}
+
+.minute, .hour {
+  position: absolute;
+  width: 30px;
+  background: #fff;
+  height: 125px;
+  border-radius: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: -1px 0 #7E5FBE, -5px 0px 10px #7E5FBE;
+  -ms-transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  left: 0;
+  margin: auto;
+  right: 0;
+  top: 50%;
+}
+
+.hour {
+  height: 95px;
+}
+
+
+/*clock version 2 */
+
+.clock2 {
+
+  position: relative;
+  width: 350px;
+  height: 350px;
+background: rgba(212,212,212,0.5);/*rgba to change only background opacity instead of all the object, using alpha property, you can change the last value (0-1), that is the alpha value*/
+  background-size: 100%;
+  background-image: -webkit-radial-gradient(center, ellipse cover, #e91e63 0%, #e91e63 100%);
+  background-image: radial-gradient(ellipse cover at center, #e91e63 0%, #e91e63 100%);
+  border-radius: 100%;
+ 
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin: auto;
+  border: 17px solid #00ACC1;  /* clock margin (color study) */
+
+  right: 0;
+  top: 10px;
+
+}
+.clock2:after {
+  content: '';
+  position: absolute;
+  width: 34px;/* joiner radius smaller thahn preview*/
+  height: 34px;
+  border-radius: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ffffff; /* clock pointers joiner (circle)*/
+  box-shadow: -1px 0 #676E75, -5px 0px 10px #676E75;  
+}
+
+.minute2, .hour2 {
+  position: absolute;
+  width: 15px; /* thin sticks give a better look than preview*/
+  background: #fff;
+  height: 120px;/* large sticks contrast with width*/
+  border-radius: 0px; /* sticks rounded border equal=o material design style */
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: -1px 0 #676E75, -5px 0px 10px #676E75;
+  -ms-transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  left: 0;
+  margin: auto;
+  right: 0;
+  top: 50%;
+  
+}
+
+.hour2 {
+  height: 95px;
+}
+    /*clock3.0 starts here (google style)*/
+    .clock3 {
+
+  position: relative;
+  width: 350px;
+  height: 350px;
+background: #8FA3FE;
+  background-size: 100%;
+  background-image: -webkit-radial-gradient(center, ellipse cover, #e91e63 0%, #e91e63 100%);
+  background-image: radial-gradient(ellipse cover at center, #e91e63 0%, #e91e63 100%);
+  border-radius: 100%;
+  -ms-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  margin: auto;
+  border: 20px solid #CED8DA;  /* clock margin (color study), color look diferent from hexadecimal to screen check on high resolution screen (macbook) */
+
+  right: 0;
+  top: 10px;
+
+}
+.clock3:after {
+  content: '';
+  position: absolute;
+  width: 26px;/* joiner radius smaller thahn preview*/
+  height: 26px;
+  border-radius: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  box-shadow: -1px 0 #676E75, -5px 0px 15px #676E75;
+  background: #ffffff; /* clock pointers joiner (circle)*/
+    
+}
+
+.minute3, .hour3 {
+  
+    /* ask ahmed javascript hours*degres(between seconds and minutes) + radius different color (+opacity 0.7 darker color ex:#31373F */
+    
+  position: absolute;
+  width: 14.5px; /* thin sticks give a better look than preview*/
+  background: #FFFFFF;/*aproximar mais de branco*/
+  height: 176px;/* large sticks contrast with width*/
+  border-radius: 0px; /* sticks rounded border equal=o material design style */
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: -1px 0 #51585f, -5px 0px 10px #51585f;
+  -ms-transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  left: 0;
+  margin: auto;
+  right: 0;
+  top: 50%;
+  
+}
+
+.hour3 {
+  height: 125px;
+}
+.seconds3{
+   /*make seconds pointer move*/
+  
+    
+  position: absolute;
+  width: 10px; /* thin sticks give a better look than preview*/
+  background: #FFFFFF;/*aproximar mais de branco*/
+  height: 176px;/* large sticks contrast with width*/
+  border-radius: 0px; /* sticks rounded border equal=o material design style */
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  box-shadow: -1px 0 #51585f, -5px 0px 10px #51585f;
+  -ms-transform-origin: 50% 0%;
+  -webkit-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  left: 0;
+  margin: auto;
+  right: 0;
+  top: 50%;
+}
         </style>
         <style type="text/css">
             body {
