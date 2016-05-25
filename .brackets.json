@@ -1,5 +1,0 @@
-{
-    "jscodehints.detectedExclusions": [
-        "/var/www/html/JS/Polymer/bower_components/webcomponentsjs/MutationObserver.min.js"
-    ]
-}
