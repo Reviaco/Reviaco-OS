@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Begin the session
 session_start();
 
@@ -8,12 +8,15 @@ session_unset();
 // Destroy the session.
 session_destroy();
 ?>
-<html>
-<head>
-<title>Logged Out</title>
-</head>
+    <html>
 
-<body>
-<h1>You are now logged out. Please come again</h1>
-</body>
-</html>
+    <head>
+        <link rel="import" href="../../Res.html">
+        <title>Logged Out</title>
+    </head>
+
+    <body>
+        <h1>You are now logged out. Please come again</h1>
+    </body>
+
+    </html>

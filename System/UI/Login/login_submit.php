@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 /*** begin our session ***/
 session_start();
@@ -83,11 +83,16 @@ die();
 }
 ?>
 
-<html>
-<head>
-<title>PHPRO Login</title>
-</head>
-<body>
-<p><?php echo $message; ?>
-</body>
-</html>
+    <html>
+
+    <head>
+        <link rel="import" href="../../Res.html">
+        <title>PHPRO Login</title>
+    </head>
+
+    <body>
+        <p>
+            <?php echo $message; ?>
+    </body>
+
+    </html>

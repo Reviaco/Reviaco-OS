@@ -11,6 +11,7 @@ session_destroy();
     <html>
 
     <head>
+        <link rel="import" href="../../Res.html">
         <title>Logged Out</title>
     </head>
 

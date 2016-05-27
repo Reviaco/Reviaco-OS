@@ -14,7 +14,7 @@ $_SESSION['form_token'] = $form_token;
 
     <head>
 
-
+        <link rel="import" href="../../Res.html">
         <script src="https://fb.me/react-0.13.3.min.js"></script>
         <style>
             body {}
