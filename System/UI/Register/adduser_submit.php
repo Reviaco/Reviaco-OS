@@ -3,7 +3,7 @@
 session_start();
 
 /*** first check that both the username, password and form token have been sent ***/
-if(!isset( $_POST['phpro_username'], $_POST['phpro_password'], $_POST['form_token']))
+if(!isset( $_POST['username'], $_POST['password'], $_POST['form_token']))
 {
     $message = 'Please enter a valid username and password';
 }
@@ -16,11 +16,11 @@ elseif( $_POST['form_token'] != $_SESSION['form_token'])
 else
 {
     /*** if we are here the data is valid and we can insert it into database ***/
-    $phpro_username = filter_var($_POST['phpro_username'], FILTER_SANITIZE_STRING);
-    $phpro_password = filter_var($_POST['phpro_password'], FILTER_SANITIZE_STRING);
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
     /*** now we can encrypt the password ***/
-    $phpro_password = sha1( $phpro_password );
+    $password = sha1( $password );
     
     /*** connect to database ***/
     /*** mysql hostname ***/
@@ -33,8 +33,8 @@ else
     $mysql_password = 'root';
 
     /*** database name ***/
-    $mysql_dbname = 'phpro_auth';
-    $mysql_dbnew = $phpro_username ;
+    $mysql_dbname = 'users';
+    $mysql_dbnew = $username ;
 
     try
     {
@@ -46,12 +46,12 @@ else
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*** prepare the insert ***/
-        $stmt = $dbh->prepare("INSERT INTO phpro_users (phpro_username, phpro_password ) VALUES (:phpro_username, :phpro_password )");
+        $stmt = $dbh->prepare("INSERT INTO users (username, password ) VALUES (:username, :password )");
 
 
         /*** bind the parameters ***/
-        $stmt->bindParam(':phpro_username', $phpro_username, PDO::PARAM_STR);
-        $stmt->bindParam(':phpro_password', $phpro_password, PDO::PARAM_STR, 40);
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR, 40);
 
         /*** execute the prepared statement ***/
         $stmt->execute();
@@ -60,27 +60,27 @@ else
 
         /*** if all is done, say thanks ***/
         $message = 'New user added';
-        $sql = "CREATE DATABASE $phpro_username";
+        $sql = "CREATE DATABASE $username";
         $dbh->exec($sql); 
-        $connn = new PDO("mysql:host=$mysql_hostname;dbname=$phpro_username", $mysql_username, $mysql_password);
+        $connn = new PDO("mysql:host=$mysql_hostname;dbname=$username", $mysql_username, $mysql_password);
 
     $sql2 = "CREATE TABLE Apps (
 ID int(11) NOT NULL auto_increment,
 Name varchar(20) NOT NULL,
 Icon char(40) NOT NULL,
 PRIMARY KEY (ID),
-UNIQUE KEY phpro_username (Name),
+UNIQUE KEY username (Name),
     reg_date TIMESTAMP
 )";
     $connn->exec($sql2);
-mkdir("./Users/$phpro_username");
-mkdir("./Users/$phpro_username/Documents");
-mkdir("./Users/$phpro_username//Pictures");
-mkdir("./Users/$phpro_username/Sounds");
-mkdir("./Users/$phpro_username/Vedios");
-mkdir("./Users/$phpro_username/Data");
-mkdir("./Users/$phpro_username/Downlods");
-mkdir("./Users/$phpro_username/Files");
+mkdir("../../../Users/$username");
+mkdir("../../../Users/$username/Documents");
+mkdir("../../../Users/$username/Pictures");
+mkdir("../../../Users/$username/Sounds");
+mkdir("../../../Users/$username/Vedios");
+mkdir("../../../Users/$username/Data");
+mkdir("../../../Users/$username/Downlods");
+mkdir("../../../Users/$username/Files");
     }
     catch(Exception $e)
     {

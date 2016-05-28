@@ -9,7 +9,7 @@ if(isset( $_SESSION['user_id'] ))
     $message = 'Users is already logged in';
 }
 /*** check that both the username, password have been submitted ***/
-if(!isset( $_POST['phpro_username'], $_POST['phpro_password']))
+if(!isset( $_POST['username'], $_POST['password']))
 {
     $message = 'Please enter a valid username and password';
 }
@@ -17,11 +17,11 @@ if(!isset( $_POST['phpro_username'], $_POST['phpro_password']))
 else
 {
     /*** if we are here the data is valid and we can insert it into database ***/
-    $phpro_username = filter_var($_POST['phpro_username'], FILTER_SANITIZE_STRING);
-    $phpro_password = filter_var($_POST['phpro_password'], FILTER_SANITIZE_STRING);
+    $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+    $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
     /*** now we can encrypt the password ***/
-    $phpro_password = sha1( $phpro_password );
+    $password = sha1( $password );
     
     /*** connect to database ***/
     /*** mysql hostname ***/
@@ -45,12 +45,12 @@ else
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*** prepare the select statement ***/
-        $stmt = $dbh->prepare("SELECT phpro_user_id, phpro_username, phpro_password FROM phpro_users 
-                    WHERE phpro_username = :phpro_username AND phpro_password = :phpro_password");
+        $stmt = $dbh->prepare("SELECT phpro_user_id, username, password FROM users 
+                    WHERE username = :username AND password = :password");
 
         /*** bind the parameters ***/
-        $stmt->bindParam(':phpro_username', $phpro_username, PDO::PARAM_STR);
-        $stmt->bindParam(':phpro_password', $phpro_password, PDO::PARAM_STR, 40);
+        $stmt->bindParam(':username', $username, PDO::PARAM_STR);
+        $stmt->bindParam(':password', $password, PDO::PARAM_STR, 40);
 
         /*** execute the prepared statement ***/
         $stmt->execute();

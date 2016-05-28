@@ -90,10 +90,10 @@ $_SESSION['form_token'] = $form_token;
                 <h1>Add user</h1>
                 <p>
 
-                    <paper-input label="Username" id="phpro_username" name="phpro_username" value="" maxlength="20"></paper-input>
+                    <paper-input label="Username" id="username" name="username" value="" maxlength="20"></paper-input>
                 </p>
                 <p>
-                    <paper-input label="Password" id="phpro_password" name="phpro_password" value="" maxlength="20"></paper-input>
+                    <paper-input label="Password" id="password" name="password" value="" maxlength="20"></paper-input>
                 </p>
                 <p>
                     <input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
