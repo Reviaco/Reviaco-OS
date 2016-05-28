@@ -1,0 +1,65 @@
+ .box {
+                position: fixed;
+                top: 20%;
+                left: 20%;
+                height: 60%;
+                width: 60%;
+                background-color: #ffffff;
+                z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+            }
+            
+            .form {
+                position: relative;
+            }
+            
+            h1 {
+                color: blue;
+                margin: 30px;
+                font-size: 50px;
+                font-family: Roboto;
+                font-weight: thin;
+            }
+            
+            form {
+                margin: 20px;
+                position: relative;
+                height: 100%;
+            }
+                        .sumbit_parent {
+                position: absolute;
+                right: 10%;
+                bottom: 15%;
+
+            }
+            .sumbit_child {
+                position: absolute;
+                right: 10%;
+                bottom: 15%;
+                display: none;
+            }
+            
+            .background {
+                position: fixed;
+                z-index: 99999999999999999999999999999999999999999999999999;
+                width: 100% height: 100%;
+                left: 0px;
+                top: 0px;
+                -webkit-filter: grayscale(100%);
+            }
+            
+            .layer {
+                position: fixed;
+                z-index: 999999999999999999999999999999999999999999999999999999999;
+                background-color: cyan;
+                opacity: 0.2;
+                width: 100%;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+            }
+            
+            .paper-input-container-0 .focused-line.paper-input-container {
+                Background: #e91e63;
+            }
+
+                   
