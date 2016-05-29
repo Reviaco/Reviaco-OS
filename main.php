@@ -70,38 +70,7 @@ else
 
     <head>
 
-        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/1.6.0/annyang.min.js"></script>
-        <script src="JS/Polymer/bower_components/webcomponentsjs/webcomponents.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/SVG-Morpheus/0.1.8/svg-morpheus.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.5.0/angular-material-icons.min.js"></script>
-        <script src="JS/Polymer/bower_components/polymer/polymer.html"></script>
-        <script src="JS/Polymer/bower_components/webcomponentsjs/webcomponents.js"></script>
-        <link rel="import" href="JS/Polymer/bower_components/font-roboto/roboto.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-header-panel/paper-header-panel.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-styles/paper-styles.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-toolbar/paper-toolbar.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-tabs/paper-tabs.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-icon-button/paper-icon-button.html">
-        <link rel="import" href="JS/Polymer/bower_components/iron-pages/iron-pages.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-tabs/paper-tabs.html">
-        <link rel="import" href="JS/Polymer/bower_components/iron-a11y-keys/iron-a11y-keys.html">
-        <link rel="import" href="JS/Polymer/bower_components/iron-a11y-keys-behavior/iron-a11y-keys-behavior.html">
-
-        <link rel="import" href="JS/Polymer/bower_components/paper-card/paper-card.html">
-        <link rel="stylesheet" href="CSS/demo.css">
-
-
-        <link rel="import" href="JS/Polymer/bower_components/paper-menu/paper-menu.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-material/paper-material.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-styles/color.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-styles/default-theme.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-styles/paper-styles.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-styles/paper-styles-classes.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-styles/typography.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-styles/shadow.html">
-        <script src="JS/common/modernizr.js"></script>
+        <link rel="import" href="System/Res.html">
         <script>
             angular.module('demoapp', ['ngMdIcons'])
                 .controller('democtrl', function ($scope) {
@@ -140,28 +109,9 @@ else
                 });
         </script>
 
-        <link rel="import" href="JS/Polymer/bower_components/paper-item/paper-item.html">
 
-        <link rel="import" href="JS/Polymer/bower_components/paper-slider/paper-slider.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-header-panel/paper-header-panel.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
-        <link rel="import" href="JS/Polymer/bower_components/font-roboto/roboto.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-fab/paper-fab.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-menu-button/paper-menu-button.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-icon-button/paper-icon-button.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-spinner/paper-spinner.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-toast/paper-toast.html">
-        <link rel="import" href="JS/Polymer/bower_components/iron-iconset-svg/iron-iconset-svg.html">
-        <link rel="import" href="JS/Polymer/bower_components/iron-iconset/iron-iconset.html">
-        <link rel="import" href="JS/Polymer/bower_components/iron-icons/iron-icons.html">
-        <link rel="import" href="JS/Polymer/bower_components/iron-icon/iron-icon.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-drawer-panel/paper-drawer-panel.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-button/paper-button.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-dialog/paper-dialog.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-dialog-behavior/paper-dialog-behavior.html">
-        <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 
-        <link href="CSS/Normalize/normalize.css" rel="stylesheet" />
+
         <link href="CSS/Start Screen/Settings Sidebar.css" rel="stylesheet" />
 
         <link href="CSS/Start Screen/ahmed sidebar.css" rel="stylesheet" />
@@ -170,100 +120,8 @@ else
         <link href="CSS/Start Screen/Sidebar.css" rel="stylesheet" />
         <link href="CSS/Start Screen/Iframes.css" rel="stylesheet" />
         <link href="CSS/Start Screen/Text.css" rel="stylesheet" />
-        <link href="JS/angular-material-icons.css" rel="stylesheet" />
-        <link href="CSS/Start Screen/Tiles.css" rel="stylesheet" />
-        <link href="CSS/Metro UI/metro-bootstrap-responsive.min.css" rel="stylesheet" />
-        <link href="CSS/Metro UI/metro-bootstrap.min.css" rel="stylesheet" />
-        <link href="CSS/Metro UI/iconFont.min.css" rel="stylesheet" />
-        <link href="CSS/Kendo UI/kendo.common.min.css" rel="stylesheet" />
-        <link href="CSS/Kendo UI/kendo.metro.min.css" rel="stylesheet" />
-        <link href="CSS/Animate/animate.css" rel="stylesheet" />
-        <link href="CSS/Epoch/epoch.min.css" rel="stylesheet" />
-        <link href="JS/md-date-time.css" rel="stylesheet" />
-        <link href="JS/textillate/animate.css" rel="stylesheet" />
-        <link href="JS/textillate/style.css" rel="stylesheet" />
-        <script src="JS/Jquery/jquery-1.11.1.min.js"></script>
-        <script src="JS/Jquery/jquery.color.plus-names-2.1.2.min.js"></script>
-        <script src="JS/Knob/jquery.knob.min.js"></script>
-        <script src="JS/Elevate Zoom/jquery.elevateZoom-3.0.8.min.js"></script>
-        <script src="JS/Jquery/jquery-migrate-1.2.1.min.js"></script>
-        <script src="JS/Voix/voix.min.js"></script>
-        <script src="JS/Packery/draggabilly.pkgd.min.js"></script>
-        <script src="JS/ThreeJS/three.min.js"></script>
-        <script src="JS/Kreate/kreate.min.js"></script>
-        <script src="JS/Rainy Day/rainyday.min.js"></script>
-
-        <script src="JS/Sticker/sticker.min.js"></script>
-        <script src="JS/Retina/retina.min.js"></script>
-        <script src="JS/Smooth Scroll/jquery.smooth-scroll.min.js"></script>
-        <script src="JS/Random Colour/randomColor.js"></script>
-        <script src="JS/Packery/packery.pkgd.min.js"></script>
-        <script src="JS/Packery/draggabilly.pkgd.min.js"></script>
-        <script src="http://h123.ru/js/DOMEventsLevel3.shim.js?1"></script>
-        <script src="http://h123.ru/js/a.js"></script>
-        <script src="http://h123.ru/js/microdata-js.js"></script>
-        <script src="JS/Anijs/anijs-helper-scrollreveal-min.js"></script>
-        <script src="JS/Anijs/anijs-jquery-event-system-min.js"></script>
-        <script src="JS/Anijs/anijs-min.js"></script>
-        <script src="JS/Downloader/download.min.js"></script>
-        <script src="JS/CM Rotate/CMRotate.js"></script>
-        <script src="JS/Kendo UI/kendo.ui.core.min.js"></script>
-        <script src="JS/CreateJS/createjs-2013.12.12.min.js"></script>
-        <script src="JS/Sidebar/modernizr.custom.js"></script>
-        <script src="JS/Epoch/epoch.min.js"></script>
-        <script src="JS/Gesture Kit/gesturekit.min.js"></script>
-
-        <script src="JS/Metro UI/jquery.dataTables.js"></script>
-        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-        <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-        <link rel="stylesheet" href="CSS/materialize1.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.96.1/js/materialize.min.js"></script>
-        <link rel="stylesheet" href="CSS/style.min.css">
-        <script src="JS/materialMenu.min.js"></script>
-        <script src="JS/demo11.js"></script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-        <link href="lib/jasmine.css" type="text/css" rel="stylesheet">
-
-        <script src="lib/jquery-1.10.2.js"></script>
-        <script src="lib/jquery.simulate.js"></script>
-        <script src="lib/jasmine.js"></script>
-        <script src="lib/jasmine-jsreporter.js"></script>
-        <script src="lib/jasmine-html.js"></script>
-        <script src="lib/jasmine-jquery.js"></script>
-
-        <link href="src/dragdealer.css" type="text/css" rel="stylesheet">
-        <script src="src/dragdealer.js"></script>
-
-        <script src="spec/helpers.js"></script>
-        <script src="spec/matchers.js"></script>
-        <script src="spec/optionsSpec.js"></script>
-        <script src="spec/draggingSpec.js"></script>
-        <!--[if gt IE 9]><!-->
-        <script src="spec/touchDraggingSpec.js"></script>
-        <!--<![endif]-->
-        <script src="spec/callbacksSpec.js"></script>
-        <script src="spec/apiSpec.js"></script>
-        <script src="spec/resizingSpec.js"></script>
-        <script src="spec/eventsSpec.js"></script>
-        <script src="spec/setup.js"></script>
-        <script src="spec/browser-runner.js"></script>
-
-        <link href="demo/style/index.css" type="text/css" rel="stylesheet">
-        <link href="demo/style/jasmine-reporter.css" type="text/css" rel="stylesheet">
-        <link href="demo/style/demos.css" type="text/css" rel="stylesheet">
-        <script src="demo/script/index.js"></script>
-        <script src="demo/script/demos.js"></script>
 
 
-
-        <link rel="import" href="JS/Polymer/bower_components/neon-animation/animations/scale-up-animation.html">
-        <link rel="import" href="JS/Polymer/bower_components/neon-animation/animations/fade-out-animation.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-radio-button/paper-radio-button.html">
-        <link rel="import" href="JS/Polymer/bower_components/paper-radio-group/paper-radio-group.html">
-        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript" src="JS/keypress.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.0.0/annyang.min.js"></script>
         <script src="https://raw.githubusercontent.com/pisi/Longclick/master/jquery.longclick-min.js"></script>
         <script>
             function UpdateTime() {
@@ -958,7 +816,7 @@ else
 
             <h1 class="tlt"><?php echo $message; ?></h1>
         </div>
-        <div class="power bounceOut animated">
+        <div class="power">
             <div class="power_cover"></div>
             <iron-a11y-keys target="{{}}" keys="up down left right" on-keys-pressed="myFunction()"></iron-a11y-keys>
             <div class="power_menu">

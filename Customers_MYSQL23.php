@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 /*** begin the session ***/
 session_start();
 
-if(!isset($_SESSION['user_id']))
+if(!isset($_SESSION['id']))
 {
     $message = 'You must be logged in to access this page';
 }
@@ -23,7 +23,7 @@ else
         $mysql_password = 'root';
 
         /*** database name ***/
-        $mysql_dbname = 'phpro_auth';
+        $mysql_dbname = 'users';
 
 
         /*** select the users name from the database ***/
@@ -34,26 +34,26 @@ else
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*** prepare the insert ***/
-        $stmt = $dbh->prepare("SELECT phpro_username FROM phpro_users 
-        WHERE phpro_user_id = :phpro_user_id");
+        $stmt = $dbh->prepare("SELECT username FROM users 
+        WHERE id = :id");
 
         /*** bind the parameters ***/
-        $stmt->bindParam(':phpro_user_id', $_SESSION['user_id'], PDO::PARAM_INT);
+        $stmt->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
 
         /*** execute the prepared statement ***/
         $stmt->execute();
 
         /*** check for a result ***/
-        $phpro_username = $stmt->fetchColumn();
+        $username = $stmt->fetchColumn();
 
         /*** if we have no something is wrong ***/
-        if($phpro_username == false)
+        if($username == false)
         {
             $message = 'Access Error';
         }
         else
         {
-            $message = 'Welcome '.$phpro_username;
+            $message = 'Welcome '.$username;
         }
     }
     catch (Exception $e)
@@ -63,14 +63,15 @@ else
     }
 }
 
-$conn = new mysqli("localhost", "root", "root", $phpro_username);
+$conn = new mysqli("localhost", "root", "root", $username);
 
-$result = $conn->query("SELECT Name FROM Apps");
+$result = $conn->query("SELECT Name, Description FROM apps");
 
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"Name":"'  . $rs["Name"]. '"}'; 
+    $outp .= '"Name":"'   . $rs["Name"]        . '",';
+    $outp .= '"Description":"'. $rs["Description"]     . '"}'; 
 }
 $outp .="]";
 

@@ -67,7 +67,7 @@ else
     $sql2 = "CREATE TABLE Apps (
 ID int(11) NOT NULL auto_increment,
 Name varchar(20) NOT NULL,
-Icon char(40) NOT NULL,
+Description char(40) NOT NULL,
 PRIMARY KEY (ID),
 UNIQUE KEY username (Name),
     reg_date TIMESTAMP

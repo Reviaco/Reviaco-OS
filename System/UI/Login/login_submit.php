@@ -4,7 +4,7 @@
 session_start();
 
 /*** check if the users is already logged in ***/
-if(isset( $_SESSION['user_id'] ))
+if(isset( $_SESSION['id'] ))
 {
     $message = 'Users is already logged in';
 }
@@ -34,7 +34,7 @@ else
     $mysql_password = 'root';
 
     /*** database name ***/
-    $mysql_dbname = 'phpro_auth';
+    $mysql_dbname = 'users';
 
     try
     {
@@ -45,7 +45,7 @@ else
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*** prepare the select statement ***/
-        $stmt = $dbh->prepare("SELECT phpro_user_id, username, password FROM users 
+        $stmt = $dbh->prepare("SELECT id, username, password FROM users 
                     WHERE username = :username AND password = :password");
 
         /*** bind the parameters ***/
@@ -69,7 +69,7 @@ else
                 /*** set the session user_id variable ***/
                 $_SESSION['user_id'] = $user_id;
 
-header("Location: https://localhost/main.php");
+header("Location: https://localhost/Reviaco-OS/index.php");
 die();
         }
 
@@ -86,7 +86,7 @@ die();
     <html>
 
     <head>
-        <link rel="import" href="../../Res.html">
+ 
         <title>PHPRO Login</title>
     </head>
 
