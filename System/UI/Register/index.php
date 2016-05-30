@@ -27,7 +27,8 @@ $_SESSION['form_token'] = $form_token;
         <paper-material class="box" elevation="2">
 
             <form class="form" action="adduser_submit.php" method="post">
-                <h1>Add User</h1>
+
+        <div class="step"><h1>Add User</h1>
 <br><br>
 
                     <paper-input label="Username" id="username" name="username" value="" maxlength="20"></paper-input>
@@ -35,6 +36,8 @@ $_SESSION['form_token'] = $form_token;
                     <paper-input label="Password" id="password" name="password" value="" maxlength="20"></paper-input>
 
 
+</div>
+                
 
                     <input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
                     <paper-button raised class="sumbit_parent">Register<input class="sumbit_child" type="submit" value=""> </input></paper-button>

@@ -4,7 +4,7 @@ header("Content-Type: application/json; charset=UTF-8");
 /*** begin the session ***/
 session_start();
 
-if(!isset($_SESSION['id']))
+if(!isset($_SESSION['user_id']))
 {
     $message = 'You must be logged in to access this page';
 }
@@ -38,7 +38,7 @@ else
         WHERE id = :id");
 
         /*** bind the parameters ***/
-        $stmt->bindParam(':id', $_SESSION['id'], PDO::PARAM_INT);
+        $stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
 
         /*** execute the prepared statement ***/
         $stmt->execute();
@@ -70,7 +70,7 @@ $result = $conn->query("SELECT Name, Description FROM apps");
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "[") {$outp .= ",";}
-    $outp .= '"Name":"'   . $rs["Name"]        . '",';
+    $outp .= '{"Name":"'   . $rs["Name"]        . '",';
     $outp .= '"Description":"'. $rs["Description"]     . '"}'; 
 }
 $outp .="]";
