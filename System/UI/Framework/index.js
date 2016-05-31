@@ -39,7 +39,7 @@
 
                     for (i = 0; i < arr.length; i++) {
 
-                        out += "<div class=\"mySlides w3-animate-fading " + arr[i].Name + "\"" + "><paper-card heading=\"" + arr[i].Name + "\"" + "image=\"Apps/" + arr[i].Name + "/Media/icon.png\"" + " class=\"lime\"" + "><div class=\"card-content\"" + ">" + arr[i].Description + "</div></paper-card></div>";
+                        out += "<div class=\"mySlides w3-animate-fading " + arr[i].Name + "\"" + "><paper-card heading=\"" + arr[i].Name + "\"" + "image=\"../../../Apps/" + arr[i].Name + "/Media/icon.png\"" + " class=\"lime\"" + "><div class=\"card-content\"" + ">" + arr[i].Description + "</div></paper-card></div>";
 
                     }
                     out += "</div>";
@@ -48,9 +48,8 @@
                 $(".bubble-wrap").click(function () {
                     $(".bubble").toggleClass("active");
                     $(".bubbleback").toggleClass("active");
-                    $(".first").toggleClass("active");
-                    $(".second").toggleClass("active");
-                    $(".third").toggleClass("active");
+                     $(".power_btn_icon").toggle(1000);
+                    $(".power_ctrl").toggle(1000);
                 });
                 $('.toggle-btn').click(function () {
                     $('.filter-btn').toggleClass('open');

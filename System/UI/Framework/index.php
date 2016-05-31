@@ -66,16 +66,15 @@ else
     <html>
 
     <head>
-        <link rel="import" href="System/Res.html">
+        <link rel="import" href="../../Res.html">
         <script src="./index.js"></script>
 
-        <link src="./index.css" rel="stylesheet">
-
+        <link href="./index.css" rel="stylesheet">
 
     </head>
 
     <body onload="carousel();">
-        <img class="background" src="System/Media/Backgrounds/3.jpg"></img>
+        <img class="background" src="../../Media/Backgrounds/3.jpg"></img>
         <h1>Start</h1>
         <div class="notification_centre_show" onmouseover="notification_centre_toggle();"></div>
         <div class="notification_centre" onmouseout="notification_centre_toggle();">
@@ -114,15 +113,16 @@ else
 
 
         <div class="nav_bar">
-            <img class="back" src="System/Media/Framework/Back.png"></img>
-            <img class="home" src="System/Media/Framework/Home.png"></img>
-            <img class="menu" src="System/Media/Framework/Menu.png"></img>
+            <img class="back" src="../../Media/Framework/Back.png"></img>
+            <img class="home" src="../../Media/Framework/Home.png"></img>
+            <img class="menu" src="../../Media/Framework/Menu.png"></img>
+            <i class="material-icons power_ctrl">power_settings_new</i>
+            <i class="material-icons power_ctrl">power_settings_new</i>
+            <i class="material-icons power_ctrl">power_settings_new</i>
             <div class="bubbleback"></div>
-            <div class="bubble"></div>
+            <div class="bubble"><i class="material-icons power_btn_icon">power_settings_new</i></div>
             <div class="bubble-wrap">
-                <div class="bar first"></div>
-                <div class="bar second"></div>
-                <div class="bar third"></div>
+
             </div>
         </div>
 
