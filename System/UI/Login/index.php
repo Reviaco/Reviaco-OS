@@ -3,11 +3,9 @@
 <head>
 
     <link rel="import" href="../../Res.html">
-        <link href="./index.css" rel="stylesheet">
-    <style>
- 
-    </style>
-    <title>PHPRO Login</title>
+        <link href="./style.css" rel="stylesheet">
+<script src="./script.js"></script>
+
 </head>
 
 <body>
