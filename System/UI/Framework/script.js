@@ -1,4 +1,12 @@
             $(function () {
+                $.fn.extend({
+                    animateCss: function (animationName) {
+                        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+                        $(this).addClass('animated ' + animationName).one(animationEnd, function () {
+                            $(this).removeClass('animated ' + animationName);
+                        });
+                    }
+                });
                 var xmlhttp2 = new XMLHttpRequest();
                 var url2 = "http://localhost/Reviaco-OS/System/Data/Notifications.php";
 
@@ -39,16 +47,81 @@
 
                     for (i = 0; i < arr.length; i++) {
 
-                        out += "<div class=\"mySlides w3-animate-fading " + arr[i].Name + "\"" + "><paper-card heading=\"" + arr[i].Name + "\"" + "image=\"../../../Apps/" + arr[i].Name + "/Media/icon.png\"" + " class=\"lime\"" + "><div class=\"card-content\"" + ">" + arr[i].Description + "</div></paper-card></div>";
+                        out += "<div class=\"mySlides w3-animate-fading " + arr[i].Name + "\"" + "><paper-card id=\"" + arr[i].Name + "\"" + " heading=\"" + arr[i].Name + "\"" + "image=\"../../../Apps/" + arr[i].Name + "/Media/icon.png\"" + " class=\"lime\"" + "><div class=\"card-content\"" + ">" + arr[i].Description + "</div></paper-card></div>";
 
                     }
                     out += "</div>";
                     $("body").append(out);
                 }
+                $(document).on("click", "paper-card", function (event) {
+
+                    $("body").append("<iframe  class=\"current_window\"" + "id=\"" + event.currentTarget.id + "_iframe\"" + "src=\"http://localhost/Reviaco-OS/Apps/" + event.currentTarget.id + "/\"" + "></iframe>");
+
+                    $("#" + event.currentTarget.id + "_iframe").animateCss('bounce');
+                    $("#" + event.currentTarget.id + "_iframe").fadeIn(400);
+
+
+                    var htmlString = $("." + event.currentTarget.id + "").html();
+                    $.ajax({
+                            method: "POST"
+                            , url: "../../Linux Commands/launch.php"
+                            , data: {
+                                dataString: htmlString
+                            }
+                        })
+                        .done(function (msg) {
+                            alert("Data Saved: " + msg);
+                        });
+
+
+
+
+                });
+                $(".home").click(function () {
+
+                    $(".current_window, bg_window").animate("slide", "{direction: down}");
+
+
+                    var i = localStorage.getItem("top");
+                    var y = parseInt(i) + 15;
+                    $(".current_window").css({
+                        top: y
+
+
+                    });
+                    $(".current_window").removeClass('current_window').addClass('bg_window');
+                    localStorage.setItem("top", y);
+                });
+                var interval;
+                $(".menu").mousedown(function () {
+                    interval = setInterval(performWhileMouseDown, 1500);
+                }).mouseup(function () {
+                    clearInterval(interval);
+                });
+
+                function performWhileMouseDown() {
+
+                    $("iframe").removeClass('fadeOutDownBig');
+
+                    $("iframe").addClass('animated fadeInUpBig');
+                    $(document).ready(function () {
+                        $("iframe").click(function () {
+
+                            var d = document.getElementById(event.currentTarget.id);
+                            d.className = " current_window ";
+                            var a = localStorage.getItem("top");
+                            var z = parseInt(a) - 15;
+                            localStorage.setItem("top", z);
+                            $("#" + event.currentTarget.id + "").addClass('current_window')
+                            $("iframe:not(.current)").removeClass('fadeInUpBig').addClass('fadeOutDownBig');
+                        });
+                    });
+
+                };
                 $(".bubble-wrap").click(function () {
                     $(".bubble").toggleClass("active");
                     $(".bubbleback").toggleClass("active");
-                     $(".power_btn_icon").toggle(1000);
+                    $(".power_btn_icon").toggle(1000);
                     $(".power_ctrl").toggle(1000);
                 });
                 $('.toggle-btn').click(function () {

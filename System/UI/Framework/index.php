@@ -67,26 +67,25 @@ else
 
     <head>
         <link rel="import" href="../../Res.html">
-        <script src="./index.js"></script>
-
-        <link href="./index.css" rel="stylesheet">
+        <script src="./script.js"></script>
+        <link href="./style.css" rel="stylesheet">
+        <link rel="import" href="./polymer-style.html">
 
     </head>
 
     <body onload="carousel();">
         <img class="background" src="../../Media/Backgrounds/3.jpg"></img>
-        <h1>Start</h1>
+
         <div class="notification_centre_show" onmouseover="notification_centre_toggle();"></div>
         <div class="notification_centre" onmouseout="notification_centre_toggle();">
             <div class="overlay"></div>
             <div class="top">
 
                 <div class="user-profile">
-                    <img src="https://raw.githubusercontent.com/arjunamgain/FilterMenu/master/images/profile.jpg">
+                    <img src="../../Media/Avatars/6.svg">
                     <div class="user-details">
                         <h4><?php echo $message; ?></h4>
-                        <p>
-                            <?php echo $message; ?>
+                        <p><?php echo $message; ?>
                         </p>
                     </div>
                 </div>
@@ -116,15 +115,16 @@ else
             <img class="back" src="../../Media/Framework/Back.png"></img>
             <img class="home" src="../../Media/Framework/Home.png"></img>
             <img class="menu" src="../../Media/Framework/Menu.png"></img>
-            <i class="material-icons power_ctrl">power_settings_new</i>
-            <i class="material-icons power_ctrl">power_settings_new</i>
-            <i class="material-icons power_ctrl">power_settings_new</i>
+            <i class="material-icons power_ctrl restart_btn">replay</i>
+            <i class="material-icons power_ctrl poweroff_btn">power_settings_new</i>
+
             <div class="bubbleback"></div>
             <div class="bubble"><i class="material-icons power_btn_icon">power_settings_new</i></div>
             <div class="bubble-wrap">
 
             </div>
         </div>
+<div class="status_bar"></div>
 
 
     </body>

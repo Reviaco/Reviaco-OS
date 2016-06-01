@@ -5,22 +5,22 @@
  .back {
      position: relative;
      width: 30px;
-     top: 25%;
-     left: 0%;
+     top: 20%;
+     left: 1000%;
  }
  
  .home {
      position: relative;
      width: 30px;
-     top: 25%;
+     top: 20%;
      left: 50%
  }
  
  .menu {
      position: relative;
      width: 30px;
-     top: 25%;
-     left: 100%;
+     top: 20%;
+     left: 0;
  }
  
  .background {
@@ -28,7 +28,7 @@
      height: 100%;
      width: 100%;
      z-index: -10;
-     -webkit-filter: blur(20px);
+     -webkit-filter: blur(5px);
  }
  
  .mySlides {
@@ -49,7 +49,7 @@
      height: 100%;
      position: fixed;
      overflow: hidden;
-     z-index: 10;
+     z-index: 12;
      display: none;
  }
  
@@ -298,7 +298,7 @@
      top: 0px;
      height: 100%;
      width: 10px;
-     z-index: 9;
+     z-index: 11;
  }
  
  .nav_bar {
@@ -309,6 +309,18 @@
      position: fixed;
      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
      bottom: 0;
+     z-index: 10;
+ }
+ 
+ .status_bar {
+     background-color: #3498db;
+     width: 100%;
+     height: 25px;
+     overflow: hidden;
+     position: fixed;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+     top: 0;
+     z-index: 10;
  }
  
  .bubble-wrap {
@@ -381,15 +393,39 @@
  .card-content {
      background-color: whitesmoke;
  }
-.power_btn_icon {
-    color: white;
-    font-size: 50px;
+ 
+ .power_btn_icon {
+     color: white;
+     font-size: 50px;
+ }
+ 
+ .power_ctrl {
+     color: white;
+     font-size: 50px;
+     display: none;
+     position: fixed;
+     bottom: 0;
+     z-index: 150;
+ }
+.poweroff_btn  {
+    left: 50%;
 }
-.power_ctrl {
-        color: white;
-    font-size: 50px;
-    display: none;
-    position: absolute;
-    bottom: 0;
-    z-index: 150;
+.restart_btn  {
+    left: 0;
 }
+ 
+ .current_window {
+     z-index: 9;
+     position: fixed;
+     width: 100%;
+     height: 100%;
+ }
+ 
+ .bg_window {
+     width: 50%;
+     height: 50%;
+     left: 25%;
+     right: 25%;
+     display: none;
+     margin-top: 200px;
+ }
