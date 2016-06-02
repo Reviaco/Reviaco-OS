@@ -1,11 +1,11 @@
  .box {
      position: fixed;
-     top: 20%;
-     left: 20%;
-     height: 60%;
-     width: 60%;
+     top: 31%;
+     left: 32%;
+     height: 300px;
+     width: 450px;
      background-color: #ffffff;
-     z-index: 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999;
+     z-index: 99999999999999999999;
      display: none;
  }
  
@@ -27,34 +27,15 @@
      height: 100%;
  }
  
- .sumbit_parent {
+ .sumbit {
      position: absolute;
-     right: 10%;
+     right: 8%;
      bottom: 15%;
- }
- 
- .sumbit_child {
-     position: absolute;
-     right: 10%;
-     bottom: 15%;
-     display: none;
  }
  
  .background {
      position: fixed;
      z-index: 99999999999999999999999999999999999999999999999999;
-     width: 100%;
-     height: 100%;
-     left: 0px;
-     top: 0px;
-     -webkit-filter: grayscale(100%);
- }
- 
- .layer {
-     position: fixed;
-     z-index: 999999999999999999999999999999999999999999999999999999999;
-     background-color: cyan;
-     opacity: 0.2;
      width: 100%;
      height: 100%;
      left: 0px;
@@ -66,7 +47,6 @@
  }
  
  .user-profile {
-     margin-top: 25px;
      display: inline-block;
  }
  
@@ -83,19 +63,30 @@
  }
  
  .user-details {
-    margin-top: 10px;
-    vertical-align: bottom;
-    position: relative;
-    top: 20px;
-    left: -10;
+     margin-top: 10px;
+     vertical-align: bottom;
+     position: relative;
+     top: 20px;
+     left: -10;
  }
  
  .user-details h4 {
      font-size: 18px;
  }
-.users {
-    position: fixed;
-    z-index: 999999999999;
-    left: 20%;
-    top: 35%;
-}
+ 
+ .users {
+     position: fixed;
+     z-index: 999999999999;
+     left: 44%;
+     top: 35%;
+     text-align: center;
+ }
+ 
+ .username {
+     background-color: transparent;
+     border: 0;
+     position: absolute;
+     top: 8%;
+     left: 43.5%;
+     font-weight: bolder;
+ }

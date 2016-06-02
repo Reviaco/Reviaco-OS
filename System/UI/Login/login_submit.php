@@ -69,7 +69,7 @@ else
                 /*** set the session user_id variable ***/
                 $_SESSION['user_id'] = $user_id;
 
-header("Location: https://localhost/Reviaco-OS/index.php");
+header("Location: http://localhost/Reviaco-OS/System/UI/Framework/");
 die();
         }
 
@@ -87,7 +87,7 @@ die();
 
     <head>
  
-        <title>PHPRO Login</title>
+  
     </head>
 
     <body>
