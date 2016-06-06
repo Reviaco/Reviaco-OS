@@ -1,0 +1,32 @@
+body {
+    overflow: hidden;
+}
+
+.setting_page,
+.back_btn {
+    display: none;
+}
+
+.setting_cover {
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    bottom: 0;
+    background-color: cornflowerblue;
+}
+
+.setting_cover_icon {
+    position: fixed;
+    top: 35%;
+    left: 13%;
+}
+
+.Users_settings,
+.Users_settings_sub {
+    display: none;
+    position: fixed;
+    width: 50%;
+    height: 100%;
+    top: 15%;
+    left: 620px;
+}
