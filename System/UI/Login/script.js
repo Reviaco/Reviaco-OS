@@ -1,5 +1,5 @@
 var xmlhttp = new XMLHttpRequest();
-var url = "http://localhost/Reviaco-OS/System/Data/Users.php";
+var url = "http://localhost/Reviaco-OS/System/PHP/Data/Users.php";
 
 xmlhttp.onreadystatechange = function () {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

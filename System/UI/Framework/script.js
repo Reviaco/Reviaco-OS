@@ -64,7 +64,7 @@
                     var htmlString = $("." + event.currentTarget.id + "").html();
                     $.ajax({
                             method: "POST"
-                            , url: "../../Linux Commands/launch.php"
+                            , url: "../../PHP/Linux Commands/launch.php"
                             , data: {
                                 dataString: htmlString
                             }
