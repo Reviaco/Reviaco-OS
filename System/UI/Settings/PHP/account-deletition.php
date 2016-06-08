@@ -1,5 +1,5 @@
 <?php
-    $stringData = $_POST['dataString']; 
+    $stringData = $_POST['dataString'];
 
 $servername = "localhost";
 $username = "root";
@@ -12,7 +12,7 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // sql to delete a record
-    $sql = "DELETE FROM users WHERE username=$stringData";
+    $sql = "DELETE FROM users WHERE username='$stringData'";
 
     // use exec() because no results are returned
     $conn->exec($sql);

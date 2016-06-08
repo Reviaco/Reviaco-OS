@@ -59,6 +59,9 @@ else
         unset( $_SESSION['form_token'] );
 
         /*** if all is done, say thanks ***/
+header("Location: http://localhost/Reviaco-OS/System/UI/Framework/");
+die();
+$_SESSION['user_id'] = $user_id;
         $message = 'New user added';
         $sql = "CREATE DATABASE $username";
         $dbh->exec($sql); 
@@ -73,14 +76,14 @@ UNIQUE KEY username (Name),
     reg_date TIMESTAMP
 )";
     $connn->exec($sql2);
-mkdir("../../../Users/$username");
-mkdir("../../../Users/$username/Documents");
-mkdir("../../../Users/$username/Pictures");
-mkdir("../../../Users/$username/Sounds");
-mkdir("../../../Users/$username/Vedios");
-mkdir("../../../Users/$username/Data");
-mkdir("../../../Users/$username/Downlods");
-mkdir("../../../Users/$username/Files");
+mkdir("../../../../Users/$username");
+mkdir("../../../../Users/$username/Documents");
+mkdir("../../../../Users/$username/Pictures");
+mkdir("../../../../Users/$username/Sounds");
+mkdir("../../../../Users/$username/Vedios");
+mkdir("../../../../Users/$username/Data");
+mkdir("../../../../Users/$username/Downlods");
+mkdir("../../../../Users/$username/Files");
     }
     catch(Exception $e)
     {
@@ -99,16 +102,3 @@ mkdir("../../../Users/$username/Files");
 }
 ?>
 
-    <html>
-
-    <head>
-        <link rel="import" href="../../Res.html">
-        <title>PHPRO Login</title>
-    </head>
-
-    <body>
-        <p>
-            <?php echo $message; ?>
-    </body>
-
-    </html>

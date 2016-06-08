@@ -1,8 +1,8 @@
                                            function account_deletiton(username) {
-                                               console.log('ahmed');
+                                               console.log(username);
                    $.ajax({
                                         method: "POST"
-                                        , url: "PHP/Account Deletition.php"
+                                        , url: "PHP/account-deletition.php"
                                         , data: {
                                             dataString: username
                                         }
@@ -101,10 +101,16 @@ $('#Users_settings_sub').fadeIn(500);
                
                     
 var username = event.currentTarget.id;
-         var users_settings_sub = '<h4>' + username + '</h4><paper-icon-item onclick="account_deletiton("'+username+'")" id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div secondary>Delete the account named ' + username + '</div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>';
+         var users_settings_sub = '<h4>' + username + '</h4><paper-icon-item onclick="account_deletiton(\''+username+'\')" id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div secondary>Delete the account named ' + username + '</div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>';
 
 document.getElementById('users_listbox_sub').innerHTML = users_settings_sub;
 
 
                 });
-
+$(document).on('click', '.bubble-wrap', function () {
+                
+                    $('.bubble').toggleClass('active');
+                    $('.bubbleback').toggleClass('active');
+    $('.add_user_btn').toggle();
+    $('#register_form_container').fadeToggle(500);
+                });

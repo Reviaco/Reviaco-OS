@@ -83,16 +83,3 @@ die();
 }
 ?>
 
-    <html>
-
-    <head>
- 
-  
-    </head>
-
-    <body>
-        <p>
-            <?php echo $message; ?>
-    </body>
-
-    </html>
