@@ -74,33 +74,38 @@ $_SESSION['form_token'] = $form_token;
             </div>
 
         </div>
+        <div id="setting_page" class="setting_page">
+            <paper-material elevation="1" class="setting_cover mdc-bg-blue-500">
+                <img id="setting_cover_icon" class="setting_cover_icon" src="" width="300" height="300"></img>
+            </paper-material>
+        </div>
         <section id="Users_settings" class="Users_settings">
-                            <paper-material id="register_form_container" class="box" elevation="2">
+            <paper-material id="register_form_container" class="box" elevation="2">
 
-                    <form class="form" action="PHP/adduser_submit.php" method="post">
+                <form id="adduser_form" class="form" action="PHP/adduser_submit.php" method="post">
 
-                        <div class="step">
-                            <h1>Add User</h1>
-                            <br>
-                            <br>
+                    <div class="step">
+                        <h1>Add User</h1>
+                        <br>
+                        <br>
 
-                            <paper-input label="Username" id="username" name="username" value="" maxlength="20"></paper-input>
-                            <br>
-                            <paper-input label="Password" id="password" name="password" value="" maxlength="20"></paper-input>
-
-
-                        </div>
+                        <paper-input label="Username" id="username" name="username" value="" maxlength="20"></paper-input>
+                        <br>
+                        <paper-input type="password" label="Password" id="password" name="password" value="" maxlength="20"></paper-input>
 
 
-                        <input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
-                        <paper-button raised class="sumbit_parent">Register
-                            <input class="sumbit_child" type="submit" value=""> </input>
-                        </paper-button>
+                    </div>
 
-                    </form>
-                </paper-material>
+
+                    <input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
+                    <paper-button raised class="sumbit_parent" onclick="submitForm()">Register
+                        
+                    </paper-button>
+                    <paper-button raised class="sumbit_cancel">Cancel</paper-button>
+                </form>
+            </paper-material>
             <div class="bubbleback"></div>
-            <div class="bubble mdc-bg-purple-500"><i id="add_user_btn" class="material-icons add_user_btn_icon">add</i>
+            <div class="bubble mdc-bg-purple-500"><i id="add_user_btn_icon" class="material-icons add_user_btn_icon">add</i>
 
             </div>
             <div class="bubble-wrap">
@@ -119,11 +124,7 @@ $_SESSION['form_token'] = $form_token;
         </section>
 
 
-        <div id="setting_page" class="setting_page">
-            <paper-material elevation="1" class="setting_cover mdc-bg-blue-500">
-                <img id="setting_cover_icon" class="setting_cover_icon" src="" width="300" height="300"></img>
-            </paper-material>
-        </div>
+
         <app-header>
 
 

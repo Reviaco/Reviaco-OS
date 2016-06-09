@@ -59,8 +59,7 @@ else
         unset( $_SESSION['form_token'] );
 
         /*** if all is done, say thanks ***/
-header("Location: http://localhost/Reviaco-OS/System/UI/Framework/");
-die();
+
 $_SESSION['user_id'] = $user_id;
         $message = 'New user added';
         $sql = "CREATE DATABASE $username";
@@ -75,7 +74,16 @@ PRIMARY KEY (ID),
 UNIQUE KEY username (Name),
     reg_date TIMESTAMP
 )";
+$sql3 = "CREATE TABLE Settings (
+ID int(11) NOT NULL auto_increment,
+Volume varchar(20) NOT NULL,
+About varchar(40) NOT NULL,
+PRIMARY KEY (ID),
+UNIQUE KEY username (Volume),
+    reg_date TIMESTAMP
+)";
     $connn->exec($sql2);
+$connn->exec($sql3);
 mkdir("../../../../Users/$username");
 mkdir("../../../../Users/$username/Documents");
 mkdir("../../../../Users/$username/Pictures");
@@ -84,6 +92,8 @@ mkdir("../../../../Users/$username/Vedios");
 mkdir("../../../../Users/$username/Data");
 mkdir("../../../../Users/$username/Downlods");
 mkdir("../../../../Users/$username/Files");
+header("Location: http://localhost/Reviaco-OS/System/UI/Framework/");
+die();
     }
     catch(Exception $e)
     {

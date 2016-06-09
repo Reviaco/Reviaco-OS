@@ -1,3 +1,6 @@
+* {
+    font-family: roboto;
+}
 body {
     overflow: hidden;
 }
@@ -12,7 +15,6 @@ body {
     width: 50%;
     height: 100%;
     bottom: 0;
-
 }
 
 .setting_cover_icon {
@@ -37,7 +39,7 @@ body {
     background-color: transparent;
     top: 25%;
     left: 48%;
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
     cursor: pointer;
     -webkit-transform: scale(1);
@@ -54,11 +56,10 @@ body {
     width: 60px;
     top: 25%;
     left: 48%;
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
     -webkit-transform: scale(1);
     -webkit-transition: all 0.3s ease-out;
-   
 }
 
 .bubble.active {
@@ -73,7 +74,7 @@ body {
     background-color: white;
     top: 25%;
     left: 48%;
-    position: absolute;
+    position: fixed;
     border-radius: 50%;
     -webkit-transform: scale(1);
     opacity: 1;
@@ -121,19 +122,17 @@ form {
     bottom: 15%;
 }
 
-.sumbit_child {
+.sumbit_cancel {
     position: absolute;
-    right: 10%;
+    right: 30%;
     bottom: 15%;
-    display: none;
 }
-
 
 .paper-input-container-0 .focused-line.paper-input-container {
     Background: #e91e63;
 }
-add_user_btn_icon {
-    width: 60px;
-    height: 60px;
+
+.add_user_btn_icon {
+    font-size: 60px;
     color: white;
 }

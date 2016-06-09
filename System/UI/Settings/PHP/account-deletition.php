@@ -12,10 +12,12 @@ try {
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // sql to delete a record
-    $sql = "DELETE FROM users WHERE username='$stringData'";
-
+    $sql1 = "DELETE FROM users WHERE username='$stringData'";
+$sql2 = "DROP DATABASE '$stringData'";
     // use exec() because no results are returned
-    $conn->exec($sql);
+    $conn->exec($sql1);
+$conn->exec($sql2);
+rmdir("../../../../Users/$stringData/");
     echo "Record deleted successfully";
     }
 catch(PDOException $e)

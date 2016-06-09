@@ -1,4 +1,7 @@
- .box {
+ * {
+    font-family: roboto;
+}
+.box {
      position: fixed;
      top: 31%;
      left: 32%;

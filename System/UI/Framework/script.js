@@ -1,4 +1,44 @@
             $(function () {
+                function sound_hud_hide() {
+    $('#sound_hud').slideUp(1000);
+}
+                    var get_volume = new XMLHttpRequest();
+                var url_get_volume = "http://localhost/Reviaco-OS/System/PHP/Data/Volume.php";
+
+                get_volume.onreadystatechange = function () {
+                    if (get_volume.readyState == 4 && get_volume.status == 200) {
+                        get_volume(get_volume.responseText);
+                    }
+                }
+                get_volume.open('GET', url_get_volume, true);
+                get_volume.send();
+
+                function get_volume(response) {
+                    var arr = JSON.parse(response);
+                    
+                }
+                var volume_current = 0;
+                $('body').on( 'keydown', function( event ){
+
+
+var x = event.which;
+    if (x == 175) {
+        
+        $('#sound_hud').slideDown(1000);
+volume_current += 1;
+        document.getElementById('volume_slider').value = volume_current;
+setTimeout(sound_hud_hide, 3000);
+
+        
+    }
+    if (x == 174) {
+$('#sound_hud').slideDown(1000);
+volume_current -= 1;
+        document.getElementById('volume_slider').value = volume_current;
+setTimeout(sound_hud_hide, 3000);
+
+    }
+});
                 $.fn.extend({
                     animateCss: function (animationName) {
                         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -8,7 +48,7 @@
                     }
                 });
                 var xmlhttp2 = new XMLHttpRequest();
-                var url2 = "http://localhost/Reviaco-OS/System/Data/Notifications.php";
+                var url2 = "http://localhost/Reviaco-OS/System/PHP/Data/Notifications.php";
 
                 xmlhttp2.onreadystatechange = function () {
                     if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
@@ -30,7 +70,7 @@
                     $(".tasks").append(notification);
                 }
                 var xmlhttp = new XMLHttpRequest();
-                var url = "http://localhost/Reviaco-OS/System/Data/Apps.php";
+                var url = "http://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
 
                 xmlhttp.onreadystatechange = function () {
                     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {

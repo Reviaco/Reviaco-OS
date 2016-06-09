@@ -111,6 +111,16 @@ $(document).on('click', '.bubble-wrap', function () {
                 
                     $('.bubble').toggleClass('active');
                     $('.bubbleback').toggleClass('active');
-    $('.add_user_btn').toggle();
+    $('#add_user_btn_icon').toggle();
     $('#register_form_container').fadeToggle(500);
                 });
+$(document).on('click', '.sumbit_cancel', function () {
+                
+                    $('.bubble').toggleClass('active');
+                    $('.bubbleback').toggleClass('active');
+    $('#add_user_btn_icon').toggle();
+    $('#register_form_container').fadeToggle(500);
+                });
+function submitForm() {
+  document.getElementById("adduser_form").submit();
+}

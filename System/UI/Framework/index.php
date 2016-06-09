@@ -74,6 +74,7 @@ else
     </head>
 
     <body onload="carousel();">
+        
         <img class="background" src="../../Media/Backgrounds/3.jpg"></img>
 
         <div class="notification_centre_show" onmouseover="notification_centre_toggle();"></div>
@@ -85,7 +86,8 @@ else
                     <img src="../../Media/Avatars/6.svg">
                     <div class="user-details">
                         <h4><?php echo $message; ?></h4>
-                        <p><?php echo $message; ?>
+                        <p>
+                            <?php echo $message; ?>
                         </p>
                     </div>
                 </div>
@@ -124,8 +126,11 @@ else
 
             </div>
         </div>
-<div class="status_bar"></div>
-
+        <div class="status_bar"></div>
+<div id="sound_hud" class="sound_hud">
+            <div>Sound Volume</div>
+            <paper-slider id="volume_slider" class="red" value="" max="100" editable></paper-slider>
+        </div>
 
     </body>
 
