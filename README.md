@@ -8,19 +8,19 @@ Reviaco OS is the first universal operating system that will be able to run most
 
 It can run:
 
-1. #Windows win32 apps using #WineHQ Windows Compatibility Layer.
+1. Windows win32 apps using WineHQ Windows Compatibility Layer.
 
 2. Linux apps using the native Linux libraries.
 
-3. MAC OSX CLI tools using # DarlingHQ.
+3. MAC OSX CLI tools using DarlingHQ.
 
-4. #Android,  #Blackberry,  Palmas and #Tizen apps using their emulators shipped with their official SDKs.
+4. Android,  Blackberry,  Palmas and Tizen apps using their emulators shipped with their official SDKs.
 
-5. #Chrome apps using Chrome Web browser.
+5. Chrome apps using Chrome Web browser.
 
 # What is the language which is used in programming Reviaco OS ?!!! 
 
-Reviaco OS is generally based on Web languages ( HTML, CSS, JS, PHP)  and it interact with Linux using exec() PHP command and NodeJS modules and it can show the Linux apps in a HTML #VNC client.  
+Reviaco OS is generally based on Web languages ( HTML, CSS, JS, PHP )  and it interact with Linux using exec() PHP command and NodeJS modules and it can show the Linux apps in a HTML5 based VNC client (NoVNC).    
 
 # What will Reviaco OS be based on?!!! 
 
