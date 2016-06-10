@@ -132,6 +132,14 @@ else
             <paper-slider id="volume_slider" class="red" value="" max="100" editable></paper-slider>
         </div>
 
+    <div class="recent_panel">
+        <div class="minimized_window"><span>Click Me</span></div>
+        <div class="minimized_window"><span>Click Me</span></div>
+        <div class="minimized_window"><span>Click Me</span></div>
+        <div class="minimized_window"><span>Click Me</span></div>
+        <div class="minimized_window"><span>Click Me</span></div>
+        <div class="minimized_window"><span>Click Me</span></div>
+    </div>
     </body>
 
     </html>
