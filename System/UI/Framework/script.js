@@ -3,8 +3,8 @@
   var rotate, timeline;
 
   rotate = function() {
-    return $('.card:first-child').fadeOut(400, 'swing', function() {
-      return $('.card:first-child').appendTo('.container').hide();
+    return $('.minimized_window:first-child').fadeOut(400, 'swing', function() {
+      return $('.minimized_window:first-child').appendTo('#recent_panel').hide();
     }).fadeIn(400, 'swing');
   };
 
@@ -14,11 +14,61 @@
     return clearInterval(timeline);
   });
 
-  $('.card').click(function() {
+  $('.minimized_window').click(function() {
     return rotate();
   });
 
 }).call(this);
+                
+                
+                
+function appbook_load() {
+
+	// Create the appbook
+
+	$('.appbook').turn({
+			// Width
+
+			width:922,
+			
+			// Height
+
+			height:600,
+
+			// Elevation
+
+			elevation: 50,
+			
+			// Enable gradients
+
+			gradients: true,
+			
+			// Auto center this appbook
+
+			autoCenter: true
+
+	});
+}
+
+                
+           
+                startTime();
+            function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('clock').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+                
                 
                 function sound_hud_hide() {
     $('#sound_hud').slideUp(1000);
@@ -69,14 +119,14 @@ setTimeout(sound_hud_hide, 3000);
                     }
                 });
                 var xmlhttp2 = new XMLHttpRequest();
-                var url2 = "http://localhost/Reviaco-OS/System/PHP/Data/Notifications.php";
+                var url2 = 'http://localhost/Reviaco-OS/System/PHP/Data/Notifications.php';
 
                 xmlhttp2.onreadystatechange = function () {
                     if (xmlhttp2.readyState == 4 && xmlhttp2.status == 200) {
                         notifications(xmlhttp2.responseText);
                     }
                 }
-                xmlhttp2.open("GET", url2, true);
+                xmlhttp2.open('GET', url2, true);
                 xmlhttp2.send();
 
                 function notifications(response) {
@@ -88,7 +138,7 @@ setTimeout(sound_hud_hide, 3000);
 
                     }
 
-                    $(".tasks").append(notification);
+                    $('.tasks').append(notification);
                 }
                 var xmlhttp = new XMLHttpRequest();
                 var url = "http://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
@@ -98,31 +148,31 @@ setTimeout(sound_hud_hide, 3000);
                         app_showcase(xmlhttp.responseText);
                     }
                 }
-                xmlhttp.open("GET", url, true);
+                xmlhttp.open('GET', url, true);
                 xmlhttp.send();
 
                 function app_showcase(response) {
                     var arr = JSON.parse(response);
                     var i;
-                    var out = "<div class=\"app_showcase\"" + ">";
+                    var out = '<div id="app_showcase" class="app_showcase">';
 
                     for (i = 0; i < arr.length; i++) {
 
                         out += "<div class=\"mySlides w3-animate-fading " + arr[i].Name + "\"" + "><paper-card id=\"" + arr[i].Name + "\"" + " heading=\"" + arr[i].Name + "\"" + "image=\"../../../Apps/" + arr[i].Name + "/Media/icon.png\"" + " class=\"lime\"" + "><div class=\"card-content\"" + ">" + arr[i].Description + "</div></paper-card></div>";
 
                     }
-                    out += "</div>";
-                    $("body").append(out);
+                    out += '</div>';
+                    $('body').append(out);
                 }
-                $(document).on("click", "paper-card", function (event) {
+                $(document).on('click', 'paper-card', function (event) {
 
-                    $("body").append("<iframe  class=\"current_window\"" + "id=\"" + event.currentTarget.id + "_iframe\"" + "src=\"http://localhost/Reviaco-OS/Apps/" + event.currentTarget.id + "/\"" + "></iframe>");
+                    $('body').append("<iframe  class=\"current_window\"" + "id=\"" + event.currentTarget.id + "_iframe\"" + "src=\"http://localhost/Reviaco-OS/Apps/" + event.currentTarget.id + "/\"" + "></iframe>");
 
-                    $("#" + event.currentTarget.id + "_iframe").animateCss('bounce');
-                    $("#" + event.currentTarget.id + "_iframe").fadeIn(400);
+                    $('#' + event.currentTarget.id + '_iframe').animateCss('bounce');
+                    $('#' + event.currentTarget.id + '_iframe').fadeIn(400);
+$('#app_showcase').fadeOut();
 
-
-                    var htmlString = $("." + event.currentTarget.id + "").html();
+                    var htmlString = $('.' + event.currentTarget.id + '').html();
                     $.ajax({
                             method: "POST"
                             , url: "../../PHP/Linux Commands/launch.php"
@@ -138,47 +188,24 @@ setTimeout(sound_hud_hide, 3000);
 
 
                 });
-                $(".home").click(function () {
-
-                    $(".current_window, bg_window").animate("slide", "{direction: down}");
-
-
-                    var i = localStorage.getItem("top");
-                    var y = parseInt(i) + 15;
-                    $(".current_window").css({
-                        top: y
-
-
-                    });
-                    $(".current_window").removeClass('current_window').addClass('bg_window');
-                    localStorage.setItem("top", y);
+                $("#home").click(function () {
+var window;
+                  
+window = $('.current_window').detach();
+$('#recent_panel').prepend(window);
+                 $('#app_showcase').fadeIn();   
+                    $('#recent_panel').fadeIn(); 
+                    
                 });
-                var interval;
-                $(".menu").mousedown(function () {
-                    interval = setInterval(performWhileMouseDown, 1500);
-                }).mouseup(function () {
-                    clearInterval(interval);
+                
+                                $("#menu").click(function () {
+
+$('#recent_panel').slideDown();
+                                    $('#app_showcase').fadeOut();
+                    $('iframe').removeClass('current_window').addClass('minimized_window');
+                    
                 });
 
-                function performWhileMouseDown() {
-
-                    $("iframe").removeClass('fadeOutDownBig');
-
-                    $("iframe").addClass('animated fadeInUpBig');
-                    $(document).ready(function () {
-                        $("iframe").click(function () {
-
-                            var d = document.getElementById(event.currentTarget.id);
-                            d.className = " current_window ";
-                            var a = localStorage.getItem("top");
-                            var z = parseInt(a) - 15;
-                            localStorage.setItem("top", z);
-                            $("#" + event.currentTarget.id + "").addClass('current_window')
-                            $("iframe:not(.current)").removeClass('fadeInUpBig').addClass('fadeOutDownBig');
-                        });
-                    });
-
-                };
                 $(".bubble-wrap").click(function () {
                     $(".bubble").toggleClass("active");
                     $(".bubbleback").toggleClass("active");

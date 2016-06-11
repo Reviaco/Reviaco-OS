@@ -70,11 +70,48 @@ else
         <script src="./script.js"></script>
         <link href="./style.css" rel="stylesheet">
         <link rel="import" href="./polymer-style.html">
+<script type="text/javascript">
+document.body.onload = function() {
 
+
+function appbook_load() {
+
+	// Create the appbook
+
+	$('.appbook').turn({
+			// Width
+
+			width:922,
+			
+			// Height
+
+			height:600,
+
+			// Elevation
+
+			elevation: 50,
+			
+			// Enable gradients
+
+			gradients: true,
+			
+			// Auto center this appbook
+
+			autoCenter: true
+
+	});
+};
+    };
+
+// Load the HTML4 version if there's not CSS transform
+
+
+
+</script>
     </head>
 
-    <body onload="carousel();">
-        
+    <body onload="carousel();startTime();">
+
         <img class="background" src="../../Media/Backgrounds/3.jpg"></img>
 
         <div class="notification_centre_show" onmouseover="notification_centre_toggle();"></div>
@@ -114,32 +151,39 @@ else
 
 
         <div class="nav_bar">
-            <img class="back" src="../../Media/Framework/Back.png"></img>
-            <img class="home" src="../../Media/Framework/Home.png"></img>
-            <img class="menu" src="../../Media/Framework/Menu.png"></img>
-            <i class="material-icons power_ctrl restart_btn">replay</i>
-            <i class="material-icons power_ctrl poweroff_btn">power_settings_new</i>
-
+            <img id="back" class="back" src="../../Media/Framework/Back.png" width="50" height="50"></img>
+            <img id="home" class="home" src="../../Media/Framework/Home.svg" width="50" height="50"></img>
+            <img id="menu" class="menu" src="../../Media/Framework/Menu.png" width="50" height="50"></img>
+            <img id="restart_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50"></img>
+            <img id="poweroff_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50"></img>
             <div class="bubbleback"></div>
             <div class="bubble"><i class="material-icons power_btn_icon">power_settings_new</i></div>
             <div class="bubble-wrap">
 
             </div>
         </div>
-        <div class="status_bar"></div>
-<div id="sound_hud" class="sound_hud">
+        <div class="status_bar"><div id="clock" class="clock"></div></div>
+        <div id="sound_hud" class="sound_hud">
             <div>Sound Volume</div>
             <paper-slider id="volume_slider" class="red" value="" max="100" editable></paper-slider>
         </div>
 
-    <div class="recent_panel">
-        <div class="minimized_window"><span>Click Me</span></div>
-        <div class="minimized_window"><span>Click Me</span></div>
-        <div class="minimized_window"><span>Click Me</span></div>
-        <div class="minimized_window"><span>Click Me</span></div>
-        <div class="minimized_window"><span>Click Me</span></div>
-        <div class="minimized_window"><span>Click Me</span></div>
-    </div>
+        <div id="recent_panel" class="recent_panel">
+
+        </div>
+<div class="appbook-viewport">
+	<div class="container">
+		<div class="appbook">
+
+			<div style="background:red"></div>
+			<div style="background:red"></div>
+			<div style="background:red"></div>
+			<div style="background:red"></div>
+			<div style="background:red"></div>
+
+		</div>
+	</div>
+</div>
     </body>
 
     </html>

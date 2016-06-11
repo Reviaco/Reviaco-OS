@@ -99,7 +99,7 @@ $_SESSION['form_token'] = $form_token;
 
                     <input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
                     <paper-button raised class="sumbit_parent" onclick="submitForm()">Register
-                        
+
                     </paper-button>
                     <paper-button raised class="sumbit_cancel">Cancel</paper-button>
                 </form>
@@ -139,7 +139,7 @@ $_SESSION['form_token'] = $form_token;
                     <paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button>
 
                     <div id="title" title="">Settings</div>
-
+<paper-icon-button icon="cancel"></paper-icon-button>
                 </app-toolbar>
 
             </div>
