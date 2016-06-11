@@ -68,12 +68,12 @@ else
     <head>
         <link rel="import" href="../../Res.html">
         <script src="./script.js"></script>
-        <link href="./style.css" rel="stylesheet">
+        <link href="style.css" rel="stylesheet">
         <link rel="import" href="./polymer-style.html">
 <script type="text/javascript">
-document.body.onload = function() {
 
 
+appbook_load();
 function appbook_load() {
 
 	// Create the appbook
@@ -101,7 +101,7 @@ function appbook_load() {
 
 	});
 };
-    };
+   
 
 // Load the HTML4 version if there's not CSS transform
 
@@ -110,7 +110,8 @@ function appbook_load() {
 </script>
     </head>
 
-    <body onload="carousel();startTime();">
+    <body onload="carousel();startTime();appbook_load();">
+        
 
         <img class="background" src="../../Media/Backgrounds/3.jpg"></img>
 
