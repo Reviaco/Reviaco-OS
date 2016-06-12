@@ -1,9 +1,92 @@
 <style is="custom-style">
-paper-slider {
-width: 99%;
-}
-  paper-slider.red {
-    --paper-slider-knob-color: var(--paper-red-500);
-    --paper-slider-active-color: var(--paper-red-500);
-  }
+    paper-slider {
+        width: 99%;
+    }
+    
+    paper-slider.red {
+        --paper-slider-knob-color: var(--paper-red-500);
+        --paper-slider-active-color: var(--paper-red-500);
+    }
+    
+    body:not([style-scope]):not(.style-scope) {
+        margin: 0;
+        font-family: 'Roboto', 'Noto', sans-serif;
+        background-color: #eee;
+    }
+    
+    .bg-header:not([style-scope]):not(.style-scope) {
+        position: fixed;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 264px;
+        background-color: #e91e63;
+        color: #fff;
+    }
+    
+    app-header:not([style-scope]):not(.style-scope) {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #e91e63;
+        color: #fff;
+    }
+    
+    paper-fab:not([style-scope]):not(.style-scope) {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        color: #666;
+    }
+    
+    [title]:not([style-scope]):not(.style-scope) {
+        margin-left: 30px;
+        font-weight: 300;
+    }
+    
+    .content:not([style-scope]):not(.style-scope) {
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -ms-flex-direction: row;
+        -webkit-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-wrap: wrap;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: 190px 4px 4px;
+        box-sizing: border-box;
+    }
+    
+    .card:not([style-scope]):not(.style-scope) {
+        width: calc(50% - 8px);
+        height: 200px;
+        margin: 4px;
+        background-color: #90A4AE;
+    }
+    
+    .cyan:not([style-scope]):not(.style-scope) {
+        background-color: #00BCD4;
+    }
+    
+    .teal:not([style-scope]):not(.style-scope) {
+        background-color: #009688;
+    }
+    
+    .purple:not([style-scope]):not(.style-scope) {
+        background-color: #9c27b0;
+    }
+    
+    .blue:not([style-scope]):not(.style-scope) {
+        background-color: #4285f4;
+    }
+    
+    .orange:not([style-scope]):not(.style-scope) {
+        background-color: #FF5722;
+    }
 </style>

@@ -70,53 +70,16 @@ else
         <script src="./script.js"></script>
         <link href="style.css" rel="stylesheet">
         <link rel="import" href="./polymer-style.html">
-<script type="text/javascript">
 
-
-appbook_load();
-function appbook_load() {
-
-	// Create the appbook
-
-	$('.appbook').turn({
-			// Width
-
-			width:922,
-			
-			// Height
-
-			height:600,
-
-			// Elevation
-
-			elevation: 50,
-			
-			// Enable gradients
-
-			gradients: true,
-			
-			// Auto center this appbook
-
-			autoCenter: true
-
-	});
-};
-   
-
-// Load the HTML4 version if there's not CSS transform
-
-
-
-</script>
     </head>
 
-    <body onload="carousel();startTime();appbook_load();">
-        
+    <body onload="carousel();">
+
 
         <img class="background" src="../../Media/Backgrounds/3.jpg"></img>
 
-        <div class="notification_centre_show" onmouseover="notification_centre_toggle();"></div>
-        <div class="notification_centre" onmouseout="notification_centre_toggle();">
+        <div id="notification_centre_show" class="notification_centre_show"></div>
+        <div id="notification_centre" class="notification_centre">
             <div class="overlay"></div>
             <div class="top">
 
@@ -163,7 +126,9 @@ function appbook_load() {
 
             </div>
         </div>
-        <div class="status_bar"><div id="clock" class="clock"></div></div>
+        <div class="status_bar">
+            <div id="clock" class="clock"></div>
+        </div>
         <div id="sound_hud" class="sound_hud">
             <div>Sound Volume</div>
             <paper-slider id="volume_slider" class="red" value="" max="100" editable></paper-slider>
@@ -172,19 +137,19 @@ function appbook_load() {
         <div id="recent_panel" class="recent_panel">
 
         </div>
-<div class="appbook-viewport">
-	<div class="container">
-		<div class="appbook">
+        <div class="appbook-viewport">
+            <div class="container">
+                <div class="appbook">
 
-			<div style="background:red"></div>
-			<div style="background:red"></div>
-			<div style="background:red"></div>
-			<div style="background:red"></div>
-			<div style="background:red"></div>
+                    <div style="background:red"></div>
+                    <div style="background:red"></div>
+                    <div style="background:red"></div>
+                    <div style="background:red"></div>
+                    <div style="background:red"></div>
 
-		</div>
-	</div>
-</div>
+                </div>
+            </div>
+        </div>
     </body>
 
     </html>
