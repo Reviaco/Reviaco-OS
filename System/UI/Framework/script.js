@@ -141,18 +141,9 @@ setTimeout(sound_hud_hide, 3000);
                 $(document).on('click', 'paper-card', function (event) {
 
                     $('body').append('<iframe name="' + event.currentTarget.id + '" class="current_window" id="' + event.currentTarget.id + '_iframe" src="about:blank"></iframe>');
-var iframe = document.getElementById('gimp_iframe');
-iframe = iframe.contentWindow ? 
-         iframe.contentWindow : 
-         (
-             iframe.contentDocument.document ?
-             iframe.contentDocument.document : 
-             iframe.contentDocument
-         );
-iframe.document.open();
-iframe.document.write('<div class="bg-header"></div><div id="contentContainer"><app-toolbar><div>Gimp</div></app-toolbar></div>');
-iframe.document.close();
-                    $('#' + event.currentTarget.id + '_iframe').animateCss('bounce');
+
+  window.frames[event.currentTarget.id].document.getElementById('title').innerHTML = event.currentTarget.id ;
+                  $('#' + event.currentTarget.id + '_iframe').animateCss('bounce');
                     $('#' + event.currentTarget.id + '_iframe').fadeIn(400);
 $('#app_showcase').fadeOut();
 
