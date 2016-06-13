@@ -1,6 +1,7 @@
 * {
     font-family: roboto;
 }
+
 body {
     overflow: hidden;
 }
@@ -24,13 +25,16 @@ body {
 }
 
 .Users_settings,
-.Users_settings_sub {
+.Users_settings_sub,
+.Storage_settings,
+.Apps_settings,
+.Apps_settings_sub {
     display: none;
     position: fixed;
     width: 50%;
     height: 100%;
     top: 15%;
-    left: 620px;
+    left: 630px;
 }
 
 .bubble-wrap {

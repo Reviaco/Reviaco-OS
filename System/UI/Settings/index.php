@@ -8,6 +8,8 @@ $form_token = md5( uniqid('auth', true) );
 
 /*** set the session form token ***/
 $_SESSION['form_token'] = $form_token;
+$df = disk_free_space("C:");
+$ds = disk_total_space("C:");
 ?>
     <html>
 
@@ -21,7 +23,125 @@ $_SESSION['form_token'] = $form_token;
         <link rel="import" href="polymer-style.html">
         <link href="style.css" rel="stylesheet">
         <script src="script.js"></script>
+        <script>
+    var config = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [
+                    '<?php echo $df; ?>',
+                    2000,
+                    1000,
+                    500,
+                    102544123445,
+                    121152654,
+                ],
+                backgroundColor: [
+                    "#FF1744",
+                    "##2962FF",
+                    "#FFAB00",
+                    "#455A64",
+                    "#00C853",
+                    "#FF5722",
+                ],
+            }, {
+    
+                data: [
+                    '<?php echo $ds; ?>',
+                    14554,
+                    412,
+                    4544,
+                    200000000,
+                    121152654,
+                ],
+                backgroundColor: [
+                    "#FF1744",
+                    "#2962FF",
+                    "#FFAB00",
+                    "#455A64",
+                    "#00C853",
+                    "#FF5722",
+                ],
+            }],
+            labels: [
+                "/",
+                "/usr",
+                "/tmp",
+                "/var",
+                "/home",
+                "/boot"
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    };
 
+
+            $(document).on('click', '#Storage', function (event) {
+                var ctx = document.getElementById("storage-chart").getContext("2d");
+                window.myPie = new Chart(ctx, config);
+            });
+            
+                var config1 = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [
+                    '<?php echo $df; ?>',
+                    2000,
+                    1000,
+                    500,
+                    102544123445,
+                    121152654,
+                ],
+                backgroundColor: [
+                    "#FF1744",
+                    "##2962FF",
+                    "#FFAB00",
+                    "#455A64",
+                    "#00C853",
+                    "#FF5722",
+                ],
+            }, {
+    
+                data: [
+                    '<?php echo $ds; ?>',
+                    14554,
+                    412,
+                    4544,
+                    200000000,
+                    121152654,
+                ],
+                backgroundColor: [
+                    "#FF1744",
+                    "#2962FF",
+                    "#FFAB00",
+                    "#455A64",
+                    "#00C853",
+                    "#FF5722",
+                ],
+            }],
+            labels: [
+                "/",
+                "/usr",
+                "/tmp",
+                "/var",
+                "/home",
+                "/boot"
+            ]
+        },
+        options: {
+            responsive: true
+        }
+    };
+
+
+            $(document).on('click', '.app', function (event) {
+                var ctx1 = document.getElementById("app-chart").getContext("2d");
+                window.myPie = new Chart(ctx1, config1);
+            });
+        </script>
 
 
     </head>
@@ -36,40 +156,40 @@ $_SESSION['form_token'] = $form_token;
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
                 <paper-card id="Bluetooth" class="card" heading="Bluetooth">
-                    <div class="card-content">Transfer has become easier</div>
+                    <div class="card-content">Transfering has become easier</div>
                 </paper-card>
                 <paper-card id="Ethernet" class="card" heading="Ethernet">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
                 <paper-card id="Apps" class="card" heading="Apps">
-                    <div class="card-content">Use cheaper Internet</div>
+                    <div class="card-content">The best feature of Reviaco</div>
                 </paper-card>
                 <paper-card id="" class="card" heading="Language and input">
-                    <div class="card-content">Use cheaper Internet</div>
-                </paper-card>
-                <paper-card id="Accessibility" class="card" heading="Accessibility">
-                    <div class="card-content">Use cheaper Internet</div>
-                </paper-card>
-                <paper-card id="About" class="card" heading="About">
-                    <div class="card-content">Use cheaper Internet</div>
+                    <div class="card-content">Are you an alien ?!!
+                    No problem, your language is supported.....:)</div>
                 </paper-card>
                 <paper-card id="Users" class="card" heading="Users">
-                    <div class="card-content">Use cheaper Internet</div>
+                    <div class="card-content">This device isn't yours only, but it's also for your friends</div>
                 </paper-card>
                 <paper-card id="Accounts" class="card" heading="Accounts">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
-                <paper-card id="Sequrity" class="card" heading="Security">
+                <paper-card id="Security" class="card" heading="Security">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
                 <paper-card id="Devices" class="card" heading="Devices">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
-                <paper-card id="Updates" class="card" heading="Updates">
+                <paper-card id="Storage" class="card" heading="Storage">
+                    <div class="card-content">With Reviaco 1GiB value is as 1TiB</div>
+                </paper-card>                <paper-card id="Accessibility" class="card" heading="Accessibility">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
-                <paper-card id="Storage" class="card" heading="Storage">
-                    <div class="card-content">Use cheaper Internet</div>
+                                <paper-card id="Updates" class="card" heading="Updates">
+                    <div class="card-content">Be always up-to-date</div>
+                </paper-card>
+                                <paper-card id="About" class="card" heading="About">
+                    <div class="card-content">Learn more about your device !</div>
                 </paper-card>
             </div>
 
@@ -119,10 +239,25 @@ $_SESSION['form_token'] = $form_token;
         <section id="Users_settings_sub" class="Users_settings_sub">
             <div id="users_listbox_sub" role="listbox">
 
-
+<h4></h4><paper-icon-item onclick='' id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div id="description" secondary></div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>
             </div>
         </section>
+        <section id="Apps_settings" class="Apps_settings">            <div id="apps_listbox" role="listbox">
 
+
+            </div></section>
+                    <section id="Apps_settings_sub" class="Users_settings_sub">
+            <div id="apps_listbox_sub" role="listbox">
+
+<h4></h4><paper-icon-item onclick='' id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div id="description" secondary></div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>
+                
+            </div>
+                        <canvas id="app-chart" width="100" height="100" />
+        </section>
+        <section id="Storage_settings" class="Storage_settings">
+
+            <canvas id="storage-chart" width="100" height="100" />
+        </section>
 
 
         <app-header>
@@ -139,7 +274,7 @@ $_SESSION['form_token'] = $form_token;
                     <paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button>
 
                     <div id="title" title="">Settings</div>
-<paper-icon-button icon="cancel"></paper-icon-button>
+                    <paper-icon-button icon="cancel"></paper-icon-button>
                 </app-toolbar>
 
             </div>

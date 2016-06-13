@@ -1,5 +1,5 @@
                                            function account_deletiton(username) {
-                                               console.log(username);
+                                              
                    $.ajax({
                                         method: "POST"
                                         , url: "PHP/account-deletition.php"
@@ -7,9 +7,44 @@
                                             dataString: username
                                         }
                                     })
+                                           }                             function app_deletiton(app_name) {
+                                              
+                   $.ajax({
+                                        method: "POST"
+                                        , url: "PHP/app-deletition.php"
+                                        , data: {
+                                            dataString: app_name
+                                        }
+                                    })
 
          
 }
+var xmlhttp1 = new XMLHttpRequest();
+   var url1 = "http://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
+
+   xmlhttp1.onreadystatechange = function() {
+     if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
+       app_list(xmlhttp1.responseText);
+     }
+   }
+   xmlhttp1.open('GET', url1, true);
+   xmlhttp1.send();
+
+   function app_list(response) {
+     var arr = JSON.parse(response);
+     var i;
+     var out = '<div class="app">';
+
+     for (i = 0; i < arr.length; i++) {
+out += '<paper-icon-item id="' + arr[i].Name + '" class="user"><iron-image class="app_icon" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].Name + '.png"  width="50" height="50" item-icon></iron-image><paper-item-body two-line><div>' + arr[i].Name +'</div><div secondary>' + arr[i].Description +'</div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>'
+
+
+     }
+     out += '</div>';
+     $('#apps_listbox').append(out);
+   }
+
+
 var xmlhttp = new XMLHttpRequest();
 var url = "http://localhost/Reviaco-OS/System/PHP/Data/Users.php";
 
@@ -59,14 +94,14 @@ addEventListener('WebComponentsReady', function () {
                 $(document).on("click", "paper-card", function (event) {
 
 event.stopPropagation();
-$('#main_page').fadeToggle(500);
-$('#setting_page').fadeToggle(500);
+$('#main_page').fadeOut(500);
+$('#setting_page').fadeIn(500);
                
                     $('#back_btn').fadeToggle(500);
 var setting = event.currentTarget.id;
                     document.getElementById('setting_cover_icon').src = "Media/" + setting + ".png";
 
-$('#'+ setting +'_settings').fadeToggle(500);     
+$('#'+ setting +'_settings').fadeIn(500);     
 document.getElementById('title').innerHTML = setting;
 
 
@@ -92,7 +127,21 @@ document.getElementById('title').innerHTML = 'Settings';
                
                     
 
+$(document).on('click', '.app', function (event) {
+$('#Apps_settings').fadeOut(500);
 
+$('#Apps_settings_sub').fadeIn(500);
+event.stopPropagation();
+
+               
+                    
+var app_name = event.currentTarget.id;
+        $('#apps_listbox_sub').find('h4').html(app_name);
+$('#apps_listbox_sub').find('paper-icon-item').attr('onclick','app_deletiton( "'+ app_name +'")');
+                    $('#apps_listbox_sub').find('#description').html('Delete the account named ' + app_name + '');
+
+
+                });
                 $(document).on('click', '.user', function (event) {
 
 event.stopPropagation();
@@ -101,12 +150,14 @@ $('#Users_settings_sub').fadeIn(500);
                
                     
 var username = event.currentTarget.id;
-         var users_settings_sub = '<h4>' + username + '</h4><paper-icon-item onclick="account_deletiton(\''+username+'\')" id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div secondary>Delete the account named ' + username + '</div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>';
+        $('#users_listbox_sub').find('h4').html(username);
+$('#users_listbox_sub').find('paper-icon-item').attr('onclick','app_deletiton( "'+ username +'")');
+                    $('#users_listbox_sub').find('#description').html('Delete the account named ' + username + '');
 
-document.getElementById('users_listbox_sub').innerHTML = users_settings_sub;
 
 
                 });
+
 $(document).on('click', '.bubble-wrap', function () {
                 
                     $('.bubble').toggleClass('active');
@@ -124,3 +175,5 @@ $(document).on('click', '.sumbit_cancel', function () {
 function submitForm() {
   document.getElementById("adduser_form").submit();
 }
+
+ 
