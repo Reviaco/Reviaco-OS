@@ -110,7 +110,7 @@ document.getElementById('title').innerHTML = setting;
                 $(document).on('click', '#back_btn', function (event) {
 
 event.stopPropagation();
-
+$( "#chart:visible" ).empty();
 $('#setting_page').fadeOut(500);
 $('#main_page').fadeIn(500);
 
