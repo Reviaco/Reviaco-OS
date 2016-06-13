@@ -259,7 +259,19 @@ $ds = disk_total_space("C:");
             <canvas id="storage-chart chart" width="100" height="100" />
         </section>
 
+<section id="Apps_settings" class="Apps_settings">            <div id="apps_listbox" role="listbox">
 
+
+            </div></section>
+                    <section id="About_settings" class="About_settings">
+            <div id="about_listbox" role="listbox">
+
+<h4>Version</h4><paper-icon-item onclick='' id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div id="version" secondary></div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>
+
+    <h4>Build Date</h4><paper-icon-item onclick='' id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div id="build_date" secondary></div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>            
+            </div>
+                        
+        </section>
         <app-header>
 
 
