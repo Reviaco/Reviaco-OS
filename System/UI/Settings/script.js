@@ -175,5 +175,17 @@ $(document).on('click', '.sumbit_cancel', function () {
 function submitForm() {
   document.getElementById("adduser_form").submit();
 }
+var get_version = new XMLHttpRequest();
+var get_version_url = "../../../version.json";
 
+get_version.onreadystatechange = function() {
+    if (get_version.readyState == 4 && get_version.status == 200) {
+        var myArr = JSON.parse(get_version.responseText);
+        myFunction(myArr);
+    }
+};
+get_version.open("GET", get_version_url, true);
+get_version.send();
+$('#version').html(info[1].version);
+$('#build_date').html(info[1].build_date);
  
