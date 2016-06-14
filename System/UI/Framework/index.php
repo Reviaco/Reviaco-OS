@@ -137,16 +137,38 @@ else
         <div id="recent_panel" class="recent_panel">
 
         </div>
-        <div class="appbook-viewport">
+        <div id="appbook-viewport" class="appbook-viewport">
             <div class="container">
                 <div class="appbook">
 
-                    <div style="background:red"></div>
-                    <div style="background:red"></div>
-                    <div style="background:red"></div>
-                    <div style="background:red"></div>
-                    <div style="background:red"></div>
-
+                    iv>
+                    <div class="page"><b class="a">A</b><div id="app_list" class="app_list"><div id="gimp" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/gimp.png" /><div class="app_title"><h4 class="app_title">Gimp</h4></div></div></div>
+                    </div>
+                    <div class="page"><b class="index_letter">B</b></div>
+                    <div class="page"><b class="index_letter">C</b></div>
+                    <div class="page"><b class="index_letter">D</b></div>
+                    <div class="page"><b class="index_letter">E</b></div>
+                    <div class="page"><b class="index_letter">F</b></div>
+                    <div class="page"><b class="index_letter">G</b></div>
+                    <div class="page"><b class="index_letter">H</b></div>
+                    <div class="page"><b class="index_letter">I</b></div>
+                    <div class="page"><b class="index_letter">J</b></div>
+                    <div class="page"><b class="index_letter">K</b></div>
+                    <div class="page"><b class="index_letter">L</b></div>
+                    <div class="page"><b class="index_letter">M</b></div>
+                    <div class="page"><b class="index_letter">N</b></div>
+                    <div class="page"><b class="index_letter">O</b></div>
+                    <div class="page"><b class="index_letter">P</b></div>
+                    <div class="page"><b class="index_letter">Q</b></div>
+                    <div class="page"><b class="index_letter">R</b></div>
+                    <div class="page"><b class="index_letter">S</b></div>
+                    <div class="page"><b class="index_letter">T</b></div>
+                    <div class="page"><b class="index_letter">U</b></div>
+                    <div class="page"><b class="index_letter">V</b></div>
+                    <div class="page"><b class="index_letter">W</b></div>
+                    <div class="page"><b class="index_letter">X</b></div>
+                    <div class="page"><b class="index_letter">Y</b></div>
+                    <div class="page"><b class="index_letter">Z</b></div>
                 </div>
             </div>
         </div>

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 /*** begin the session ***/
@@ -65,13 +65,13 @@ else
 
 $conn = new mysqli("localhost", "root", "root", $username);
 
-$result = $conn->query("SELECT Name, Description FROM apps");
+$result = $conn->query("SELECT name, description FROM apps");
 
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"Name":"'   . $rs["Name"]        . '",';
-    $outp .= '"Description":"'. $rs["Description"]     . '"}'; 
+    $outp .= '{"name":"'   . $rs["name"]        . '",';
+    $outp .= '"description":"'. $rs["description"]     . '"}'; 
 }
 $outp .="]";
 

@@ -42,6 +42,7 @@ event.stopPropagation();
     
     "width": 100
   }, 500);
+                    
         $(".box").fadeIn();  
                     var username = $( "#" + event.currentTarget.id + "" ).find( "h4" ).html();
                     
@@ -53,4 +54,11 @@ document.getElementById("username").value = username;
                 });
 function submitForm() {
   document.getElementById("form").submit();
+    $(".box").fadeOut(); 
+    $( ".user-profile img" ).animate({
+    
+    "height": 200,
+    
+    "width": 200
+  }, 500);
 }

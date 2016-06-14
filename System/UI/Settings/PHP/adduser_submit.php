@@ -60,30 +60,39 @@ else
 
         /*** if all is done, say thanks ***/
 
-$_SESSION['user_id'] = $user_id;
+
         $message = 'New user added';
         $sql = "CREATE DATABASE $username";
         $dbh->exec($sql); 
         $connn = new PDO("mysql:host=$mysql_hostname;dbname=$username", $mysql_username, $mysql_password);
 
-    $sql2 = "CREATE TABLE Apps (
-ID int(11) NOT NULL auto_increment,
-Name varchar(20) NOT NULL,
-Description char(40) NOT NULL,
-PRIMARY KEY (ID),
-UNIQUE KEY username (Name),
+    $sql2 = "CREATE TABLE apps (
+id int(11) NOT NULL auto_increment,
+name varchar(20) NOT NULL,
+description varchar(40) NOT NULL,
+type varchar(40) NOT NULL,
+PRIMARY KEY (id),
+UNIQUE KEY username (name),
     reg_date TIMESTAMP
 )";
-$sql3 = "CREATE TABLE Settings (
-ID int(11) NOT NULL auto_increment,
-Volume varchar(20) NOT NULL,
-About varchar(40) NOT NULL,
-PRIMARY KEY (ID),
-UNIQUE KEY username (Volume),
+$sql3 = "CREATE TABLE settings (
+id int(11) NOT NULL auto_increment,
+volume varchar(20) NOT NULL,
+PRIMARY KEY (id),
+UNIQUE KEY username (volume),
     reg_date TIMESTAMP
 )";
-    $connn->exec($sql2);
+        $sql4 = "CREATE TABLE notifications (
+id int(11) NOT NULL auto_increment,
+title varchar(20) NOT NULL,
+description varchar(20) NOT NULL,
+PRIMARY KEY (id),
+UNIQUE KEY username (title),
+    reg_date TIMESTAMP
+)";
+$connn->exec($sql2);
 $connn->exec($sql3);
+$connn->exec($sql4);
 mkdir("../../../../Users/$username");
 mkdir("../../../../Users/$username/Documents");
 mkdir("../../../../Users/$username/Pictures");

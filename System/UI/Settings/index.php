@@ -252,11 +252,11 @@ $ds = disk_total_space("C:");
 <h4></h4><paper-icon-item onclick='' id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div id="description" secondary></div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>
                 
             </div>
-                        <canvas id="app-chart chart" width="100" height="100" />
+                        <canvas id="app-chart" width="100" height="100" />
         </section>
         <section id="Storage_settings" class="Storage_settings">
 
-            <canvas id="storage-chart chart" width="100" height="100" />
+            <canvas id="storage-chart" width="100" height="100" />
         </section>
 
 <section id="Apps_settings" class="Apps_settings">            <div id="apps_listbox" role="listbox">
@@ -266,10 +266,14 @@ $ds = disk_total_space("C:");
                     <section id="About_settings" class="About_settings">
             <div id="about_listbox" role="listbox">
 
-<h4>Version</h4><paper-icon-item onclick='' id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div id="version" secondary></div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>
+<paper-icon-item onclick='' id="version_container"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Version</div><div id="version" secondary></div></paper-item-body></paper-icon-item>
 
-    <h4>Build Date</h4><paper-icon-item onclick='' id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div id="build_date" secondary></div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>            
+    <paper-icon-item onclick='' id="build_date_container"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Build Date</div><div id="build_date" secondary></div></paper-item-body></paper-icon-item>            
             </div>
+                        
+        </section>
+             <section id="WI-FI_settings" class="WI-FI_settings">
+<div id="wifi_not_supported_container" class="wifi_not_supported_container"><img width="50" width="50" src="../../Media/Framework/confused.png" /><div class="wifi_not_supported_container_text"><h4>Oops, It seems that your computer hasn't WI-FI interface.....!</h4></div></div>
                         
         </section>
         <app-header>

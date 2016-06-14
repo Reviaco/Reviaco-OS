@@ -17,7 +17,7 @@ $sql2 = "DROP DATABASE '$stringData'";
     // use exec() because no results are returned
     $conn->exec($sql1);
 $conn->exec($sql2);
-rmdir("../../../../Users/$stringData/");
+rmdir("../../../../Users/'$stringData'/");
     echo "Record deleted successfully";
     }
 catch(PDOException $e)

@@ -65,13 +65,13 @@ else
 
 $conn = new mysqli("localhost", "root", "root", $username);
 
-$result = $conn->query("SELECT Title, Description FROM notifications");
+$result = $conn->query("SELECT title, description FROM notifications");
 
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"Title":"'   . $rs["Title"]        . '",';
-    $outp .= '"Description":"'. $rs["Description"]     . '"}'; 
+    $outp .= '{"title":"'   . $rs["title"]        . '",';
+    $outp .= '"description":"'. $rs["description"]     . '"}'; 
 }
 $outp .="]";
 
