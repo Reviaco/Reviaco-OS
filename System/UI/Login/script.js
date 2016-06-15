@@ -1,15 +1,15 @@
-var xmlhttp = new XMLHttpRequest();
-var url = "http://localhost/Reviaco-OS/System/PHP/Data/Users.php";
+var get_users = new XMLHttpRequest();
+var get_users_url = "http://localhost/Reviaco-OS/System/PHP/Data/Users.php";
 
-xmlhttp.onreadystatechange = function () {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        app_showcase(xmlhttp.responseText);
+get_users.onreadystatechange = function () {
+    if (get_users.readyState == 4 && get_users.status == 200) {
+        get_users_function(get_users.responseText);
     }
 }
-xmlhttp.open("GET", url, true);
-xmlhttp.send();
+get_users.open("GET", get_users_url, true);
+get_users.send();
 
-function app_showcase(response) {
+function get_users_function(response) {
     var arr = JSON.parse(response);
     var i;
     var out = "<div class=\"users\"" + ">";

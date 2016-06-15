@@ -8,7 +8,17 @@
     position: fixed;
     color: white;
 }
-
+.tinted-bg-blur {
+    z-index: 999999;
+    position: absolute;
+    min-height: 100%;
+    height: auto;
+    display: block;
+    top: 0;
+    /* Add this CSS to remove transparent border around the image */
+    left: -10%;
+    width: 120%;
+}
 h3 {
     color: black;
 }
@@ -45,12 +55,12 @@ h3 {
     left: -50px;
 }
 
-.background {
+.bg {
     position: fixed;
     height: 100%;
     width: 100%;
     z-index: -10;
-    -webkit-filter: blur(5px);
+    
 }
 
 .mySlides {

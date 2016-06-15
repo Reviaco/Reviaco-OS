@@ -1,4 +1,42 @@
  $(function() {
+     function bg_blur() {
+          $('#bg').backgroundBlur({
+    imageURL : 'http://localhost/Reviaco-OS/System/Media/Backgrounds/3.jpg',
+    blurAmount : 10,
+    imageClass : 'tinted-bg-blur'
+});
+     }
+              if (document.addEventListener) {
+        document.addEventListener('contextmenu', function(e) {
+            alert("You've tried to open context menu"); //here you draw your own menu
+            e.preventDefault();
+        }, false);
+    } else {
+        document.attachEvent('oncontextmenu', function() {
+            alert("You've tried to open context menu");
+            window.event.returnValue = false;
+        });
+    }
+
+      var myIndex = 0;
+ 
+
+ function carousel() {
+
+   var i;
+   var x = document.getElementsByClassName("mySlides");
+   for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+   }
+   myIndex++;
+   if (myIndex > x.length) {
+     myIndex = 1
+   }
+   x[myIndex - 1].style.display = "block";
+   setTimeout(carousel, 5000);
+ }
+     
+     
    sessionStorage.clickcount = 5900;
 
    function vnc_port(x) {
@@ -11,6 +49,8 @@
    }
      $( window ).load(function() {
          setInterval(function(){ get_notifications_interval(); }, 3000);
+         carousel();
+         bg_blur();
    $('.appbook').turn({
      // Width
 
@@ -175,31 +215,102 @@ get_volume.send();
 
      for (i = 0; i < arr.length; i++) {
 
-       out += "<div class=\"mySlides w3-animate-fading " + arr[i].name + "\"" + "><paper-card id=\"" + arr[i].name + "\"" + " heading=\"" + arr[i].name + "\"" + "image=\"../../../Users/default/Apps/Linux Apps/Icons/" + arr[i].name + ".png\"" + " class=\"lime\"" + "><div class=\"card-content\"" + ">" + arr[i].description + "</div></paper-card></div>";
+       out += '<div type="' + arr[i].type + '" class="mySlides w3-animate-fading ' + arr[i].name + '"><paper-card type="' + arr[i].type + '" id="' + arr[i].name + '"  heading="' + arr[i].name + '" image="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" class="lime"><div class="card-content">' + arr[i].description + '</div></paper-card></div>';
 
      }
      out += '</div>';
      $('body').append(out);
    }
-   $(document).on('click', 'paper-card', function(event) {
+   $(document).on('click', 'paper-card', function( event ) {
+       event.stopPropagation();
+var type;
+      type = $( this ).attr('type');
+       console.log(type);
+      if (type == 'linux') {
      vnc_port(1);
      console.log(sessionStorage.clickcount);
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
 
      $('#app_showcase').fadeOut();
 
-     var htmlString = $('.' + event.currentTarget.id + '').html();
+
+      }else if (type == 'windows') 
+{
+     vnc_port(1);
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'windows') 
+{
+     vnc_port(1);
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'android') 
+{
+     vnc_port(1);
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'blackberry') 
+{
+     vnc_port(1);
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'tizen') 
+{
+     vnc_port(1);
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'chrome') 
+{
+     vnc_port(1);
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'webos') 
+{
+     vnc_port(1);
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else {
+          
+      }
+               var htmlString = $('.' + event.currentTarget.id + '').html();
      $.ajax({
-         method: "POST",
-         url: "../../PHP/Linux Commands/launch.php",
+         method: 'POST',
+         url: '../../PHP/Linux Commands/launch/'+ type +'.php',
          data: {
            dataString: htmlString
          }
        })
        .done(function(msg) {
-         alert("Data Saved: " + msg);
+         alert('Data Saved: ' + msg);
        });
-
    });
      $('#home').longpress(function(e) {
     $('#app_showcase').fadeOut();
@@ -290,19 +401,20 @@ get_volume.send();
 
    });
  });
- var myIndex = 0;
- carousel();
+   google.load("feeds", "1");
 
- function carousel() {
-   var i;
-   var x = document.getElementsByClassName("mySlides");
-   for (i = 0; i < x.length; i++) {
-     x[i].style.display = "none";
-   }
-   myIndex++;
-   if (myIndex > x.length) {
-     myIndex = 1
-   }
-   x[myIndex - 1].style.display = "block";
-   setTimeout(carousel, 5000);
- }
+    function initialize() {
+      var feed = new google.feeds.Feed("http://fastpshb.appspot.com/feed/1/fastpshb");
+      feed.load(function(result) {
+        if (!result.error) {
+          var container = document.getElementById("feed");
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            var div = document.createElement("div");
+            div.appendChild(document.createTextNode(entry.title));
+            container.appendChild(div);
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);

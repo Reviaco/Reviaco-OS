@@ -65,13 +65,14 @@ else
 
 $conn = new mysqli("localhost", "root", "root", $username);
 
-$result = $conn->query("SELECT name, description FROM apps");
+$result = $conn->query("SELECT name, description, type FROM apps");
 
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "[") {$outp .= ",";}
     $outp .= '{"name":"'   . $rs["name"]        . '",';
-    $outp .= '"description":"'. $rs["description"]     . '"}'; 
+    $outp .= '"description":"'   . $rs["description"]        . '",';
+    $outp .= '"type":"'. $rs["type"]     . '"}'; 
 }
 $outp .="]";
 

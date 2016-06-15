@@ -73,11 +73,13 @@ else
 
     </head>
 
-    <body onload="carousel();">
+    <body>
 
 
-        <img class="background" src="../../Media/Backgrounds/3.jpg"></img>
+        <div id="bg" class="bg"></div>
 
+
+  <div id="div"></div>
         <div id="notification_centre_show" class="notification_centre_show"></div>
         <div id="notification_centre" class="notification_centre">
             <div class="overlay"></div>
