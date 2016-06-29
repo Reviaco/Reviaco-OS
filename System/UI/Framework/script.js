@@ -37,13 +37,13 @@
  }
      
      
-   sessionStorage.clickcount = 5900;
+   sessionStorage.assistant_current = 'brolu';
 
-   function vnc_port(x) {
+   function assistant_wakeUp(x) {
 
      if (typeof(Storage) !== "undefined") {
 
-       sessionStorage.clickcount = Number(sessionStorage.clickcount) + x;
+       sessionStorage.assistant_current = x;
      }
 
    }
@@ -227,7 +227,7 @@ var type;
       type = $( this ).attr('type');
        console.log(type);
       if (type == 'linux') {
-     vnc_port(1);
+     
      console.log(sessionStorage.clickcount);
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
 
@@ -236,7 +236,7 @@ var type;
 
       }else if (type == 'windows') 
 {
-     vnc_port(1);
+     
      console.log(sessionStorage.clickcount);
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
 
@@ -245,7 +245,7 @@ var type;
 
       } else if (type == 'windows') 
 {
-     vnc_port(1);
+     
      console.log(sessionStorage.clickcount);
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
 
@@ -254,7 +254,7 @@ var type;
 
       } else if (type == 'android') 
 {
-     vnc_port(1);
+     
      console.log(sessionStorage.clickcount);
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
 
@@ -263,7 +263,7 @@ var type;
 
       } else if (type == 'blackberry') 
 {
-     vnc_port(1);
+     
      console.log(sessionStorage.clickcount);
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
 
@@ -272,7 +272,7 @@ var type;
 
       } else if (type == 'tizen') 
 {
-     vnc_port(1);
+     
      console.log(sessionStorage.clickcount);
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
 
@@ -281,7 +281,7 @@ var type;
 
       } else if (type == 'chrome') 
 {
-     vnc_port(1);
+     
      console.log(sessionStorage.clickcount);
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
 
@@ -290,7 +290,7 @@ var type;
 
       } else if (type == 'webos') 
 {
-     vnc_port(1);
+     
      console.log(sessionStorage.clickcount);
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
 
@@ -418,3 +418,130 @@ var type;
       });
     }
     google.setOnLoadCallback(initialize);
+    
+    
+    var commands = {'hey *assistant_name': assistant_wakeMe,
+    'what is your name': assistant_say_its_name, 'open *app_name': app_launch1};
+    var assistant_wakeMe = function(assistant_name) {
+    assistant_wakeUp(assistant_name);
+    if (sessionStorage.assistant_current == 'brolu') {
+    
+    }elseif (sessionStorage.assistant_current == 'lucy') {
+    
+    }else{
+    };
+    };
+    
+    var assistant_say_its_name = function() {
+    if (sessionStorage.assistant_current == 'Brolu') {
+    
+    }else{
+    
+    };
+    };
+    
+   var app_launch1 = function(app_name) {
+    if (sessionStorage.assistant_current == 'Brolu') {
+    
+    }else{
+    
+    };
+    var type;
+      type = $( '#' + app_name + '' ).attr('type');
+       console.log(type);
+      if (type == 'linux') {
+     
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }else if (type == 'windows') 
+{
+     
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'windows') 
+{
+     
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'android') 
+{
+     
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'blackberry') 
+{
+     
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'tizen') 
+{
+     
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'chrome') 
+{
+   
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'webos') 
+{
+     
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+ } else if (type == 'firefox') 
+{
+     
+     console.log(sessionStorage.clickcount);
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      
+      } else {
+          
+      }
+               var htmlString = $('.' + event.currentTarget.id + '').html();
+     $.ajax({
+         method: 'POST',
+         url: '../../PHP/Linux Commands/launch/'+ type +'.php',
+         data: {
+           dataString: htmlString
+         }
+       })
+       .done(function(msg) {
+         alert('Data Saved: ' + msg);
+       });
+    
+    };
