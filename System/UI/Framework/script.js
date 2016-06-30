@@ -51,6 +51,8 @@
          setInterval(function(){ get_notifications_interval(); }, 3000);
          carousel();
          bg_blur();
+         meSpeak.loadConfig("../../JS/mespeak/mespeak_config.json");
+    meSpeak.loadVoice("../../JS/mespeak/voices/en/en.json");
    $('.appbook').turn({
      // Width
 
