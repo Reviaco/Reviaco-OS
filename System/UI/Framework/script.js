@@ -76,17 +76,7 @@
 
    });
      });
-   $("#notification_centre_show").mouseenter(function() {
-       
-     event.stopPropagation();
-     $("#notification_centre").show("slide", "{direction: left}");
-
-   });
-   $("#notification_centre").mouseleave(function(event) {
-     event.stopPropagation();
-     $("#notification_centre").hide("slide", "{direction: left}");
-
-   });
+  
 
    (function() {
      var rotate, timeline;
@@ -366,16 +356,7 @@ var type;
      $(".power_btn_icon").toggle(1000);
      $(".power_ctrl").toggle(1000);
    });
-   $('.toggle-btn').click(function() {
-     $('.filter-btn').toggleClass('open');
-
-   });
-
-   $('.filter-btn a').click(function() {
-     $('.filter-btn').removeClass('open');
-
-   });
-
+   
  });
 
  $('#all').click(function() {
