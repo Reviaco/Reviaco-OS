@@ -1,11 +1,11 @@
-﻿<?php
+<?php
     $stringData = $_POST['dataString']; 
 
 
 
 
 
-$command = "sudo apt-get update";
+$command = 'export DISPLAY=:1 && wine "path" ';
 $command .= " $param1 $param2 $param3 2>&1";
 
 
@@ -16,7 +16,6 @@ $pid = popen( $command,"r");
 while( !feof( $pid ) )
 {
  echo fread($pid, 256);
-
  flush();
  ob_flush();
 
