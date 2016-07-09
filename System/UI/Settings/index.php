@@ -152,19 +152,19 @@ $ds = disk_total_space("C:");
 
             <div class="content">
 
-                <paper-card id="WI-FI" class="card" heading="WI-FI">
+                <paper-card id="WI-FI" class="card" heading="WI-FI" image="../../Media/Backgrounds/.jpg">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
-                <paper-card id="Bluetooth" class="card" heading="Bluetooth">
+                <paper-card id="Bluetooth" class="card" heading="Bluetooth" image="../../Media/Backgrounds/23.jpg">
                     <div class="card-content">Transfering has become easier</div>
                 </paper-card>
-                <paper-card id="Ethernet" class="card" heading="Ethernet">
+                <paper-card id="Ethernet" class="card" heading="Ethernet" image="../../Media/Backgrounds/21.jpg">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
-                <paper-card id="Apps" class="card" heading="Apps">
+                <paper-card id="Apps" class="card" heading="Apps" image="../../Media/Backgrounds/.jpg">
                     <div class="card-content">The best feature of Reviaco</div>
                 </paper-card>
-                <paper-card id="" class="card" heading="Language and input">
+                <paper-card id="" class="card" heading="Language and input" image="../../Media/Backgrounds/.jpg">
                     <div class="card-content">Are you an alien ?!!
                     No problem, your language is supported.....:)</div>
                 </paper-card>
@@ -174,13 +174,20 @@ $ds = disk_total_space("C:");
                 <paper-card id="Accounts" class="card" heading="Accounts">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
+<paper-card id="Brolucy" class="card" heading="Brolucy" image="../../Media/Backgrounds/27.jpg">
+                    <div class="card-content">Have your own friend</div>
+                </paper-card>
+ 
                 <paper-card id="Security" class="card" heading="Security">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
                 <paper-card id="Devices" class="card" heading="Devices">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
-                <paper-card id="Storage" class="card" heading="Storage">
+ <paper-card id="Sound" class="card" heading="Sound" image="../../Media/Backgrounds/20.jpg">
+                    <div class="card-content">best Audio FX</div>
+                </paper-card>
+                <paper-card id="Storage" class="card" heading="Storage" image="../../Media/Backgrounds/26.jpg">
                     <div class="card-content">With Reviaco 1GiB value is as 1TiB</div>
                 </paper-card>                <paper-card id="Accessibility" class="card" heading="Accessibility">
                     <div class="card-content">Use cheaper Internet</div>
