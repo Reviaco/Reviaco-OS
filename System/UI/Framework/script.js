@@ -231,7 +231,7 @@ var type;
       if (type == 'linux') {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -240,7 +240,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -249,7 +249,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -258,7 +258,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -267,7 +267,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -276,7 +276,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -285,7 +285,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -294,7 +294,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -454,7 +454,7 @@ var type;
       if (type == 'linux') {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -463,7 +463,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -472,7 +472,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -481,7 +481,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -490,7 +490,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -499,7 +499,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -508,7 +508,7 @@ var type;
 {
    
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -517,7 +517,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -525,7 +525,7 @@ var type;
 {
      
      console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div><iframe src="http://ahmed-pc:' + sessionStorage.clickcount + '/vnc_auto.html?host=Ahmed-PC&port=' + sessionStorage.clickcount + '&password=5733091"></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 

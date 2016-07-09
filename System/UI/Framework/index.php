@@ -75,46 +75,9 @@ else
 
     <body>
 
-
         <div id="bg" class="bg"></div>
 
-
   <div id="div"></div>
-        <div id="notification_centre_show" class="notification_centre_show"></div>
-        <div id="notification_centre" class="notification_centre">
-            <div class="overlay"></div>
-            <div class="top">
-
-                <div class="user-profile">
-                    <img src="../../Media/Avatars/6.svg">
-                    <div class="user-details">
-                        <h4><?php echo $message; ?></h4>
-                        <p>
-                            <?php echo $message; ?>
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="filter-btn">
-                <a id="one" href="#"><i class="ion-ios-checkmark-outline"></i></a>
-                <a id="two" href="#"><i class="ion-ios-alarm-outline"></i></a>
-                <a id="three" href="#"><i class="ion-ios-heart-outline"></i></a>
-                <a id="all" href="#"><i class="ion-ios-star-outline"></i></a>
-                <span class="toggle-btn ion-android-funnel"></span>
-            </div>
-            <div class="clearfix"></div>
-            <div class="bottom">
-                <div class="title">
-                    <h3>Notifications</h3>
-                    <small>February 8,2015</small>
-                </div>
-                <ul class="tasks">
-
-                </ul>
-            </div>
-        </div>
-
 
         <div class="nav_bar">
             <img id="back" class="back" src="../../Media/Framework/Back.png" width="50" height="50"></img>
