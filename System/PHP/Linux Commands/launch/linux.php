@@ -69,7 +69,7 @@ else
 
 
 
-$command = "export DISPLAY=:0 && sudo -u $username $stringData && sleep 5 && wmctrl -r $(xdotool getwindowfocus getwindowname) -e '0,11,188,1280,742'";
+$command = "export DISPLAY=:1 && sudo -u $username $stringData && sleep 10 && wmctrl -r $(xdotool getwindowfocus getwindowname) -e '0,11,188,1280,742'";
 
 $command .= " $param1 $param2 $param3 2>&1";
 

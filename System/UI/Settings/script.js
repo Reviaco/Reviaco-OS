@@ -150,6 +150,42 @@ document.getElementById('title').innerHTML = setting;
 
 
                 });
+$(document).on("click", "#ringtone_btn_container", function (event) {
+
+
+$('#setting_cover_icon').fadeOut(500);
+$('#ringtone_list').fadeIn(500);
+               
+                    
+
+
+
+
+                });
+    $('*').click(function(e) {
+    	if(e.target.id != 'ringtone_btn_container') {
+    		    		$('#setting_cover_icon').fadeIn(500);
+$('#ringtone_list').fadeOut(500);
+    	}
+    });
+    $('*').click(function(e) {
+    	if(e.target.id != 'volume_btn_container') {
+    		$('#setting_cover_icon').fadeIn(500);
+$('#volume_list').fadeOut(500);
+    	}
+    });
+$(document).on("click", "#volume_btn_container", function (event) {
+
+
+$('#setting_cover_icon').fadeOut(500);
+$('#volume_list').fadeIn(500);
+               
+                    
+
+
+
+
+                });
                 $(document).on('click', '#back_btn', function (event) {
 
 event.stopPropagation();

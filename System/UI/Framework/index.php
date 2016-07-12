@@ -74,7 +74,9 @@ else
     </head>
 
     <body>
-
+<div id="welcomeAnimation_bg" class="welcomeAnimation_bg">
+<video id="welcomeAnimation" class="welcomeAnimation" src="random_src" type="video/mp4"  autoplay ></video>
+</div>
         <div id="bg" class="bg"></div>
 
   <div id="div"></div>

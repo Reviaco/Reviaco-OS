@@ -152,19 +152,19 @@ $ds = disk_total_space("C:");
 
             <div class="content">
 
-                <paper-card id="WI-FI" class="card" heading="WI-FI" image="../../Media/Backgrounds/.jpg">
+                <paper-card id="WI-FI" class="card" heading="WI-FI" >
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
-                <paper-card id="Bluetooth" class="card" heading="Bluetooth" image="../../Media/Backgrounds/23.jpg">
+                <paper-card id="Bluetooth" class="card" heading="Bluetooth" >
                     <div class="card-content">Transfering has become easier</div>
                 </paper-card>
-                <paper-card id="Ethernet" class="card" heading="Ethernet" image="../../Media/Backgrounds/21.jpg">
+                <paper-card id="Ethernet" class="card" heading="Ethernet" >
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
-                <paper-card id="Apps" class="card" heading="Apps" image="../../Media/Backgrounds/.jpg">
+                <paper-card id="Apps" class="card" heading="Apps" >
                     <div class="card-content">The best feature of Reviaco</div>
                 </paper-card>
-                <paper-card id="" class="card" heading="Language and input" image="../../Media/Backgrounds/.jpg">
+                <paper-card id="" class="card" heading="Language and input" >
                     <div class="card-content">Are you an alien ?!!
                     No problem, your language is supported.....:)</div>
                 </paper-card>
@@ -174,7 +174,7 @@ $ds = disk_total_space("C:");
                 <paper-card id="Accounts" class="card" heading="Accounts">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
-<paper-card id="Brolucy" class="card" heading="Brolucy" image="../../Media/Backgrounds/27.jpg">
+<paper-card id="Brolucy" class="card" heading="Brolucy" >
                     <div class="card-content">Have your own friend</div>
                 </paper-card>
  
@@ -184,10 +184,10 @@ $ds = disk_total_space("C:");
                 <paper-card id="Devices" class="card" heading="Devices">
                     <div class="card-content">Use cheaper Internet</div>
                 </paper-card>
- <paper-card id="Sound" class="card" heading="Sound" image="../../Media/Backgrounds/20.jpg">
+ <paper-card id="Sound" class="card" heading="Sound" >
                     <div class="card-content">best Audio FX</div>
                 </paper-card>
-                <paper-card id="Storage" class="card" heading="Storage" image="../../Media/Backgrounds/26.jpg">
+                <paper-card id="Storage" class="card" heading="Storage" >
                     <div class="card-content">With Reviaco 1GiB value is as 1TiB</div>
                 </paper-card>                <paper-card id="Accessibility" class="card" heading="Accessibility">
                     <div class="card-content">Use cheaper Internet</div>
@@ -279,10 +279,31 @@ $ds = disk_total_space("C:");
             </div>
                         
         </section>
+                    <section id="Sound_settings" class="Sound_settings">
+            <div id="sound_listbox" role="listbox">
+
+<paper-icon-item onclick='' id="volume_btn_container"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Sound Volumes</div><div id="volume_tip" secondary>Loud sounds cause DEATH ;)</div></paper-item-body></paper-icon-item>
+<paper-icon-item onclick='' id="ringtone_btn_container"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Ringtone</div><div id="ringtone_tip" secondary>Keep yourself happy with out daily updated HD ringtones</div></paper-item-body></paper-icon-item>
+                        
+        </section>
              <section id="WI-FI_settings" class="WI-FI_settings">
 <div id="wifi_not_supported_container" class="wifi_not_supported_container"><img width="50" width="50" src="../../Media/Framework/confused.png" /><div class="wifi_not_supported_container_text"><h4>Oops, It seems that your computer hasn't WI-FI interface.....!</h4></div></div>
                         
         </section>
+
+<paper-radio-group selected="b" aria-labelledby="label2" id="ringtone_list" class="ringtone_list">
+  <paper-radio-button name="a">allosaurus</paper-radio-button><br>
+  <paper-radio-button name="b">brontosaurus</paper-radio-button><br>
+  <paper-radio-button name="d">diplodocus</paper-radio-button>
+</paper-radio-group>
+<div id="volume_list" class="volume_list">
+<div>Ringtone</div>
+<paper-slider class="red" value="23" max="255" editable></paper-slider>
+<div>Media</div>
+<paper-slider class="green" value="183" max="255" editable></paper-slider>
+<div>Notifications</div>
+<paper-slider class="blue" value="211" max="255" editable></paper-slider>
+</div>
         <app-header>
 
 

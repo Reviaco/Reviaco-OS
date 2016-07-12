@@ -1,11 +1,10 @@
 ﻿<?php
-    $stringData = $_POST['dataString']; 
 
 
 
 
 
-$command = "export DISPLAY=:0 && $stringData --geometry=1280x765+14+245";
+$command = "sleep 5 && export DISPLAY=:1 && wmctrl -r $(xdotool getwindowfocus getwindowname) -e '0,11,188,1280,742'";
 $command .= " $param1 $param2 $param3 2>&1";
 
 

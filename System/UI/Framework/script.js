@@ -1,4 +1,26 @@
+// Hello.
+//
+// This is JSHint, a tool that helps to detect errors and potential
+// problems in your JavaScript code.
+//
+// To start, simply enter some JavaScript anywhere on this page. Your
+// report will appear on the right side.
+//
+// Additionally, you can toggle specific options in the Configure
+// menu.
+
  $(function() {
+function welcomeAnimation() {
+  var videos = new Array('1', '2', '3', '4', '5');
+  var l = videos.length;
+  var random_no = Math.floor(l*Math.random());
+  document.getElementById('welcomeAnimation').src = '../../Media/welcomeAnimation/' + videos[random_no] + '.mp4';
+console.log(videos[random_no]);
+    document.getElementById('welcomeAnimation').addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+            $('#welcomeAnimation_bg').fadeOut(); 
+    }
+     }
      function bg_blur() {
           $('#bg').backgroundBlur({
     imageURL : 'http://localhost/Reviaco-OS/System/Media/Backgrounds/3.jpg',
@@ -30,7 +52,7 @@
    }
    myIndex++;
    if (myIndex > x.length) {
-     myIndex = 1
+     myIndex = 1;
    }
    x[myIndex - 1].style.display = "block";
    setTimeout(carousel, 5000);
@@ -51,6 +73,7 @@
          setInterval(function(){ get_notifications_interval(); }, 3000);
          carousel();
          bg_blur();
+welcomeAnimation();
          meSpeak.loadConfig("../../JS/mespeak/mespeak_config.json");
     meSpeak.loadVoice("../../JS/mespeak/voices/en/en.json");
    $('.appbook').turn({
@@ -115,8 +138,8 @@
 
    function checkTime(i) {
      if (i < 10) {
-       i = "0" + i
-     }; // add zero in front of numbers < 10
+       i = "0" + i;
+     } // add zero in front of numbers < 10
      return i;
    }
 
@@ -172,7 +195,7 @@ get_volume.send();
      if (get_notifications.readyState == 4 && get_notifications.status == 200) {
        get_notifications_function(get_notifications.responseText);
      }
-   }
+   };
    get_notifications.open('GET', get_notifications_url, true);
    get_notifications.send();
 
@@ -195,7 +218,7 @@ get_volume.send();
      if (get_apps.readyState == 4 && get_apps.status == 200) {
        get_apps_function(get_apps.responseText);
      }
-   }
+   };
      
    get_apps.open('GET', get_apps_url, true);
    get_apps.send();
@@ -217,10 +240,10 @@ get_volume.send();
        event.stopPropagation();
 var type;
       type = $( this ).attr('type');
-       console.log(type);
+      
       if (type == 'linux') {
      
-     console.log(sessionStorage.clickcount);
+     
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
@@ -229,7 +252,7 @@ var type;
       }else if (type == 'windows') 
 {
      
-     console.log(sessionStorage.clickcount);
+     
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
@@ -238,7 +261,7 @@ var type;
       } else if (type == 'windows') 
 {
      
-     console.log(sessionStorage.clickcount);
+     
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
@@ -247,7 +270,7 @@ var type;
       } else if (type == 'android') 
 {
      
-     console.log(sessionStorage.clickcount);
+    
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
@@ -256,7 +279,7 @@ var type;
       } else if (type == 'blackberry') 
 {
      
-     console.log(sessionStorage.clickcount);
+     
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
@@ -265,7 +288,7 @@ var type;
       } else if (type == 'tizen') 
 {
      
-     console.log(sessionStorage.clickcount);
+    
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
@@ -274,7 +297,7 @@ var type;
       } else if (type == 'chrome') 
 {
      
-     console.log(sessionStorage.clickcount);
+     
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
@@ -283,7 +306,7 @@ var type;
       } else if (type == 'webos') 
 {
      
-     console.log(sessionStorage.clickcount);
+    
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
@@ -292,7 +315,8 @@ var type;
       } else {
           
       }
-               var htmlString = $('.' + event.currentTarget.id + '').html();
+               var htmlString = event.currentTarget.id;
+console.log(htmlString);
      $.ajax({
          method: 'POST',
          url: '../../PHP/Linux Commands/launch/'+ type +'.php',
@@ -300,9 +324,14 @@ var type;
            dataString: htmlString
          }
        })
-       .done(function(msg) {
-         alert('Data Saved: ' + msg);
-       });
+     $.ajax({
+         method: 'POST',
+         url: '../../PHP/Linux Commands/maximize/'+ type +'.php',
+         data: {
+           dataString: htmlString
+         }
+       })
+
    });
      $('#home').longpress(function(e) {
     $('#app_showcase').fadeOut();
@@ -346,9 +375,15 @@ var type;
      event.stopPropagation();
      $(this).offsetParent().offsetParent().fadeOut();
      $(this).offsetParent().offsetParent().remove();
-     vnc_port(-1);
+     
      $('#app_showcase').fadeIn();
-
+     $.ajax({
+         method: 'POST',
+         url: '../../PHP/Linux Commands/maximize/'+ type +'.php',
+         data: {
+           dataString: htmlString
+         }
+       })
    });
    $(".bubble-wrap").click(function() {
      $(".bubble").toggleClass("active");
@@ -384,35 +419,18 @@ var type;
 
    });
  });
-   google.load("feeds", "1");
 
-    function initialize() {
-      var feed = new google.feeds.Feed("http://fastpshb.appspot.com/feed/1/fastpshb");
-      feed.load(function(result) {
-        if (!result.error) {
-          var container = document.getElementById("feed");
-          for (var i = 0; i < result.feed.entries.length; i++) {
-            var entry = result.feed.entries[i];
-            var div = document.createElement("div");
-            div.appendChild(document.createTextNode(entry.title));
-            container.appendChild(div);
-          }
-        }
-      });
-    }
-    google.setOnLoadCallback(initialize);
     
+    if (annyang) {
     
-    var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'open *app_name': app_launch1};
     var assistant_wakeMe = function(assistant_name) {
     assistant_wakeUp(assistant_name);
     if (sessionStorage.assistant_current == 'brolu') {
     
-    }elseif (sessionStorage.assistant_current == 'lucy') {
+    }else if (sessionStorage.assistant_current == 'lucy') {
     
     }else{
-    };
+    }
     };
     
     var assistant_say_its_name = function() {
@@ -420,7 +438,7 @@ var type;
     
     }else{
     
-    };
+    }
     };
     
    var app_launch1 = function(app_name) {
@@ -428,14 +446,14 @@ var type;
     
     }else{
     
-    };
+    }
     var type;
       type = $( '#' + app_name + '' ).attr('type');
        console.log(type);
       if (type == 'linux') {
      
-     console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -443,8 +461,8 @@ var type;
       }else if (type == 'windows') 
 {
      
-     console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -452,8 +470,8 @@ var type;
       } else if (type == 'windows') 
 {
      
-     console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -461,8 +479,8 @@ var type;
       } else if (type == 'android') 
 {
      
-     console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -470,8 +488,8 @@ var type;
       } else if (type == 'blackberry') 
 {
      
-     console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -479,8 +497,8 @@ var type;
       } else if (type == 'tizen') 
 {
      
-     console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -488,8 +506,8 @@ var type;
       } else if (type == 'chrome') 
 {
    
-     console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -497,25 +515,27 @@ var type;
       } else if (type == 'webos') 
 {
      
-     console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
  } else if (type == 'firefox') 
 {
      
-     console.log(sessionStorage.clickcount);
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
 
       
       } else {
+
+speak('Sorry, But it seems that you have invented a new app name!');
           
       }
-               var htmlString = $('.' + event.currentTarget.id + '').html();
+               var htmlString = app_name;
      $.ajax({
          method: 'POST',
          url: '../../PHP/Linux Commands/launch/'+ type +'.php',
@@ -528,3 +548,22 @@ var type;
        });
     
     };
+var commands = {'hey *assistant_name': assistant_wakeMe,
+    'what is your name': assistant_say_its_name, 'open *app_name': app_launch1};
+    annyang.debug();
+
+    // Add voice commands to respond to
+    annyang.addCommands(commands);
+
+    // OPTIONAL: Set a language for speech recognition (defaults to English)
+    // For a full list of language codes, see the documentation:
+    // https://github.com/TalAter/annyang/blob/master/docs/FAQ.md#what-languages-are-supported
+    annyang.setLanguage('en');
+
+    // Start listening. You can call this here, or attach this call to an event, button, etc.
+    annyang.start();
+  } else {
+
+  }
+
+

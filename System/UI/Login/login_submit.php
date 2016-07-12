@@ -69,6 +69,11 @@ else
                 /*** set the session user_id variable ***/
                 $_SESSION['user_id'] = $user_id;
 
+$file = '../../PHP/Data/current_user.php';
+
+// Write the contents back to the file
+file_put_contents($file, $username);
+
 header("Location: http://localhost/Reviaco-OS/System/UI/Framework/");
 die();
         }
