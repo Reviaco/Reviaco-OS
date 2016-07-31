@@ -85,8 +85,8 @@ else
             <img id="back" class="back" src="../../Media/Framework/Back.png" width="50" height="50"></img>
             <img id="home" class="home" src="../../Media/Framework/Home.svg" width="50" height="50"></img>
             <img id="menu" class="menu" src="../../Media/Framework/Menu.png" width="50" height="50"></img>
-            <img id="restart_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50" command="sudo reboot"></img>
-            <img id="poweroff_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50" command="sudo poweroff"></img>
+            <img id="restart_btn command_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50" command="sudo reboot"></img>
+            <img id="poweroff_btn command_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50" command="sudo poweroff"></img>
             <div class="bubbleback"></div>
             <div class="bubble"><i class="material-icons power_btn_icon">power_settings_new</i></div>
             <div class="bubble-wrap">
