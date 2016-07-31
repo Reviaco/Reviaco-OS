@@ -12,7 +12,7 @@
  $(function() {
 $(document).on('click', '#command_btn', function( event ) {
        event.stopPropagation();
-var htmlString = $( this ).atrr();
+var htmlString = $( this ).atrr('command');
      $.ajax({
          method: 'POST',
          url: '../../PHP/Linux Commands/generic.php',
