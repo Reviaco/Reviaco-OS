@@ -1,0 +1,101 @@
+<html>
+<head>
+  <title>Frameless Window</title>
+
+        <link rel="import" href="http://localhost/Reviaco-OS/System/Res.html">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="titlebar.js"></script>
+  <script src="frameless_window.js"></script>
+</head>
+
+<body>
+   <div id="notification_centre_show" class="notification_centre_show"></div>
+<div id="notification_centre" class="notification_centre">
+            <div class="overlay"></div>
+            <div class="top">
+
+                <div class="user-profile">
+                    <img src="http://localhost/Reviaco-OS/System/Media/Avatars/6.svg">
+                    <div class="user-details">
+                        <h4><?php echo $message; ?></h4>
+                        <p>
+                            <?php echo $message; ?>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="filter-btn">
+                <a id="one" href="#"><i class="ion-ios-checkmark-outline"></i></a>
+                <a id="two" href="#"><i class="ion-ios-alarm-outline"></i></a>
+                <a id="three" href="#"><i class="ion-ios-heart-outline"></i></a>
+                <a id="all" href="#"><i class="ion-ios-star-outline"></i></a>
+                <span class="toggle-btn ion-android-funnel"></span>
+            </div>
+            <div class="clearfix"></div>
+            <div class="bottom">
+                <div class="title">
+                    <h3>Notifications</h3>
+                    <small>February 8,2015</small>
+                </div>
+                <ul class="tasks">
+
+                </ul>
+            </div>
+        </div>
+
+  <div id="content" style="display:none;">
+    <div id="inner-content">
+
+      Select the titlebar to enable:
+      <br/>
+
+      <input type="checkbox" id="top-box">Top Titlebar
+      <br/>
+      <input type="checkbox" id="bottom-box">Bottom Titlebar
+      <br/>
+      <input type="checkbox" id="left-box">Left Titlebar
+      <br/>
+      <input type="checkbox" id="right-box">Right Titlebar
+      <br/>
+      <br/>
+
+      <button id="close-window-button">Close Window</button>
+      <br/>
+      <button id="minimize-window-button">Minimize</button>
+      <br/>
+      <button id="maximize-window-button">Maximize</button>
+      <br/>
+      <button id="unmaximize-window-button">Unmaximize</button>
+      <br/>
+      <button id="open-inspector-button">Open Developer Tools</button>
+
+    </div>
+  </div>
+<script>
+ $(function() {
+ $("#notification_centre_show").mouseenter(function() {
+       
+     event.stopPropagation();
+     $("#notification_centre").show("slide", "{direction: left}");
+
+   });
+   $("#notification_centre").mouseleave(function(event) {
+     event.stopPropagation();
+     $("#notification_centre").hide("slide", "{direction: left}");
+
+   });
+   $('.toggle-btn').click(function() {
+     $('.filter-btn').toggleClass('open');
+
+   });
+
+   $('.filter-btn a').click(function() {
+     $('.filter-btn').removeClass('open');
+
+   });
+});
+
+</script>
+</body>
+</html>

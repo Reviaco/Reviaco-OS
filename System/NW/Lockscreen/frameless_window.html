@@ -1,0 +1,93 @@
+<html>
+<head>
+  <title>Frameless Window</title>
+
+        <link rel="import" href="http://localhost/Reviaco-OS/System/Res.html">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script src="titlebar.js"></script>
+  <script src="frameless_window.js"></script>
+
+</head>
+<body>
+
+
+
+  <div id="content" style="display:none;">
+    <div id="inner-content">
+
+      Select the titlebar to enable:
+      <br/>
+
+      <input type="checkbox" id="top-box">Top Titlebar
+      <br/>
+      <input type="checkbox" id="bottom-box">Bottom Titlebar
+      <br/>
+      <input type="checkbox" id="left-box">Left Titlebar
+      <br/>
+      <input type="checkbox" id="right-box">Right Titlebar
+      <br/>
+      <br/>
+
+      <button id="close-window-button">Close Window</button>
+      <br/>
+      <button id="minimize-window-button">Minimize</button>
+      <br/>
+      <button id="maximize-window-button">Maximize</button>
+      <br/>
+      <button id="unmaximize-window-button">Unmaximize</button>
+      <br/>
+      <button id="open-inspector-button">Open Developer Tools</button>
+
+    </div>
+  </div>
+     <div class="slide-to-unlock old-slider">
+    <div id="slide-to-unlock-old" class="dragdealer">
+      <div class="handle"></div>
+    </div>
+  </div>
+<script>
+ $(function() {
+  var slideToUnlockOld = new Dragdealer('slide-to-unlock-old', {
+    steps: 2,
+y: 1,
+  horizontal: false,
+  vertical: true,
+    loose: true,
+    callback: function(x, y) {
+      // Only 0 and 1 are the possible values because of "steps: 2"
+      if (!y) {
+        this.disable();
+        $('#slide-to-unlock-old').fadeOut();
+        // Bring unlock screen back after a while
+
+var awayCallback = function(){
+				          slideToUnlockOld.enable();
+          slideToUnlockOld.setValue(0, 1, true);
+          $('#slide-to-unlock-old').fadeIn();
+			};
+			
+			var awayBackCallback = function(){
+				console.log(new Date().toTimeString() + ": back");
+			};
+			var onVisibleCallback = function(){
+				console.log(new Date().toTimeString() + ": now looking at page");
+			};
+			
+			var onHiddenCallback = function(){
+				console.log(new Date().toTimeString() + ": not looking at page");
+			};
+			var idle = new Idle({
+				onHidden: onHiddenCallback,
+				onVisible: onVisibleCallback,
+				onAway: awayCallback,
+				onAwayBack: awayBackCallback,
+				awayTimeout: 5000 //away with 5 seconds of inactivity
+			}).start();
+      }
+    }
+  });
+})
+
+</script>
+</body>
+</html>
