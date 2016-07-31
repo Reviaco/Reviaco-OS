@@ -5,7 +5,7 @@
 
 
 
-$command = "sudo apt-get update";
+$command = "$stringData";
 $command .= " $param1 $param2 $param3 2>&1";
 
 
