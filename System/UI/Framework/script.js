@@ -10,19 +10,23 @@
 // menu.
 
  $(function() {
-$(document).on('click', '#command_btn', function( event ) {
-       event.stopPropagation();
-var htmlString = $( this ).atrr('command');
+function exec(command) {
      $.ajax({
          method: 'POST',
          url: '../../PHP/Linux Commands/generic.php',
          data: {
-           dataString: htmlString
+           dataString: command
          }
        })
        .done(function(msg) {
          alert('Data Saved: ' + msg);
        });
+}
+
+$(document).on('click', '#command_btn', function( event ) {
+       event.stopPropagation();
+exec($( this ).atrr('command'););
+
 });
 function welcomeAnimation() {
   var videos = new Array('1', '2', '3', '4', '5');
@@ -455,18 +459,6 @@ var assistant_wakeMe = function(assistant_name) {
     
     }else{
     }
-
-var htmlString = 'sudo poweroff';
-     $.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/launch/generic.php',
-         data: {
-           dataString: htmlString
-         }
-       })
-       .done(function(msg) {
-         alert('Data Saved: ' + msg);
-       });
     };
     
     var assistant_poweroff_PC = function() {
@@ -475,6 +467,17 @@ var htmlString = 'sudo poweroff';
     }else{
     
     }
+exec('sudo poweroff');
+    };
+
+
+var assistant_reboot_PC = function() {
+    if (sessionStorage.assistant_current == 'Brolu') {
+    
+    }else{
+    
+    }
+exec('sudo reboot');
     };
     
    var app_launch1 = function(app_name) {
@@ -586,7 +589,8 @@ speak('Sorry, But it seems that you have invented a new app name!');
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
     'what is your name': assistant_say_its_name,
-    'shutdown this computer': assistant_poweroff_PC,'open *app_name': app_launch1};
+    'shutdown this computer': assistant_poweroff_PC,
+    'restart this computer': assistant_reboot_PC,'open *app_name': app_launch1};
     annyang.debug();
 
     // Add voice commands to respond to
