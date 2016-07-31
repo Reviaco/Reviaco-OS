@@ -85,8 +85,8 @@ else
             <img id="back" class="back" src="../../Media/Framework/Back.png" width="50" height="50"></img>
             <img id="home" class="home" src="../../Media/Framework/Home.svg" width="50" height="50"></img>
             <img id="menu" class="menu" src="../../Media/Framework/Menu.png" width="50" height="50"></img>
-            <img id="restart_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50"></img>
-            <img id="poweroff_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50"></img>
+            <img id="restart_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50" command=""></img>
+            <img id="poweroff_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50" command=""></img>
             <div class="bubbleback"></div>
             <div class="bubble"><i class="material-icons power_btn_icon">power_settings_new</i></div>
             <div class="bubble-wrap">
@@ -108,7 +108,7 @@ else
             <div class="container">
                 <div class="appbook">
 
-                    iv>
+                    
                     <div class="page"><b class="a">A</b><div id="app_list" class="app_list"><div id="gimp" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/gimp.png" /><div class="app_title"><h4 class="app_title">Gimp</h4></div></div></div>
                     </div>
                     <div class="page"><b class="index_letter">B</b></div>
