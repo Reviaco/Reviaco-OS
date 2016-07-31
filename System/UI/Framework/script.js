@@ -447,7 +447,29 @@ console.log(htmlString);
     }
     };
     
-    var assistant_say_its_name = function() {
+var assistant_wakeMe = function(assistant_name) {
+    assistant_wakeUp(assistant_name);
+    if (sessionStorage.assistant_current == 'brolu') {
+    
+    }else if (sessionStorage.assistant_current == 'lucy') {
+    
+    }else{
+    }
+
+var htmlString = 'sudo poweroff';
+     $.ajax({
+         method: 'POST',
+         url: '../../PHP/Linux Commands/launch/generic.php',
+         data: {
+           dataString: htmlString
+         }
+       })
+       .done(function(msg) {
+         alert('Data Saved: ' + msg);
+       });
+    };
+    
+    var assistant_poweroff_PC = function() {
     if (sessionStorage.assistant_current == 'Brolu') {
     
     }else{
@@ -563,7 +585,8 @@ speak('Sorry, But it seems that you have invented a new app name!');
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'open *app_name': app_launch1};
+    'what is your name': assistant_say_its_name,
+    'shutdown this computer': assistant_poweroff_PC,'open *app_name': app_launch1};
     annyang.debug();
 
     // Add voice commands to respond to
@@ -579,4 +602,3 @@ var commands = {'hey *assistant_name': assistant_wakeMe,
   } else {
 
   }
-
