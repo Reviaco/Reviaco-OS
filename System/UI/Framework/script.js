@@ -10,6 +10,20 @@
 // menu.
 
  $(function() {
+$(document).on('click', '#command_btn', function( event ) {
+       event.stopPropagation();
+var htmlString = $( this ).atrr();
+     $.ajax({
+         method: 'POST',
+         url: '../../PHP/Linux Commands/generic.php',
+         data: {
+           dataString: htmlString
+         }
+       })
+       .done(function(msg) {
+         alert('Data Saved: ' + msg);
+       });
+});
 function welcomeAnimation() {
   var videos = new Array('1', '2', '3', '4', '5');
   var l = videos.length;
@@ -565,5 +579,4 @@ var commands = {'hey *assistant_name': assistant_wakeMe,
   } else {
 
   }
-
 
