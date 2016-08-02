@@ -132,7 +132,8 @@ echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 
 mysqli_close($link);
 
-$command = "mkdir /var/www/html/Users/$phpro_username/Downloads/$app/$app/ && unzip /var/www/html/Users/$phpro_username/Downloads/$app/catt.zip -d /var/www/html/Users/$phpro_username/Downloads/$app/$app/ && cp -a /var/www/html/Users/$phpro_username/Downloads/$app/$app/ /var/www/html/Users/$phpro_username/Apps/";
+$command = "mkdir /var/www/html/Users/$phpro_username/Downloads/$app/$app/ &&
+cd /var/www/html/Users/phpro_username/Downloads/$app && wget https://site.com/$app && unzip /var/www/html/Users/$phpro_username/Downloads/$app/catt.zip -d /var/www/html/Users/$phpro_username/Downloads/$app/$app/ && cp -a /var/www/html/Users/$phpro_username/Downloads/$app/$app/ /var/www/html/Users/$phpro_username/Apps/";
 
 $command .= " $param1 $param2 $param3 2>&1";
 
