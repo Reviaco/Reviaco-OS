@@ -15,6 +15,19 @@ function checkTime(i) {
 }
 window.onload = startTime;
 
+setInterval(check_connection, 3000);
+
+function check_connection() {
+
+if(navigator.onLine)
+  {
+    alert('You are Online');
+  }
+  else
+  {
+    alert('You are Offline')
+  }
+}
 var get_users = new XMLHttpRequest();
 var get_users_url = "http://localhost/Reviaco-OS/System/PHP/Data/Users.php";
 
