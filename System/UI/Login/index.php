@@ -31,6 +31,10 @@
 
         </form>
     </paper-material>
+    <div id="info_bar" class="info_bar">
+    <div id="clock" class="clock"></div>
+    <div id="connection_status" class="connection_status"></div>
+    </div>
 </body>
 
 </html>
