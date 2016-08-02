@@ -33,7 +33,7 @@
     </paper-material>
     <div id="info_bar" class="info_bar">
     <div id="clock" class="clock"></div>
-    <div id="connection_status" class="connection_status"></div>
+    <div id="connection_status" class="connection_status"><img id="connection_status_indicator" class="connection_status_indicator" src=""></img></div>
     </div>
 </body>
 
