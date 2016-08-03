@@ -32,8 +32,9 @@
         </form>
     </paper-material>
     <div id="info_bar" class="info_bar">
+    <div id="connection_status" class="connection_status"><img id="connection_status_indicator" class="connection_status_indicator" src="" width="50" height="50"></img></div>
     <div id="clock" class="clock"></div>
-    <div id="connection_status" class="connection_status"><img id="connection_status_indicator" class="connection_status_indicator" src=""></img></div>
+
     </div>
 </body>
 
