@@ -37,8 +37,8 @@ FB: https://fb.me/Reviaco
 # License 
 
 © 2016 Copyright Reviaco
--------------------------
--------------------------
+-----------------------------
+-----------------------------
 
 1. Anyone has the permissions to modify Reviaco, but doesn't have any permissions to share these modifications anywhere except on Reviaco Official repo on Github.
 
