@@ -39,6 +39,30 @@ console.log(videos[random_no]);
             $('#welcomeAnimation_bg').fadeOut(); 
     }
      }
+function appbook() {
+$('.appbook').turn({
+     // Width
+
+     width: 922,
+
+     // Height
+
+     height: 600,
+
+     // Elevation
+
+     elevation: 50,
+
+     // Enable gradients
+
+     gradients: true,
+
+     // Auto center this appbook
+
+     autoCenter: true
+
+   });
+}
      function bg_blur() {
           $('#bg').backgroundBlur({
     imageURL : 'http://localhost/Reviaco-OS/System/Media/Backgrounds/3.jpg',
@@ -87,37 +111,23 @@ console.log(videos[random_no]);
      }
 
    }
-     $( window ).load(function() {
-         setInterval(function(){ get_notifications_interval(); }, 3000);
-         carousel();
-         bg_blur();
-welcomeAnimation();
+function loadVoices() {
          meSpeak.loadConfig("../../JS/mespeak/mespeak_config.json");
     meSpeak.loadVoice("../../JS/mespeak/voices/en/en.json");
-   $('.appbook').turn({
-     // Width
+}
+     $( window ).load(function() {
+setTimeout(function() { welcomeAnimation(); }, 500);
+         setInterval(function(){ get_notifications_interval(); }, 1000);
+         
+setTimeout(function() { carousel(); }, 1500);
+setTimeout(function() { bg_blur(); }, 2000);
+setTimeout(function() { appbook(); }, 2500);
+setTimeout(function() { loadVoices(); }, 3000);
 
-     width: 922,
 
-     // Height
 
-     height: 600,
-
-     // Elevation
-
-     elevation: 50,
-
-     // Enable gradients
-
-     gradients: true,
-
-     // Auto center this appbook
-
-     autoCenter: true
-
-   });
+   
      });
-  
 
    (function() {
      var rotate, timeline;
