@@ -21,11 +21,11 @@ function check_connection() {
 
 if(navigator.onLine)
   {
-    document.getElementById("connection_status_indicator").src = "../../Media/Indicators/EthernetOff.png";
+    document.getElementById("connection_status_indicator").src = "../../Media/Indicators/EthernetOn.png";
   }
   else
   {
-    document.getElementById("connection_status_indicator").src = "../../Media/Indicators/EthernetOn.png";
+    document.getElementById("connection_status_indicator").src = "../../Media/Indicators/EthernetOff.png";
   }
 }
 var get_users = new XMLHttpRequest();
