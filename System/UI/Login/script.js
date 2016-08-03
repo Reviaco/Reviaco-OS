@@ -8,6 +8,14 @@ function startTime() {
     document.getElementById('clock').innerHTML =
     h + ":" + m + ":" + s;
     var t = setTimeout(startTime, 500);
+if(navigator.onLine)
+  {
+    document.getElementById("connection_status_indicator").src = "../../Media/Indicators/EthernetOn.png";
+  }
+  else
+  {
+    document.getElementById("connection_status_indicator").src = "../../Media/Indicators/EthernetOff.png";
+  }
 }
 function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
