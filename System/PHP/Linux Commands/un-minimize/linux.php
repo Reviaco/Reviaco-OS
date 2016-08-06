@@ -1,13 +1,9 @@
 ﻿<?php
 
+  $stringData = $_POST['dataString']; 
 
-
-
-
-$command = "sleep 5 && export DISPLAY=:1 && wmctrl -r $(xdotool getwindowfocus getwindowname) -e '0,11,188,1280,742'";
+$command = "export DISPLAY=:0 && wmctrl -ia $stringData";
 $command .= " $param1 $param2 $param3 2>&1";
-
-
 
 $pid = popen( $command,"r");
 
