@@ -1,16 +1,8 @@
 ﻿<?php
     $stringData = $_POST['dataString']; 
-
-
-
-
-
-$command = "export DISPLAY=:1 && /opt/VirtualGL/bin/vglrun $stringData";
-$command .= " $param1 $param2 $param3 2>&1";
-
-
-
-$pid = popen( $command,"r");
+    $command = "export DISPLAY=:0 && sudo killall $stringData";
+    $command .= " $param1 $param2 $param3 2>&1";
+    $pid = popen( $command,"r");
 
 
 while( !feof( $pid ) )

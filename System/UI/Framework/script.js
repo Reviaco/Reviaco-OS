@@ -345,6 +345,8 @@ var type;
       }
                var htmlString = event.currentTarget.id;
 console.log(htmlString);
+       var htmlString = event.currentTarget.id;
+console.log(htmlString);
      $.ajax({
          method: 'POST',
          url: '../../PHP/Linux Commands/launch/'+ type +'.php',
@@ -352,13 +354,17 @@ console.log(htmlString);
            dataString: htmlString
          }
        })
-     $.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/maximize/'+ type +'.php',
-         data: {
-           dataString: htmlString
-         }
-       })
+
+     
+$.ajax({
+    type: 'get',
+    url: '../../PHP/Linux Commands/get_current_window_id.php',
+    data: htmlString,
+    success: function(data) {
+        alert(data);
+        var current_window_hex = data;
+    }
+});
 
    });
      $('#home').longpress(function(e) {
@@ -372,6 +378,14 @@ console.log(htmlString);
      $('#recent_panel').prepend(minimized_window);
      $('#app_showcase').fadeIn();
           $('#appbook-viewport').fadeOut();
+
+$.ajax({
+         method: 'POST',
+         url: '../../PHP/Linux Commands/minimize/linux.php',
+         data: {
+           dataString: current_window_hex
+         }
+       })
      $('#recent_panel:visible').animateCss('bounceOut');
      $('#recent_panel:visible').hide();
 });
