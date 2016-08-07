@@ -23,9 +23,10 @@ function exec(command) {
        });
 }
 
-$(document).on('click', '#command_btn', function( event ) {
+$(document).on('click', 'img', function( event ) {
        event.stopPropagation();
-var command_to_be_executed = $( this ).atrr('command');
+var command_to_be_executed = $( this ).attr('command');;
+console.log(command_to_be_executed);
 exec(command_to_be_executed);
 
 });
@@ -640,33 +641,12 @@ $.ajax({
     }
     };
     
-var assistant_wakeMe = function(assistant_name) {
-    assistant_wakeUp(assistant_name);
-    if (sessionStorage.assistant_current == 'brolu') {
-    
-    }else if (sessionStorage.assistant_current == 'lucy') {
-    
-    }else{
-    }
-    };
-    
-    var assistant_poweroff_PC = function() {
+    var assistant_say_its_name = function() {
     if (sessionStorage.assistant_current == 'Brolu') {
     
     }else{
     
     }
-exec('sudo poweroff');
-    };
-
-
-var assistant_reboot_PC = function() {
-    if (sessionStorage.assistant_current == 'Brolu') {
-    
-    }else{
-    
-    }
-exec('sudo reboot');
     };
     
    var app_launch1 = function(app_name) {
@@ -777,9 +757,7 @@ speak('Sorry, But it seems that you have invented a new app name!');
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name,
-    'shutdown this computer': assistant_poweroff_PC,
-    'restart this computer': assistant_reboot_PC,'open *app_name': app_launch1};
+    'what is your name': assistant_say_its_name, 'open *app_name': app_launch1};
     annyang.debug();
 
     // Add voice commands to respond to
