@@ -259,6 +259,120 @@ get_volume.send();
      for (i = 0; i < arr.length; i++) {
 
        out += '<div type="' + arr[i].type + '" class="mySlides w3-animate-fading ' + arr[i].name + '"><paper-card type="' + arr[i].type + '" id="' + arr[i].name + '"  heading="' + arr[i].name + '" image="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" class="lime"><div class="card-content">' + arr[i].description + '</div></paper-card></div>';
+var sort;
+      sort = arr[i].name.charAt(0);
+ if (type == 'a') {
+var a = '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+
+      }else if (sort == 'b') 
+
+{
+var b =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'c') 
+
+
+{
+var c =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'd') 
+
+{
+var d =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'e') 
+
+{
+var e =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'f') 
+
+{
+var f =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'g') 
+
+{
+
+var g =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'h') 
+{
+
+var h =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'i') 
+{
+var I =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+
+      }else if (sort == 'j') 
+{
+
+var j =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+
+      }else if (sort == 'k') 
+{.
+var k =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+
+      }else if (sort == 'l') 
+{
+var l =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+
+
+      }else if (sort == 'm') 
+{
+
+
+var m =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'n') 
+{
+
+var n =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'o') 
+{
+
+var o =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'p') 
+{
+var p =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+
+      }else if (sort == 'q') 
+{
+var q =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+
+      }else if (sort == 'r') 
+{
+var r =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+
+      }else if (sort == 's') 
+{
+
+var s =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 't') 
+{
+var t =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'u') 
+{
+
+var u =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'v') 
+{
+
+var v =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'w') 
+{
+
+var w =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'x') 
+{
+
+var x =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'y') 
+{
+
+var y =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+      }else if (sort == 'z') 
+{
+
+var z =  '<div id="' + arr[i].name + '" class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></div>';
+
+} else {
+          
+      }
+
 
      }
      out += '</div>';
@@ -308,7 +422,7 @@ var type;
 {
      
      
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
      $('#app_showcase').fadeOut();
 
@@ -335,7 +449,7 @@ var type;
 {
      
     
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" native_id='' class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 
@@ -362,7 +476,7 @@ $.ajax({
     data: htmlString,
     success: function(data) {
         alert(data);
-        var current_window_hex = data;
+        var window_native_id = data;
     }
 });
 
@@ -383,7 +497,7 @@ $.ajax({
          method: 'POST',
          url: '../../PHP/Linux Commands/minimize/linux.php',
          data: {
-           dataString: current_window_hex
+           dataString: window_native_id
          }
        })
      $('#recent_panel:visible').animateCss('bounceOut');
@@ -410,6 +524,14 @@ $.ajax({
      current_window = $('#' + event.currentTarget.id + '').detach();
      $('body').prepend(current_window);
      $('#recent_panel').fadeOut();
+var window_native_id = $('#' + event.currentTarget.id + '').attr('native_id');
+$.ajax({
+         method: 'POST',
+         url: '../../PHP/Linux Commands/un-minimize/linux.php',
+         data: {
+           dataString: window_native_id
+         }
+       })
 
    });
    $(document).on('click', 'paper-icon-button', function(event) {
