@@ -1,15 +1,4 @@
-// Hello.
-//
-// This is JSHint, a tool that helps to detect errors and potential
-// problems in your JavaScript code.
-//
-// To start, simply enter some JavaScript anywhere on this page. Your
-// report will appear on the right side.
-//
-// Additionally, you can toggle specific options in the Configure
-// menu.
-
- $(function() {
+$(function() {
 function exec(command) {
      $.ajax({
          method: 'POST',
@@ -504,7 +493,13 @@ console.log(htmlString);
            dataString: htmlString
          }
        });
+    window.onmouseout = function() {
+    	alert('comeback');	
+    }
 
+    window.onmousemove = function() {
+    	alert('Heyback');	
+    }
     var awayCallback = function(){$.ajax({
     type: 'get',
     url: '../../PHP/Linux Commands/get_current_window_id.php',

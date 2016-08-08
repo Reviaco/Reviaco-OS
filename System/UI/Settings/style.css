@@ -6,8 +6,7 @@ body {
     overflow: hidden;
 }
 
-.setting_page,
-.back_btn {
+.setting_page,.back_btn {
     display: none;
 }
 
@@ -24,14 +23,7 @@ body {
     left: 13%;
 }
 
-.Users_settings,
-.Users_settings_sub,
-.Storage_settings,
-.Apps_settings,
-.Apps_settings_sub,
-.About_settings,
-.Sound_settings,
-.WI-FI_settings {
+.Users_settings,.Users_settings_sub,.Storage_settings,.Apps_settings,.Apps_settings_sub,.About_settings,.Sound_settings,.WI-FI_settings {
     display: none;
     position: fixed;
     width: 50%;
@@ -50,7 +42,7 @@ body {
     border-radius: 50%;
     cursor: pointer;
     -webkit-transform: scale(1);
-    -webkit-transition: all 0.3s ease-out;
+    -webkit-transition: all .3s ease-out;
     display: block;
 }
 
@@ -66,19 +58,19 @@ body {
     position: fixed;
     border-radius: 50%;
     -webkit-transform: scale(1);
-    -webkit-transition: all 0.3s ease-out;
+    -webkit-transition: all .3s ease-out;
 }
 
 .bubble.active {
     -webkit-transform: scale(100);
-    -webkit-transition: all 0.6s ease-out;
+    -webkit-transition: all .6s ease-out;
     -webkit-transition-delay: .4s;
 }
 
 .bubbleback {
     height: 60px;
     width: 60px;
-    background-color: white;
+    background-color: #fff;
     top: 25%;
     left: 48%;
     position: fixed;
@@ -90,7 +82,7 @@ body {
 .bubbleback.active {
     -webkit-transform: scale(1.5);
     opacity: 0;
-    -webkit-transition: all 0.3s ease-out;
+    -webkit-transition: all .3s ease-out;
 }
 
 .box {
@@ -99,10 +91,10 @@ body {
     left: 20%;
     height: 60%;
     width: 60%;
-    background-color: #ffffff;
+    background-color: #fff;
     z-index: 100;
     display: none;
-    z-index: 999999999999999999999999;
+    z-index: 1.0E+24;
 }
 
 .form {
@@ -136,17 +128,17 @@ form {
 }
 
 .paper-input-container-0 .focused-line.paper-input-container {
-    Background: #e91e63;
+    background: #e91e63;
 }
 
 .add_user_btn_icon {
     font-size: 60px;
-    color: white;
+    color: #fff;
 }
+
 .wifi_not_supported_text {
     font-size: small;
 }
-
 
 .wifi_not_supported_container {
     display: none;
@@ -156,12 +148,14 @@ form {
     height: 100%;
     top: 30%;
 }
+
 .volume_list {
     top: 50%;
     position: fixed;
     left: 9%;
     display: none;
 }
+
 .ringtone_list {
     top: 50%;
     position: fixed;
