@@ -494,13 +494,8 @@ console.log(htmlString);
          }
        });
     window.onmouseout = function() {
-    	alert('comeback');	
-    }
-
-    window.onmousemove = function() {
-    	alert('Heyback');	
-    }
-    var awayCallback = function(){$.ajax({
+    	alert('comeback');
+$.ajax({
     type: 'get',
     url: '../../PHP/Linux Commands/get_current_window_id.php',
     data: htmlString,
@@ -508,13 +503,16 @@ console.log(htmlString);
         alert(data);
         var window_native_id = data;
     }
-});};
+});	
+    }
+
+    window.onmousemove = function() {
+    	alert('Heyback');	
+    }
+    
 			
 
-			var idle = new Idle({
-				onAway: awayCallback,
-				awayTimeout: 5000 //away with 5 seconds of inactivity
-			}).start();
+
 
 
    });
