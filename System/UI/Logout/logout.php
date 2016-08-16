@@ -7,16 +7,8 @@ session_unset();
 
 // Destroy the session.
 session_destroy();
+
+//Redirect to the login form
+header("Location: http://localhost/Reviaco-OS/System/UI/Login/");
+die();
 ?>
-    <html>
-
-    <head>
-        <link rel="import" href="../../Res.html">
-        <title>Logged Out</title>
-    </head>
-
-    <body>
-        <h1>You are now logged out. Please come again</h1>
-    </body>
-
-    </html>
