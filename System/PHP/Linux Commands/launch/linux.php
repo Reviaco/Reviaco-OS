@@ -64,7 +64,7 @@ else
     }
 }
 
-$command = "export DISPLAY=:0 && sudo -u $username $stringData";
+$command = "export DISPLAY=:1 && sudo -u $username $stringData";
 
 $command .= " $param1 $param2 $param3 2>&1";
 

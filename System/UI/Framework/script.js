@@ -108,12 +108,12 @@ function loadVoices() {
 }
      $( window ).load(function() {
 setTimeout(function() { welcomeAnimation(); }, 500);
-         setInterval(function(){ get_notifications_interval(); }, 1000);
          
-setTimeout(function() { carousel(); }, 1500);
-setTimeout(function() { bg_blur(); }, 2000);
-setTimeout(function() { appbook(); }, 2500);
-setTimeout(function() { loadVoices(); }, 3000);
+         
+setTimeout(function() { carousel(); }, 1000);
+setTimeout(function() { bg_blur(); }, 1500);
+setTimeout(function() { appbook(); }, 2000);
+setTimeout(function() { loadVoices(); }, 2500);
 
 
 
@@ -206,30 +206,7 @@ get_volume.send();
        });
      }
    });
-     function get_notifications_interval() {
-   var get_notifications = new XMLHttpRequest();
-   var get_notifications_url = 'http://localhost/Reviaco-OS/System/PHP/Data/Notifications.php';
-
-   get_notifications.onreadystatechange = function() {
-     if (get_notifications.readyState == 4 && get_notifications.status == 200) {
-       get_notifications_function(get_notifications.responseText);
-     }
-   };
-   get_notifications.open('GET', get_notifications_url, true);
-   get_notifications.send();
-
-   function get_notifications_function(response) {
-     var arr = JSON.parse(response);
-     var i;
-
-     for (i = 0; i < arr.length; i++) {
-       var notification = "<li class=\"one red " + arr[i].title + "\"" + "><span class=\"task-title\"" + ">" + arr[i].title + "</span><span class=\"task-time\"" + ">5pm</span><span class=\"task-cat\"" + ">" + arr[i].description + "</span></li>";
-
-     }
-
-     $('.tasks').html(notification);
-   }
-     }
+     
    var get_apps = new XMLHttpRequest();
    var get_apps_url = "http://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
 
