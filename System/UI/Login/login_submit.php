@@ -45,8 +45,7 @@ else
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         /*** prepare the select statement ***/
-        $stmt = $dbh->prepare("SELECT id, username, password FROM users 
-                    WHERE username = :username AND password = :password");
+        $stmt = $dbh->prepare("SELECT id, username, password FROM users WHERE username = :username AND password = :password");
 
         /*** bind the parameters ***/
         $stmt->bindParam(':username', $username, PDO::PARAM_STR);
@@ -86,5 +85,6 @@ die();
         $message = 'We are unable to process your request. Please try again later"';
     }
 }
+echo $message;
 ?>
 

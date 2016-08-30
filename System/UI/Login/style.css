@@ -99,6 +99,7 @@
    bottom: 10px;
    right: 10px;
    display: flex;
+z-index: 99999999999999999999999;
 }
  
  .clock  {
