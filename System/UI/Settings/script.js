@@ -38,7 +38,7 @@ var xmlhttp1 = new XMLHttpRequest();
      var out = '<div class="app">';
 
      for (i = 0; i < arr.length; i++) {
-out += '<paper-icon-item id="' + arr[i].name + '" class="user"><iron-image class="app_icon" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png"  width="50" height="50" item-icon></iron-image><paper-item-body two-line><div>' + arr[i].name +'</div><div secondary>' + arr[i].description +'</div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>'
+out += '<paper-icon-item id="' + arr[i].name + '" class="app"><iron-image class="app_icon" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png"  width="50" height="50" item-icon></iron-image><paper-item-body two-line><div>' + arr[i].name +'</div><div secondary>' + arr[i].description +'</div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>'
 
 
      }
@@ -217,7 +217,7 @@ event.stopPropagation();
 var app_name = event.currentTarget.id;
         $('#apps_listbox_sub').find('h4').html(app_name);
 $('#apps_listbox_sub').find('paper-icon-item').attr('onclick','app_deletiton( "'+ app_name +'")');
-                    $('#apps_listbox_sub').find('#description').html('Delete the account named ' + app_name + '');
+                    $('#apps_listbox_sub').find('#description').html('Delete the app named ' + app_name + '');
 
 
                 });

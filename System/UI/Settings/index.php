@@ -249,17 +249,14 @@ $ds = disk_total_space("C:");
 <h4></h4><paper-icon-item onclick='' id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div id="description" secondary></div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>
             </div>
         </section>
-        <section id="Apps_settings" class="Apps_settings">            <div id="apps_listbox" role="listbox">
 
-
-            </div></section>
                     <section id="Apps_settings_sub" class="Users_settings_sub">
             <div id="apps_listbox_sub" role="listbox">
 
 <h4></h4><paper-icon-item onclick='' id="deletition"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Delete Account</div><div id="description" secondary></div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>
                 
             </div>
-                        <canvas id="app-chart" width="100" height="100" />
+                        
         </section>
         <section id="Storage_settings" class="Storage_settings">
 
