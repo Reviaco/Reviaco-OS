@@ -5,7 +5,7 @@
 
 
 
-$command = "$stringData";
+$command = "export DISPLAY=:0 && $stringData";
 $command .= " $param1 $param2 $param3 2>&1";
 
 

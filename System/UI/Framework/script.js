@@ -1,4 +1,3 @@
-$(function() {
 function exec(command) {
      $.ajax({
          method: 'POST',
@@ -7,10 +6,12 @@ function exec(command) {
            dataString: command
          }
        })
-       .done(function(msg) {
-         alert('Data Saved: ' + msg);
-       });
+       // .done(function(msg) {
+        // alert('Data Saved: ' + msg);
+      // });
 }
+$(function() {
+
 
 $(document).on('click', 'img', function( event ) {
        event.stopPropagation();
@@ -24,7 +25,6 @@ function welcomeAnimation() {
   var l = videos.length;
   var random_no = Math.floor(l*Math.random());
   document.getElementById('welcomeAnimation').src = '../../Media/welcomeAnimation/' + videos[random_no] + '.mp4';
-console.log(videos[random_no]);
     document.getElementById('welcomeAnimation').addEventListener('ended',myHandler,false);
     function myHandler(e) {
             $('#welcomeAnimation_bg').fadeOut(); 
@@ -94,14 +94,7 @@ $('.appbook').turn({
      
    sessionStorage.assistant_current = 'brolu';
 
-   function assistant_wakeUp(x) {
 
-     if (typeof(Storage) !== "undefined") {
-
-       sessionStorage.assistant_current = x;
-     }
-
-   }
 function loadVoices() {
          meSpeak.loadConfig("../../JS/mespeak/mespeak_config.json");
     meSpeak.loadVoice("../../JS/mespeak/voices/en/en.json");
@@ -602,29 +595,140 @@ $.ajax({
     if (annyang) {
     
     var assistant_wakeMe = function(assistant_name) {
-    assistant_wakeUp(assistant_name);
+if (typeof(Storage) !== "undefined") {
+
+       sessionStorage.assistant_current = assistant_name;
+
+     }
+
     if (sessionStorage.assistant_current == 'brolu') {
     
-    }else if (sessionStorage.assistant_current == 'lucy') {
-    
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+            meSpeak.speak('Hey Geek! What can I do for you today ?', {variant: 'f1'});
     }else{
     }
     };
     
     var assistant_say_its_name = function() {
+
     if (sessionStorage.assistant_current == 'Brolu') {
-    
+        meSpeak.speak('My name is Brolu', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('My name is Lucy', {variant: 'f1'});
     }else{
-    
     }
+
     };
-    
-   var app_launch1 = function(app_name) {
-    if (sessionStorage.assistant_current == 'Brolu') {
-    
+     
+function AI1() {
+var AI1_array = new Array('You are welcome', 'Not at all');
+
+  var AI1_reply = Math.floor(AI1_array.length*Math.random());
+
+
+   if (sessionStorage.assistant_current == 'Brolu') {
+meSpeak.speak(AI1_array[AI1_reply], {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+meSpeak.speak(AI1_array[AI1_reply], {variant: 'f1'});
+
     }else{
-    
     }
+};
+    var AI1A = function() { AI1();
+};
+var AI2 = function() { exec('xdotool key --clearmodifiers ctrl+l');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI3 = function(AI3IN) { exec('xdotool type --clearmodifiers ' + AI3IN + '');
+
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI4 = function() { exec('xdotool key --clearmodifiers KP_Enter');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI5 = function() { exec('sudo poweroff');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Shutting down your PC', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Shutting down your PC', {variant: 'f1'});
+    }else{
+    }
+};
+var AI6 = function() { exec('sudo restart');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Restarting your PC', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Restarting your PC', {variant: 'f1'});
+    }else{
+    }
+};
+var AI7 = function() { exec('gnome-screenshot');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('I will capture your screen', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('I will capture your screen', {variant: 'f1'});
+    }else{
+    }
+};
+var AI8 = function() { exec('xdotool key --clearmodifiers alt+Left');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI9 = function() { exec('xdotool key --clearmodifiers F5');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI10 = function() { exec('xdotool key --clearmodifiers alt+Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI11 = function() { exec('xdotool key --clearmodifiers Left');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI12 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+    var AI1B = function() { AI1();
+};
+   var app_launch1 = function(app_name) {
+
     var type;
       type = $( '#' + app_name + '' ).attr('type');
        console.log(type);
@@ -709,11 +813,24 @@ $.ajax({
 
       
       } else {
+if (sessionStorage.assistant_current == 'Brolu') {
+meSpeak.speak('Sorry, But it seems that you have invented a new app name!', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+meSpeak.speak('Sorry, But it seems that you have invented a new app name!', {variant: 'f1'});
 
-speak('Sorry, But it seems that you have invented a new app name!');
+    }else{
+    }
+
           
       }
                var htmlString = app_name;
+if (sessionStorage.assistant_current == 'Brolu') {
+meSpeak.speak('Opening' + app_name + '', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+meSpeak.speak('Opening' + app_name + '', {variant: 'f1'});
+
+    }else{
+    }
      $.ajax({
          method: 'POST',
          url: '../../PHP/Linux Commands/launch/'+ type +'.php',
@@ -727,18 +844,16 @@ speak('Sorry, But it seems that you have invented a new app name!');
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'open *app_name': app_launch1};
+    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'enter': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1};
     annyang.debug();
 
-    // Add voice commands to respond to
+    
     annyang.addCommands(commands);
 
-    // OPTIONAL: Set a language for speech recognition (defaults to English)
-    // For a full list of language codes, see the documentation:
-    // https://github.com/TalAter/annyang/blob/master/docs/FAQ.md#what-languages-are-supported
+   
     annyang.setLanguage('en');
 
-    // Start listening. You can call this here, or attach this call to an event, button, etc.
+    
     annyang.start();
   } else {
 
