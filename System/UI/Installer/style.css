@@ -20,7 +20,38 @@ position: fixed;
 .app_page {
 display: none;
 }
+.back_btn {
+display: none;
+}
 /* 3D Cube */
+.cube {
+position: fixed;
+zoom: 50%;
+}
+.cube1 {
+left: 5%;
+top: 55%;
+}
+.cube2 {
+left: 40%;
+top: 55%;
+}
+.cube3 {
+right: 5%;
+top: 55%;
+}
+.cube4 {
+left: 5%;
+top: 80%;
+}
+.cube5 {
+left: 40%;
+top: 80%;
+}
+.cube6 {
+right: 5%;
+top: 80%;
+}
 .space3d {
   perspective: 1000px;
   width: 250px;
