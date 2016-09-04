@@ -439,6 +439,62 @@ $('#appbook-viewport').fadeOut();
 $('#appbook-viewport').fadeOut();
 
 
+      } else if (type == 'Lutro') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }else if (type == 'NXEngine') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }else if (type == 'VB') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }else if (type == 'TyrQuake') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }
+else if (type == 'Sega') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }
+else if (type == 'Game&Watch') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
       } else if (type == 'webos') 
 {
      
@@ -786,6 +842,62 @@ var AI12 = function() { exec('xdotool key --clearmodifiers Right');
 
 
       } else if (type == 'chrome') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      } else if (type == 'Lutro') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }else if (type == 'NXEngine') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }else if (type == 'VB') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }else if (type == 'TyrQuake') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }
+else if (type == 'Sega') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+
+     $('#app_showcase').fadeOut();
+
+
+      }
+else if (type == 'Game&Watch') 
 {
    
      

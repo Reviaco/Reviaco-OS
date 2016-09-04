@@ -1,25 +1,23 @@
-                                           function account_deletiton(username) {
+function account_deletiton(username) {
                                               
-                   $.ajax({
-                                        method: "POST"
-                                        , url: "PHP/account-deletition.php"
-                                        , data: {
-                                            dataString: username
-                                        }
-                                    });
-                   get_users_interval();
-                                           }                             function app_deletiton(app_name) {
-                                              
-                   $.ajax({
-                                        method: "POST"
-                                        , url: "PHP/app-deletition.php"
-                                        , data: {
-                                            dataString: app_name
-                                        }
-                                    });
-                                               get_apps_interval();
-
-         
+$.ajax({
+method: "POST"
+, url: "PHP/account-deletition.php"
+, data: {
+dataString: username
+}
+ });
+get_users_interval();
+}                             
+function app_deletiton(app_name) {                                            
+$.ajax({
+method: "POST"
+, url: "PHP/app-deletition.php"
+, data: {
+dataString: app_name
+}
+});
+get_apps_interval();         
 }
 var xmlhttp1 = new XMLHttpRequest();
    var url1 = "http://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
