@@ -8,103 +8,69 @@ header("Content-Type: application/json; charset=UTF-8");
 
 /*** begin the session ***/
 
+/*** begin the session ***/
 session_start();
 
 if(!isset($_SESSION['user_id']))
-
 {
-
-$message = 'You must be logged in to access this page';
-
+    $message = 'You must be logged in to access this page';
 }
-
 else
-
 {
+    try
+    {
+        /*** connect to database ***/
+        /*** mysql hostname ***/
+        $mysql_hostname = 'localhost';
 
-try
+        /*** mysql username ***/
+        $mysql_username = 'root';
 
-{
+        /*** mysql password ***/
+        $mysql_password = 'root';
 
-/*** connect to database ***/
+        /*** database name ***/
+        $mysql_dbname = 'users';
 
-/*** mysql hostname ***/
 
-$mysql_hostname = 'localhost';
+        /*** select the users name from the database ***/
+        $dbh = new PDO("mysql:host=$mysql_hostname;dbname=$mysql_dbname", $mysql_username, $mysql_password);
+        /*** $message = a message saying we have connected ***/
 
-/*** mysql username ***/
+        /*** set the error mode to excptions ***/
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$mysql_username = 'root';
+        /*** prepare the insert ***/
+        $stmt = $dbh->prepare("SELECT username FROM users 
+        WHERE id = :id");
 
-/*** mysql password ***/
+        /*** bind the parameters ***/
+        $stmt->bindParam(':id', $_SESSION['user_id'], PDO::PARAM_INT);
 
-$mysql_password = 'root';
+        /*** execute the prepared statement ***/
+        $stmt->execute();
 
-/*** database name ***/
+        /*** check for a result ***/
+        $username = $stmt->fetchColumn();
 
-$mysql_dbname = 'phpro_auth';
-
-/*** select the users name from the database ***/
-
-$dbh = new PDO("mysql:host=$mysql_hostname;dbname=$mysql_dbname", $mysql_username, $mysql_password);
-
-/*** $message = a message saying we have connected ***/
-
-/*** set the error mode to excptions ***/
-
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-/*** prepare the insert ***/
-
-$stmt = $dbh->prepare("SELECT phpro_username FROM phpro_users 
-
-WHERE phpro_user_id = :phpro_user_id");
-
-/*** bind the parameters ***/
-
-$stmt->bindParam(':phpro_user_id', $_SESSION['user_id'], PDO::PARAM_INT);
-
-/*** execute the prepared statement ***/
-
-$stmt->execute();
-
-/*** check for a result ***/
-
-$phpro_username = $stmt->fetchColumn();
-
-/*** if we have no something is wrong ***/
-
-if($phpro_username == false)
-
-{
-
-$message = 'Access Error';
-
+        /*** if we have no something is wrong ***/
+        if($username == false)
+        {
+            $message = 'Access Error';
+        }
+        else
+        {
+            $message = 'Welcome '.$username;
+        }
+    }
+    catch (Exception $e)
+    {
+        /*** if we are here, something is wrong in the database ***/
+        $message = 'We are unable to process your request. Please try again later"';
+    }
 }
 
-else
-
-{
-
-$message = 'Welcome '.$phpro_username;
-
-}
-
-}
-
-catch (Exception $e)
-
-{
-
-/*** if we are here, something is wrong in the database ***/
-
-$message = 'We are unable to process your request. Please try again later"';
-
-}
-
-}
-
-$link = mysqli_connect("localhost", "root", "root", $phpro_username);
+$link = mysqli_connect("localhost", "root", "root", $username);
 
 // Check connection
 
@@ -116,7 +82,7 @@ die("ERROR: Could not connect. " . mysqli_connect_error());
 
 // Attempt insert query execution
 
-$sql = "INSERT INTO Apps (Name) VALUES ('$app')";
+$sql = "INSERT INTO apps (name) VALUES ('$app')";
 
 if(mysqli_query($link, $sql)){
 
@@ -132,27 +98,24 @@ echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 
 mysqli_close($link);
 
-$command = "mkdir /var/www/html/Users/$phpro_username/Downloads/$app/$app/ &&
-cd /var/www/html/Users/phpro_username/Downloads/$app && wget https://site.com/$app && unzip /var/www/html/Users/$phpro_username/Downloads/$app/catt.zip -d /var/www/html/Users/$phpro_username/Downloads/$app/$app/ && cp -a /var/www/html/Users/$phpro_username/Downloads/$app/$app/ /var/www/html/Users/$phpro_username/Apps/";
+
+$command = "export DISPLAY=:1 && sudo -u $username mkdir /var/www/html/Reviaco-OS/Users/$username/Downloads/$app/$app/ & sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/$app/catt.zip -d /var/www/html/Reviaco-OS/Users/$username/Downloads/$app/$app & sudo -u $username cp -a /var/www/html/Reviaco-OS/Users/$username/Downloads/$app/$app/ /var/www/html/Reviaco-OS/Users/$username/Apps/";
 
 $command .= " $param1 $param2 $param3 2>&1";
 
+
+
 $pid = popen( $command,"r");
 
+
 while( !feof( $pid ) )
-
 {
+ echo fread($pid, 256);
+ flush();
+ ob_flush();
 
-fread($pid, 256);
-
-flush();
-
-ob_flush();
-
-usleep(100000);
-
+ usleep(100000);
 }
-
 pclose($pid);
 
 $conn->close();
