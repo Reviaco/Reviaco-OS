@@ -64,7 +64,7 @@ else
     }
 }
 
-$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ $stringData";
+$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/genesis_plus_gx_libretro.so /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$stringData/launch.md";
 
 $command .= " $param1 $param2 $param3 2>&1";
 
