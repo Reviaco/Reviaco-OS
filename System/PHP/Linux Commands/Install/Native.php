@@ -1,6 +1,7 @@
 <?php
 
-$app = 'catt';
+$app = 'GoogleKeep';
+$type = 'Chrome';
 
 header("Access-Control-Allow-Origin: *");
 
@@ -99,7 +100,7 @@ echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 mysqli_close($link);
 
 
-$command = "export DISPLAY=:1 && sudo -u $username mkdir /var/www/html/Reviaco-OS/Users/$username/Downloads/$app/$app/ & sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/$app/catt.zip -d /var/www/html/Reviaco-OS/Users/$username/Downloads/$app/$app & sudo -u $username cp -a /var/www/html/Reviaco-OS/Users/$username/Downloads/$app/$app/ /var/www/html/Reviaco-OS/Users/$username/Apps/";
+$command = "export DISPLAY=:0 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/$app.zip && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/$app && sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/$app.zip -d /var/www/html/Reviaco-OS/Users/$username/Apps/$app/main";
 
 $command .= " $param1 $param2 $param3 2>&1";
 
