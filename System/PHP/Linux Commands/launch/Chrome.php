@@ -64,7 +64,7 @@ else
     }
 }
 
-$command = "export DISPLAY=:1 && sudo -u $username /opt/google/chrome/google-chrome --load-and-launch-app=/var/www/html/Reviaco-OS/Users/$username/Apps/Chrome/$stringData";
+$command = "export DISPLAY=:0 && sudo -u $username /opt/google/chrome/google-chrome --load-and-launch-app=/var/www/html/Reviaco-OS/Users/$username/Apps/Chrome/$stringData";
 
 $command .= " $param1 $param2 $param3 2>&1";
 

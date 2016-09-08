@@ -1,4 +1,0 @@
- function iframeLoaded() { var iFrameID = document.getElementById('idIframe'); if(iFrameID) { // here you can make the height, I delete it first, then I make it again iFrameID.height = ""; iFrameID.height = iFrameID.contentWindow.document.body.scrollHeight + "px"; } } 
-var a = ​document.getElementsByTagName('button'); var src, el, attrs; for(var i=0,l=a.length;i<l;i++) { src = a[i]; el = document.createElement('paper-button'); attrs = src.attributes; for(var j=0,k=attrs.length;j<k;j++) { el.setAttribute(attrs[j].name, attrs[j].value); } el.innerHTML = src.innerHTML; src.parentNode.replaceChild(el, src); }
-
-var a = ​document.getElementsByTagName('input'); var src, el, attrs; for(var i=0,l=a.length;i<l;i++) { src = a[i]; el = document.createElement('paper-input'); attrs = src.attributes; for(var j=0,k=attrs.length;j<k;j++) { el.setAttribute(attrs[j].name, attrs[j].value); } el.innerHTML = src.innerHTML; src.parentNode.replaceChild(el, src); }

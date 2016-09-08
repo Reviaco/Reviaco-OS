@@ -23,11 +23,11 @@
 </div>
 <div id="home" class="home">
 <div id="slides" class="slides">
-    <img class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
-    <img class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
-    <img class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
-    <img class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
-    <img class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
+    <img id="app_promo_slide1" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
+    <img id="app_promo_slide2" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
+    <img id="app_promo_slide3" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
+    <img id="app_promo_slide4" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
+    <img id="app_promo_slide5" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
   </div>      
 <div id="games cube1" class="cube cube1">
 <div class="space3d">

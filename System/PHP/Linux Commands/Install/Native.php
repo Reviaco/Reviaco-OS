@@ -1,7 +1,7 @@
 <?php
 
-$app = 'GoogleKeep';
-$type = 'Chrome';
+$app = $_POST['app_name'];
+$type = $_POST['type'];
 
 header("Access-Control-Allow-Origin: *");
 
@@ -83,7 +83,7 @@ die("ERROR: Could not connect. " . mysqli_connect_error());
 
 // Attempt insert query execution
 
-$sql = "INSERT INTO apps (name) VALUES ('$app')";
+$sql = "INSERT INTO apps (name, type, description) VALUES ('$app', '$type', '$description')";
 
 if(mysqli_query($link, $sql)){
 
@@ -100,7 +100,7 @@ echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
 mysqli_close($link);
 
 
-$command = "export DISPLAY=:0 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/$app.zip && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/$app && sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/$app.zip -d /var/www/html/Reviaco-OS/Users/$username/Apps/$app/main";
+$command = "export DISPLAY=:0 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/main.zip && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/$app && sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/main.zip -d /var/www/html/Reviaco-OS/Users/$username/Apps/$app && cd /var/www/html/Reviaco-OS/Users/$username/Apps/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/icon.png";
 
 $command .= " $param1 $param2 $param3 2>&1";
 

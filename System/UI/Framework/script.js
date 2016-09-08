@@ -370,7 +370,7 @@ $('#pageZ').find( "#app_list" ).append(z);
 var type;
       type = $( this ).attr('type');
       
-      if (type == 'linux') {
+      if (type == 'Linux') {
      
      
      $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
@@ -389,7 +389,7 @@ $('#appbook-viewport').fadeOut();
 $('#appbook-viewport').fadeOut();
 
 
-      } else if (type == 'windows') 
+      } else if (type == 'Windows') 
 {
      
      
@@ -399,7 +399,7 @@ $('#appbook-viewport').fadeOut();
 $('#appbook-viewport').fadeOut();
 
 
-      } else if (type == 'android') 
+      } else if (type == 'Android') 
 {
      
     
@@ -409,7 +409,7 @@ $('#appbook-viewport').fadeOut();
 $('#appbook-viewport').fadeOut();
 
 
-      } else if (type == 'blackberry') 
+      } else if (type == 'BlackBerry') 
 {
      
      
@@ -419,7 +419,7 @@ $('#appbook-viewport').fadeOut();
 $('#appbook-viewport').fadeOut();
 
 
-      } else if (type == 'tizen') 
+      } else if (type == 'Tizen') 
 {
      
     
@@ -429,13 +429,13 @@ $('#appbook-viewport').fadeOut();
 $('#appbook-viewport').fadeOut();
 
 
-      } else if (type == 'chrome') 
+      } else if (type == 'Chrome') 
 {
      
      
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+    $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
-     $('#app_showcase').fadeOut();
+$('#app_showcase').fadeOut();
 $('#appbook-viewport').fadeOut();
 
 
@@ -805,7 +805,7 @@ var AI12 = function() { exec('xdotool key --clearmodifiers Right');
      $('#app_showcase').fadeOut();
 
 
-      } else if (type == 'windows') 
+      } else if (type == 'Windows') 
 {
      
      
@@ -814,7 +814,7 @@ var AI12 = function() { exec('xdotool key --clearmodifiers Right');
      $('#app_showcase').fadeOut();
 
 
-      } else if (type == 'android') 
+      } else if (type == 'Android') 
 {
      
      
@@ -823,7 +823,7 @@ var AI12 = function() { exec('xdotool key --clearmodifiers Right');
      $('#app_showcase').fadeOut();
 
 
-      } else if (type == 'blackberry') 
+      } else if (type == 'BlackBerry') 
 {
      
      
@@ -832,7 +832,7 @@ var AI12 = function() { exec('xdotool key --clearmodifiers Right');
      $('#app_showcase').fadeOut();
 
 
-      } else if (type == 'tizen') 
+      } else if (type == 'Tizen') 
 {
      
      
@@ -841,7 +841,7 @@ var AI12 = function() { exec('xdotool key --clearmodifiers Right');
      $('#app_showcase').fadeOut();
 
 
-      } else if (type == 'chrome') 
+      } else if (type == 'Chrome') 
 {
    
      
@@ -906,7 +906,7 @@ else if (type == 'Game&Watch')
      $('#app_showcase').fadeOut();
 
 
-      } else if (type == 'webos') 
+      } else if (type == 'WebOS') 
 {
      
      
@@ -914,7 +914,7 @@ else if (type == 'Game&Watch')
 
      $('#app_showcase').fadeOut();
 
- } else if (type == 'firefox') 
+ } else if (type == 'Firefox') 
 {
      
      
