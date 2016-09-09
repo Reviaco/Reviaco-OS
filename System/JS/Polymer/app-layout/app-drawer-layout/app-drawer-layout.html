@@ -55,7 +55,28 @@ With an app-header-layout:
   <app-header-layout>
     <app-header>
       <app-toolbar>
-        <div title>App name</div>
+        <div main-title>App name</div>
+      </app-toolbar>
+    </app-header>
+
+    main content
+
+  </app-header-layout>
+</app-drawer-layout>
+```
+
+Add the `drawer-toggle` attribute to elements inside `app-drawer-layout` that toggle the drawer on tap events:
+
+```html
+<app-drawer-layout>
+  <app-drawer>
+    drawer-content
+  </app-drawer>
+  <app-header-layout>
+    <app-header>
+      <app-toolbar>
+        <paper-icon-button icon="menu" drawer-toggle></paper-icon-button>
+        <div main-title>App name</div>
       </app-toolbar>
     </app-header>
 
@@ -122,7 +143,7 @@ Custom property                          | Description                          
 
     <iron-media-query
         query="[[_computeMediaQuery(forceNarrow, responsiveWidth)]]"
-        query-matches="{{_narrow}}"></iron-media-query>
+        on-query-matches-changed="_onQueryMatchesChanged"></iron-media-query>
   </template>
 
   <script>
@@ -143,24 +164,43 @@ Custom property                          | Description                          
         },
 
         /**
-         * If the viewport's width is smaller than this value, the panel will change to narrow layout.
-         * In the mode the drawer will be closed.
+         * If the viewport's width is smaller than this value, the panel will change to narrow
+         * layout. In the mode the drawer will be closed.
          */
         responsiveWidth: {
           type: String,
           value: '640px'
         },
 
-        _narrow: Boolean
+        /**
+         * Returns true if it is in narrow layout. This is useful if you need to show/hide
+         * elements based on the layout.
+         */
+        narrow: {
+          type: Boolean,
+          readOnly: true,
+          notify: true
+        },
+
+        /**
+         * If true, the drawer will initially be opened when in narrow layout mode.
+         */
+        openedWhenNarrow: {
+          type: Boolean,
+          value: false
+        }
       },
 
       listeners: {
         'tap': '_tapHandler',
-        'app-drawer-reset-layout': 'resetLayout'
+        'app-drawer-attached': '_resetDrawerState',
+        'app-drawer-reset-layout': 'resetLayout',
+        'iron-resize': 'resetLayout'
       },
 
       observers: [
-        'resetLayout(_narrow, isAttached)'
+        'resetLayout(narrow, isAttached)',
+        '_narrowChanged(narrow, isAttached)'
       ],
 
       /**
@@ -175,30 +215,23 @@ Custom property                          | Description                          
       _tapHandler: function(e) {
         var target = Polymer.dom(e).localTarget;
         if (target && target.hasAttribute('drawer-toggle')) {
-          this.drawer.toggle();
+          var drawer = this.drawer;
+          if (drawer && !drawer.persistent) {
+            drawer.toggle();
+          }
         }
       },
 
       resetLayout: function() {
         this.debounce('_resetLayout', function() {
-          if (!this.isAttached) {
-            return;
-          }
-
           var drawer = this.drawer;
-          var drawerWidth = this.drawer.getWidth();
           var contentContainer = this.$.contentContainer;
 
-          if (this._narrow) {
-            drawer.opened = drawer.persistent = false;
-            contentContainer.classList.add('narrow');
-
+          if (this.narrow || !drawer) {
             contentContainer.style.marginLeft = '';
             contentContainer.style.marginRight = '';
           } else {
-            drawer.opened = drawer.persistent = true;
-            contentContainer.classList.remove('narrow');
-
+            var drawerWidth = drawer.getWidth();
             if (drawer.position == 'right') {
               contentContainer.style.marginLeft = '';
               contentContainer.style.marginRight = drawerWidth + 'px';
@@ -207,9 +240,33 @@ Custom property                          | Description                          
               contentContainer.style.marginRight = '';
             }
           }
-
-          this.notifyResize();
         });
+      },
+
+      _resetDrawerState: function() {
+        this.debounce('_resetDrawerState', function() {
+          var drawer = this.drawer;
+          if (!drawer) {
+            return;
+          }
+
+          if (this.narrow) {
+            drawer.opened = this.openedWhenNarrow;
+            drawer.persistent = false;
+          } else {
+            drawer.opened = drawer.persistent = true;
+          }
+        });
+      },
+
+      _narrowChanged: function(narrow) {
+        this.toggleClass('narrow', narrow, this.$.contentContainer);
+        this._resetDrawerState();
+        this.notifyResize();
+      },
+
+      _onQueryMatchesChanged: function(event) {
+        this._setNarrow(event.detail.value);
       },
 
       _computeMediaQuery: function(forceNarrow, responsiveWidth) {

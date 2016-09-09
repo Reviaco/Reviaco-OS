@@ -86,9 +86,24 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         Polymer.AppLayout.scroll({top: 500, behavior: 'smooth'});
 
         window.setTimeout(function() {
-          assert.isAbove(scrollSpy.callCount, 5, 'scroll top should be fired multiple times');
+          assert.isAbove(scrollSpy.callCount, 1, 'scroll top should be fired multiple times');
           done();
         }, 300);
+      });
+
+      test('smooth scrolling to the top', function(done) {
+        Polymer.AppLayout.scroll({top: 1000});
+        Polymer.AppLayout.scroll({top: 0, behavior: 'smooth'});
+
+        var timer;
+
+        window.addEventListener('scroll', function() {
+          clearInterval(timer);
+          timer = setTimeout(function() {
+            assert.equal(window.pageYOffset, 0, 'document scrollTop');
+            done();
+          }, 200);
+        });
       });
 
     });
