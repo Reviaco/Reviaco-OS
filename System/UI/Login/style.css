@@ -12,6 +12,10 @@
      display: none;
  }
  
+.user_avatar_title  {
+                   color: #FFFFFF;
+}
+
  .form {
      position: relative;
  }
@@ -30,9 +34,15 @@
      height: 100%;
  }
  
- .sumbit {
+ .sumbit_btn {
      position: absolute;
-     right: 8%;
+     right: 4%;
+     bottom: 15%;
+ }
+
+ .cancel_btn {
+     position: absolute;
+     right: 30%;
      bottom: 15%;
  }
  

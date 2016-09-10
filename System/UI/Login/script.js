@@ -44,23 +44,23 @@ get_users.onreadystatechange = function () {
         get_users_function(get_users.responseText);
     }
 }
-get_users.open("GET", get_users_url, true);
+get_users.open('GET', get_users_url, true);
 get_users.send();
 
 function get_users_function(response) {
     var arr = JSON.parse(response);
     var i;
-    var out = "<div class=\"users\"" + ">";
+    var out = '<div class="users">';
 
     for (i = 0; i < arr.length; i++) {
 
-        out += "<div id=\"" + arr[i].username + "\"" + " class=\"user-profile\"" + "><img src=\"../../Media/Avatars/6.svg\"" + "><div class=\"user-details " + arr[i].username + "_name\"" + "><h4>" + arr[i].username + "</h4></div></div>";
+        out += '<div id="' + arr[i].username + '" class="user-profile"><img src="../../../Users/' + arr[i].username + 'Profile/Avatar.jpg"><div class="user-details ' + arr[i].username + '_name"><h4 class="user_avatar_title">' + arr[i].username + '</h4></div></div>';
 
     }
-    out += "</div>";
-    $("body").append(out);
+    out += '</div>';
+    $('body').append(out);
 }
-                $(document).on("click", ".user-profile", function (event) {
+                $(document).on('click', '.user-profile', function (event) {
 
 event.stopPropagation();
 
@@ -82,17 +82,28 @@ event.stopPropagation();
   }, 500);
                     
         $(".box").fadeIn();  
-                    var username = $( "#" + event.currentTarget.id + "" ).find( "h4" ).html();
+                    var username = $( '#' + event.currentTarget.id + '' ).find( 'h4' ).html();
                     
-document.getElementById("username").value = username;
+document.getElementById('username').value = username;
 
 
 
 
                 });
 function submitForm() {
-  document.getElementById("form").submit();
+  document.getElementById('form').submit();
     $(".box").fadeOut(); 
+    $( ".user-profile img" ).animate({
+    
+    "height": 200,
+    
+    "width": 200
+  }, 500);
+}
+
+function cancel() {
+    $(".box").fadeOut();
+$( ".user-profile" ).removeAttr( 'style' );
     $( ".user-profile img" ).animate({
     
     "height": 200,

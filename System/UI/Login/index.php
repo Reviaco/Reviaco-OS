@@ -26,8 +26,8 @@
 
 
             <input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
-
-            <paper-button raised class="sumbit" onclick="submitForm()">Sign In</paper-button>
+            <paper-button raised id="cancel_btn" class="cancel_btn" onclick="cancel()">Cancel</paper-button>
+            <paper-button raised id="sumbit_btn" class="sumbit_btn" onclick="submitForm()">Sign In</paper-button>
 
         </form>
     </paper-material>
