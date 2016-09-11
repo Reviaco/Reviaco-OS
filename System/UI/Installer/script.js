@@ -49,7 +49,7 @@ $(document).on('click', '#install_btn', function( event ) {
      type = $( this ).attr('type');;
      $.ajax({
          method: 'POST',
-         url: '../../PHP/Linux Commands/Install/Native.php',
+         url: '../../PHP/Linux Commands/install.php',
          data: {
            app_name: app_name,
            type: type

@@ -379,16 +379,6 @@ var type;
 $('#appbook-viewport').fadeOut();
 
 
-      }else if (type == 'windows') 
-{
-     
-     
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
-
-     $('#app_showcase').fadeOut();
-$('#appbook-viewport').fadeOut();
-
-
       } else if (type == 'Windows') 
 {
      
@@ -423,7 +413,7 @@ $('#appbook-viewport').fadeOut();
 {
      
     
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
      $('#app_showcase').fadeOut();
 $('#appbook-viewport').fadeOut();
@@ -433,7 +423,7 @@ $('#appbook-viewport').fadeOut();
 {
      
      
-    $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+    $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
 $('#app_showcase').fadeOut();
 $('#appbook-viewport').fadeOut();
@@ -443,7 +433,7 @@ $('#appbook-viewport').fadeOut();
 {
    
      
-     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
      $('#app_showcase').fadeOut();
 
@@ -452,7 +442,7 @@ $('#appbook-viewport').fadeOut();
 {
    
      
-     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
      $('#app_showcase').fadeOut();
 
@@ -461,7 +451,7 @@ $('#appbook-viewport').fadeOut();
 {
    
      
-     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
      $('#app_showcase').fadeOut();
 
@@ -470,7 +460,7 @@ $('#appbook-viewport').fadeOut();
 {
    
      
-     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
      $('#app_showcase').fadeOut();
 
@@ -480,7 +470,7 @@ else if (type == 'Sega')
 {
    
      
-     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
      $('#app_showcase').fadeOut();
 
@@ -490,7 +480,7 @@ else if (type == 'Game&Watch')
 {
    
      
-     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
      $('#app_showcase').fadeOut();
 
@@ -514,9 +504,10 @@ console.log(htmlString);
 console.log(htmlString);
      $.ajax({
          method: 'POST',
-         url: '../../PHP/Linux Commands/launch/'+ type +'.php',
+         url: '../../PHP/Linux Commands/launch.php',
          data: {
-           dataString: htmlString
+            htmlString,
+           type: type
          }
        });
     window.onmouseout = function() {
@@ -788,16 +779,7 @@ var AI12 = function() { exec('xdotool key --clearmodifiers Right');
     var type;
       type = $( '#' + app_name + '' ).attr('type');
        console.log(type);
-      if (type == 'linux') {
-     
-     
-     $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
-
-     $('#app_showcase').fadeOut();
-
-
-      }else if (type == 'windows') 
-{
+      if (type == 'Linux') {
      
      
      $('body').append('<div id="' + app_name + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
@@ -945,9 +927,10 @@ meSpeak.speak('Opening' + app_name + '', {variant: 'f1'});
     }
      $.ajax({
          method: 'POST',
-         url: '../../PHP/Linux Commands/launch/'+ type +'.php',
+         url: '../../PHP/Linux Commands/launch.php',
          data: {
-           dataString: htmlString
+           app_name: htmlString,
+           type: type
          }
        })
        .done(function(msg) {

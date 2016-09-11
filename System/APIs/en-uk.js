@@ -1,3 +1,14 @@
+(function($) {
+
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});
+
 $.fn.text = function(options) {
 
         // Establish our default settings
@@ -8,13 +19,14 @@ $.fn.text = function(options) {
             name: null,
             width: null,
             length: null,
+            animation: null,
             thickness: null,
             font_style: null,
-            when_finishes_downloading: null
+            when_finished_downloading: null
         }, options);
 
         return this.each(function() {
-            var name = settings.الاسم;
+            var name = settings.name;
             var out = '<p id="' + name + '"></p>';
             $('contents').append(out);
             $('#' + name + '').text(settings.text);
@@ -55,7 +67,7 @@ $.fn.text = function(options) {
 
             if (settings.font_style) {
 
-                $('#' + name + '').css('font-style', settings.الخط);
+                $('#' + name + '').css('font-style', settings.font_style);
             }
 
 
@@ -75,9 +87,62 @@ $('#' + name + '').css('font-weight', 'bold');
             if (settings.length) {
                 $('#' + name + '').css('length', settings.length);
             }
+            if (settings.animation) {
+                $('#' + name + '').animateCss('settings.animation');
+            }
 
-            if ($.isFunction(settings.when_finishes_downloading)) {
-                settings.when_finishes_downloading.call(this);
+            if ($.isFunction(settings.when_finished_downloading)) {
+                settings.when_finished_downloading.call(this);
+            }
+        });
+
+    };
+
+
+$.fn.image = function(options) {
+
+        // Establish our default settings
+        var settings = $.extend({
+            title: null,
+            source: null,
+            image_width: null,
+            image_length: null,
+            name: null,
+            animation: null,
+            width: null,
+            length: null,
+            when_finished_downloading: null
+        }, options);
+
+        return this.each(function() {
+            var name = settings.name;
+            var source = settings.source;
+            var out = '<img id="' + name + '" src="' + source '"></img>';
+            $('contents').append(out);
+
+            
+            if (settings.image_width) {
+                $('#' + name + '').attr('width', settings.image_width);
+            }
+            if (settings.title) {
+                $('#' + name + '').attr('alt', settings.title);
+            }
+            if (settings.image_length) {
+                $('#' + name + '').attr('length', settings.image_length);
+            }
+
+            if (settings.width) {
+                $('#' + name + '').css('width', settings.width);
+            }
+            if (settings.animation) {
+                $('#' + name + '').animateCss('settings.animation');
+            }
+            if (settings.length) {
+                $('#' + name + '').css('length', settings.length);
+            }
+
+            if ($.isFunction(settings.when_finished_downloading)) {
+                settings.when_finished_downloading.call(this);
             }
         });
 

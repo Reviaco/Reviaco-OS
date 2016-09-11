@@ -1,5 +1,7 @@
 ﻿<?php
-$stringData = $_POST['dataString'];
+$app_name = $_POST['app_name'];
+$type = $_POST['type'];
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 /*** begin the session ***/
@@ -64,7 +66,47 @@ else
     }
 }
 
-$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ $stringData";
+if ($type == "Linux") {
+
+$command = "export DISPLAY=:0 && sudo -u $username $app_name";
+
+} elseif ($type < "Lutro") {
+
+$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.lutro";
+
+} elseif ($type < "NXEngine") {
+
+$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.exe";
+
+} elseif ($type < "Sega") {
+
+$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/genesis_plus_gx_libretro.so /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.md";
+
+} elseif ($type < "SNES") {
+
+$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/snes9x2010_libretro.so /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.sfc";
+
+} elseif ($type < "TyrQuake") {
+
+$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.pak";
+
+} elseif ($type < "VB") {
+
+$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.vb";
+
+} elseif ($type < "Windows") {
+
+$command = "export DISPLAY=:0 && sudo -u $username wine /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.exe";
+
+} elseif ($type < "Android") {
+
+$command = "export DISPLAY=:0 && sudo -u $username adb shell am start -n $app_name";
+
+} else {
+
+$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/Game&Watch/$app_name/launch.mgw";
+
+}
 
 $command .= " $param1 $param2 $param3 2>&1";
 

@@ -54,7 +54,7 @@ function get_users_function(response) {
 
     for (i = 0; i < arr.length; i++) {
 
-        out += '<div id="' + arr[i].username + '" class="user-profile"><img src="../../../Users/' + arr[i].username + 'Profile/Avatar.jpg"><div class="user-details ' + arr[i].username + '_name"><h4 class="user_avatar_title">' + arr[i].username + '</h4></div></div>';
+        out += '<div id="' + arr[i].username + '" class="user-profile"><img src="../../../Users/' + arr[i].username + '/Profile/Avatar.jpg"><div class="user-details ' + arr[i].username + '_name"><h4 class="user_avatar_title">' + arr[i].username + '</h4></div></div>';
 
     }
     out += '</div>';
@@ -67,21 +67,21 @@ event.stopPropagation();
                    
   
  
-                   $( ".user-profile" ).css("position", "fixed").animate({
+                   $( '.user-profile' ).css('position', 'fixed').animate({
     
-    "left": "45%",
+    'left': '45%',
     
-    "top": "25%"
+    'top': "25%'
   }, 500);
  
-                   $( ".user-profile img" ).animate({
+                   $( '.user-profile img' ).animate({
     
-    "height": 100,
+    'height': 100,
     
-    "width": 100
+    'width': 100
   }, 500);
                     
-        $(".box").fadeIn();  
+        $('.box').fadeIn();  
                     var username = $( '#' + event.currentTarget.id + '' ).find( 'h4' ).html();
                     
 document.getElementById('username').value = username;
