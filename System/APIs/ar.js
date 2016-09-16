@@ -20,6 +20,7 @@ $.fn.نص = function(options) {
             العرض: null,
             الطول: null,
             السمك: null,
+            الحركة: null,
             شكل_الخط: null,
             عند_الانتهاء_من_التحميل: null
         }, options);
@@ -105,6 +106,7 @@ $.fn.صورة = function(options) {
             الاسم: null,
             العرض: null,
             الطول: null,
+            الحركة: null,
             عند_الانتهاء_من_التحميل: null
         }, options);
 

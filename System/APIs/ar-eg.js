@@ -21,6 +21,7 @@ $.fn.extend({
             الطول: null,
             الطخن: null,
             شكل_الخط: null,
+            الحركة: null,
             لما_يخلص_تحميل: null
         }, options);
 
@@ -114,6 +115,7 @@ $.fn.صورة = function(options) {
             الاسم: null,
             العرض: null,
             الطول: null,
+            الحركة: null,
             لما_يخلص_تحميل: null
         }, options);
 
