@@ -373,7 +373,7 @@ var type;
       if (type == 'Linux') {
      
      
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 $('#appbook-viewport').fadeOut();
@@ -383,7 +383,7 @@ $('#appbook-viewport').fadeOut();
 {
      
      
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 $('#appbook-viewport').fadeOut();
@@ -393,7 +393,7 @@ $('#appbook-viewport').fadeOut();
 {
      
     
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
      $('#app_showcase').fadeOut();
 $('#appbook-viewport').fadeOut();
@@ -403,7 +403,7 @@ $('#appbook-viewport').fadeOut();
 {
      
      
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
 
 
@@ -412,7 +412,7 @@ $('#appbook-viewport').fadeOut();
 {
      
     
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
 
 
@@ -420,7 +420,7 @@ $('#appbook-viewport').fadeOut();
 {
      
      
-    $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
+    $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
 
 
@@ -474,7 +474,7 @@ else if (type == 'Game&Watch')
 {
      
     
-     $('body').append('<div id="' + event.currentTarget.id + '" native_id="" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" native_id="" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="titile" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
 
 
       } else {
@@ -498,7 +498,7 @@ console.log(htmlString);
          }
        });
     window.onmouseout = function() {
-    	alert('comeback');
+    	// alert('comeback');
 $.ajax({
     type: 'get',
     url: '../../PHP/Linux Commands/get_current_window_id.php',
@@ -511,7 +511,7 @@ $.ajax({
     }
 
     window.onmousemove = function() {
-    	alert('Heyback');	
+    	// alert('Heyback');	
     }
     
 
@@ -755,6 +755,143 @@ var AI12 = function() { exec('xdotool key --clearmodifiers Right');
     }else{
     }
 };
+var AI13 = function() {
+var CPUCores = navigator.hardwareConcurrency;
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Your CPU has' + CPUCores + 'cores', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Your CPU has' + CPUCores + 'cores', {variant: 'f1'});
+    }else{
+    }
+};
+var AI14 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI15 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI16 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI17 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI18 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI19 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI20 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI21 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI22 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI23 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI24 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI25 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI26 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI27 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI28 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
+var AI29 = function() { exec('xdotool key --clearmodifiers Right');
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+};
     var AI1B = function() { AI1();
 };
    var app_launch1 = function(app_name) {
@@ -899,7 +1036,7 @@ $('#appbook-viewport').fadeOut();
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'enter': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1};
+    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'enter': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'move right': AI13, 'move right': AI14, 'move right': AI15, 'move right': AI12, 'move right': AI12, 'move right': AI12, 'move right': AI12, 'How many cores does my computer CPU has': AI12, 'move right': AI12, 'move right': AI12, 'move right': AI16, 'move right': AI17, 'move right': AI18, 'move right': AI19, 'move right': AI20, 'move right': AI21, 'move right': AI22, 'move right': AI23, 'move right': AI24, 'move right': AI25, 'move right': AI26, 'move right': AI27, 'move right': AI28, 'move right': AI29};
     annyang.debug();
 
     

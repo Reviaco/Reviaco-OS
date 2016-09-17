@@ -71,7 +71,7 @@ event.stopPropagation();
     
     'left': '45%',
     
-    'top': "25%'
+    'top': '25%'
   }, 500);
  
                    $( '.user-profile img' ).animate({

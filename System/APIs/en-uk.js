@@ -85,7 +85,7 @@ $('#' + name + '').css('font-weight', 'bold');
                 $('#' + name + '').css('width', settings.width);
             }
             if (settings.length) {
-                $('#' + name + '').css('length', settings.length);
+                $('#' + name + '').css('height', settings.length);
             }
             if (settings.animation) {
                 $('#' + name + '').animateCss('settings.animation');
@@ -138,7 +138,7 @@ $.fn.image = function(options) {
                 $('#' + name + '').animateCss('settings.animation');
             }
             if (settings.length) {
-                $('#' + name + '').css('length', settings.length);
+                $('#' + name + '').css('height', settings.length);
             }
 
             if ($.isFunction(settings.when_finished_downloading)) {

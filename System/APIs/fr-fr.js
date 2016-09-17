@@ -83,7 +83,7 @@ $('#' + name + '').css('font-weight', 'bold');
                 $('#' + name + '').css('width', settings.largeur);
             }
             if (settings.longueur) {
-                $('#' + name + '').css('length', settings.longueur);
+                $('#' + name + '').css('height', settings.longueur);
             }
             if (settings.animation) {
                 $('#' + name + '').animateCss('settings.animation');
@@ -131,7 +131,7 @@ $.fn.image = function(options) {
                 $('#' + name + '').css('width', settings.largeur);
             }
             if (settings.longueur) {
-                $('#' + name + '').css('length', settings.longueur);
+                $('#' + name + '').css('height', settings.longueur);
             }
             if (settings.animation) {
                 $('#' + name + '').animateCss('settings.animation');

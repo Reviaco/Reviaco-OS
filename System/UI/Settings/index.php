@@ -147,6 +147,11 @@ $ds = disk_total_space("C:");
     </head>
 
     <body>
+<div id="splashScreen" class="splashScreen">
+<img id="splashIcon" class="splashIcon" src="icon.png" width="356" height="356" />
+<h1 id="splashTitle" class="splashTitle mdc-text-grey-500">Settings</h1>
+</div>
+<div id="body" class="body">
         <div id="main_page">
             <div class="bg-header" style="transform: translate3d(0px, 0px, 0px);"></div>
 
@@ -284,7 +289,12 @@ $ds = disk_total_space("C:");
                         
         </section>
              <section id="WI-FI_settings" class="WI-FI_settings">
-<div id="wifi_not_supported_container" class="wifi_not_supported_container"><img width="50" width="50" src="../../Media/Framework/confused.png" /><div class="wifi_not_supported_container_text"><h4>Oops, It seems that your computer hasn't WI-FI interface.....!</h4></div></div>
+<div id="wifi_not_supported_container" class="wifi_not_supported_container">
+<img width="50" width="50" src="../../Media/Framework/confused.png" />
+<div class="wifi_not_supported_container_text">
+<h4>Oops, It seems that your computer hasn't WI-FI interface.....!</h4>
+</div>
+</div>
                         
         </section>
 
@@ -302,25 +312,20 @@ $ds = disk_total_space("C:");
 <paper-slider class="blue" value="211" max="255" editable></paper-slider>
 </div>
         <app-header>
-
-
             <div id="background" class="style-scope app-header">
                 <div id="backgroundRearLayer" class="style-scope app-header"></div>
                 <div id="backgroundFrontLayer" class="style-scope app-header"></div>
             </div>
             <div id="contentContainer">
-
                 <app-toolbar>
-
                     <paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button>
-
-                    <div id="title" title="">Settings</div>
+                    <div class="title" id="title" title="">Settings</div>
                     <paper-icon-button icon="cancel"></paper-icon-button>
                 </app-toolbar>
 
             </div>
         </app-header>
-
+</div>
     </body>
 
     </html>

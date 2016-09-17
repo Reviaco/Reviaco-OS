@@ -92,7 +92,7 @@ $('#' + name + '').css('font-weight', 'bold');
                 $('#' + name + '').css('width', settings.العرض);
             }
             if (settings.الطول) {
-                $('#' + name + '').css('length', settings.الطول);
+                $('#' + name + '').css('height', settings.الطول);
             }
             if (settings.الحركة) {
                 $('#' + name + '').animateCss('settings.الحركة');
@@ -139,7 +139,7 @@ $.fn.صورة = function(options) {
                 $('#' + name + '').css('width', settings.العرض);
             }
             if (settings.الطول) {
-                $('#' + name + '').css('length', settings.الطول);
+                $('#' + name + '').css('height', settings.الطول);
             }
             if (settings.الحركة) {
                 $('#' + name + '').animateCss('settings.الحركة');

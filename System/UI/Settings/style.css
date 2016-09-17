@@ -2,6 +2,17 @@
     font-family: roboto;
 }
 
+.splashScreen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: WhiteSmoke;
+}
+
+.body {
+   display: none;
+}
+
 body {
     overflow: hidden;
 }
@@ -16,6 +27,18 @@ body {
     height: 100%;
     bottom: 0;
 }
+
+.splashIcon {
+     position: fixed;
+     left: 35%;
+     top: 15%;
+}
+
+splashTitle  {
+    position: fixed;
+    top: 50%;
+    left: 40%;    
+} 
 
 .setting_cover_icon {
     position: fixed;

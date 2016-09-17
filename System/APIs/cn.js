@@ -88,7 +88,7 @@ $('#' + name + '').css('font-weight', 'bold');
                 $('#' + name + '').css('width', settings.宽度);
             }
             if (settings.长度) {
-                $('#' + name + '').css('length', settings.长度);
+                $('#' + name + '').css('height', settings.长度);
             }
 
             if ($.isFunction(settings.当下载完毕)) {
@@ -133,7 +133,7 @@ $.fn.图片 = function(options) {
                 $('#' + name + '').css('width', settings.宽度);
             }
             if (settings.长度) {
-                $('#' + name + '').css('length', settings.长度);
+                $('#' + name + '').css('height', settings.长度);
             }
             if (settings.动画) {
                 $('#' + name + '').animateCss('settings.动画');
