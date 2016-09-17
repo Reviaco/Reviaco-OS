@@ -1,3 +1,24 @@
+$.ajax({
+  url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent('https://news.google.com.eg/news?cf=all&hl=ar&ned=ar_me&output=rss'),
+  dataType : 'json',
+  success  : function (data) {
+    if (data.responseData.feed && data.responseData.feed.entries) {
+      $.each(data.responseData.feed.entries, function (i, e) {
+        console.log("------------------------");
+        console.log("title      : " + e.title);
+        console.log("link     : " + e.link);
+        console.log("description: " + e.description);
+      });
+    }
+  }
+});
+$(document).on("mousedown", "body", function (ev) {
+    if (ev.which == 2) {
+        ev.preventDefault();
+$('body').append('<div id="settings" class="current_window window"><iframe src="../Settings" /></div>');
+        return false;
+    }
+});
 function exec(command) {
      $.ajax({
          method: 'POST',
@@ -11,8 +32,8 @@ function exec(command) {
       // });
 }
 $(function() {
-
-
+$("#bg").dblclick(function(){
+});
 $(document).on('click', 'img', function( event ) {
        event.stopPropagation();
 var command_to_be_executed = $( this ).attr('command');;
@@ -77,7 +98,6 @@ $('.appbook').turn({
  
 
  function carousel() {
-
    var i;
    var x = document.getElementsByClassName("mySlides");
    for (i = 0; i < x.length; i++) {
@@ -219,116 +239,116 @@ get_volume.send();
 
      for (i = 0; i < arr.length; i++) {
 
-       out += '<div type="' + arr[i].type + '" class="mySlides w3-animate-fading ' + arr[i].name + '"><paper-card type="' + arr[i].type + '" id="' + arr[i].name + '" heading="' + arr[i].name + '" image="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" class="lime"><div class="card-content">' + arr[i].description + '</div></paper-card></div>';
+       out += '<div type="' + arr[i].type + '" class="mySlides w3-animate-fading ' + arr[i].name + '"><paper-card type="' + arr[i].type + '" id="' + arr[i].name + '" heading="' + arr[i].name + '" image="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/cover.jpg" class="lime"><div class="card-content">' + arr[i].description + '</div></paper-card></div>';
 var sort;
       sort = arr[i].name.charAt(0);
  if (sort == 'a') {
-var a = '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var a = '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if (sort == 'b') 
 
 {
-var b =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var b =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'c') 
 
 
 {
-var c =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var c =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'd') 
 
 {
-var d =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var d =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'e') 
 
 {
-var e =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var e =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'f') 
 
 {
-var f =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'g') 
+var f =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+      }else if (sort == 'G') 
 
 {
 
-var g =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var g =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'h') 
 {
 
-var h =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var h =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'i') 
 {
-var I =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var I =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if (sort == 'j') 
 {
 
-var j =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var j =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if (sort == 'k') 
       {
-var k =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var k =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if (sort == 'l') 
 {
-var l =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var l =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
 
       }else if (sort == 'm') 
 {
 
 
-var m =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var m =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'n') 
 {
 
-var n =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var n =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'o') 
 {
 
-var o =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var o =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'p') 
 {
-var p =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var p =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if (sort == 'q') 
 {
-var q =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var q =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if (sort == 'r') 
 {
-var r =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var r =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if (sort == 's') 
 {
 
-var s =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var s =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 't') 
 {
-var t =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var t =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'u') 
 {
 
-var u =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var u =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'v') 
 {
 
-var v =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var v =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'w') 
 {
 
-var w =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var w =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'x') 
 {
 
-var x =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var x =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'y') 
 {
 
-var y =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var y =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if (sort == 'z') 
 {
 
-var z =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/default/Apps/Linux Apps/Icons/' + arr[i].name + '.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var z =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
 } else {
           
@@ -373,30 +393,23 @@ var type;
       if (type == 'Linux') {
      
      
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
-     $('#app_showcase').fadeOut();
-$('#appbook-viewport').fadeOut();
 
 
       } else if (type == 'Windows') 
 {
      
      
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
-
-     $('#app_showcase').fadeOut();
-$('#appbook-viewport').fadeOut();
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
 
       } else if (type == 'Android') 
 {
      
     
-     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div> </div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><app-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></app-toolbar></div></div>');
 
-     $('#app_showcase').fadeOut();
-$('#appbook-viewport').fadeOut();
 
 
       } else if (type == 'BlackBerry') 
@@ -481,7 +494,7 @@ else if (type == 'Game&Watch')
           
       }
 
-     $('#app_showcase').fadeOut();
+$('#app_showcase').fadeOut();
 
 $('#appbook-viewport').fadeOut();
 
@@ -764,11 +777,11 @@ var CPUCores = navigator.hardwareConcurrency;
     }else{
     }
 };
-var AI14 = function() { exec('xdotool key --clearmodifiers Right');
+var AI14 = function() { exec('sudo systemctl suspend');
  if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
+        meSpeak.speak('I will give it, I promise', {variant: 'm1'});
     }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
+        meSpeak.speak('I will give it, I promise', {variant: 'f1'});
     }else{
     }
 };
@@ -1030,13 +1043,13 @@ $('#appbook-viewport').fadeOut();
            type: type
          }
        })
-       .done(function(msg) {
-         alert('Data Saved: ' + msg);
-       });
+       // .done(function(msg) {
+         // alert('Data Saved: ' + msg);
+       // });
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'enter': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'move right': AI13, 'move right': AI14, 'move right': AI15, 'move right': AI12, 'move right': AI12, 'move right': AI12, 'move right': AI12, 'How many cores does my computer CPU has': AI12, 'move right': AI12, 'move right': AI12, 'move right': AI16, 'move right': AI17, 'move right': AI18, 'move right': AI19, 'move right': AI20, 'move right': AI21, 'move right': AI22, 'move right': AI23, 'move right': AI24, 'move right': AI25, 'move right': AI26, 'move right': AI27, 'move right': AI28, 'move right': AI29};
+    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'enter': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU has': AI13, 'please give my computer a strong drink': AI14};
     annyang.debug();
 
     
@@ -1050,3 +1063,4 @@ var commands = {'hey *assistant_name': assistant_wakeMe,
   } else {
 
   }
+

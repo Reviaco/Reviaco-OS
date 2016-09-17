@@ -2,6 +2,12 @@
     font-family: roboto;
 }
 
+.splashTitle  {
+    position: fixed;
+    top: 60%;
+    left: 39%;    
+} 
+
 .splashScreen {
     position: fixed;
     width: 100%;
@@ -33,12 +39,6 @@ body {
      left: 35%;
      top: 15%;
 }
-
-splashTitle  {
-    position: fixed;
-    top: 50%;
-    left: 40%;    
-} 
 
 .setting_cover_icon {
     position: fixed;

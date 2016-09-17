@@ -258,6 +258,6 @@ $( window ).load(function() {
          setInterval(function(){ get_users_interval(); }, 3000);
 });
 $(window).bind("load", function() {
-//$('#splashScreen').fadeOut(500);
-//$('#body').fadeIn(500);  
+$('#splashScreen').fadeOut(500);
+$('#body').fadeIn(500);  
 });

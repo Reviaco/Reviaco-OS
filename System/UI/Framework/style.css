@@ -186,7 +186,11 @@ h3 {
 }
 
 .poweroff_btn {
-    left: 50%;
+    left: 49%;
+}
+
+.sleep_btn {
+    right: 15px;
 }
 
 .restart_btn {
@@ -402,9 +406,9 @@ iframe {
     top: 20;
 }
 .index_letter {
-        height: 30;
+    height: 30;
     position: relative;
-    left: 0;
+    left: 50%;
     top: 20;
 }
 .app_list {
