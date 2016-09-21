@@ -70,12 +70,11 @@ $.fn.文本 = function(options) {
                 $('#' + name + '').css('font-style', settings.字体样式);
             }
 
-
-            if (settings.厚度) {
+if (settings.厚度) {
                 if (settings.厚度 == '厚') {
-                    $('#' + name + '').css('font-weight', settings.厚度);
+           $('#' + name + '').css('font-weight', 'bold');
                 } else {
-$('#' + name + '').css('font-weight', 'bold');
+                    $('#' + name + '').css('font-weight', settings.厚度);
 }
             }
             if (settings.尺寸) {
@@ -116,7 +115,7 @@ $.fn.图片 = function(options) {
         return this.each(function() {
             var name = settings.名称;
             var source = settings.资源;
-            var out = '<img id="' + name + '" src="' + source '"></img>';
+            var out = '<img id="' + name + '" src="' + source + '" alt="' + title +'"></img>';
             $('内容').append(out);
 
             

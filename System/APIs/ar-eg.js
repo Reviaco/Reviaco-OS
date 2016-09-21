@@ -80,9 +80,10 @@ $.fn.extend({
 
             if (settings.الطخن) {
                 if (settings.الطخن == 'طخين') {
-                    $('#' + name + '').css('font-weight', settings.الطخن);
-                } else {
 $('#' + name + '').css('font-weight', 'bold');
+                   
+                } else {
+ $('#' + name + '').css('font-weight', settings.الطخن);
 }
             }
             if (settings.الحجم) {
@@ -95,7 +96,14 @@ $('#' + name + '').css('font-weight', 'bold');
                 $('#' + name + '').css('height', settings.الطول);
             }
             if (settings.الحركة) {
-                $('#' + name + '').animateCss('settings.الحركة');
+                if (settings.الحركة == 'بيطنطط') {
+                    $('#' + name + '').animateCss('bounce');
+                } else {
+$('#' + name + '').animateCss(settings.الحركة);
+}
+            }
+if (settings.الشفافية) {
+                $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
                 settings.لما_يخلص_تحميل.call(this);
@@ -122,7 +130,7 @@ $.fn.صورة = function(options) {
         return this.each(function() {
             var name = settings.الاسم;
             var source = settings.المصدر;
-            var out = '<img id="' + name + '" src="' + source '"></img>';
+            var out = '<img id="' + name + '" src="' + source + '"></img>';
             $('Eطبق_السلطة').append(out);
 
             
@@ -141,9 +149,11 @@ $.fn.صورة = function(options) {
             if (settings.الطول) {
                 $('#' + name + '').css('height', settings.الطول);
             }
-            if (settings.الحركة) {
-                $('#' + name + '').animateCss('settings.الحركة');
-            }
+               if (settings.الحركة == 'بيطنطط') {
+                    $('#' + name + '').animateCss('bounce');
+                } else {
+$('#' + name + '').animateCss(settings.الحركة);
+}
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
                 settings.لما_يخلص_تحميل.call(this);
             }

@@ -1,5 +1,4 @@
 (function($) {
-
 $.fn.extend({
     animateCss: function (animationName) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -29,7 +28,7 @@ $.fn.نص = function(options) {
             var name = settings.الاسم;
             var out = '<p id="' + name + '"></p>';
             $('Eالمحتوى').append(out);
-            $('#' + name + '').text(settings.الكلام);
+            $('#' + name + '').text(settings.النص);
 
             if (settings.اللون) {
                 if (settings.اللون == 'اسود') {
@@ -71,9 +70,9 @@ $.fn.نص = function(options) {
 
             if (settings.السمك) {
                 if (settings.السمك == 'سميك') {
-                    $('#' + name + '').css('font-weight', settings.السمك);
+                    $('#' + name + '').css('font-weight', 'bold');
                 } else {
-$('#' + name + '').css('font-weight', 'bold');
+ $('#' + name + '').css('font-weight', settings.السمك);
 }
             }
             if (settings.الحجم) {
@@ -86,7 +85,14 @@ $('#' + name + '').css('font-weight', 'bold');
                 $('#' + name + '').css('height', settings.الطول);
             }
             if (settings.الحركة) {
-                $('#' + name + '').animateCss('settings.الحركة');
+                if (settings.الحركة == 'يقفز') {
+                    $('#' + name + '').animateCss('bounce');
+                } else {
+$('#' + name + '').animateCss(settings.الحركة);
+}
+            }
+if (settings.الشفافية) {
+                $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.عند_الانتهاء_من_التحميل)) {
                 settings.عند_الانتهاء_من_التحميل.call(this);
@@ -107,13 +113,14 @@ $.fn.صورة = function(options) {
             العرض: null,
             الطول: null,
             الحركة: null,
+            الشفافية: null,
             عند_الانتهاء_من_التحميل: null
         }, options);
 
         return this.each(function() {
             var name = settings.الاسم;
             var source = settings.المصدر;
-            var out = '<img id="' + name + '" src="' + source '"></img>';
+            var out = '<img id="' + name + '" src="' + source + '"></img>';
             $('Eالمحتوى').append(out);
 
             
@@ -132,8 +139,15 @@ $.fn.صورة = function(options) {
             if (settings.الطول) {
                 $('#' + name + '').css('height', settings.الطول);
             }
-            if (settings.الحركة) {
-                $('#' + name + '').animateCss('settings.الحركة');
+            if (settings.الشفافية) {
+                $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
+            }
+           if (settings.الحركة) {
+                if (settings.الحركة == 'يقفز') {
+                    $('#' + name + '').animateCss('bounce');
+                } else {
+$('#' + name + '').animateCss(settings.الحركة);
+}
             }
             if ($.isFunction(settings.عند_الانتهاء_من_التحميل)) {
                 settings.عند_الانتهاء_من_التحميل.call(this);

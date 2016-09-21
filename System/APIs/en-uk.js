@@ -1,5 +1,4 @@
 (function($) {
-
 $.fn.extend({
     animateCss: function (animationName) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
@@ -9,7 +8,7 @@ $.fn.extend({
     }
 });
 
-$.fn.text = function(options) {
+$.fn.text0 = function(options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -73,9 +72,9 @@ $.fn.text = function(options) {
 
             if (settings.thickness) {
                 if (settings.thickness == 'thick') {
-                    $('#' + name + '').css('font-weight', settings.thickness);
+           $('#' + name + '').css('font-weight', 'bold');
                 } else {
-$('#' + name + '').css('font-weight', 'bold');
+                    $('#' + name + '').css('font-weight', settings.thickness);
 }
             }
             if (settings.size) {
@@ -89,6 +88,16 @@ $('#' + name + '').css('font-weight', 'bold');
             }
             if (settings.animation) {
                 $('#' + name + '').animateCss('settings.animation');
+            }
+if (settings.animation) {
+                if (settings.animation == 'jumping') {
+                    $('#' + name + '').animateCss('bounce');
+                } else {
+$('#' + name + '').animateCss(settings.animation);
+}
+            }
+if (settings.opacity) {
+                $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.opacity + '%)');
             }
 
             if ($.isFunction(settings.when_finished_downloading)) {
@@ -117,7 +126,7 @@ $.fn.image = function(options) {
         return this.each(function() {
             var name = settings.name;
             var source = settings.source;
-            var out = '<img id="' + name + '" src="' + source '"></img>';
+            var out = '<img id="' + name + '" src="' + source + '"></img>';
             $('contents').append(out);
 
             
@@ -140,7 +149,16 @@ $.fn.image = function(options) {
             if (settings.length) {
                 $('#' + name + '').css('height', settings.length);
             }
-
+if (settings.animation) {
+                if (settings.animation == 'jumping') {
+                    $('#' + name + '').animateCss('bounce');
+                } else {
+$('#' + name + '').animateCss(settings.animation);
+}
+            }
+if (settings.opacity) {
+                $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.opacity + '%)');
+            }
             if ($.isFunction(settings.when_finished_downloading)) {
                 settings.when_finished_downloading.call(this);
             }

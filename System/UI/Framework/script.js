@@ -16,6 +16,8 @@ $(document).on("mousedown", "body", function (ev) {
     if (ev.which == 2) {
         ev.preventDefault();
 $('body').append('<div id="settings" class="current_window window"><iframe src="../Settings" /></div>');
+$('#app_showcase').fadeOut();
+$('#appbook-viewport').fadeOut();
         return false;
     }
 });
@@ -32,7 +34,8 @@ function exec(command) {
       // });
 }
 $(function() {
-$("#bg").dblclick(function(){
+$("body").dblclick(function(){
+$('#bg').backgroundBlur('http://www.bing.com/az/hprichbg/rb/Castelmezzano_EN-US11750585825_1920x1080.jpg');
 });
 $(document).on('click', 'img', function( event ) {
        event.stopPropagation();
@@ -78,8 +81,10 @@ $('.appbook').turn({
      function bg_blur() {
           $('#bg').backgroundBlur({
     imageURL : 'http://localhost/Reviaco-OS/System/Media/Backgrounds/3.jpg',
-    blurAmount : 10,
-    imageClass : 'tinted-bg-blur'
+    blurAmount : 5,
+    imageClass : 'tinted-bg-blur',
+    duration: 1000, // If the image needs to be faded in, how long that should take
+    endOpacity : 1 // Specify the final opacity that the image will have
 });
      }
               if (document.addEventListener) {
@@ -1032,7 +1037,6 @@ meSpeak.speak('Opening' + app_name + '', {variant: 'f1'});
     }
 
 $('#app_showcase').fadeOut();
-
 $('#appbook-viewport').fadeOut();
 
      $.ajax({

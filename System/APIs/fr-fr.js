@@ -114,7 +114,7 @@ $.fn.image = function(options) {
             var name = settings.nom;
             var source = settings.source;
             var title = settings.titre;
-            var out = '<img id="' + name + '" src="' + source '" alt="' + title +'"></img>';
+            var out = '<img id="' + name + '" src="' + source + '" alt="' + title +'"></img>';
             $('contenu').append(out);
 
             
