@@ -1,17 +1,3 @@
-$.ajax({
-  url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent('https://news.google.com.eg/news?cf=all&hl=ar&ned=ar_me&output=rss'),
-  dataType : 'json',
-  success  : function (data) {
-    if (data.responseData.feed && data.responseData.feed.entries) {
-      $.each(data.responseData.feed.entries, function (i, e) {
-        console.log("------------------------");
-        console.log("title      : " + e.title);
-        console.log("link     : " + e.link);
-        console.log("description: " + e.description);
-      });
-    }
-  }
-});
 $(document).on("mousedown", "body", function (ev) {
     if (ev.which == 2) {
         ev.preventDefault();
@@ -782,19 +768,39 @@ var CPUCores = navigator.hardwareConcurrency;
     }else{
     }
 };
-var AI14 = function() { exec('sudo systemctl suspend');
+var AI14 = function() {
+if (sessionStorage.assistant_current == 'Brolu') { 
+$.ajax({
+  url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent('https://news.google.com/news?cf=all&hl=en&ned=us&output=rss'),
+  dataType : 'json',
+  success  : function (data) {
+    if (data.responseData.feed && data.responseData.feed.entries) {
+      $.each(data.responseData.feed.entries, function (i, e) {
+setTimeout(function() { meSpeak.speak(e.title, {variant: 'm1'}); }, 10000 * i);
+      });
+    }
+  }
+});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+$.ajax({
+  url      : document.location.protocol + '//ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent('https://news.google.com/news?cf=all&hl=en&ned=us&output=rss'),
+  dataType : 'json',
+  success  : function (data) {
+    if (data.responseData.feed && data.responseData.feed.entries) {
+      $.each(data.responseData.feed.entries, function (i, e) {
+setTimeout(function() { meSpeak.speak(e.title, {variant: 'f1'}); }, 10000 * i);
+      });
+    }
+  }
+});
+    }else{
+    }
+};
+var AI15 = function() { exec('sudo systemctl suspend');
  if (sessionStorage.assistant_current == 'Brolu') {
         meSpeak.speak('I will give it, I promise', {variant: 'm1'});
     }else if (sessionStorage.assistant_current == 'Lucy') {
         meSpeak.speak('I will give it, I promise', {variant: 'f1'});
-    }else{
-    }
-};
-var AI15 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
     }else{
     }
 };
@@ -1053,7 +1059,7 @@ $('#appbook-viewport').fadeOut();
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'enter': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU has': AI13, 'please give my computer a strong drink': AI14};
+    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'enter': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU has': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15};
     annyang.debug();
 
     

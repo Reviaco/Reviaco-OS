@@ -86,6 +86,10 @@ $command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-li
 
 $command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/snes9x2010_libretro.so /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.sfc";
 
+} elseif ($type < "Chrome") {
+
+$command = "export DISPLAY=:0 && sudo -u $username /opt/google/chrome/google-chrome --load-and-launch-app=/var/www/html/Reviaco-OS/Users/$username/Apps/Chrome/$app_name";
+
 } elseif ($type < "TyrQuake") {
 
 $command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.pak";
