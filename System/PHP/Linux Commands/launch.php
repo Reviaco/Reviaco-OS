@@ -68,47 +68,47 @@ else
 
 if ($type == "Linux") {
 
-$command = "export DISPLAY=:0 && sudo -u $username $app_name";
+$command = "export DISPLAY=:1 && sudo -u $username $app_name";
 
-} elseif ($type < "Lutro") {
+} elseif ($type == "Lutro") {
 
-$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.lutro";
+$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.lutro";
 
-} elseif ($type < "NXEngine") {
+} elseif ($type == "NXEngine") {
 
-$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.exe";
+$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.exe";
 
-} elseif ($type < "Sega") {
+} elseif ($type == "Sega") {
 
-$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/genesis_plus_gx_libretro.so /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.md";
+$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/genesis_plus_gx_libretro.so /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.md";
 
-} elseif ($type < "SNES") {
+} elseif ($type == "SNES") {
 
-$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/snes9x2010_libretro.so /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.sfc";
+$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/snes9x2010_libretro.so /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.sfc";
 
-} elseif ($type < "Chrome") {
+} elseif ($type == "Chrome") {
 
-$command = "export DISPLAY=:0 && sudo -u $username /opt/google/chrome/google-chrome --load-and-launch-app=/var/www/html/Reviaco-OS/Users/$username/Apps/Chrome/$app_name";
+$command = "export DISPLAY=:1 && sudo -u $username google-chrome-unstable --load-and-launch-app=/var/www/html/Reviaco-OS/Users/$username/Apps/Chrome/$app_name";
 
-} elseif ($type < "TyrQuake") {
+} elseif ($type == "TyrQuake") {
 
-$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.pak";
+$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.pak";
 
-} elseif ($type < "VB") {
+} elseif ($type == "VB") {
 
-$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.vb";
+$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.vb";
 
-} elseif ($type < "Windows") {
+} elseif ($type == "Windows") {
 
-$command = "export DISPLAY=:0 && sudo -u $username wine /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.exe";
+$command = "export DISPLAY=:1 && sudo -u $username wine64-development /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.exe";
 
-} elseif ($type < "Android") {
+} elseif ($type == "Android") {
 
-$command = "export DISPLAY=:0 && sudo -u $username adb shell am start -n $app_name";
+$command = "export DISPLAY=:1 && sudo -u $username adb shell am start -n com.google.android.apps.maps/com.google.android.maps.MapsActivity";
 
 } else {
 
-$command = "export DISPLAY=:0 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/Game&Watch/$app_name/launch.mgw";
+$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/Game&Watch/$app_name/launch.mgw";
 
 }
 

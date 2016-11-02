@@ -105,7 +105,6 @@ $('.appbook').turn({
      
    sessionStorage.assistant_current = 'brolu';
 
-
 function loadVoices() {
          meSpeak.loadConfig("../../JS/mespeak/mespeak_config.json");
     meSpeak.loadVoice("../../JS/mespeak/voices/en/en.json");
@@ -123,7 +122,6 @@ setTimeout(function() { loadVoices(); }, 2500);
 
    
      });
-
    (function() {
      var rotate, timeline;
 
@@ -502,20 +500,17 @@ console.log(htmlString);
          }
        });
     window.onmouseout = function() {
-    	// alert('comeback');
 $.ajax({
     type: 'get',
     url: '../../PHP/Linux Commands/get_current_window_id.php',
     data: htmlString,
     success: function(data) {
-        alert(data);
         var window_native_id = data;
     }
 });	
     }
 
-    window.onmousemove = function() {
-    	// alert('Heyback');	
+    window.onmousemove = function() {	
     }
     
 
@@ -666,6 +661,7 @@ meSpeak.speak(AI1_array[AI1_reply], {variant: 'm1'});
 meSpeak.speak(AI1_array[AI1_reply], {variant: 'f1'});
 
     }else{
+meSpeak.speak(AI1_array[AI1_reply], {variant: 'f1'});
     }
 };
     var AI1A = function() { AI1();
@@ -1059,7 +1055,7 @@ $('#appbook-viewport').fadeOut();
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'enter': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU has': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15};
+    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'enter': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU have': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15};
     annyang.debug();
 
     

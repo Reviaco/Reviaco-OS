@@ -2,7 +2,7 @@
 
   $stringData = $_POST['dataString']; 
 
-$command = "export DISPLAY=:0 && wmctrl -ia $stringData";
+$command = "export DISPLAY=:1 && wmctrl -ia $stringData";
 $command .= " $param1 $param2 $param3 2>&1";
 
 $pid = popen( $command,"r");

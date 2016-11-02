@@ -1,6 +1,6 @@
 ﻿<?php
     $stringData = $_POST['dataString']; 
-    $command = "export DISPLAY=:0 && sudo killall $stringData";
+    $command = "export DISPLAY=:1 && sudo killall $stringData";
     $command .= " $param1 $param2 $param3 2>&1";
     $pid = popen( $command,"r");
 

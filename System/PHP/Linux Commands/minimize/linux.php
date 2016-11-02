@@ -5,7 +5,7 @@
 
 
 
-$command = "export DISPLAY=:0 && xdotool windowminimize $stringData";
+$command = "export DISPLAY=:1 && xdotool windowminimize $stringData";
 $command .= " $param1 $param2 $param3 2>&1";
 
 
