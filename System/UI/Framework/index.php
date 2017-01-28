@@ -83,12 +83,12 @@ else
   <div id="div"></div>
 
         <div class="nav_bar">
-            <img id="back" class="back" src="../../Media/Framework/Back.png" width="50" height="50"></img>
-            <img id="home" class="home" src="../../Media/Framework/Home.svg" width="50" height="50"></img>
-            <img id="menu" class="menu" src="../../Media/Framework/Menu.png" width="50" height="50"></img>
-            <img id="restart_btn command_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50" command="sudo reboot"></img>
-            <img id="poweroff_btn command_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50" command="sudo poweroff"></img>
-            <img id="sleep_btn command_btn" class="power_ctrl sleep_btn" src="../../Media/Framework/Sleep.png" width="50" height="50" command="sudo systemctl suspend"></img>
+            <img id="back" class="back" src="../../Media/Framework/Back.png" width="50" height="50" />
+            <img id="home" class="home" src="../../Media/Framework/Home.svg" width="50" height="50" />
+            <img id="menu" class="menu" src="../../Media/Framework/Menu.png" width="50" height="50" />
+            <img id="restart_btn command_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50" command="sudo reboot" />
+            <img id="poweroff_btn command_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50" command="sudo poweroff" />
+            <img id="sleep_btn command_btn" class="power_ctrl sleep_btn" src="../../Media/Framework/Sleep.png" width="50" height="50" command="sudo systemctl suspend" />
             <div class="bubbleback"></div>
             <div class="bubble"><i class="material-icons power_btn_icon">power_settings_new</i></div>
             <div class="bubble-wrap">
@@ -140,4 +140,4 @@ else
         </div>
     </body>
 
-    </html>
+</html>

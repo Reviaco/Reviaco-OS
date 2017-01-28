@@ -30,27 +30,27 @@ zoom: 50%;
 }
 .cube1 {
 left: 5%;
-top: 55%;
+top: 50%;
 }
 .cube2 {
 left: 40%;
-top: 55%;
+top: 50%;
 }
 .cube3 {
 right: 5%;
-top: 55%;
+top: 50%;
 }
 .cube4 {
 left: 5%;
-top: 80%;
+top: 75%;
 }
 .cube5 {
 left: 40%;
-top: 80%;
+top: 75%;
 }
 .cube6 {
 right: 5%;
-top: 80%;
+top: 75%;
 }
 .space3d {
   perspective: 1000px;
@@ -122,16 +122,8 @@ top: 80%;
 }
 
 .space3d ._3dbox {
-  -webkit-animation-name: example;
-  /* Chrome, Safari, Opera */
-  -webkit-animation-duration: 4s;
-  /* Chrome, Safari, Opera */
-  -webkit-animation-iteration-count: 3;
-  /* Chrome, Safari, Opera */
-  -webkit-animation-direction: reverse;
-  /* Chrome, Safari, Opera */
   animation-name: example;
-  animation-duration: 4s;
+  animation-duration: 25s;
   animation-iteration-count: infinite;
   animation-direction: reverse;
 }
