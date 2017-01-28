@@ -79,6 +79,7 @@ top: 75%;
   box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.1), 0 0 50px rgba(0, 0, 0, 0.3);
   color: #333;
   line-height: 250px;
+  background-size: auto 100%;
 }
 
 ._3dface--front {
@@ -153,34 +154,3 @@ top: 75%;
     transform: rotateY(0deg);
   }
 }
-
-.games {
-  background: url(../../Media/Cards/1.jpg);
-  background-size: 100%;
-}
-
-._3dface--left {
-  background: url(http://4.bp.blogspot.com/-HGFGdCGFTkw/UXVq6PNmS4I/AAAAAAAAAUE/hBNmVCOVlu4/s400/durga+wm.jpg);
-  background-size: auto 100%;
-}
-
-._3dface--right {
-  background: url(http://2.bp.blogspot.com/-yrnBD8wJ-g0/UNRtPF8pR7I/AAAAAAAAATE/YSpLvqTNyoQ/s320/A+P+J+abdul+kalam_+swm+.jpg);
-  background-size: auto 100%;
-}
-
-._3dface--top {
-  background: url(http://3.bp.blogspot.com/-mySu8dy4ux4/ULiVKS4YBbI/AAAAAAAAAR0/vBMi_4dAPDE/s400/rajiv+dixit+s.jpg);
-  background-size: auto 100%;
-}
-
-._3dface--bottom {
-  background: url(http://2.bp.blogspot.com/-B9QWFtc9bVY/UHFs7y9GqkI/AAAAAAAAARI/YLDkoHYr3g4/s400/Gau+wm.jpg);
-  background-size: auto 100%;
-}
-
-._3dface--back {
-  background: url(http://3.bp.blogspot.com/-ofufG97PpiU/UBzXu-1AisI/AAAAAAAAAP0/iDnhOh-vrb8/s400/shiv+ji.jpg);
-  background-size: auto 100%;
-}
-

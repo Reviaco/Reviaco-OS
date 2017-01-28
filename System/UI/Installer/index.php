@@ -28,10 +28,10 @@
     <img id="app_promo_slide4" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
     <img id="app_promo_slide5" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
   </div>      
-<div id="games cube1" class="cube cube1">
+<div id="cube1" class="cube cube1">
 <div class="space3d">
     <div class="_3dbox">
-      <div id="app_promo_cube_1" class="games _3dfaceE_3dface--front"></div>
+      <div id="app_promo_cube_1" class="_3dface _3dface--front"></div>
       <div id="app_promo_cube_1_A" class="_3dface _3dface--top" app_name="" type=""></div>
       <div id="app_promo_cube_1_B" class="_3dface _3dface--bottom" app_name="" type=""></div>
       <div id="app_promo_cube_1_C" class="_3dface _3dface--left" app_name="" type=""></div>
