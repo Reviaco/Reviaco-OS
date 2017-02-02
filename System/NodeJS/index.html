@@ -1,0 +1,55 @@
+<html>
+
+<head>
+
+
+   <link rel="import" href="../Res.html">
+
+    <script>
+        function scan_wifi_interval() {
+
+$.get( "http://localhost/wifi/wifi-scan", function( data ) {
+                   var scan_wifi = data.networks;
+     var i;
+      var wifi_networks = '<div class="wifi_networks">';
+
+     for (i = 0; i < scan_wifi.length; i++) {
+                   wifi_networks += '<paper-icon-item id="'+scan_wifi[i].ssid+'" class="user"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>'+scan_wifi[i].ssid+'</div><div secondary>Jan 9 2014</div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>';
+         console.log(scan_wifi[i].ssid);
+     }
+                     wifi_networks += '</div>';
+    document.getElementById('wifi_networks_listbox').innerHTML = wifi_networks;
+});
+
+
+   
+
+}
+      $(document).ready(function(){
+
+        var user,pass;
+        $("#submit").click(function(){
+          user=$("#user").val();
+          pass=$("#password").val();
+          $.post("http://localhost/wifi/wifi-auth-data",{user: user,password: pass}, function(data){
+            if(data==='done')
+              {
+                alert("login success");
+              }
+          });
+        });
+      });
+    </script>
+  </head>
+  <body id='wifi_networks_listbox' onclick="scan_wifi_interval()">
+                <paper-toolbar>
+                    <paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button>
+                    <div class="title" id="title" title="">Settings</div>
+                    <paper-icon-button icon="cancel"></paper-icon-button>
+                </paper-toolbar>
+    <h1>Hello people !</h1>
+    <input type="TEXT" id="user" size="40"><br>
+    <input type="password" id="password" size="40"><br>
+    <input type="button" id="submit" value="Submit">
+  </body>
+</html>

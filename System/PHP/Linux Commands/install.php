@@ -109,18 +109,22 @@ $command = "export DISPLAY=:1 && sudo -u $username apt-get update && sudo -u $us
 
 } elseif ($type == "Android") { 
 
-$command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && sudo -u $username wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/main.apk && sudo -u $username adb -s emulator-5554 install main.apk && sudo -u $username adb -s emulator-5556 install main.apk && sudo -u $username adb -s emulator-5558 install main.apk && sudo -u $username adb install main.apk && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/$app && cd /var/www/html/Reviaco-OS/Users/$username/Apps/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/icon.png && sudo -u $username rm -r -f /var/www/html/Reviaco-OS/Users/$username/Downloads/main.apk";
+$command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && sudo -u $username wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/Android/$app/main.apk && sudo -u $username adb -s emulator-5554 install main.apk && sudo -u $username rm -f /var/www/html/Reviaco-OS/Users/$username/Downloads/main* && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/Android/$app && cd /var/www/html/Reviaco-OS/Users/$username/Apps/Android/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/Android/$app/cover.jpg";
 
 } elseif ($type == "Chrome") {
 
-$command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && sudo -u $username wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/main.zip && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/main.zip -d /var/www/html/Reviaco-OS/Users/$username/Apps/$app && cd /var/www/html/Reviaco-OS/Users/$username/Apps/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/icon.png && sudo -u $username rm -r -f /var/www/html/Reviaco-OS/Users/$username/Downloads/main.zip";
+$command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && sudo -u $username wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/Chrome/$app/main.zip && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/Chrome/$app && sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/main.zip -d /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && cd /var/www/html/Reviaco-OS/Users/$username/Apps/Chrome/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/Chrome/$app/icon.png && sudo -u $username rm -r -f /var/www/html/Reviaco-OS/Users/$username/Downloads/main.zip";
+
+} elseif ($type == "Windows") {
+
+$command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && sudo -u $username wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/main.zip && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/main.zip -d /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && sudo -u $username rm -f /var/www/html/Reviaco-OS/Users/$username/Downloads/main* && cd /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/icon.png ";
 
 } else {
 
 }
 
 
-$command .= " $param1 $param2 $param3 2>&1";
+
 
 
 

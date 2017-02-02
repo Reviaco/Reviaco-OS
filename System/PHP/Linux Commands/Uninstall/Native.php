@@ -134,7 +134,7 @@ mysqli_close($link);
 
 $command = "rm -r -f /var/www/html/Reviaco-OS/Users/$phpro_username/Apps/$app";
 
-$command .= " $param1 $param2 $param3 2>&1";
+
 
 $pid = popen( $command,"r");
 

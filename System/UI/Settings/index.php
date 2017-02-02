@@ -14,11 +14,6 @@ $ds = disk_total_space("C:");
     <html>
 
     <head>
-
-
-
-
-
         <link rel="import" href="../../Res.html">
         <link rel="import" href="polymer-style.html">
         <link href="style.css" rel="stylesheet">
@@ -208,27 +203,21 @@ $ds = disk_total_space("C:");
         </div>
         <div id="setting_page" class="setting_page">
             <paper-material elevation="1" class="setting_cover mdc-bg-blue-500">
-                <img id="setting_cover_icon" class="setting_cover_icon" src="" width="300" height="300"></img>
+                <img id="setting_cover_icon" class="setting_cover_icon" src="" width="300" height="300" />
             </paper-material>
         </div>
         <section id="Users_settings" class="Users_settings">
+            <div id="users_listbox" role="listbox" />
             <paper-material id="register_form_container" class="box" elevation="2">
 
                 <form id="adduser_form" class="form" action="PHP/adduser_submit.php" method="post">
 
                     <div class="step">
                         <h1>Add User</h1>
-                        <br>
-                        <br>
-
                         <paper-input label="Username" id="username" name="username" value="" maxlength="20"></paper-input>
                         <br>
                         <paper-input type="password" label="Password" id="password" name="password" value="" maxlength="20"></paper-input>
-
-
                     </div>
-
-
                     <input type="hidden" name="form_token" value="<?php echo $form_token; ?>" />
                     <paper-button raised class="sumbit_parent" onclick="submitForm()">Register
 
@@ -241,10 +230,6 @@ $ds = disk_total_space("C:");
 
             </div>
             <div class="bubble-wrap">
-
-            </div>
-            <div id="users_listbox" role="listbox">
-
 
             </div>
         </section>
@@ -286,9 +271,10 @@ $ds = disk_total_space("C:");
 
 <paper-icon-item onclick='' id="volume_btn_container"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Sound Volumes</div><div id="volume_tip" secondary>Loud sounds cause DEATH ;)</div></paper-item-body></paper-icon-item>
 <paper-icon-item onclick='' id="ringtone_btn_container"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>Ringtone</div><div id="ringtone_tip" secondary>Keep yourself happy with out daily updated HD ringtones</div></paper-item-body></paper-icon-item>
-                        
+                        </div>         
         </section>
              <section id="WI-FI_settings" class="WI-FI_settings">
+                 <div id="wifi_networks_listbox" role="listbox" />
 <div id="wifi_not_supported_container" class="wifi_not_supported_container">
 <img width="50" width="50" src="../../Media/Framework/confused.png" />
 <div class="wifi_not_supported_container_text">
@@ -317,11 +303,11 @@ $ds = disk_total_space("C:");
                 <div id="backgroundFrontLayer" class="style-scope app-header"></div>
             </div>
             <div id="contentContainer">
-                <app-toolbar>
+                <paper-toolbar>
                     <paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button>
                     <div class="title" id="title" title="">Settings</div>
                     <paper-icon-button icon="cancel"></paper-icon-button>
-                </app-toolbar>
+                </paper-toolbar>
 
             </div>
         </app-header>

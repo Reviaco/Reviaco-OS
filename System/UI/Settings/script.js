@@ -17,7 +17,8 @@ method: "POST"
 dataString: app_name
 }
 });
-get_apps_interval();         
+get_apps_interval();
+scan_wifi_interval();
 }
 var xmlhttp1 = new XMLHttpRequest();
    var url1 = "http://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
@@ -60,30 +61,7 @@ $('#version').html(info[0].version);
 $('#build_date').html(info[0].build_date);
 }
 
-var get_wifi = new XMLHttpRequest();
-var get_wifi_url = "../../PHP/Data/Net_Wifi/Wifi_usage.php";
 
-get_wifi.onreadystatechange = function() {
-    if (get_wifi.readyState == 4 && get_wifi.status == 200) {
-        if (get_wifi.responseText = 'No wireless interfaces found!') {
-            $('#wifi_not_supported_container').show(500);
-            
-        }else if (get_wifi.responseText = 'No wireless networks available.') {
-            
-        } 
-        else{
-         var wifi_list = JSON.parse(get_wifi.responseText);
-        myFunction(wifi_list);   
-        }
-        
-    }
-};
-get_wifi.open("GET", get_wifi_url, true);
-get_wifi.send();
-
-function get_wifi(wifi) {
-
-}
 function get_users_interval() {
 var get_users = new XMLHttpRequest();
 var get_users_url = "http://localhost/Reviaco-OS/System/PHP/Data/Users.php";
@@ -109,6 +87,23 @@ function get_users_function(response) {
    users_settings += '</div>';
     document.getElementById('users_listbox').innerHTML = users_settings;
 }
+}
+function scan_wifi_interval() {
+
+              $.get( "http://localhost/wifi/wifi-scan", function( data ) {
+                   var scan_wifi = data.networks;
+     var i;
+      var wifi_networks = '<div class="wifi_networks">';
+
+     for (i = 0; i < scan_wifi.length; i++) {
+                   wifi_networks += '<paper-icon-item id="'+scan_wifi[i].ssid+'" class="user"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>'+scan_wifi[i].ssid+'</div><div secondary>Jan 9 2014</div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>';
+         console.log(scan_wifi[i].ssid);
+     }
+                     wifi_networks += '</div>';
+    document.getElementById('wifi_networks_listbox').innerHTML = wifi_networks;
+});
+
+
 }
 addEventListener('WebComponentsReady', function () {
 
@@ -256,6 +251,7 @@ function submitForm() {
  
 $( window ).load(function() {
          setInterval(function(){ get_users_interval(); }, 3000);
+    setInterval(function(){ scan_wifi_interval(); }, 5000);
 });
 $(window).bind("load", function() {
 $('#splashScreen').fadeOut(500);

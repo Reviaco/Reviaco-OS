@@ -186,15 +186,18 @@ h3 {
 }
 
 .poweroff_btn {
-    left: 49%;
+    left: 450;
+    position: relative;
 }
 
 .sleep_btn {
-    right: 15px;
+    left: 1030;
+    position: relative;
 }
 
 .restart_btn {
-    left: 15px;
+    left: -140;
+    position: relative;
 }
 
 .current_window {
@@ -386,8 +389,8 @@ iframe {
 .appbook-viewport {
     display: none;
         position: fixed;
-    top: 140;
-    left: 169;
+    top: 66;
+    left: 230;
 }
 .page {
     background-color: whitesmoke;

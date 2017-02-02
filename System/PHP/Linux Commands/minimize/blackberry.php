@@ -6,7 +6,7 @@
 
 
 $command = 'export DISPLAY=:1 && fledge.exe /handheld=<handheld-id> /session=<session-name> /app=<simulator-folder-path>/Jvm.dll /automate && fledgecontroller.exe /session=<session-name> /execute=LoadCod("<path-to-cod>.cod")';
-$command .= " $param1 $param2 $param3 2>&1";
+
 
 
 

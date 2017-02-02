@@ -6,7 +6,7 @@
 
 
 $command = "export DISPLAY=:1 && adb shell am start -n $stringData";
-$command .= " $param1 $param2 $param3 2>&1";
+
 
 
 

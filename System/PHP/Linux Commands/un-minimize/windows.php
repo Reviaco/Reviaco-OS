@@ -6,7 +6,7 @@
 
 
 $command = 'export DISPLAY=:1 && wine "path" ';
-$command .= " $param1 $param2 $param3 2>&1";
+
 
 
 

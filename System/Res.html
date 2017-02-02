@@ -3,14 +3,17 @@
 <script src="JS/Jquery/jquery.color.plus-names-2.1.2.min.js"></script>
 <script src="JS/Jquery/jquery.simulate.js"></script>
 <script src="JS/Jquery/jquery-ui.js"></script>
+<script src="JS/D3/d3.min.js"></script>
 <script src="JS/Polymer/webcomponentsjs/webcomponents.min.js"></script>
 <script src="JS/Polymer/webcomponentsjs/MutationObserver.min.js"></script>
 <script src="JS/Polymer/webcomponentsjs/HTMLImports.min.js"></script>
 <script src="JS/Polymer/webcomponentsjs/CustomElements.min.js"></script>
 <script src="JS/Polymer/web-animations-js/web-animations.min.js"></script>
+<script src="JS/Polymer/chai/chai.js"></script>
+<script src="JS/Polymer/lazy-img/intersection-observer.js"></script>
+<script src="JS/Polymer/mocha/mocha.js"></script>
+<script src="JS/Polymer/sinon/lib/sinon.js"></script>
 <link rel="import" href="JS/Polymer/polymer/polymer.html">
-<link rel="import" href="JS/Polymer/polymer/polymer-mini.html">
-<link rel="import" href="JS/Polymer/polymer/polymer-micro.html">
 <script src="JS/patternLock/patternLock.min.js"></script>
 <script src="JS/Anijs/anijs-min.js"></script>
 <script src="JS/Anijs/anijs-jquery-event-system-min.js"></script>
@@ -20,12 +23,12 @@
 <script src="JS/CM Rotate/CMRotate.js"></script>
 <script src="JS/Chart/Chart.bundle.min.js"></script>
 <script src="JS/CreateJS/createjs.min.js"></script>
+<script src="JS/Wikipedia/wikipedia.js"></script>
 <script src="JS/Downloader/download.min.js"></script>
 <script src="JS/Dragdealer/lib/jquery-1.10.2.js"></script>
 <script src="JS/Dragdealer/src/dragdealer.js"></script>
 <script src="JS/Idle/idle.min.js"></script>
 <script src="JS/Elevate Zoom/jquery.elevateZoom-3.0.8.min.js"></script>
-<script src="JS/Epoch/epoch.min.js"></script>
 <script src="JS/Longpress/jquery.longpress.js"></script>
 <script src="JS/FitText/jquery.fittext.js"></script>
 <script src="JS/Gesture Kit/gesturekit.min.js"></script>
@@ -55,7 +58,6 @@
 <script src="JS/Hash/hash.js"></script>
 <script src="JS/Textillate/jquery.textillate.js"></script>
 <script src="JS/Retina/retina.min.js"></script>
-<script src="JS/Sticker/sticker.min.js"></script>
 <script src="JS/Random Colour/randomColor.js"></script>
 <script src="JS/Polymer/firebase/firebase.js"></script>
 <script src="JS/Polymer/promise-polyfill/Promise.min.js"></script>
@@ -64,9 +66,7 @@
 <script src="JS/Angular Material Icons/angular-material-icons.min.js"></script>
 <script src="JS/SVG Morpheus/svg-morpheus.js"></script>
 <script src="JS/Annyang/annyang.min.js"></script>
-<script src="JS/Gesture Kit/gesturekit.min.js"></script>
 <script src="JS/Velocity/velocity.min.js"></script>
-<script src="JS/ZoomJS/zoom.js"></script>
 <script src="https://www.google.com/jsapi"></script>
 <link rel="import" href="JS/Polymer/app-layout/app-layout.html">
 <link rel="import" href="JS/Polymer/app-localize-behavior/app-localize-behavior.html">
@@ -87,12 +87,14 @@
 <link rel="import" href="JS/Polymer/iron-dropdown/iron-dropdown.html">
 <link rel="import" href="JS/Polymer/iron-fit-behavior/iron-fit-behavior.html">
 <link rel="import" href="JS/Polymer/iron-flex-layout/iron-flex-layout-classes.html">
-<link rel="import" href="JS/Polymer/iron-flex-layout/iron-flex-layout.html">
 <link rel="import" href="JS/Polymer/iron-form-element-behavior/iron-form-element-behavior.html">
 <link rel="import" href="JS/Polymer/iron-icon/iron-icon.html">
 <link rel="import" href="JS/Polymer/iron-icons/av-icons.html">
 <link rel="import" href="JS/Polymer/iron-icons/communication-icons.html">
 <link rel="import" href="JS/Polymer/iron-icons/device-icons.html">
+<link rel="import" href="JS/Polymer/k-avatar/k-avatar.html">
+<link rel="import" href="JS/Polymer/paper-autocomplete/paper-autocomplete.html">
+<link rel="import" href="JS/Polymer/paper-autocomplete/paper-autocomplete-suggestions.html">
 <link rel="import" href="JS/Polymer/iron-icons/editor-icons.html">
 <link rel="import" href="JS/Polymer/iron-icons/hardware-icons.html">
 <link rel="import" href="JS/Polymer/iron-icons/image-icons.html">
@@ -196,6 +198,7 @@
 <link rel="import" href="JS/Polymer/paper-toggle-button/paper-toggle-button.html">
 <link rel="import" href="JS/Polymer/paper-toolbar/paper-toolbar.html">
 <link rel="import" href="JS/Polymer/paper-tooltip/paper-tooltip.html">
+<link rel="import" href="JS/Polymer/lazy-img/lazy-img.html">
 <link rel="import" href="JS/Polymer/promise-polyfill/promise-polyfill-lite.html">
 <link rel="import" href="JS/Polymer/promise-polyfill/promise-polyfill.html">
 <link rel="import" href="JS/Polymer/app-layout/app-box/app-box.html">
@@ -250,13 +253,10 @@
 <link rel="import" href="JS/Polymer/google-url-shortener/google-url-shortener.html">
 <link rel="import" href="JS/Polymer/google-youtube-upload/google-youtube-upload.html">
 <link rel="import" href="JS/Polymer/google-youtube/google-youtube.html">
-<link href="JS/Polymer/google-youtube-upload/google-youtube-upload.css" rel="stylesheet" />
-<link href="JS/Polymer/google-signin/google-signin.css" rel="stylesheet" />
-<link href="JS/Polymer/google-chart/google-chart.css" rel="stylesheet" />
+<link href="JS/Polymer/mocha/mocha.css" rel="stylesheet" />
 <link href="JS/Textillate/style.css" rel="stylesheet" />
 <link href="CSS/Animate/animate.min.css" rel="stylesheet" />
 <link href="CSS/Material Design Color Palette/material-design-color-palette.min.css" rel="stylesheet" />
-<link href="CSS/Epoch/epoch.min.css" rel="stylesheet" />
 <link href="CSS/Normalize/normalize.css" rel="stylesheet" />
 <link href="CSS/Rounded Buttons/roundedButtons.css" rel="stylesheet" />
 <link href="CSS/W3/w3.css" rel="stylesheet">
