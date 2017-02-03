@@ -1,14 +1,7 @@
 <?php
     $stringData = $_POST['dataString']; 
 
-
-
-
-
 $command = "export DISPLAY=:1 && adb shell am force-stop $stringData";
-
-
-
 
 $pid = popen( $command,"r");
 

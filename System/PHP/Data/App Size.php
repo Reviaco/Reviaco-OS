@@ -6,4 +6,3 @@ $filename = '../../../"$stringData"';
 
 echo  filesize($filename);
 ?>
-

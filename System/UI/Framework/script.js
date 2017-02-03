@@ -486,14 +486,7 @@ else if (type == 'Game&Watch')
      $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
-      } else if (type == 'webos') 
-{
-     
-    
-     $('body').append('<div id="' + event.currentTarget.id + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-      } else {
+      }  else {
           
       }
 
@@ -712,6 +705,16 @@ var AI3 = function(AI3IN) { exec('xdotool type --clearmodifiers ' + AI3IN + '');
     }else{
     }
 };
+    var assistant_execute = function(command20) { exec(command20);
+ if (sessionStorage.assistant_current == 'Brolu') {
+        meSpeak.speak('Okey', {variant: 'm1'});
+    }else if (sessionStorage.assistant_current == 'Lucy') {
+        meSpeak.speak('Okey', {variant: 'f1'});
+    }else{
+    }
+
+
+     };
 var AI4 = function() { exec('xdotool key --clearmodifiers KP_Enter');
  if (sessionStorage.assistant_current == 'Brolu') {
         meSpeak.speak('Okey', {variant: 'm1'});
@@ -1095,7 +1098,7 @@ $('#appbook-viewport').fadeOut();
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'go': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU have': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15, 'move the mouse pointer to the middle of the screen': AI16};
+    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'go': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU have': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15, 'move the mouse pointer to the middle of the screen': AI16, 'execute *command20': assistant_execute};
     annyang.debug();
 
     

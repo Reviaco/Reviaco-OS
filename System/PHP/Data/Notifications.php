@@ -21,4 +21,3 @@ $conn->close();
 echo($outp);
 
 ?>
-
