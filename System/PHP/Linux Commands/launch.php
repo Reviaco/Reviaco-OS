@@ -102,7 +102,7 @@ $command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-li
 
 $command = "export DISPLAY=:1 && sudo -u $username wine /var/www/html/Reviaco-OS/Users/$username/Apps/Windows/$app_name/$app_name.exe";
 
-} elseif ($type == "Android") {
+} elseif ($type == "AndroidPhone") {
 
 $command = "export DISPLAY=:1 && sudo -u $username adb shell am start -n com.google.android.apps.maps/com.google.android.maps.MapsActivity";
 
