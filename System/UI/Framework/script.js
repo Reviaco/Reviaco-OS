@@ -119,22 +119,11 @@ $('.appbook').turn({
      
    sessionStorage.assistant_current = 'brolu';
 
-function loadVoices() {
-         meSpeak.loadConfig("../../JS/mespeak/mespeak_config.json");
-    meSpeak.loadVoice("../../JS/mespeak/voices/en/en.json");
-}
      $( window ).load(function() {
 setTimeout(function() { welcomeAnimation(); }, 500);
-         
-         
 setTimeout(function() { carousel(); }, 1000);
 setTimeout(function() { bg_blur(); }, 1500);
 setTimeout(function() { appbook(); }, 2000);
-setTimeout(function() { loadVoices(); }, 2500);
-
-
-
-   
      });
    (function() {
      var rotate, timeline;
@@ -652,22 +641,15 @@ sessionStorage.assistant_current = assistant_name;
 
      }
 
-    if (sessionStorage.assistant_current == 'Brolu') {
-    meSpeak.speak('Hey Geek! What can I do for you today ?', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-            meSpeak.speak('Hey Geek! What can I do for you today ?', {variant: 'f1'});
-    }else{
-    }
+
+    speak('Hey Geek! What can I do for you today ?', sessionStorage.assistant_current);
+
     };
     
     var assistant_say_its_name = function() {
 
-    if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('My name is Brolu', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('My name is Lucy', {variant: 'f1'});
-    }else{
-    }
+
+        speak('My name is' + sessionStorage.assistant_current +  '', sessionStorage.assistant_current);
 
     };
      
@@ -676,128 +658,79 @@ var AI1_array = new Array('You are welcome', 'Not at all');
 
   var AI1_reply = Math.floor(AI1_array.length*Math.random());
 
+speak(AI1_array[AI1_reply], sessionStorage.assistant_current);
 
-   if (sessionStorage.assistant_current == 'Brolu') {
-meSpeak.speak(AI1_array[AI1_reply], {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-meSpeak.speak(AI1_array[AI1_reply], {variant: 'f1'});
-
-    }else{
-meSpeak.speak(AI1_array[AI1_reply], {variant: 'f1'});
-    }
 };
     var AI1A = function() { AI1();
 };
 var AI2 = function() { exec('xdotool key --clearmodifiers ctrl+l');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
+
+        speak('Okey', sessionStorage.assistant_current);
+
 };
 var AI3 = function(AI3IN) { exec('xdotool type --clearmodifiers ' + AI3IN + '');
 
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
+ 
+        speak('Okey', sessionStorage.assistant_current);
+
 };
     var assistant_execute = function(command20) { exec(command20);
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
 
+        speak('Okey', sessionStorage.assistant_current);
 
      };
 var AI4 = function() { exec('xdotool key --clearmodifiers KP_Enter');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
+
+        speak('Okey', sessionStorage.assistant_current);
+
 };
 var AI5 = function() { exec('sudo poweroff');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Shutting down your PC', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Shutting down your PC', {variant: 'f1'});
-    }else{
-    }
+
+        speak('Shutting down your PC', sessionStorage.assistant_current);
+
 };
 var AI6 = function() { exec('sudo restart');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Restarting your PC', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Restarting your PC', {variant: 'f1'});
-    }else{
-    }
+        speak('Restarting your PC', sessionStorage.assistant_current);
+
 };
 var AI7 = function() { exec('gnome-screenshot');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('I will capture your screen', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('I will capture your screen', {variant: 'f1'});
-    }else{
-    }
+
+        speak('I will capture your screen', sessionStorage.assistant_current);
+
 };
 var AI8 = function() { exec('xdotool key --clearmodifiers alt+Left');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
+
+        speak('Okey', sessionStorage.assistant_current);
+
 };
 var AI9 = function() { exec('xdotool key --clearmodifiers F5');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
+
+        speak('Okey', sessionStorage.assistant_current);
+
 };
 var AI10 = function() { exec('xdotool key --clearmodifiers alt+Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
+
+        speak('Okey', sessionStorage.assistant_current);
+
 };
 var AI11 = function() { exec('xdotool key --clearmodifiers Left');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
+ 
+        speak('Okey', sessionStorage.assistant_current);
+
 };
 var AI12 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
+        speak('Okey', sessionStorage.assistant_current);
+
+
 };
 var AI13 = function() {
 var CPUCores = navigator.hardwareConcurrency;
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Your CPU has' + CPUCores + 'cores', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Your CPU has' + CPUCores + 'cores', {variant: 'f1'});
-    }else{
-    }
+
+        speak('Your CPU has' + CPUCores + 'cores', sessionStorage.assistant_current);
+
 };
 var AI14 = function() {
-if (sessionStorage.assistant_current == 'Brolu') { 
+
 $.ajax({
         url: 'https://api.rss2json.com/v1/api.json',
         method: 'GET',
@@ -810,151 +743,23 @@ $.ajax({
 
     for(var i in response.items){
         var item = response.items[i];
-setTimeout(function() { meSpeak.speak(item.title, {variant: 'm1'}); }, 10000 * i);
+setTimeout(function() { speak(item.title, sessionStorage.assistant_current); }, 10000 * i);
 
     }
 });
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-$.ajax({
-        url: 'https://api.rss2json.com/v1/api.json',
-        method: 'GET',
-        dataType: 'json',
-        data: {
-            rss_url: 'https://news.google.com/news?cf=all&hl=en&ned=us&output=rss'
-        }
-}).done(function (response) {
-    if(response.status != 'ok'){ throw response.message; }
-
-    for(var i in response.items){
-        var item = response.items[i];
-setTimeout(function() { meSpeak.speak(item.title, {variant: 'f1'}); }, 10000 * i);
-
-
-    }
-});
-    }else{
-    }
+   
 };
 var AI15 = function() { exec('sudo systemctl suspend');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('I will give it, I promise', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('I will give it, I promise', {variant: 'f1'});
-    }else{
-    }
+
+        speak('I will give it, I promise', sessionStorage.assistant_current);
+
 };
 var AI16 = function() { exec('xdotool mousemove --polar 0 0');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
+
+        speak('Okey', sessionStorage.assistant_current);
+
 };
-var AI17 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI18 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI19 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI20 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI21 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI22 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI23 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI24 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI25 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI26 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI27 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI28 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
-var AI29 = function() { exec('xdotool key --clearmodifiers Right');
- if (sessionStorage.assistant_current == 'Brolu') {
-        meSpeak.speak('Okey', {variant: 'm1'});
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-        meSpeak.speak('Okey', {variant: 'f1'});
-    }else{
-    }
-};
+
     var AI1B = function() { AI1();
 };
    var app_launch1 = function(app_name) {
@@ -1063,9 +868,9 @@ else if (type == 'Game&Watch')
       
       } else {
 if (sessionStorage.assistant_current == 'Brolu') {
-meSpeak.speak('Sorry, But it seems that you have invented a new app name!', {variant: 'm1'});
+speak('Sorry, But it seems that you have invented a new app name!', sessionStorage.assistant_current);
     }else if (sessionStorage.assistant_current == 'Lucy') {
-meSpeak.speak('Sorry, But it seems that you have invented a new app name!', {variant: 'f1'});
+speak('Sorry, But it seems that you have invented a new app name!', {variant: 'f1'});
 
     }else{
     }
@@ -1074,9 +879,9 @@ meSpeak.speak('Sorry, But it seems that you have invented a new app name!', {var
       }
                var htmlString = app_name;
 if (sessionStorage.assistant_current == 'Brolu') {
-meSpeak.speak('Opening' + app_name + '', {variant: 'm1'});
+speak('Opening' + app_name + '', sessionStorage.assistant_current);
     }else if (sessionStorage.assistant_current == 'Lucy') {
-meSpeak.speak('Opening' + app_name + '', {variant: 'f1'});
+speak('Opening' + app_name + '', {variant: 'f1'});
 
     }else{
     }

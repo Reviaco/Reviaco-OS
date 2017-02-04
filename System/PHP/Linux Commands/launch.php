@@ -98,6 +98,10 @@ $command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-li
 
 $command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.vb";
 
+} elseif ($type == "MacOS") {
+
+$command = "export DISPLAY=:1 && sudo -u $username retroarch -L /usr/lib/i386-linux-gnu/libretro/ /var/www/html/Reviaco-OS/Users/$username/Apps/SNES/$app_name/launch.vb";
+
 } elseif ($type == "Windows") {
 
 $command = "export DISPLAY=:1 && sudo -u $username wine /var/www/html/Reviaco-OS/Users/$username/Apps/Windows/$app_name/$app_name.exe";

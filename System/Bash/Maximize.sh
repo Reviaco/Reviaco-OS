@@ -29,4 +29,10 @@ while true
 do
 	timeout 0.1s devilspie2 --folder=/var/www/html/Reviaco-OS/System/Lua/Maximize/Tizen
 done
+elif [ "$2" = "MacOS" ]
+then
+while true
+do
+	timeout 0.1s devilspie2 --folder=/var/www/html/Reviaco-OS/System/Lua/Maximize/MacOS
+done
 fi

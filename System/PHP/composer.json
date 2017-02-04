@@ -1,0 +1,11 @@
+{
+    "require": {
+        "jwage/purl": "^0.0.7",
+        "dompdf/dompdf": "^0.7.0",
+        "rinvex/country": "^3.0",
+        "moneyphp/money": "^3.0",
+        "florianv/swap": "^3.0",
+        "php-http/message": "^1.4",
+        "php-http/guzzle6-adapter": "^1.1"
+    }
+}
