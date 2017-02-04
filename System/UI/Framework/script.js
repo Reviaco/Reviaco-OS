@@ -760,6 +760,38 @@ var AI16 = function() { exec('xdotool mousemove --polar 0 0');
 
 };
 
+        var AIDB = function(Phrase) { 
+                 $.ajax({
+         method: 'POST',
+         url: 'http://internal-reviaco.tk/Brolucy/PHP/AI_Request.php',
+         data: {
+           Phrase: Phrase
+         },
+        success: function(data) {
+ 
+
+
+
+
+
+      console.log(data[0].Response);
+
+        speak(data[0].Response, sessionStorage.assistant_current);
+  
+
+        }
+       });
+
+ 
+
+
+
+
+
+
+
+};
+
     var AI1B = function() { AI1();
 };
    var app_launch1 = function(app_name) {
@@ -878,13 +910,7 @@ speak('Sorry, But it seems that you have invented a new app name!', {variant: 'f
           
       }
                var htmlString = app_name;
-if (sessionStorage.assistant_current == 'Brolu') {
 speak('Opening' + app_name + '', sessionStorage.assistant_current);
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-speak('Opening' + app_name + '', {variant: 'f1'});
-
-    }else{
-    }
 
 $('#app_showcase').fadeOut();
 $('#appbook-viewport').fadeOut();
@@ -903,7 +929,7 @@ $('#appbook-viewport').fadeOut();
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'go': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU have': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15, 'move the mouse pointer to the middle of the screen': AI16, 'execute *command20': assistant_execute};
+    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'go': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU have': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15, 'move the mouse pointer to the middle of the screen': AI16, 'execute *command20': assistant_execute, '*Phrase': AIDB};
     annyang.debug();
 
     
