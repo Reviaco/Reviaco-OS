@@ -653,14 +653,7 @@ sessionStorage.assistant_current = assistant_name;
 
     };
      
-function AI1() {
-var AI1_array = new Array('You are welcome', 'Not at all');
 
-  var AI1_reply = Math.floor(AI1_array.length*Math.random());
-
-speak(AI1_array[AI1_reply], sessionStorage.assistant_current);
-
-};
     var AI1A = function() { AI1();
 };
 var AI2 = function() { exec('xdotool key --clearmodifiers ctrl+l');
@@ -768,15 +761,12 @@ var AI16 = function() { exec('xdotool mousemove --polar 0 0');
            Phrase: Phrase
          },
         success: function(data) {
- 
 
+  var responseID = Math.floor(data.length*Math.random());
 
+      console.log(data[responseID].Response);
 
-
-
-      console.log(data[0].Response);
-
-        speak(data[0].Response, sessionStorage.assistant_current);
+        speak(data[responseID].Response, sessionStorage.assistant_current);
   
 
         }
@@ -929,7 +919,7 @@ $('#appbook-viewport').fadeOut();
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'thanks': AI1A, 'thank you': AI1B, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'go': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU have': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15, 'move the mouse pointer to the middle of the screen': AI16, 'execute *command20': assistant_execute, '*Phrase': AIDB};
+    'what is your name': assistant_say_its_name, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'go': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU have': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15, 'move the mouse pointer to the middle of the screen': AI16, 'execute *command20': assistant_execute, '*Phrase': AIDB};
     annyang.debug();
 
     
