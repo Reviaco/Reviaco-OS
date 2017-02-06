@@ -10,6 +10,26 @@ $('#appbook-viewport').fadeOut();
         return false;
     }
 });
+   function kill(current_window_type, current_window_id) {
+         if (current_window_type == 'Linux') {
+     $.ajax({
+         method: 'POST',
+         url: '../../PHP/Linux Commands/Kill/Linux.php',
+         data: {
+           dataString: current_window_id
+         }
+       })
+     } else if (current_window_type == 'Windows') {
+              $.ajax({
+         method: 'POST',
+         url: '../../PHP/Linux Commands/Kill/Windows.php',
+         data: {
+           dataString: current_window_id
+         }
+       })
+     } else {
+}
+}
 function exec(command) {
      $.ajax({
          method: 'POST',
@@ -54,6 +74,14 @@ function welcomeAnimation() {
             $('#welcomeAnimation_bg').fadeOut(); 
     }
      }
+    $(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('.appbook').turn('previous');
+		else if (e.keyCode==39)
+			$('.appbook').turn('next');
+			
+	});
 function appbook() {
 $('.appbook').turn({
      // Width
@@ -62,7 +90,7 @@ $('.appbook').turn({
 
      // Height
 
-     height: 600,
+     height: 500,
 
      // Elevation
 
@@ -234,110 +262,110 @@ get_volume.send();
        out += '<div type="' + arr[i].type + '" class="mySlides w3-animate-fading ' + arr[i].name + '"><paper-card type="' + arr[i].type + '" id="' + arr[i].name + '" heading="' + arr[i].name + '" image="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/cover.png" class="lime"><div class="card-content">' + arr[i].description + '</div></paper-card></div>';
 var sort;
       sort = arr[i].name.charAt(0);
- if (sort == 'a') {
+ if ((sort == 'A') || (sort == 'a')) {
 var a = '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
-      }else if (sort == 'b') 
+      }else if ((sort == 'B') || (sort == 'b'))
 
 {
 var b =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'c') 
+      }else if ((sort == 'C') || (sort == 'c'))
 
 
 {
 var c =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'd') 
+      }else if ((sort == 'D') || (sort == 'd'))
 
 {
 var d =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'e') 
+      }else if ((sort == 'E') || (sort == 'e'))
 
 {
 var e =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'f') 
+      }else if ((sort == 'F') || (sort == 'f'))
 
 {
 var f =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'G') 
+      }else if ((sort == 'G') || (sort == 'g'))
 
 {
 
 var g =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'h') 
+      }else if ((sort == 'H') || (sort == 'h'))
 {
 
 var h =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'i') 
+      }else if ((sort == 'I') || (sort == 'i'))
 {
-var I =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var i =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
-      }else if (sort == 'j') 
+      }else if ((sort == 'J') || (sort == 'j'))
 {
 
 var j =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
-      }else if (sort == 'k') 
+      }else if ((sort == 'K') || (sort == 'k'))
       {
 var k =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
-      }else if (sort == 'l') 
+      }else if ((sort == 'L') || (sort == 'l'))
 {
 var l =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
 
-      }else if (sort == 'm') 
+      }else if ((sort == 'M') || (sort == 'm'))
 {
 
 
 var m =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'n') 
+      }else if ((sort == 'N') || (sort == 'n'))
 {
 
 var n =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'o') 
+      }else if ((sort == 'O') || (sort == 'o'))
 {
 
 var o =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'p') 
+      }else if ((sort == 'P') || (sort == 'p'))
 {
 var p =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
-      }else if (sort == 'q') 
+      }else if ((sort == 'Q') || (sort == 'q'))
 {
 var q =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
-      }else if (sort == 'r') 
+      }else if ((sort == 'R') || (sort == 'r'))
 {
 var r =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
-      }else if (sort == 's') 
+      }else if ((sort == 'S') || (sort == 's'))
 {
 
 var s =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 't') 
+      }else if ((sort == 'T') || (sort == 't'))
 {
 var t =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'u') 
+      }else if ((sort == 'U') || (sort == 'u'))
 {
 
 var u =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'v') 
+      }else if ((sort == 'V') || (sort == 'v'))
 {
 
 var v =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'w') 
+      }else if ((sort == 'W') || (sort == 'w'))
 {
 
 var w =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'x') 
+      }else if ((sort == 'X') || (sort == 'x'))
 {
 
 var x =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'y') 
+      }else if ((sort == 'Y') || (sort == 'y'))
 {
 
 var y =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
-      }else if (sort == 'z') 
+      }else if ((sort == 'Z') || (sort == 'z'))
 {
 
 var z =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/demo/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
@@ -376,103 +404,111 @@ $('#pageW').find( "#app_list" ).append(w);
 $('#pageX').find( "#app_list" ).append(x);
 $('#pageY').find( "#app_list" ).append(y);
 $('#pageZ').find( "#app_list" ).append(z);
+
    }
    $(document).on('click', 'paper-card, indexed_app', function( event ) {
        event.stopPropagation();
-var type;
-      type = $( this ).attr('type');
+
+      sessionStorage.type = $( this ).attr('type');
       
-      if (type == 'Linux') {
+      if (sessionStorage.type == 'Linux') {
      
      
-     $('body').append('<div id="' + event.currentTarget.id + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
 
-      } else if (type == 'Windows') 
+      } else if (sessionStorage.type == 'Windows') 
 {
      
      
-     $('body').append('<div id="' + event.currentTarget.id + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
-      } else if (type == 'Android') 
-{
-     
-    
-     $('body').append('<div id="' + event.currentTarget.id + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-
-      } else if (type == 'BlackBerry') 
-{
-     
-     
-     $('body').append('<div id="' + event.currentTarget.id + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-
-
-      } else if (type == 'Tizen') 
+      } else if (sessionStorage.type == 'Android') 
 {
      
     
-     $('body').append('<div id="' + event.currentTarget.id + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
 
-      } else if (type == 'Chrome') 
+      } else if (sessionStorage.type == 'BlackBerry') 
 {
      
      
-    $('body').append('<div id="' + event.currentTarget.id + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+     $('body').append('<div id="' + event.currentTarget.id + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
 
 
-      } else if (type == 'Lutro') 
+      } else if (sessionStorage.type == 'Tizen') 
 {
-   
      
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+    
+     $('body').append('<div id="' + event.currentTarget.id + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
 
-      }else if (type == 'NXEngine') 
+      } else if (sessionStorage.type == 'Chrome') 
 {
-   
      
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-      }else if (type == 'VB') 
-{
-   
      
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+    $('body').append('<div id="' + event.currentTarget.id + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + event.currentTarget.id + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
-      }else if (type == 'TyrQuake') 
+
+
+      } else if (sessionStorage.type == 'Lutro') 
 {
    
      
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+
+
+
+      }else if (sessionStorage.type == 'NXEngine') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+
+
+      }else if (sessionStorage.type == 'VB') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+
+
+      }else if (sessionStorage.type == 'TyrQuake') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+
+
+      }else if (sessionStorage.type == 'SNES') 
+{
+   
+     
+     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
       }
-else if (type == 'Sega') 
+else if (sessionStorage.type == 'Sega') 
 {
    
      
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
       }
-else if (type == 'Game&Watch') 
+else if (sessionStorage.type == 'Game&Watch') 
 {
    
      
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
+     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
 
 
       }  else {
@@ -483,31 +519,17 @@ $('#app_showcase').fadeOut();
 
 $('#appbook-viewport').fadeOut();
 
-               var htmlString = event.currentTarget.id;
-console.log(htmlString);
-       htmlString = event.currentTarget.id;
-console.log(htmlString);
+               sessionStorage.appName = event.currentTarget.id;
+console.log(sessionStorage.type);
      $.ajax({
          method: 'POST',
          url: '../../PHP/Linux Commands/launch.php',
          data: {
-            app_name: htmlString,
-           type: type
+            app_name: sessionStorage.appName,
+           type: sessionStorage.type
          }
        });
-    window.onmouseout = function() {
-$.ajax({
-    type: 'get',
-    url: '../../PHP/Linux Commands/get_current_window_id.php',
-    data: htmlString,
-    success: function(data) {
-        var window_native_id = data;
-    }
-});	
-    }
-
-    window.onmousemove = function() {	
-    }
+exec('/var/www/html/Reviaco-OS/System/Bash/Maximize.sh ' + sessionStorage.appName + ' ' + sessionStorage.type + '');
     
 
    });
@@ -517,28 +539,24 @@ $.ajax({
          $('#appbook-viewport').fadeIn();
          
 }, function(e) {
+         exec('sudo killall Maximize.sh && /var/www/html/Reviaco-OS/System/Bash/Minimize.sh ' + sessionStorage.appName + ' ' + sessionStorage.type + '');
          var minimized_window;
-
      minimized_window = $('.current_window').detach();
      $('#recent_panel').prepend(minimized_window);
      $('#app_showcase').fadeIn();
           $('#appbook-viewport').fadeOut();
-
-$.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/minimize/linux.php',
-         data: {
-           dataString: window_native_id
-         }
-       });
-     $('#recent_panel:visible').animateCss('bounceOut');
-     $('#recent_panel:visible').hide();
+     $('#recent_panel').animateCss('bounceOut');
+     $('#recent_panel').hide();
 });
    
 
    $("#menu").click(function() {
-     $('.current_window').show();
+       exec('sudo killall Maximize.sh && /var/www/html/Reviaco-OS/System/Bash/Minimize.sh ' + sessionStorage.appName + ' ' + sessionStorage.type + '');
+                var minimized_window;
 
+     minimized_window = $('.current_window').detach();
+     $('#recent_panel').prepend(minimized_window);
+     $('.current_window').show();
      $('.current_window').removeClass('current_window').addClass('minimized_window');
 
      $('#recent_panel').animateCss('bounceIn');
@@ -547,50 +565,26 @@ $.ajax({
 
    });
    $(document).on('click', '.window', function(event) {
-
+exec('sudo killall Minimize.sh && /var/www/html/Reviaco-OS/System/Bash/Maximize.sh ' + sessionStorage.appName + ' ' + sessionStorage.type + '');
      event.stopPropagation();
      $('#' + event.currentTarget.id + '').removeClass('minimized_window').addClass('current_window');
      var current_window;
-
      current_window = $('#' + event.currentTarget.id + '').detach();
      $('body').prepend(current_window);
      $('#recent_panel').fadeOut();
 var window_native_id = $('#' + event.currentTarget.id + '').attr('native_id');
-$.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/un-minimize/linux.php',
-         data: {
-           dataString: window_native_id
-         }
-       });
+
 
    });
+ 
    $(document).on('click', 'paper-icon-button', function(event) {
-
      event.stopPropagation();
-     var current_window_type = $(this).offsetParent().offsetParent().attr('type');
-     var current_window_id = $(this).offsetParent().offsetParent().attr('id');
-     $(this).offsetParent().offsetParent().fadeOut();
-     $(this).offsetParent().offsetParent().remove();
+     var current_window_type = $(this).offsetParent().offsetParent().offsetParent().attr('type');
+     var current_window_id = $(this).offsetParent().offsetParent().offsetParent().attr('id');
+     $(this).offsetParent().offsetParent().offsetParent().fadeOut();
+     $(this).offsetParent().offsetParent().offsetParent().remove();
      $('#app_showcase').fadeIn();
-     if (current_window_type == 'Linux') {
-     $.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/Kill/Linux.php',
-         data: {
-           dataString: current_window_id
-         }
-       })
-     } else if (current_window_type == 'Windows') {
-              $.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/Kill/Windows.php',
-         data: {
-           dataString: current_window_id
-         }
-       })
-     } else {
-}
+     kill(current_window_type, current_window_id);
    });
    $(".bubble-wrap").click(function() {
      $(".bubble").toggleClass("active");
