@@ -118,7 +118,7 @@ If you're doing more than a one line edit, you'll want to have finer control and
     # start a server
     $ $(npm bin)/buster-server
 
-    # capture a browser by pointing it to http://localhost:1111/capture
+    # capture a browser by pointing it to https://localhost:1111/capture
     # run tests (in both browser and node)
     $ $(npm bin)/buster-test
 

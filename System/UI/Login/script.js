@@ -37,7 +37,7 @@ if(navigator.onLine)
   }
 }
 var get_users = new XMLHttpRequest();
-var get_users_url = "http://localhost/Reviaco-OS/System/PHP/Data/Users.php";
+var get_users_url = "https://localhost/Reviaco-OS/System/PHP/Data/Users.php";
 
 get_users.onreadystatechange = function () {
     if (get_users.readyState == 4 && get_users.status == 200) {

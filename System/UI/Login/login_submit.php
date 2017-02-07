@@ -73,7 +73,7 @@ $file = fopen("../../PHP/Data/current_user.txt","w");
 echo fwrite($file,$username);
 fclose($file);
 
-header("Location: http://localhost/Reviaco-OS/System/UI/Framework/");
+header("Location: https://localhost/Reviaco-OS/System/UI/Framework/");
 die();
         }
 

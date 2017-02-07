@@ -8,7 +8,7 @@
     <script>
         function scan_wifi_interval() {
 
-$.get( "http://localhost/wifi/wifi-scan", function( data ) {
+$.get( "https://localhost/wifi/wifi-scan", function( data ) {
                    var scan_wifi = data.networks;
      var i;
       var wifi_networks = '<div class="wifi_networks">';
@@ -31,7 +31,7 @@ $.get( "http://localhost/wifi/wifi-scan", function( data ) {
         $("#submit").click(function(){
           user=$("#user").val();
           pass=$("#password").val();
-          $.post("http://localhost/wifi/wifi-auth-data",{user: user,password: pass}, function(data){
+          $.post("https://localhost/wifi/wifi-auth-data",{user: user,password: pass}, function(data){
             if(data==='done')
               {
                 alert("login success");

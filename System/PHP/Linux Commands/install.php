@@ -105,7 +105,7 @@ $command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Dow
 
 } elseif ($type == "Linux") {
 
-$command = "export DISPLAY=:1 && sudo -u $username apt-get update && sudo -u $username apt-get -y install $app && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/$app && cd /var/www/html/Reviaco-OS/Users/$username/Apps/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/icon.png";
+$command = "export DISPLAY=:1 && sudo -u $username apt-get update && sudo -u $username apt-get -y install $app && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/Linux/$app && cd /var/www/html/Reviaco-OS/Users/$username/Apps/Linux/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/icon.png";
 
 } elseif ($type == "Android") { 
 
@@ -117,7 +117,7 @@ $command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Dow
 
 } elseif ($type == "Windows") {
 
-$command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && sudo -u $username wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/main.zip && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/main.zip -d /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && sudo -u $username rm -f /var/www/html/Reviaco-OS/Users/$username/Downloads/main* && cd /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/icon.png ";
+$command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Downloads && sudo -u $username wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/main.zip && sudo -u $username mkdir -p /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && sudo -u $username unzip /var/www/html/Reviaco-OS/Users/$username/Downloads/main.zip -d /var/www/html/Reviaco-OS/Users/$username/Apps/$type/$app && sudo -u $username rm -f /var/www/html/Reviaco-OS/Users/$username/Downloads/main* && cd /var/www/html/Reviaco-OS/Users/$username/Apps/Windows/$app && wget https://github.com/Reviaco/Echo-Store/raw/master/Apps/$type/$app/icon.png ";
 
 } else {
 

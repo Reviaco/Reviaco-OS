@@ -108,7 +108,7 @@ $('.appbook').turn({
 }
      function bg_blur() {
           $('#bg').backgroundBlur({
-    imageURL : 'http://localhost/Reviaco-OS/System/Media/Backgrounds/37.jpg',
+    imageURL : 'https://localhost/Reviaco-OS/System/Media/Backgrounds/37.jpg',
     blurAmount : 4,
     imageClass : 'tinted-bg-blur',
     duration: 1000, // If the image needs to be faded in, how long that should take
@@ -241,7 +241,7 @@ get_volume.send();
    });
      
    var get_apps = new XMLHttpRequest();
-   var get_apps_url = "http://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
+   var get_apps_url = "https://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
 
    get_apps.onreadystatechange = function() {
      if (get_apps.readyState == 4 && get_apps.status == 200) {

@@ -48,7 +48,7 @@ PouchDB needs the following to be able to build and test your build, if you have
   * [Node.js](http://nodejs.org/)
   * [CouchDB](http://couchdb.apache.org/)
 
-CouchDB must be running and available at `http://localhost:5984`. If you can open that URL in a browser and see `"couchdb": "Welcome"`, then it's working.
+CouchDB must be running and available at `https://localhost:5984`. If you can open that URL in a browser and see `"couchdb": "Welcome"`, then it's working.
 
 You'll also need to ensure that CORS is enabled on the CouchDB. You can easily do this by running `npm install -g add-cors-to-couchdb` and then `add-cors-to-couchdb`.
 

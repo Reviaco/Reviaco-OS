@@ -21,7 +21,7 @@ get_apps_interval();
 scan_wifi_interval();
 }
 var xmlhttp1 = new XMLHttpRequest();
-   var url1 = "http://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
+   var url1 = "https://localhost/Reviaco-OS/System/PHP/Data/Apps.php";
 
    xmlhttp1.onreadystatechange = function() {
      if (xmlhttp1.readyState == 4 && xmlhttp1.status == 200) {
@@ -64,7 +64,7 @@ $('#build_date').html(info[0].build_date);
 
 function get_users_interval() {
 var get_users = new XMLHttpRequest();
-var get_users_url = "http://localhost/Reviaco-OS/System/PHP/Data/Users.php";
+var get_users_url = "https://localhost/Reviaco-OS/System/PHP/Data/Users.php";
 
 get_users.onreadystatechange = function () {
     if (get_users.readyState == 4 && get_users.status == 200) {
@@ -90,7 +90,7 @@ function get_users_function(response) {
 }
 function scan_wifi_interval() {
 
-              $.get( "http://localhost/wifi/wifi-scan", function( data ) {
+              $.get( "https://localhost/wifi/wifi-scan", function( data ) {
                    var scan_wifi = data.networks;
      var i;
       var wifi_networks = '<div class="wifi_networks">';
