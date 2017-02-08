@@ -5,11 +5,13 @@
     <link rel="import" href="../../Res.html">
     <link href="./style.css" rel="stylesheet">
     <script src="./script.js"></script>
+    <script src="../../JS/Jquery/jquery-3.1.1.min.js"></script>
+
 
 </head>
 
 <body>
-    <img class="background" src="../../Media/Backgrounds/11.jpg"></img>
+    <img class="background" src="../../Media/Backgrounds/11.jpg" />
 
     <paper-material class="box" elevation="2">
 
@@ -18,7 +20,7 @@
             <br>
             <br>
 
-            <input id="username" class="username" name="username" value="" maxlength="20" readonly="readonly"></input>
+            <input id="username" class="username" name="username" value="" maxlength="20" readonly="readonly" />
             <br>
             <br>
             <paper-input type="password" label="Password" id="password" name="password" value="" maxlength="20"></paper-input>
@@ -32,7 +34,7 @@
         </form>
     </paper-material>
     <div id="info_bar" class="info_bar">
-    <div id="connection_status" class="connection_status"><img id="connection_status_indicator" class="connection_status_indicator" src="" width="50" height="50"></img></div>
+    <div id="connection_status" class="connection_status"><img id="connection_status_indicator" class="connection_status_indicator" src="" width="50" height="50" /></div>
     <div id="clock" class="clock"></div>
 
     </div>

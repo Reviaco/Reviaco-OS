@@ -403,7 +403,7 @@ iframe {
 .a {
 
     left: 50%;
-        height: 30;
+    height: 30;
     position: relative;
 
     top: 20;
@@ -424,3 +424,6 @@ iframe {
 color: white;
 }
 
+.carousel {
+    zoom: 150%;
+}

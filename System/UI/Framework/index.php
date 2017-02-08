@@ -63,8 +63,8 @@ else
 }
 
 ?>
+<!DOCTYPE html>
     <html>
-
     <head>
         <link rel="import" href="../../Res.html">
         <script src="./script.js"></script>
