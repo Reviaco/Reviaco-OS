@@ -208,6 +208,24 @@ h3 {
     top: 25px;
 }
 
+.SplitRight_current_window {
+    z-index: 9;
+    position: fixed;
+    width: 683px;
+    height: 100%;
+    top: 25px;
+    right: 0px;
+}
+
+.SplitLeft_current_window {
+    z-index: 9;
+    position: fixed;
+    width: 683px;
+    height: 100%;
+    top: 25px;
+    left: 0px;
+}
+
 .bg_window {
     width: 50%;
     height: 50%;
@@ -426,4 +444,10 @@ color: white;
 
 .carousel {
     zoom: 150%;
+}
+
+.split_btn {
+    top: 5.5%;
+    right: 56px;
+    height: 40px;
 }

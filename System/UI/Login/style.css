@@ -88,10 +88,8 @@
  }
  
  .users {
-     position: fixed;
+     top: 15%;
      z-index: 999999999999;
-     left: 44%;
-     top: 35%;
      text-align: center;
  }
  

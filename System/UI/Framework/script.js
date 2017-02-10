@@ -1,35 +1,9 @@
 var PointerX;
 var PointerY;
 var response;
-$(document).on("mousedown", "body", function (ev) {
-    if (ev.which == 2) {
-        ev.preventDefault();
-$('body').append('<div id="settings" class="current_window window"><iframe src="../Settings" /></div>');
-$('#showcase').fadeOut();
-$('#appbook-viewport').fadeOut();
-        return false;
-    }
+$.get( "../../PHP/Data/current_user.txt", function( data ) {
+    sessionStorage.username = data;
 });
-   function kill(current_window_type, current_window_id) {
-         if (current_window_type == 'Linux') {
-     $.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/Kill/Linux.php',
-         data: {
-           dataString: current_window_id
-         }
-       })
-     } else if (current_window_type == 'Windows') {
-              $.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/Kill/Windows.php',
-         data: {
-           dataString: current_window_id
-         }
-       })
-     } else {
-}
-}
 function exec(command) {
      $.ajax({
          method: 'POST',
@@ -52,6 +26,132 @@ response = msg;
 
        });
 }
+function devilspie2(action, type, name) {
+    exec('sudo killall devilspie2-controller');
+setTimeout(function() { exec('devilspie2-controller ' + action + ' ' + type + ' ' + name + ''); }, 500);
+}
+function appendApp(type, name) {
+          if (type == 'Linux') {
+     
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div class="title" id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+
+      } else if (type == 'Windows') 
+{
+     
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div class="title" id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+      } else if (type == 'Android') 
+{
+     
+    
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div class="title" id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+
+      } else if (type == 'BlackBerry') 
+{
+     
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div class="title" id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+
+
+      } else if (type == 'Tizen') 
+{
+     
+    
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div class="title" id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+
+      } else if (type == 'Chrome') 
+{
+     
+     
+    $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div class="title" id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+
+
+      } else if (type == 'Lutro') 
+{
+   
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+
+      }else if (type == 'NXEngine') 
+{
+   
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+      }else if (type == 'VB') 
+{
+   
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+      }else if (type == 'TyrQuake') 
+{
+   
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+      }else if (type == 'SNES') 
+{
+   
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+      }
+else if (type == 'Sega') 
+{
+   
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div id="title" title="">' + name + '</div><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+      }
+else if (type == 'Game&Watch') 
+{
+   
+     
+     $('body').append('<div id="' + name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><div id="title" title="">' + name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar><div class="fixed-action-btn horizontal split_btn"><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><ul style="top: 5px;right: 25px;"><li id="SplitLeft_btn"><a class="btn-floating yellow darken-1"><i class="material-icons">arrow_back</i></a></li><li id="SplitRight_btn"><a class="btn-floating red"><i class="material-icons">arrow_forward</i></a></li></ul></div></div></div>');
+
+
+      }  else {
+          
+      }
+    exec('launch ' + sessionStorage.username + ' ' + type + ' ' + name + '');
+
+    devilspie2('Maximize', type, name);
+}
+   function kill(type, name) {
+    exec('kill-app ' + sessionStorage.username + ' ' + type + ' ' + name + '');
+
+}
+$(document).on("mousedown", "body", function (ev) {
+    if (ev.which == 2) {
+        ev.preventDefault();
+$('body').append('<div id="settings" class="current_window window"><iframe src="../Settings" /></div>');
+$('#showcase').fadeOut();
+$('#appbook-viewport').fadeOut();
+        return false;
+    }
+});
+
 $(function() {
 $("body").dblclick(function(){
 
@@ -400,129 +500,13 @@ $('#pageZ').find( "#app_list" ).append(z);
    }
    $(document).on('click', '#carousel-img, indexed_app', function( event ) {
        event.stopPropagation();
-
       sessionStorage.type = $( this ).offsetParent().attr('app-type');
-       sessionStorage.appName = $( this ).offsetParent().attr('app-name');
-      
-      if (sessionStorage.type == 'Linux') {
-     
-     
-     $('body').append('<div id="' + sessionStorage.appName + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + sessionStorage.appName + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-
-      } else if (sessionStorage.type == 'Windows') 
-{
-     
-     
-     $('body').append('<div id="' + sessionStorage.appName + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + sessionStorage.appName + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-      } else if (sessionStorage.type == 'Android') 
-{
-     
-    
-     $('body').append('<div id="' + sessionStorage.appName + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + sessionStorage.appName + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-
-      } else if (sessionStorage.type == 'BlackBerry') 
-{
-     
-     
-     $('body').append('<div id="' + sessionStorage.appName + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + sessionStorage.appName + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-
-
-      } else if (sessionStorage.type == 'Tizen') 
-{
-     
-    
-     $('body').append('<div id="' + sessionStorage.appName + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + sessionStorage.appName + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-
-      } else if (sessionStorage.type == 'Chrome') 
-{
-     
-     
-    $('body').append('<div id="' + sessionStorage.appName + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div class="title" id="title" title="">' + sessionStorage.appName + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-
-
-      } else if (sessionStorage.type == 'Lutro') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-
-      }else if (sessionStorage.type == 'NXEngine') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-      }else if (sessionStorage.type == 'VB') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-      }else if (sessionStorage.type == 'TyrQuake') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-      }else if (sessionStorage.type == 'SNES') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-      }
-else if (sessionStorage.type == 'Sega') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-      }
-else if (sessionStorage.type == 'Game&Watch') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + sessionStorage.type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div></div>');
-
-
-      }  else {
-          
-      }
+       sessionStorage.appName = $( this ).offsetParent().attr('app-name');      
+appendApp(sessionStorage.type, sessionStorage.appName);
 
 $('#showcase').fadeOut();
 
 $('#appbook-viewport').fadeOut();
-
-console.log(sessionStorage.type);
-     $.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/launch.php',
-         data: {
-            app_name: sessionStorage.appName,
-           type: sessionStorage.type
-         }
-       });
-exec('/var/www/html/Reviaco-OS/System/Bash/Maximize.sh ' + sessionStorage.appName + ' ' + sessionStorage.type + '');
-    
 
    });
 
@@ -531,7 +515,7 @@ exec('/var/www/html/Reviaco-OS/System/Bash/Maximize.sh ' + sessionStorage.appNam
          $('#appbook-viewport').fadeIn();
          
 }, function(e) {
-         exec('sudo killall Maximize.sh && /var/www/html/Reviaco-OS/System/Bash/Minimize.sh ' + sessionStorage.appName + ' ' + sessionStorage.type + '');
+    devilspie2('Minimize', sessionStorage.type, sessionStorage.appName);
          var minimized_window;
      minimized_window = $('.current_window').detach();
      $('#recent_panel').prepend(minimized_window);
@@ -543,7 +527,7 @@ exec('/var/www/html/Reviaco-OS/System/Bash/Maximize.sh ' + sessionStorage.appNam
    
 
    $("#menu").click(function() {
-       exec('sudo killall Maximize.sh && /var/www/html/Reviaco-OS/System/Bash/Minimize.sh ' + sessionStorage.appName + ' ' + sessionStorage.type + '');
+    devilspie2('Minimize', sessionStorage.type, sessionStorage.appName);
                 var minimized_window;
 
      minimized_window = $('.current_window').detach();
@@ -556,8 +540,8 @@ exec('/var/www/html/Reviaco-OS/System/Bash/Maximize.sh ' + sessionStorage.appNam
      $('#showcase').fadeOut();
 
    });
-   $(document).on('click', '.window', function(event) {
-exec('sudo killall Minimize.sh && /var/www/html/Reviaco-OS/System/Bash/Maximize.sh ' + sessionStorage.appName + ' ' + sessionStorage.type + '');
+   $(document).on('click', '.minimized_window', function(event) {
+    devilspie2('Maximize', sessionStorage.type, sessionStorage.appName);
      event.stopPropagation();
      $('#' + event.currentTarget.id + '').removeClass('minimized_window').addClass('current_window');
      var current_window;
@@ -568,7 +552,15 @@ var window_native_id = $('#' + event.currentTarget.id + '').attr('native_id');
 
 
    });
- 
+
+   $(document).on('click', '#SplitLeft_btn', function(event) {
+    devilspie2('SplitLeft', sessionStorage.type, sessionStorage.appName);
+           $( this ).offsetParent().offsetParent().parent().parent().removeClass('current_window').addClass('SplitLeft_current_window');
+   });
+       $(document).on('click', '#SplitRight_btn', function(event) {
+    devilspie2('SplitRight', sessionStorage.type, sessionStorage.appName);
+            $( this ).offsetParent().offsetParent().parent().parent().removeClass('current_window').addClass('SplitRight_current_window');
+   });
    $(document).on('click', '#kill_btn', function(event) {
      event.stopPropagation();
      var current_window_type = $(this).offsetParent().offsetParent().offsetParent().attr('type');
@@ -614,7 +606,7 @@ var window_native_id = $('#' + event.currentTarget.id + '').attr('native_id');
  });
 
     
-    if (annyang) {
+  if (annyang) {
     
     var assistant_wakeMe = function(assistant_name) {
 if (typeof(Storage) !== "undefined") {
@@ -628,7 +620,7 @@ sessionStorage.assistant_current = assistant_name;
      }
 
 
-    speak('Hey Geek! What can I do for you today ?', sessionStorage.assistant_current);
+    speak('Hey ' + sessionStorage.username + ' ! What can I do for you today ?', sessionStorage.assistant_current);
 
     };
     
@@ -759,13 +751,6 @@ var AI16 = function() { exec('xdotool mousemove --polar 0 0');
         }
        });
 
- 
-
-
-
-
-
-
 
 };
 
@@ -775,134 +760,15 @@ var AI16 = function() { exec('xdotool mousemove --polar 0 0');
 
       var type;
       type = $( '#' + app_name + '' ).attr('type');
-
-      if (type == 'Linux') {
-     
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      } else if (type == 'Windows') 
-{
-     
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      } else if (type == 'Android') 
-{
-     
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      } else if (type == 'BlackBerry') 
-{
-     
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      } else if (type == 'Tizen') 
-{
-     
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      } else if (type == 'Chrome') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      } else if (type == 'Lutro') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      }else if (type == 'NXEngine') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      }else if (type == 'VB') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      }else if (type == 'TyrQuake') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      }
-else if (type == 'Sega') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      }
-else if (type == 'Game&Watch') 
-{
-   
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      } else if (type == 'WebOS') 
-{
-     
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
- } else if (type == 'Firefox') 
-{
-     
-     
-     $('body').append('<div id="' + app_name + '" type="' + type + '" class="current_window window"><div class="header mdc-bg-red-500" id="contentContainer"><paper-toolbar><paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button><div id="title" title="">' + app_name + '</div><paper-icon-button id="split_btn" icon="view-column"></paper-icon-button><paper-icon-button id="kill_btn" icon="cancel"></paper-icon-button></paper-toolbar></div> </div>');
-
-
-      
-      } else {
-if (sessionStorage.assistant_current == 'Brolu') {
-speak('Sorry, But it seems that you have invented a new app name!', sessionStorage.assistant_current);
-    }else if (sessionStorage.assistant_current == 'Lucy') {
-speak('Sorry, But it seems that you have invented a new app name!', {variant: 'f1'});
-
-    }else{
-    }
-
-          
-      }
-               var htmlString = app_name;
+      sessionStorage.type = type;
+       sessionStorage.appName = app_name;
+appendApp(type, app_name);
+            
 speak('Opening' + app_name + '', sessionStorage.assistant_current);
 
 $('#showcase').fadeOut();
 $('#appbook-viewport').fadeOut();
 
-     $.ajax({
-         method: 'POST',
-         url: '../../PHP/Linux Commands/launch.php',
-         data: {
-           app_name: htmlString,
-           type: type
-         }
-       })
-       // .done(function(msg) {
-         // alert('Data Saved: ' + msg);
-       // });
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
@@ -920,4 +786,3 @@ var commands = {'hey *assistant_name': assistant_wakeMe,
   } else {
 
   }
-

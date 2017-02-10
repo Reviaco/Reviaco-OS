@@ -5,9 +5,6 @@
     <link rel="import" href="../../Res.html">
     <link href="./style.css" rel="stylesheet">
     <script src="./script.js"></script>
-    <script src="../../JS/Jquery/jquery-3.1.1.min.js"></script>
-
-
 </head>
 
 <body>

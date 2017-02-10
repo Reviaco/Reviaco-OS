@@ -1,3 +1,6 @@
+ $(document).ready(function(){
+      $('.carousel').carousel();
+    });
 function startTime() {
     var today = new Date();
     var h = today.getHours();
@@ -37,7 +40,7 @@ if(navigator.onLine)
   }
 }
 var get_users = new XMLHttpRequest();
-var get_users_url = "https://localhost/Reviaco-OS/System/PHP/Data/Users.php";
+var get_users_url = "../../PHP/Data/Users.php";
 
 get_users.onreadystatechange = function () {
     if (get_users.readyState == 4 && get_users.status == 200) {
@@ -50,11 +53,11 @@ get_users.send();
 function get_users_function(response) {
     var arr = JSON.parse(response);
     var i;
-    var out = '<div class="users">';
+    var out = '<div id="users" class="carousel users">';
 
     for (i = 0; i < arr.length; i++) {
 
-        out += '<div id="' + arr[i].username + '" class="user-profile"><img src="../../../Users/' + arr[i].username + '/Profile/Avatar.jpg"><div class="user-details ' + arr[i].username + '_name"><h4 class="user_avatar_title">' + arr[i].username + '</h4></div></div>';
+        out += '<div class="carousel-item"><div id="' + arr[i].username + '" class="user-profile"><img src="../../../Users/' + arr[i].username + '/Profile/Avatar.jpg"><div class="user-details ' + arr[i].username + '_name"><h4 class="user_avatar_title">' + arr[i].username + '</h4></div></div></div>';
 
     }
     out += '</div>';
@@ -64,23 +67,8 @@ function get_users_function(response) {
 
 event.stopPropagation();
 
-                   
-  
- 
-                   $( '.user-profile' ).css('position', 'fixed').animate({
-    
-    'left': '45%',
-    
-    'top': '25%'
-  }, 500);
- 
-                   $( '.user-profile img' ).animate({
-    
-    'height': 100,
-    
-    'width': 100
-  }, 500);
                     
+          $('#users').fadeOut();                 
         $('.box').fadeIn();  
                     var username = $( '#' + event.currentTarget.id + '' ).find( 'h4' ).html();
                     
@@ -93,21 +81,11 @@ document.getElementById('username').value = username;
 function submitForm() {
   document.getElementById('form').submit();
     $(".box").fadeOut(); 
-    $( ".user-profile img" ).animate({
-    
-    "height": 200,
-    
-    "width": 200
-  }, 500);
+   
 }
 
 function cancel() {
+    $('#users').fadeIn();  
     $(".box").fadeOut();
-$( ".user-profile" ).removeAttr( 'style' );
-    $( ".user-profile img" ).animate({
-    
-    "height": 200,
-    
-    "width": 200
-  }, 500);
+
 }

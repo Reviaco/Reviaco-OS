@@ -80,6 +80,7 @@ else
 </div>
         <div id="bg" class="bg"></div>
 
+        
   <div id="div"></div>
 
         <div class="nav_bar">

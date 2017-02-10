@@ -1,6 +1,4 @@
 <?php
-$stringData = $_POST['dataString'];
-
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 /*** begin the session ***/
@@ -65,11 +63,5 @@ else
     }
 }
 
-
-$command = "export DISPLAY=:1 && sudo runuser -u $username $stringData > /dev/null 2>&1 &";
-shell_exec($command);
-
-
-
-
+echo $username;
 ?>

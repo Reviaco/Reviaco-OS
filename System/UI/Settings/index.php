@@ -207,7 +207,7 @@ $ds = disk_total_space("C:");
             </paper-material>
         </div>
         <section id="Users_settings" class="Users_settings">
-            <div id="users_listbox" role="listbox" />
+            <div id="users_listbox" role="listbox"></div>
             <paper-material id="register_form_container" class="box" elevation="2">
 
                 <form id="adduser_form" class="form" action="PHP/adduser_submit.php" method="post">
