@@ -1,7 +1,7 @@
 <?php
-
-$app = $_POST['app_name'];
 $type = $_POST['type'];
+$name = $_POST['app_name'];
+$native_name = $_POST['native_app_name'];
 
 header("Access-Control-Allow-Origin: *");
 
@@ -83,7 +83,7 @@ die("ERROR: Could not connect. " . mysqli_connect_error());
 
 // Attempt insert query execution
 
-$sql = "INSERT INTO apps (name, type, description) VALUES ('$app', '$type', '$description')";
+$sql = "INSERT INTO apps (type, name, native_name, description) VALUES ('$type', '$name', '$native_name', '$description')";
 
 if(mysqli_query($link, $sql)){
 
@@ -123,13 +123,7 @@ $command = "export DISPLAY=:1 && cd /var/www/html/Reviaco-OS/Users/$username/Dow
 
 }
 
-
-
-
-
-
 $pid = popen( $command,"r");
-
 
 while( !feof( $pid ) )
 {
@@ -144,4 +138,3 @@ pclose($pid);
 $conn->close();
 
 ?>
-

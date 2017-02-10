@@ -65,14 +65,15 @@ else
 
 $conn = new mysqli("localhost", "root", "root", $username);
 
-$result = $conn->query("SELECT name, description, type FROM apps");
+$result = $conn->query("SELECT type, name, native_name, description FROM apps");
 
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"name":"'   . $rs["name"]        . '",';
-    $outp .= '"description":"'   . $rs["description"]        . '",';
-    $outp .= '"type":"'. $rs["type"]     . '"}'; 
+    $outp .= '{"type":"'   . $rs["type"]        . '",';
+    $outp .= '"name":"'   . $rs["name"]        . '",';
+    $outp .= '"native_name":"'   . $rs["native_name"]        . '",';
+    $outp .= '"description":"'. $rs["description"]     . '"}'; 
 }
 $outp .="]";
 

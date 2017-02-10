@@ -8,13 +8,13 @@ then
 sudo runuser -u $1 wine /var/www/html/Reviaco-OS/Users/$1/Apps/Windows/$3/$3.exe > /dev/null 2>&1 &
 elif [ "$2" = "AndroidWear" ]
 then
-sudo runuser -u $1 adb shell am start -n $3 > /dev/null 2>&1 &
+sudo runuser -u $1 adb -s android-5554 shell am start -n $3 > /dev/null 2>&1 &
 elif [ "$2" = "AndroidPhone" ]
 then
-sudo runuser -u $1 adb shell am start -n $3 > /dev/null 2>&1 &
+sudo runuser -u $1 adb -s android-5556 shell am start -n $3 > /dev/null 2>&1 &
 elif [ "$2" = "AndroidTV" ]
 then
-sudo runuser -u $1 adb shell am start -n $3 > /dev/null 2>&1 &
+sudo runuser -u $1 adb -s android-5558 shell am start -n $3 > /dev/null 2>&1 &
 elif [ "$2" = "Chrome" ]
 then
 sudo runuser -u $1 google-chrome-unstable --load-and-launch-app=/var/www/html/Reviaco-OS/Users/$1/Apps/Chrome/$3 > /dev/null 2>&1 &
