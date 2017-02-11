@@ -28,8 +28,12 @@ response = msg;
 }
 function devilspie2(action, type, name) {
     exec('sudo killall devilspie2-controller');
-setTimeout(function() { exec('devilspie2-controller ' + action + ' ' + type + ' ' + name + ''); }, 500);
+setTimeout(function() { exec('devilspie2-controller ' + sessionStorage.username + ' ' + action + ' ' + type + ' ' + name + ''); }, 500);
 }
+    setInterval(function() {
+    exec('sudo pkill -f "/bin/bash /bin/set-user-status ' + sessionStorage.username + '"');
+setTimeout(function() { exec('set-user-status ' + sessionStorage.username + ''); }, 500);
+}, 1000);
 function appendApp(type, name) {
           if (type == 'Linux') {
      
