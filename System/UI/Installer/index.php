@@ -18,7 +18,14 @@
 
 <video id="appIntroduction" class="appIntroduction" src="src" type="video/mp4" autoplay loop></video>
 </div>
-<paper-fab id="install_btn" class="install_btn" icon="file-download" title="Install" class="orange" app_name="" type=""></paper-fab>
+<paper-fab id="install_btn" class="install_btn" icon="file-download" title="Install" class="orange" onclick="modal.open()" app_name="" type=""></paper-fab>
+    <paper-dialog id="modal" modal>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div class="buttons">
+          <paper-button dialog-confirm>Cancel</paper-button>
+    <paper-button dialog-confirm autofocus>Install</paper-button>
+  </div>
+</paper-dialog>
 </div>
 <div id="home" class="home">
 <div id="slides" class="slides">

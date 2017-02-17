@@ -1,5 +1,3 @@
-var PointerX;
-var PointerY;
 var response;
 $.get( "../../PHP/Data/current_user.txt", function( data ) {
     sessionStorage.username = data;
@@ -16,13 +14,13 @@ function exec(command) {
 function exec_return(command) {
      $.ajax({
          method: 'POST',
-         url: '../../PHP/Linux Commands/generic.php',
+         url: '../../PHP/Linux Commands/generic_return.php',
          data: {
            dataString: command
          }
        })
         .done(function(msg) {
-response = msg;
+sessionStorage.exec_return = msg;
 
        });
 }
@@ -168,7 +166,17 @@ console.log(command_to_be_executed);
 exec(command_to_be_executed);
 
 });
-setInterval(function(){ exec_return('eval $(xdotool getmouselocation --shell) && echo $X'); PointerX = response; console.log(parseInt(PointerX)); }, 10000);
+setInterval(function(){ 
+    exec_return('eval $(xdotool getmouselocation --shell) && echo $X'); 
+    sessionStorage.PointerX = parseInt(sessionStorage.exec_return);
+    setTimeout(function(){
+exec_return('eval $(xdotool getmouselocation --shell) && echo $Y'); 
+    sessionStorage.PointerY = parseInt(sessionStorage.exec_return); 
+    console.log(sessionStorage.PointerY + 'X' + sessionStorage.PointerX);
+    }, 500);
+
+}, 1000);
+
 function welcomeAnimation() {
   var videos = new Array('1', '2', '3', '4', '5');
   var l = videos.length;
@@ -734,6 +742,60 @@ var AI16 = function() { exec('xdotool mousemove --polar 0 0');
         speak('Okey', sessionStorage.assistant_current);
 
 };
+      var AI17 = function(no_pixels) { 
+ 
+sessionStorage.PointerX_change = sessionStorage.PointerX * 1 + parseInt(no_pixels);
+          exec('xdotool mousemove ' + sessionStorage.PointerY + ' ' + sessionStorage.PointerX_change + '');
+
+        speak('Okey', sessionStorage.assistant_current);
+
+};
+            var AI18 = function() { 
+sessionStorage.PointerX_change = sessionStorage.PointerX * 1 - parseInt(no_pixels);
+          exec('xdotool mousemove ' + sessionStorage.PointerY + ' ' + sessionStorage.PointerX_change + '');
+
+        speak('Okey', sessionStorage.assistant_current);
+
+};
+            var AI19 = function() { 
+sessionStorage.PointerY_change = sessionStorage.PointerY * 1 + parseInt(no_pixels);
+          exec('xdotool mousemove ' + sessionStorage.PointerX + ' ' + sessionStorage.PointerY_change + '');
+
+        speak('Okey', sessionStorage.assistant_current);
+
+};
+            var AI20 = function() { 
+sessionStorage.PointerY_change = sessionStorage.PointerY * 1 - parseInt(no_pixels);
+          exec('xdotool mousemove ' + sessionStorage.PointerX + ' ' + sessionStorage.PointerY_change + '');
+
+        speak('Okey', sessionStorage.assistant_current);
+
+};
+    var AI21 = function() { exec('xdotool click 1');
+
+        speak('Okey', sessionStorage.assistant_current);
+
+};
+      var AI22 = function() { exec('xdotool click 2');
+
+        speak('Okey', sessionStorage.assistant_current);
+
+};
+      var AI23 = function() { exec('xdotool click 3');
+
+        speak('Okey', sessionStorage.assistant_current);
+
+};
+            var AI24 = function() { exec('xdotool click 4');
+
+        speak('Okey', sessionStorage.assistant_current);
+
+};
+            var AI25 = function() { exec('xdotool click 5');
+
+        speak('Okey', sessionStorage.assistant_current);
+
+};
 
 
         var AIDB = function(Phrase) { 
@@ -776,7 +838,7 @@ $('#appbook-viewport').fadeOut();
     
     };
 var commands = {'hey *assistant_name': assistant_wakeMe,
-    'what is your name': assistant_say_its_name, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'go': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU have': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15, 'move the mouse pointer to the middle of the screen': AI16, 'execute *command20': assistant_execute, '*Phrase': AIDB};
+    'what is your name': assistant_say_its_name, 'focus the URL bar': AI2, 'type *AI3IN': AI3,  'go': AI4, 'shutdown the computer': AI5, 'restart that computer': AI6, 'take a screenshot': AI7, 'go back': AI8, 'refresh': AI9, 'go forward': AI10, 'move left': AI11, 'move right': AI12, 'open *app_name': app_launch1, 'How many cores does my computer CPU have': AI13, 'tell me the latest news': AI14, 'please give my computer a strong drink': AI15, 'move the mouse pointer to the middle of the screen': AI16, 'move the cursor *no_pixels pixels down': AI17, 'move the cursor *no_pixels pixels up': AI18, 'move the cursor *no_pixels pixels right': AI19, 'move the cursor *no_pixels pixels left': AI20, 'left click': AI21, 'middle click': AI22, 'right click': AI23, 'scroll up': AI24, 'scroll down': AI25, 'execute *command20': assistant_execute, '*Phrase': AIDB};
     annyang.debug();
 
     
