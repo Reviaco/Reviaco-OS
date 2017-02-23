@@ -139,6 +139,7 @@ else
                 </div>
             </div>
         </div>
+        <paper-card id="news-feed" class="news-feed"></paper-card>
     </body>
 
 </html>

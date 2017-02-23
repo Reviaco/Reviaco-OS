@@ -724,9 +724,9 @@ $.ajax({
 }).done(function (response) {
     if(response.status != 'ok'){ throw response.message; }
 
-    for(var i in response.items){
-        var item = response.items[i];
-setTimeout(function() { speak(item.title, sessionStorage.assistant_current); }, 10000 * i);
+for (i = 0; i < response.items.length; i++) {
+    var item = response.items[i];
+speak(item.title, sessionStorage.assistant_current);
 
     }
 });

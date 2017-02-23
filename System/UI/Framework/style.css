@@ -451,3 +451,9 @@ color: white;
     right: 56px;
     height: 40px;
 }
+
+.news-feed {
+    width: 25%;
+    height: 30%;
+    position: fixed;
+}
