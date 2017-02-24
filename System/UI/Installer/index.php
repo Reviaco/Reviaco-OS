@@ -9,7 +9,7 @@
 
 <paper-toolbar>
 <paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button>
-  <span class="title">Echo Store</span>
+  <span id="main_title" class="title">Echo Store</span>
   <paper-icon-button icon="search"></paper-icon-button>
 </paper-toolbar>
 <div id="app_page" class="app_page">

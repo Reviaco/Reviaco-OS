@@ -18,8 +18,8 @@ pauseOnHover: true},
 
 $(document).on('click', '._3dface', function( event ) {
 sessionStorage.app_name =  $( this ).attr("app_name");;
-sessionStorage.type =  $( this ).attr("type");;
 document.getElementById('appIntroduction').src = 'https://github.com/Reviaco/Echo-Store/raw/master/Apps/' + sessionStorage.type + '/' + sessionStorage.app_name + '/promo.mp4';
+$('#main_title').text(sessionStorage.app_name);
 $('#home').fadeOut();
 $('#app_page').fadeIn();
 $('#back_btn').fadeIn();
@@ -27,14 +27,15 @@ $('#back_btn').fadeIn();
 
 $(document).on('click', '.app_promo_slide', function( event ) {
 sessionStorage.app_name =  $( this ).attr("app_name");;
-sessionStorage.type =  $( this ).attr("type");;
 document.getElementById('appIntroduction').src = 'https://github.com/Reviaco/Echo-Store/raw/master/Apps/' + sessionStorage.type + '/' + sessionStorage.app_name + '/promo.mp4';
+$('#main_title').text(sessionStorage.app_name);    
 $('#home').fadeOut();
 $('#app_page').fadeIn();
 $('#back_btn').fadeIn();
 });
 
 $(document).on('click', '#back_btn', function( event ) {
+$('#main_title').text('Echo Store');
 $('#app_page').fadeOut();
 $('#home').fadeIn();
 $('#back_btn').fadeOut();
@@ -68,9 +69,9 @@ var get_apps = new XMLHttpRequest();
      var i;
        
      for (i = 0; i < info.length; i++) {
- $("#app_promo_slide1").attr("app_name", info[1].Name);
- $("#app_promo_slide2").attr("app_name", info[2].Name);
- $("#app_promo_slide3").attr("app_name", info[1].Name);
+ $("#app_promo_slide1").attr("app_name", info[0].Name);
+ $("#app_promo_slide2").attr("app_name", info[1].Name);
+ $("#app_promo_slide3").attr("app_name", info[2].Name);
  $("#app_promo_slide4").attr("app_name", info[1].Name);
  $("#app_promo_slide5").attr("app_name", info[1].Name);
  $("#app_promo_cube_1_A").attr("app_name", info[1].Name);
@@ -197,7 +198,7 @@ document.getElementById('app_promo_cube_6').style.backgroundImage = 'url("https:
         success: function(data) {
 
      for (i = 0; i < data.length; i++) {
-       $('#platforms_icons').append('<paper-icon-button id="platform_icon" class="platform_icon" height="50" width="50" src="../../Media/Logos/' + data[i].Type + '.png"></paper-icon-button>');
+       $('#platforms_icons').append('<paper-icon-button id="' + data[i].Type + '" class="platform_icon" height="50" width="50" src="../../Media/Logos/' + data[i].Type + '.png"></paper-icon-button>');
 
          
      }
