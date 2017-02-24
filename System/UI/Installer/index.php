@@ -8,7 +8,6 @@
 <body>
 
 <paper-toolbar>
-  <paper-icon-button id="menu_btn" class="menu_btn" icon="menu"></paper-icon-button>
 <paper-icon-button id="back_btn" class="back_btn" icon="arrow-back"></paper-icon-button>
   <span class="title">Echo Store</span>
   <paper-icon-button icon="search"></paper-icon-button>
@@ -20,7 +19,7 @@
 </div>
 <paper-fab id="install_btn" class="install_btn" icon="file-download" title="Install" class="orange" onclick="modal.open()" app_name="" type=""></paper-fab>
     <paper-dialog id="modal" modal>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+  <div id="platforms_icons"></div>
   <div class="buttons">
           <paper-button dialog-confirm>Cancel</paper-button>
     <paper-button dialog-confirm autofocus>Install</paper-button>
@@ -29,11 +28,11 @@
 </div>
 <div id="home" class="home">
 <div id="slides" class="slides">
-    <img id="app_promo_slide1" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
-    <img id="app_promo_slide2" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
-    <img id="app_promo_slide3" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
-    <img id="app_promo_slide4" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
-    <img id="app_promo_slide5" class="app_promo_slide" src="http://placehold.it/940x528" app_name="" type="">
+    <img id="app_promo_slide1" class="app_promo_slide" src="" app_name="" type="">
+    <img id="app_promo_slide2" class="app_promo_slide" src="" app_name="" type="">
+    <img id="app_promo_slide3" class="app_promo_slide" src="" app_name="" type="">
+    <img id="app_promo_slide4" class="app_promo_slide" src="" app_name="" type="">
+    <img id="app_promo_slide5" class="app_promo_slide" src="" app_name="" type="">
   </div>      
 <div id="cube1" class="cube cube1">
 <div class="space3d">
