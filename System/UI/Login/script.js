@@ -1,4 +1,16 @@
- $(document).ready(function(){
+function submitForm() {
+  document.getElementById('form').submit();
+    $(".box").fadeOut(); 
+   
+} 
+$(document).ready(function(){
+      $('#password').keypress(function (e) {
+ var key = e.which;
+ if(key == 13)  // the enter key code
+  {
+submitForm();
+  }
+  });
       $('.carousel').carousel();
     });
 function startTime() {
@@ -78,11 +90,8 @@ document.getElementById('username').value = username;
 
 
                 });
-function submitForm() {
-  document.getElementById('form').submit();
-    $(".box").fadeOut(); 
-   
-}
+
+
 
 function cancel() {
     $('#users').fadeIn();  

@@ -139,7 +139,13 @@ else
                 </div>
             </div>
         </div>
-        <paper-card id="news-feed" class="news-feed"></paper-card>
+         <paper-dialog id="modal" modal>
+  <div id="platforms_icons"></div>
+  <div class="buttons">
+          <paper-button dialog-confirm>Cancel</paper-button>
+    <paper-button id="launch_btn" dialog-confirm autofocus>Go</paper-button>
+  </div>
+</paper-dialog>
     </body>
 
 </html>

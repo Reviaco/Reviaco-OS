@@ -219,10 +219,18 @@ $('.appbook').turn({
 
    });
 }
+    	$(window).bind('keydown', function(e){
+		
+		if (e.keyCode==37)
+			$('.appbook').turn('previous');
+		else if (e.keyCode==39)
+			$('.appbook').turn('next');
+			
+	});
      function bg_blur() {
           $('#bg').backgroundBlur({
     imageURL : 'https://localhost/Reviaco-OS/System/Media/Backgrounds/37.jpg',
-    blurAmount : 4,
+    blurAmount : 2,
     imageClass : 'tinted-bg-blur',
     duration: 1000, // If the image needs to be faded in, how long that should take
     endOpacity : 1 // Specify the final opacity that the image will have
@@ -363,116 +371,116 @@ get_volume.send();
      for (i = 0; i < arr.length; i++) {
 
          
-       out += '<div app-name="' + arr[i].name + '" app-type="' + arr[i].type + '" class="carousel-item"><img id="carousel-img" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/cover.png"></div>';
+       out += '<div app-name="' + arr[i].name + '" native_name="' + arr[i].native_name + '" class="carousel-item"><img id="carousel-img" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/cover.png"></div>';
 var sort;
       sort = arr[i].name.charAt(0);
  if ((sort == 'A') || (sort == 'a')) {
-var a = '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var a = '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if ((sort == 'B') || (sort == 'b'))
 
 {
-var b =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var b =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'C') || (sort == 'c'))
 
 
 {
-var c =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var c =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'D') || (sort == 'd'))
 
 {
-var d =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var d =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'E') || (sort == 'e'))
 
 {
-var e =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var e =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'F') || (sort == 'f'))
 
 {
-var f =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var f =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'G') || (sort == 'g'))
 
 {
 
-var g =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var g =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'H') || (sort == 'h'))
 {
 
-var h =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var h =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'I') || (sort == 'i'))
 {
-var i =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var i =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if ((sort == 'J') || (sort == 'j'))
 {
 
-var j =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var j =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if ((sort == 'K') || (sort == 'k'))
       {
-var k =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var k =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if ((sort == 'L') || (sort == 'l'))
 {
-var l =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var l =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
 
       }else if ((sort == 'M') || (sort == 'm'))
 {
 
 
-var m =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var m =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'N') || (sort == 'n'))
 {
 
-var n =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var n =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'O') || (sort == 'o'))
 {
 
-var o =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var o =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'P') || (sort == 'p'))
 {
-var p =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var p =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if ((sort == 'Q') || (sort == 'q'))
 {
-var q =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var q =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if ((sort == 'R') || (sort == 'r'))
 {
-var r =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var r =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
       }else if ((sort == 'S') || (sort == 's'))
 {
 
-var s =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var s =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'T') || (sort == 't'))
 {
-var t =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var t =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'U') || (sort == 'u'))
 {
 
-var u =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var u =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'V') || (sort == 'v'))
 {
 
-var v =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var v =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'W') || (sort == 'w'))
 {
 
-var w =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var w =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'X') || (sort == 'x'))
 {
 
-var x =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var x =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'Y') || (sort == 'y'))
 {
 
-var y =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var y =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
       }else if ((sort == 'Z') || (sort == 'z'))
 {
 
-var z =  '<indexed_app id="' + arr[i].name + '" type="' + arr[i].type + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/' + arr[i].type + '/' + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
+var z =  '<indexed_app id="' + arr[i].name + '" id="' + arr[i].name + '"   class=""><img width="50" width="50" src="../../../Users/geeekyboy/Apps/'  + arr[i].name + '/icon.png" /><div class="app_title"><h4 class="app_title">' + arr[i].name + '</h4></indexed_app>';
 
 } else {
           
@@ -512,9 +520,28 @@ $('#pageZ').find( "#app_list" ).append(z);
    }
    $(document).on('click', '#carousel-img, indexed_app', function( event ) {
        event.stopPropagation();
-      sessionStorage.type = $( this ).offsetParent().attr('app-type');
-       sessionStorage.appName = $( this ).offsetParent().attr('app-name');      
-appendApp(sessionStorage.type, sessionStorage.appName);
+       sessionStorage.type = $( this ).offsetParent().attr('app-type');
+       sessionStorage.appName = $( this ).offsetParent().attr('app-name');
+       sessionStorage.appNameNative = $( this ).offsetParent().attr('native_name');
+            $.ajax({
+         method: 'POST',
+         url: 'https://localhost/Reviaco-OS/System/PHP/Data/AppTypeRequest.php',
+         data: {
+           App_Name: sessionStorage.appName
+         },
+        success: function(data) {
+
+     for (i = 0; i < data.length; i++) {
+       $('#platforms_icons').append('<paper-icon-button id="' + data[i].Type + '" class="platform_icon" height="50" width="50" src="../../Media/Logos/' + data[i].Type + '.png"></paper-icon-button>');
+
+         
+     }
+  
+
+        }
+       });
+
+appendApp(sessionStorage.type, sessionStorage.appNameNative);
 
 $('#showcase').fadeOut();
 

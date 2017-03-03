@@ -3,7 +3,7 @@
 }
 
 .clock {
-    top: 0;
+    top: 0px;
     left: 45%;
     position: fixed;
     color: white;
@@ -27,7 +27,7 @@
     min-height: 100%;
     height: auto;
     display: block;
-    top: 0;
+    top: 0px;
     /* Add this CSS to remove transparent border around the image */
     left: -10%;
     width: 120%;
@@ -41,12 +41,12 @@ h3 {
 }
 
 .nav_bar {
-    background-color: #3498db;
+    background-color: #E91E63;
     width: 100%;
     overflow: hidden;
     position: fixed;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    bottom: 0;
+    bottom: 0px;
     z-index: 10;
 }
 
@@ -92,13 +92,13 @@ h3 {
 
 
 .status_bar {
-    background-color: #3498db;
+    background-color: #E91E63;
     width: 100%;
     height: 25px;
     overflow: hidden;
     position: fixed;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    top: 0;
+    top: 0px;
     z-index: 10;
 }
 
@@ -106,7 +106,7 @@ h3 {
     height: 56px;
     width: 56px;
     background-color: transparent;
-    top: 0;
+    top: 0px;
     right: 10px;
     position: absolute;
     border-radius: 50%;
@@ -123,7 +123,7 @@ h3 {
 .bubble {
     height: 56px;
     width: 56px;
-    background-color: tomato;
+    background-color: #2196F3;
     top: 0px;
     right: 10px;
     position: absolute;
@@ -186,17 +186,17 @@ h3 {
 }
 
 .poweroff_btn {
-    left: 450;
+    left: 450px;
     position: relative;
 }
 
 .sleep_btn {
-    left: 1030;
+    left: 1030px;
     position: relative;
 }
 
 .restart_btn {
-    left: -140;
+    left: -140px;
     position: relative;
 }
 
@@ -237,7 +237,7 @@ h3 {
 
 .sound_hud {
     position: fixed;
-    top: 0;
+    top: 0px;
     background-color: white;
     width: 100%;
     display: none;
@@ -407,8 +407,8 @@ iframe {
 .appbook-viewport {
     display: none;
         position: fixed;
-    top: 66;
-    left: 230;
+    top: 66px;
+    left: 230px;
 }
 .page {
     background-color: whitesmoke;
@@ -421,22 +421,21 @@ iframe {
 .a {
 
     left: 50%;
-    height: 30;
+    height: 30px;
     position: relative;
-
-    top: 20;
+    top: 20px;
 }
 .index_letter {
-    height: 30;
+    height: 30px;
     position: relative;
     left: 50%;
-    top: 20;
+    top: 20px;
 }
 .app_list {
     position: relative;
     width: 100%;
     height: 100%;
-    top: 55;
+    top: 55px;
 }
 .user-details h4 {
 color: white;
@@ -450,10 +449,4 @@ color: white;
     top: 5.5%;
     right: 56px;
     height: 40px;
-}
-
-.news-feed {
-    width: 25%;
-    height: 30%;
-    position: fixed;
 }
