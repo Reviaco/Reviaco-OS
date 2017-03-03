@@ -1,4 +1,5 @@
 <?php
+$VolumeCurrent = $_POST['VolumeCurrent'];
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 /*** begin the session ***/
@@ -65,12 +66,14 @@ else
 
 $conn = new mysqli("localhost", "root", "root", $username);
 
+$write = $conn->query("UPDATE settings SET volume='$VolumeCurrent' WHERE id=1");
+
 $result = $conn->query("SELECT volume FROM settings");
 
 $outp = "[";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"volume":"'   . $rs["volumeame"]        . '"}';
+    $outp .= '{"volume":"'   . $rs["volume"]        . '"}';
     
 }
 $outp .="]";

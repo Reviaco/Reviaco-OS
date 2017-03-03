@@ -28,6 +28,11 @@ function devilspie2(action, type, name) {
     exec('sudo killall devilspie2-controller');
 setTimeout(function() { exec('devilspie2-controller ' + sessionStorage.username + ' ' + action + ' ' + type + ' ' + name + ''); }, 500);
 }
+function setVolume(action, rate) {
+    
+    exec('setVolume ' + action + ' ' + rate + '');
+    
+}
     setInterval(function() {
     exec('sudo pkill -f "/bin/bash /bin/set-user-status ' + sessionStorage.username + '"');
 setTimeout(function() { exec('set-user-status ' + sessionStorage.username + ''); }, 500);
@@ -221,9 +226,9 @@ $('.appbook').turn({
 }
     	$(window).bind('keydown', function(e){
 		
-		if (e.keyCode==37)
+		if (e.keyCode==107)
 			$('.appbook').turn('previous');
-		else if (e.keyCode==39)
+		else if (e.keyCode==109)
 			$('.appbook').turn('next');
 			
 	});
@@ -309,38 +314,39 @@ setTimeout(function() { appbook(); }, 2000);
    function sound_hud_hide() {
      $('#sound_hud').slideUp(1000);
    }
-  var get_volume = new XMLHttpRequest();
-var get_volume_url = "../../PHP/Data/Volume.php";
 
-get_volume.onreadystatechange = function() {
-    if (get_volume.readyState == 4 && get_volume.status == 200) {
-        
-            var volume_current1 = get_volume.responseText;
-        
-        
-    }
-};
-get_volume.open("GET", get_volume_url, true);
-get_volume.send();
    var volume_current = 0;
    $('body').on('keydown', function(event) {
 
      var x = event.which;
-     if (x == 175) {
-
+     if (x == 32) {
+         
        $('#sound_hud').slideDown(1000);
        volume_current += 1;
        document.getElementById('volume_slider').value = volume_current;
        setTimeout(sound_hud_hide, 3000);
-
+       setVolume('up', '1');
      }
      if (x == 174) {
        $('#sound_hud').slideDown(1000);
        volume_current -= 1;
        document.getElementById('volume_slider').value = volume_current;
        setTimeout(sound_hud_hide, 3000);
+       setVolume('up', '1');
+
 
      }
+                       $.ajax({
+         method: 'POST',
+         url: 'https://localhost/Reviaco-OS/System/PHP/Data/Volume.php',
+         data: {
+           VolumeCurrent: volume_current
+         },
+        success: function(data) {
+  
+
+        }
+       });
    });
    $.fn.extend({
      animateCss: function(animationName) {
@@ -564,22 +570,30 @@ $('#appbook-viewport').fadeOut();
      $('#recent_panel').hide();
 });
    
-
-   $("#menu").click(function() {
-    devilspie2('Minimize', sessionStorage.type, sessionStorage.appName);
-                var minimized_window;
-
+ $('#menu').longpress(function(e) {
+     
+     $(".powerBubble").show();
+     $(".bubble").toggleClass("active");
+     $(".bubbleback").toggleClass("active");
+     $(".power_btn_icon").toggle(1000);
+     $(".power_ctrl").toggle(1000);
+     
+}, function(e) {
+     
+     devilspie2('Minimize', sessionStorage.type, sessionStorage.appName);
+     var minimized_window;
      minimized_window = $('.current_window').detach();
      $('#recent_panel').prepend(minimized_window);
      $('.current_window').show();
      $('.current_window').removeClass('current_window').addClass('minimized_window');
-
      $('#recent_panel').animateCss('bounceIn');
      $('#recent_panel').show();
      $('#showcase').fadeOut();
 
-   });
+});
+    
    $(document).on('click', '.minimized_window', function(event) {
+       
     devilspie2('Maximize', sessionStorage.type, sessionStorage.appName);
      event.stopPropagation();
      $('#' + event.currentTarget.id + '').removeClass('minimized_window').addClass('current_window');
@@ -587,8 +601,7 @@ $('#appbook-viewport').fadeOut();
      current_window = $('#' + event.currentTarget.id + '').detach();
      $('body').prepend(current_window);
      $('#recent_panel').fadeOut();
-var window_native_id = $('#' + event.currentTarget.id + '').attr('native_id');
-
+     var window_native_id = $('#' + event.currentTarget.id + '').attr('native_id');
 
    });
 
@@ -610,10 +623,13 @@ var window_native_id = $('#' + event.currentTarget.id + '').attr('native_id');
      kill(current_window_type, current_window_id);
    });
    $(".bubble-wrap").click(function() {
+       
      $(".bubble").toggleClass("active");
      $(".bubbleback").toggleClass("active");
      $(".power_btn_icon").toggle(1000);
      $(".power_ctrl").toggle(1000);
+     $(".powerBubble").hide();
+       
    });
    
  });

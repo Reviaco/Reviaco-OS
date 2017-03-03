@@ -84,24 +84,24 @@ else
   <div id="div"></div>
 
         <div class="nav_bar">
-            <img id="back" class="back" src="../../Media/Framework/Back.png" width="50" height="50" />
-            <img id="home" class="home" src="../../Media/Framework/Home.svg" width="50" height="50" />
-            <img id="menu" class="menu" src="../../Media/Framework/Menu.png" width="50" height="50" />
-            <img id="restart_btn command_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50" command="sudo reboot" />
-            <img id="poweroff_btn command_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50" command="sudo poweroff" />
-            <img id="sleep_btn command_btn" class="power_ctrl sleep_btn" src="../../Media/Framework/Sleep.png" width="50" height="50" command="sudo systemctl suspend" />
+            <img id="back" class="back" src="../../Media/Framework/Back.png" width="30" height="30"><paper-ripple></paper-ripple></img>
+            <img id="home" class="home" src="../../Media/Framework/Home.png" width="30" height="30"><paper-ripple></paper-ripple></img>
+            <img id="menu" class="menu" src="../../Media/Framework/Menu.png" width="30" height="30"><paper-ripple></paper-ripple></img>
+            <img id="restart_btn command_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50" command="sudo reboot"><paper-ripple></paper-ripple></img>
+            <img id="poweroff_btn command_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50" command="sudo poweroff"><paper-ripple></paper-ripple></img>
+            <img id="sleep_btn command_btn" class="power_ctrl sleep_btn" src="../../Media/Framework/Sleep.png" width="50" height="50" command="sudo systemctl suspend"><paper-ripple></paper-ripple></img>
+            <div id="powerBubble" class="powerBubble">
             <div class="bubbleback"></div>
-            <div class="bubble"><i class="material-icons power_btn_icon">power_settings_new</i></div>
-            <div class="bubble-wrap">
-
-            </div>
+            <div class="bubble"></div>
+            <div class="bubble-wrap"></div>
+        </div>
         </div>
         <div class="status_bar">
             <div id="clock" class="clock"></div>
         </div>
         <div id="sound_hud" class="sound_hud">
             <div>Sound Volume</div>
-            <paper-slider id="volume_slider" class="red" value="" max="100" editable></paper-slider>
+            <paper-slider id="volume_slider" value="" max="100" editable></paper-slider>
         </div>
 
         <div id="recent_panel" class="recent_panel">
@@ -146,6 +146,6 @@ else
     <paper-button id="launch_btn" dialog-confirm autofocus>Go</paper-button>
   </div>
 </paper-dialog>
+<h4 id="activeNow_heading" class="activeNow_heading">Active Now</h4>
     </body>
-
 </html>
