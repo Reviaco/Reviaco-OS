@@ -1,6 +1,6 @@
 <html>
 <head>
-<link rel="import" href="../../Res.html">
+<link rel="import" href="https://reviaco.os/System/Res.html">
 <link rel="import" href="polymer-style.html">
 <link href="style.css" rel="stylesheet">
 <script src="script.js"></script>

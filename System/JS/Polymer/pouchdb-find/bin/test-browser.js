@@ -111,7 +111,7 @@ function startSauceConnect(callback) {
       return process.exit(1);
     }
     sauceConnectProcess = process;
-    sauceClient = wd.promiseChainRemote("localhost", 4445, username, accessKey);
+    sauceClient = wd.promiseChainRemote("reviaco.os", 4445, username, accessKey);
     callback();
   });
 }

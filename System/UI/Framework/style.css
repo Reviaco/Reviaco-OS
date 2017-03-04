@@ -464,3 +464,45 @@ color: white;
 .powerBubble {
     display: none;
 }
+
+.user-profile {
+     display: inline-block;
+ }
+ 
+ .user-profile img {
+     height: 100px;
+     width: 100px;
+     border-radius: 50%;
+     float: left;
+     margin-right: 24px;
+ }
+ 
+ .user-details p {
+     font-size: 11px;
+ }
+ 
+ .user-details {
+     margin-top: 10px;
+     vertical-align: bottom;
+     position: relative;
+     top: 20px;
+ }
+ 
+ .user-details h4 {
+     font-size: 18px;
+ }
+ 
+ .users {
+     top: 15%;
+     z-index: 999999999999;
+     text-align: center;
+ }
+
+.activeUsers {
+    position: fixed;
+    top: 55%;
+    color: #FFFFFF;
+    left: 15px;
+    height: 200px;
+    width: 96%;
+}

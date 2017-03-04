@@ -7,7 +7,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
         /*** connect to database ***/
         /*** mysql hostname ***/
-        $mysql_hostname = 'localhost';
+        $mysql_hostname = 'reviaco.os';
 
         /*** mysql username ***/
         $mysql_username = 'root';
@@ -21,7 +21,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 
 
-$conn = new mysqli("localhost", "root", "root", "users");
+$conn = new mysqli("reviaco.os", "root", "root", "users");
 
 $result = $conn->query("SELECT username FROM users");
 

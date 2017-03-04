@@ -24,7 +24,7 @@ else
     
     /*** connect to database ***/
     /*** mysql hostname ***/
-    $mysql_hostname = 'localhost';
+    $mysql_hostname = 'reviaco.os';
 
     /*** mysql username ***/
     $mysql_username = 'root';
@@ -102,7 +102,7 @@ mkdir("../../../../Users/$username/Vedios");
 mkdir("../../../../Users/$username/Data");
 mkdir("../../../../Users/$username/Downlods");
 mkdir("../../../../Users/$username/Files");
-header("Location: https://localhost/Reviaco-OS/System/UI/Framework/");
+header("Location: https://reviaco.os/System/UI/Framework/");
 die();
     }
     catch(Exception $e)

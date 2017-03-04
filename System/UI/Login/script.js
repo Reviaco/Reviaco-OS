@@ -51,49 +51,34 @@ if(navigator.onLine)
     document.getElementById("connection_status_indicator").src = "../../Media/Indicators/EthernetOff.png";
   }
 }
-var get_users = new XMLHttpRequest();
-var get_users_url = "../../PHP/Data/Users.php";
-
-get_users.onreadystatechange = function () {
-    if (get_users.readyState == 4 && get_users.status == 200) {
-        get_users_function(get_users.responseText);
-    }
-}
-get_users.open('GET', get_users_url, true);
-get_users.send();
-
-function get_users_function(response) {
-    var arr = JSON.parse(response);
+$.ajax({
+         method: 'POST',
+         url: 'https://reviaco.os/System/PHP/Data/Users.php',
+         success: function(data) {
+             
     var i;
     var out = '<div id="users" class="carousel users">';
+    for (i = 0; i < data.length; i++) {
 
-    for (i = 0; i < arr.length; i++) {
-
-        out += '<div class="carousel-item"><div id="' + arr[i].username + '" class="user-profile"><img src="../../../Users/' + arr[i].username + '/Profile/Avatar.jpg"><div class="user-details ' + arr[i].username + '_name"><h4 class="user_avatar_title">' + arr[i].username + '</h4></div></div></div>';
+        out += '<div class="carousel-item"><div id="' + data[i].username + '" class="user-profile" onclick="signinForm(\'' + data[i].username + '\');"><img src="../../../Users/' + data[i].username + '/Profile/Avatar.jpg"><div class="user-details ' + data[i].username + '_name"><h4 class="user_avatar_title">' + data[i].username + '</h4></div></div></div>';
 
     }
     out += '</div>';
     $('body').append(out);
-}
-                $(document).on('click', '.user-profile', function (event) {
+       }
+});
 
-event.stopPropagation();
-
-                    
-          $('#users').fadeOut();                 
+function signinForm(username) {
+    
+        event.stopPropagation();                
+        $('#users').fadeOut();                 
         $('.box').fadeIn();  
-                    var username = $( '#' + event.currentTarget.id + '' ).find( 'h4' ).html();
-                    
-document.getElementById('username').value = username;
-
-
-
-
-                });
-
-
+        document.getElementById('username').value = username;
+    
+};
 
 function cancel() {
+    
     $('#users').fadeIn();  
     $(".box").fadeOut();
 

@@ -9,6 +9,6 @@ session_unset();
 session_destroy();
 
 //Redirect to the login form
-header("Location: https://localhost/Reviaco-OS/System/UI/Login/");
+header("Location: https://reviaco.os/System/UI/Login/");
 die();
 ?>

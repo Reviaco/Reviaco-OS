@@ -1,4 +1,6 @@
 <?php
+
+$userType = $_POST['userType'];
 $stringData = $_POST['dataString'];
 
 header("Access-Control-Allow-Origin: *");
@@ -16,7 +18,7 @@ else
     {
         /*** connect to database ***/
         /*** mysql hostname ***/
-        $mysql_hostname = 'localhost';
+        $mysql_hostname = 'reviaco.os';
 
         /*** mysql username ***/
         $mysql_username = 'root';
@@ -65,11 +67,12 @@ else
     }
 }
 
+if ($userType == "root") {
 
+$command = "sudo $stringData > /dev/null 2>&1 &";
+shell_exec($command);
+    } else {
 $command = "export DISPLAY=:1 && sudo runuser -u $username $stringData > /dev/null 2>&1 &";
 shell_exec($command);
-
-
-
-
+    }
 ?>

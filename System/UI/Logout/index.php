@@ -11,7 +11,7 @@ session_destroy();
     <html>
 
     <head>
-        <link rel="import" href="../../Res.html">
+        <link rel="import" href="https://reviaco.os/System/Res.html">
         <title>Logged Out</title>
     </head>
 

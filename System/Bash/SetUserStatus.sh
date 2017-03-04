@@ -1,1 +1,1 @@
-mysql -u root -proot users -e "UPDATE users SET active=1 WHERE username='$1'" && sleep 3 && mysql -u root -proot users -e "UPDATE users SET active=NOW() WHERE username='$1'"
+mysql -u root -proot users -e "UPDATE users SET active=1 WHERE username='$1'" && mysql -u root -proot users -e "UPDATE users SET active=NOW() WHERE username='$1'"

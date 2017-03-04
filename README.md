@@ -14,7 +14,7 @@ It can run:
 
 3. MAC OSX CLI basic tools using DarlingHQ.
 
-4. Android,  Blackberry,  PalmOS and Tizen apps using their emulators shipped with their official SDKs.
+4. Android,  Blackberry,  LG WebOS and Tizen apps using their emulators shipped with their official SDKs.
 
 5. Chrome apps using Chrome Web browser.
 
@@ -36,7 +36,7 @@ FB: https://fb.me/Reviaco
 
 # License 
 
-© 2016 Copyright Reviaco
+© 2017 Copyright Reviaco
 -----------------------------
 -----------------------------
 

@@ -13,7 +13,7 @@ else
     {
         /*** connect to database ***/
         /*** mysql hostname ***/
-        $mysql_hostname = 'localhost';
+        $mysql_hostname = 'reviaco.os';
 
         /*** mysql username ***/
         $mysql_username = 'root';
@@ -66,7 +66,7 @@ else
 <!DOCTYPE html>
     <html>
     <head>
-        <link rel="import" href="../../Res.html">
+        <link rel="import" href="https://reviaco.os/System/Res.html">
         <script src="./script.js"></script>
         <link href="style.css" rel="stylesheet">
         <link rel="import" href="./polymer-style.html">
@@ -147,5 +147,6 @@ else
   </div>
 </paper-dialog>
 <h4 id="activeNow_heading" class="activeNow_heading">Active Now</h4>
+<div id="activeUsers" class="activeUsers"></div>
     </body>
 </html>

@@ -86,7 +86,7 @@ class HostTest extends \PHPUnit_Framework_TestCase
             array('com', 'cnn.com', 'edition', 'edition.cnn.com'),
             array('org', 'wikipedia.org', 'en', 'en.wikipedia.org'),
             array('uk.com', 'example.uk.com', 'a.b', 'a.b.example.uk.com'),
-            array(null, null, null, 'localhost'),
+            array(null, null, null, 'reviaco.os'),
         );
     }
 }

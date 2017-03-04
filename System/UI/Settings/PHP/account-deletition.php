@@ -1,7 +1,7 @@
 <?php
     $stringData = $_POST['dataString'];
 
-$servername = "localhost";
+$servername = "reviaco.os";
 $username = "root";
 $password = "root";
 $dbname = "users";

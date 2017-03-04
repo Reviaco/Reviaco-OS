@@ -23,7 +23,7 @@ or you can run:
 
     $ npm run dev
 
-and open [http://127.0.0.1:8000/tests/integration/index.html](http://127.0.0.1:8000/tests/integration/index.html) in your browser of choice. The performance tests are located @ [https://localhost:8000/tests/performance/index.html](https://localhost:8000/tests/performance/index.html).
+and open [http://127.0.0.1:8000/tests/integration/index.html](http://127.0.0.1:8000/tests/integration/index.html) in your browser of choice. The performance tests are located @ [https://reviaco.os:8000/tests/performance/index.html](https://reviaco.os:8000/tests/performance/index.html).
 
 You can also test against phantomjs, but you'll need to install phantomjs yourself:
 
@@ -97,7 +97,7 @@ If you would like to modify pouchdb-server while testing, then git clone the exp
 
 Then in the PouchDB project, run:
 
-    COUCH_HOST=https://localhost:6984 npm run dev
+    COUCH_HOST=https://reviaco.os:6984 npm run dev
 
 This works because `npm run dev` does not start up the pouchdb-server itself (only `npm test` does).
 
@@ -145,13 +145,13 @@ You can also test against node-websql:
 
 When you run `npm run dev`, performance tests are available at:
 
-    https://localhost:8000/tests/performance/index.html
+    https://reviaco.os:8000/tests/performance/index.html
 
 You can specify a particular version of PouchDB or a particular adapter by doing e.g.:
 
-    https://localhost:8000/tests/performance/index.html?src=http://site.com/path/to/pouchdb.js
-    https://localhost:8000/tests/performance/index.html?adapter=websql
-    https://localhost:8000/tests/performance/index.html?adapter=idb&src=//site.com/pouchdb.js
+    https://reviaco.os:8000/tests/performance/index.html?src=http://site.com/path/to/pouchdb.js
+    https://reviaco.os:8000/tests/performance/index.html?adapter=websql
+    https://reviaco.os:8000/tests/performance/index.html?adapter=idb&src=//site.com/pouchdb.js
 
 All of the browser plugin adapters (i.e. `fruitdown`, `memory`, and `localstorage`) are also available this way.
 
@@ -196,16 +196,16 @@ To test these adapters, you can run e.g.
 
 Or append them as query params in the browser:
 
-    https://localhost:8000/tests/index.html?adapters=memory
+    https://reviaco.os:8000/tests/index.html?adapters=memory
 
 The `adapters` list is a comma-separated list that will be used for `PouchDB.preferredAdapters`.  So e.g. if you want to test `websql` in Chrome, you can do:
 
-    https://localhost:8000/tests/index.html?adapters=websql
+    https://reviaco.os:8000/tests/index.html?adapters=websql
 
 Or even make the `preferredAdapters` list anything you want:
 
     # loads websql, then memory, then idb, then localstorage
-    https://localhost:8000/tests/index.html?adapters=websql,memory,idb,localstorage
+    https://reviaco.os:8000/tests/index.html?adapters=websql,memory,idb,localstorage
 
 Keep in mind that `preferredAdapters` only applies to non-http, non-https adapters.
 

@@ -15,7 +15,7 @@ else
     {
         /*** connect to database ***/
         /*** mysql hostname ***/
-        $mysql_hostname = 'localhost';
+        $mysql_hostname = 'reviaco.os';
 
         /*** mysql username ***/
         $mysql_username = 'root';
@@ -64,7 +64,7 @@ else
     }
 }
 
-$conn = new mysqli("localhost", "root", "root", $username);
+$conn = new mysqli("reviaco.os", "root", "root", $username);
 
 $write = $conn->query("UPDATE settings SET volume='$VolumeCurrent' WHERE id=1");
 

@@ -45,7 +45,7 @@ class PublicSuffixListTest extends PHPUnit_Framework_TestCase
             array('//www.broken.webhop.biz', 'webhop.biz', 'broken.webhop.biz', 'www', 'www.broken.webhop.biz'),
             array('ftp://www.waxaudio.com.au/audio/albums/the_mashening', 'com.au', 'waxaudio.com.au', 'www', 'www.waxaudio.com.au'),
             array('ftps://test.k12.ak.us', 'k12.ak.us', 'test.k12.ak.us', null, 'test.k12.ak.us'),
-            array('https://localhost', null, null, null, 'localhost'),
+            array('https://reviaco.os', null, null, null, 'reviaco.os'),
             array('test.museum', 'museum', 'test.museum', null, 'test.museum'),
             array('bob.smith.name', 'name', 'smith.name', 'bob', 'bob.smith.name'),
             array('tons.of.info', 'info', 'of.info', 'tons', 'tons.of.info'),

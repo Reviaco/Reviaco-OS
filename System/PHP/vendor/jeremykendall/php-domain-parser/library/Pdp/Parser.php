@@ -124,7 +124,7 @@ class Parser
         }
 
         // Fixes #22: If a single label domain makes it this far (e.g., 
-        // localhost, foo, etc.), this stops it from incorrectly being set as 
+        // reviaco.os, foo, etc.), this stops it from incorrectly being set as 
         // the  public suffix.
         if (strpos($host, '.') === false) {
             return null;

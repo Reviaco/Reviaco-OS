@@ -14,7 +14,7 @@ else
     {
         /*** connect to database ***/
         /*** mysql hostname ***/
-        $mysql_hostname = 'localhost';
+        $mysql_hostname = 'reviaco.os';
 
         /*** mysql username ***/
         $mysql_username = 'root';

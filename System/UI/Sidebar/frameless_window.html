@@ -1,8 +1,6 @@
 <html>
 <head>
-  <title>Frameless Window</title>
-
-        <link rel="import" href="https://localhost/Reviaco-OS/System/Res.html">
+  <link rel="import" href="https://reviaco.os/System/Res.html">
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script src="titlebar.js"></script>
   <script src="frameless_window.js"></script>
@@ -15,7 +13,7 @@
             <div class="top">
 
                 <div class="user-profile">
-                    <img src="https://localhost/Reviaco-OS/System/Media/Avatars/6.svg">
+                    <img id="avatar" src="https://reviaco.os/System/Media/Avatars/6.svg">
                     <div class="user-details">
                         <h4><?php echo $message; ?></h4>
                         <p>
@@ -74,6 +72,29 @@
   </div>
 <script>
  $(function() {
+$.ajax({
+         method: 'POST',
+         url: 'https://reviaco.os/System/PHP/Data/Notifications.php',
+        success: function(data) {
+     var i;
+
+     for (i = 0; i < data.length; i++) {
+       var notification = '<li class="one ' + data[i].Title + '"><span class="task-title">' + data[i].Title + '</span><span class="task-time">' + data[i].Time + '</span><span class="task-cat">' + data[i].Description + '</span></li>';
+
+     }
+
+     $('.tasks').append(notification);
+
+        }
+       });
+     $.ajax({
+         method: 'GET',
+         url: 'https://reviaco.os/System/PHP/Data/current_user.txt',
+        success: function(data) {
+     $('#avatar').attr('src', 'https://reviaco.os/Users/' + data + '/Profile/Avatar.jpg')
+
+        }
+       });
  $("#notification_centre_show").mouseenter(function() {
        
      event.stopPropagation();

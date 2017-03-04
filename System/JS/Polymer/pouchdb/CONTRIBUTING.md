@@ -48,7 +48,7 @@ PouchDB needs the following to be able to build and test your build, if you have
   * [Node.js](http://nodejs.org/)
   * [CouchDB](http://couchdb.apache.org/)
 
-CouchDB must be running and available at `https://localhost:5984`. If you can open that URL in a browser and see `"couchdb": "Welcome"`, then it's working.
+CouchDB must be running and available at `https://reviaco.os:5984`. If you can open that URL in a browser and see `"couchdb": "Welcome"`, then it's working.
 
 You'll also need to ensure that CORS is enabled on the CouchDB. You can easily do this by running `npm install -g add-cors-to-couchdb` and then `add-cors-to-couchdb`.
 
@@ -129,7 +129,7 @@ Writing a blog post for PouchDB is exactly the same process as other contributio
 2. Add yourself as an author to https://github.com/pouchdb/pouchdb/blob/master/docs/_data/authors.yml. (Make sure you have a [Gravatar](http://en.gravatar.com/) too.)
 3. Add a new blog post with the date that you expect it will be published (we can always change it later).
 4. Write something!
-5. Run `npm run build-site` and you will always have a fresh version of the site at localhost:4000. You may need to Cmd-Shift-R or Ctrl-Shift-R (hard refresh) to see the latest version, since we use AppCache.
+5. Run `npm run build-site` and you will always have a fresh version of the site at reviaco.os:4000. You may need to Cmd-Shift-R or Ctrl-Shift-R (hard refresh) to see the latest version, since we use AppCache.
 
 Committers!
 --------------

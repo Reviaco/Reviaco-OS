@@ -22,7 +22,7 @@ else
     {
         /*** connect to database ***/
         /*** mysql hostname ***/
-        $mysql_hostname = 'localhost';
+        $mysql_hostname = 'reviaco.os';
 
         /*** mysql username ***/
         $mysql_username = 'root';
@@ -71,7 +71,7 @@ else
     }
 }
 
-$link = mysqli_connect("localhost", "root", "root", $username);
+$link = mysqli_connect("reviaco.os", "root", "root", $username);
 
 // Check connection
 

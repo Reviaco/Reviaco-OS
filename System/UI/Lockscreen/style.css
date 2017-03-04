@@ -32,19 +32,11 @@ div#inner-content {
 display: none;
 }
 
-
-
-
-
-
 .slide-to-unlock {
   position: absolute;
   left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
+  top: 80%;
   transform: translate(-50%, -50%);
-
-
     width: 100%;
     height: 200%;
 }
@@ -98,7 +90,7 @@ display: none;
 
 .old-slider .handle {
   width: 100%;
-  background: url("https://localhost/Reviaco-OS/System/Media/Backgrounds/15.png");
+  background: url("https://reviaco.os/System/Media/Backgrounds/15.png");
     background-repeat:no-repeat;
     background-size:100% 100%;
 

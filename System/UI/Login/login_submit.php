@@ -25,7 +25,7 @@ else
     
     /*** connect to database ***/
     /*** mysql hostname ***/
-    $mysql_hostname = 'localhost';
+    $mysql_hostname = 'reviaco.os';
 
     /*** mysql username ***/
     $mysql_username = 'root';
@@ -73,7 +73,7 @@ $file = fopen("../../PHP/Data/current_user.txt","w");
 echo fwrite($file,$username);
 fclose($file);
 
-header("Location: https://localhost/Reviaco-OS/System/UI/Framework/");
+header("Location: https://reviaco.os/System/UI/Framework/");
 die();
         }
 

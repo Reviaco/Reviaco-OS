@@ -14,7 +14,7 @@ else
     {
         /*** connect to database ***/
         /*** mysql hostname ***/
-        $mysql_hostname = 'localhost';
+        $mysql_hostname = 'reviaco.os';
 
         /*** mysql username ***/
         $mysql_username = 'root';
@@ -63,7 +63,7 @@ else
     }
 }
 
-$conn = new mysqli("localhost", "root", "root", $username);
+$conn = new mysqli("reviaco.os", "root", "root", $username);
 
 $result = $conn->query("SELECT name, native_name, description FROM apps");
 

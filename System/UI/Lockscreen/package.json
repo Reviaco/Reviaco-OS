@@ -1,5 +1,6 @@
 {
   "name": "Lockscreen",
+  "chromium-args": "--allow-running-insecure-content --ignore-certificate-errors",
   "description": "Chrome platform app.",
   "version": "0.1.0",
   "main": "frameless_window.html",

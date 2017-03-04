@@ -236,18 +236,18 @@ display: none;
 
 .notification_centre > .top {
     position: relative;
-    min-height: 240px;
+    min-height: 200px;
     padding: 15px;
     color: #fff;
 }
 
 .user-profile {
-    margin-top: 90px;
+    margin-top: 20px;
 }
 
 .user-profile img {
-    height: 45px;
-    width: 45px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
     float: left;
     margin-right: 24px;
@@ -283,7 +283,7 @@ display: none;
     display: block;
     position: absolute;
     right: 25px;
-    top: -70px;
+    top: -30px;
     text-align: center;
     color: #fff;
     line-height: 40px;
