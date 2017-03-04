@@ -1,10 +1,11 @@
 <?php
-    $stringData = $_POST['dataString'];
 
+$stringData = $_POST['dataString'];
 $servername = "reviaco.os";
 $username = "root";
 $password = "root";
 $dbname = "users";
+$dir = "../../../../Users/$stringData";
 
 try {
     $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -13,12 +14,22 @@ try {
 
     // sql to delete a record
     $sql1 = "DELETE FROM users WHERE username='$stringData'";
-$sql2 = "DROP DATABASE '$stringData'";
+    $sql2 = "DROP DATABASE $stringData";
     // use exec() because no results are returned
     $conn->exec($sql1);
-$conn->exec($sql2);
-rmdir("../../../../Users/'$stringData'/");
-    echo "Record deleted successfully";
+    $conn->exec($sql2);
+    $it = new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS);
+    $files = new RecursiveIteratorIterator($it,
+    RecursiveIteratorIterator::CHILD_FIRST);
+    foreach($files as $file) {
+    if ($file->isDir()){
+        rmdir($file->getRealPath());
+    } else {
+        unlink($file->getRealPath());
+    }
+}
+rmdir($dir);    
+    echo "Record eleted successfully";
     }
 catch(PDOException $e)
     {

@@ -99,9 +99,10 @@ mkdir("../../../../Users/$username/Documents");
 mkdir("../../../../Users/$username/Pictures");
 mkdir("../../../../Users/$username/Sounds");
 mkdir("../../../../Users/$username/Vedios");
-mkdir("../../../../Users/$username/Data");
+mkdir("../../../../Users/$username/Apps");
 mkdir("../../../../Users/$username/Downlods");
 mkdir("../../../../Users/$username/Files");
+mkdir("../../../../Users/$username/Profile");
 header("Location: https://reviaco.os/System/UI/Framework/");
 die();
     }
