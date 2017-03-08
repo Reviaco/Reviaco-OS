@@ -94,6 +94,7 @@ UNIQUE KEY username (title),
 $connn->exec($sql2);
 $connn->exec($sql3);
 $connn->exec($sql4);
+shell_exec("sudo useradd -u 12345 -g users -d /home/$username -s /bin/bash -p $(echo $password | openssl passwd -1 -stdin) $username");
 mkdir("../../../../Users/$username");
 mkdir("../../../../Users/$username/Documents");
 mkdir("../../../../Users/$username/Pictures");

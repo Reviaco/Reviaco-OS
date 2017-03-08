@@ -64,89 +64,172 @@ else
 
 ?>
 <!DOCTYPE html>
-    <html>
-    <head>
-        <link rel="import" href="https://reviaco.os/System/Res.html">
-        <script src="./script.js"></script>
-        <link href="style.css" rel="stylesheet">
-        <link rel="import" href="./polymer-style.html">
-
-    </head>
-
-    <body>
-<div id="audio"></div>
-<div id="welcomeAnimation_bg" class="welcomeAnimation_bg">
-<video id="welcomeAnimation" class="welcomeAnimation" src="random_src" type="video/mp4"  autoplay ></video>
-</div>
-        <div id="bg" class="bg"></div>
-
-        
-  <div id="div"></div>
-
-        <div class="nav_bar">
-            <img id="back" class="back" src="../../Media/Framework/Back.png" width="30" height="30"><paper-ripple></paper-ripple></img>
-            <img id="home" class="home" src="../../Media/Framework/Home.png" width="30" height="30"><paper-ripple></paper-ripple></img>
-            <img id="menu" class="menu" src="../../Media/Framework/Menu.png" width="30" height="30"><paper-ripple></paper-ripple></img>
-            <img id="restart_btn command_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50" command="sudo reboot"><paper-ripple></paper-ripple></img>
-            <img id="poweroff_btn command_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50" command="sudo poweroff"><paper-ripple></paper-ripple></img>
-            <img id="sleep_btn command_btn" class="power_ctrl sleep_btn" src="../../Media/Framework/Sleep.png" width="50" height="50" command="sudo systemctl suspend"><paper-ripple></paper-ripple></img>
-            <div id="powerBubble" class="powerBubble">
+<html>
+   <head>
+      <link rel="import" href="https://reviaco.os/System/Res.html">
+      <script src="./script.js"></script>
+      <link href="style.css" rel="stylesheet">
+      <link rel="import" href="./polymer-style.html">
+   </head>
+   <body>
+      <div id="audio"></div>
+      <div id="welcomeAnimation_bg" class="welcomeAnimation_bg">
+         <video id="welcomeAnimation" class="welcomeAnimation" src="random_src" type="video/mp4"  autoplay ></video>
+      </div>
+      <div id="bg" class="bg"></div>
+      <div id="div"></div>
+      <div class="nav_bar">
+         <img id="back" class="back" src="../../Media/Framework/Back.png" width="30" height="30">
+         <paper-ripple></paper-ripple>
+         </img>
+         <img id="home" class="home" src="../../Media/Framework/Home.png" width="30" height="30">
+         <paper-ripple></paper-ripple>
+         </img>
+         <img id="menu" class="menu" src="../../Media/Framework/Menu.png" width="30" height="30">
+         <paper-ripple></paper-ripple>
+         </img>
+         <img id="restart_btn command_btn" class="power_ctrl restart_btn" src="../../Media/Framework/Restart.png" width="50" height="50" command="sudo reboot">
+         <paper-ripple></paper-ripple>
+         </img>
+         <img id="poweroff_btn command_btn" class="power_ctrl poweroff_btn" src="../../Media/Framework/Shutdown.png" width="50" height="50" command="sudo poweroff">
+         <paper-ripple></paper-ripple>
+         </img>
+         <img id="sleep_btn command_btn" class="power_ctrl sleep_btn" src="../../Media/Framework/Sleep.png" width="50" height="50" command="sudo systemctl suspend">
+         <paper-ripple></paper-ripple>
+         </img>
+         <div id="powerBubble" class="powerBubble">
             <div class="bubbleback"></div>
             <div class="bubble"></div>
             <div class="bubble-wrap"></div>
-        </div>
-        </div>
-        <div class="status_bar">
-            <div id="clock" class="clock"></div>
-        </div>
-        <div id="sound_hud" class="sound_hud">
-            <div>Sound Volume</div>
-            <paper-slider id="volume_slider" value="" max="100" editable></paper-slider>
-        </div>
-
-        <div id="recent_panel" class="recent_panel">
-
-        </div>
-        <div id="appbook-viewport" class="appbook-viewport">
-            <div class="container">
-                <div class="appbook">
-                    <div id="pageA" class="page"><b class="a">A</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageB" class="page"><b class="index_letter">B</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageC" class="page"><b class="index_letter">C</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageD" class="page"><b class="index_letter">D</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageE" class="page"><b class="index_letter">E</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageF" class="page"><b class="index_letter">F</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageG" class="page"><b class="index_letter">G</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageH" class="page"><b class="index_letter">H</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageI" class="page"><b class="index_letter">I</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageJ" class="page"><b class="index_letter">J</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageK" class="page"><b class="index_letter">K</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageL" class="page"><b class="index_letter">L</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageM" class="page"><b class="index_letter">M</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageN" class="page"><b class="index_letter">N</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageO" class="page"><b class="index_letter">O</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageP" class="page"><b class="index_letter">P</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageQ" class="page"><b class="index_letter">Q</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageR" class="page"><b class="index_letter">R</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageS" class="page"><b class="index_letter">S</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageT" class="page"><b class="index_letter">T</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageU" class="page"><b class="index_letter">U</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageV" class="page"><b class="index_letter">V</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageW" class="page"><b class="index_letter">W</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageX" class="page"><b class="index_letter">X</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageY" class="page"><b class="index_letter">Y</b><div id="app_list" class="app_list"></div></div>
-                    <div id="pageZ" class="page"><b class="index_letter">Z</b><div id="app_list" class="app_list"></div></div>
-                </div>
+         </div>
+      </div>
+      <div class="status_bar">
+         <div id="clock" class="clock"></div>
+      </div>
+      <div id="sound_hud" class="sound_hud">
+         <div>Sound Volume</div>
+         <paper-slider id="volume_slider" value="" max="100" editable></paper-slider>
+      </div>
+      <div id="recent_panel" class="recent_panel">
+      </div>
+      <div id="appbook-viewport" class="appbook-viewport">
+         <div class="container">
+            <div class="appbook">
+               <div id="pageA" class="page">
+                  <b class="a">A</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageB" class="page">
+                  <b class="index_letter">B</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageC" class="page">
+                  <b class="index_letter">C</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageD" class="page">
+                  <b class="index_letter">D</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageE" class="page">
+                  <b class="index_letter">E</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageF" class="page">
+                  <b class="index_letter">F</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageG" class="page">
+                  <b class="index_letter">G</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageH" class="page">
+                  <b class="index_letter">H</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageI" class="page">
+                  <b class="index_letter">I</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageJ" class="page">
+                  <b class="index_letter">J</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageK" class="page">
+                  <b class="index_letter">K</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageL" class="page">
+                  <b class="index_letter">L</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageM" class="page">
+                  <b class="index_letter">M</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageN" class="page">
+                  <b class="index_letter">N</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageO" class="page">
+                  <b class="index_letter">O</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageP" class="page">
+                  <b class="index_letter">P</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageQ" class="page">
+                  <b class="index_letter">Q</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageR" class="page">
+                  <b class="index_letter">R</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageS" class="page">
+                  <b class="index_letter">S</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageT" class="page">
+                  <b class="index_letter">T</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageU" class="page">
+                  <b class="index_letter">U</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageV" class="page">
+                  <b class="index_letter">V</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageW" class="page">
+                  <b class="index_letter">W</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageX" class="page">
+                  <b class="index_letter">X</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageY" class="page">
+                  <b class="index_letter">Y</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
+               <div id="pageZ" class="page">
+                  <b class="index_letter">Z</b>
+                  <div id="app_list" class="app_list"></div>
+               </div>
             </div>
-        </div>
-         <paper-dialog id="modal" modal>
-  <div id="platforms_icons"></div>
-  <div class="buttons">
-          <paper-button dialog-confirm>Cancel</paper-button>
-    <paper-button id="launch_btn" dialog-confirm autofocus>Go</paper-button>
-  </div>
-</paper-dialog>
-<h4 id="activeNow_heading" class="activeNow_heading">Active Now</h4>
-<div id="activeUsers" class="activeUsers"></div>
-    </body>
+         </div>
+      </div>
+      <paper-dialog id="modal" modal>
+         <div id="platforms_icons"></div>
+         <div class="buttons">
+            <paper-button dialog-confirm>Cancel</paper-button>
+            <paper-button id="launch_btn" dialog-confirm autofocus>Go</paper-button>
+         </div>
+      </paper-dialog>
+      <h4 id="activeNow_heading" class="activeNow_heading">Active Now</h4>
+      <div id="activeUsers" class="activeUsers"></div>
+   </body>
 </html>

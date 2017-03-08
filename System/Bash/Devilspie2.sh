@@ -5,7 +5,7 @@ if [ "$3" = "Linux" ]
 then
 while true
 do
-	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/Linux/$4/Scripts/Maximize
+	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/$4/Linux/Scripts/Maximize
 done
 elif [ "$3" = "AndroidTV" ]
 then
@@ -17,7 +17,7 @@ elif [ "$3" = "Windows" ]
 then
 while true
 do
-	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/Windows/$4/Scripts/Maximize
+	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/$4/Windows/Scripts/Maximize
 done
 elif [ "$3" = "AndroidPhone" ]
 then
@@ -50,7 +50,7 @@ if [ "$3" = "Linux" ]
 then
 while true
 do
-	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/Linux/$4/Scripts/Minimize
+	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/$4/Linux/Scripts/Minimize
 done
 elif [ "$3" = "AndroidTV" ]
 then
@@ -89,7 +89,7 @@ if [ "$3" = "Linux" ]
 then
 while true
 do
-	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/Linux/$4/Scripts/SplitRight
+	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/$4/Linux/Scripts/SplitRight
 done
 elif [ "$3" = "AndroidTV" ]
 then
@@ -128,7 +128,7 @@ if [ "$3" = "Linux" ]
 then
 while true
 do
-	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/Linux/$4/Scripts/SplitLeft
+	timeout 1s devilspie2 -d --folder=/var/www/html/Reviaco-OS/Users/$1/Apps/$4/Linux/Scripts/SplitLeft
 done
 elif [ "$3" = "AndroidTV" ]
 then

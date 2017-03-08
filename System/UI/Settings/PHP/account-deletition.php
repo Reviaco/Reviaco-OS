@@ -28,8 +28,10 @@ try {
         unlink($file->getRealPath());
     }
 }
-rmdir($dir);    
-    echo "Record eleted successfully";
+rmdir($dir);
+    shell_exec("sudo userdel $dataString");
+    shell_exec("sudo rm -rf /home/$dataString");
+    echo "Record deleted successfully";
     }
 catch(PDOException $e)
     {

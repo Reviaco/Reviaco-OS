@@ -1,4 +1,7 @@
 <?php
+
+$App_Name = $_POST['App_Name'];
+
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 /*** begin the session ***/
@@ -65,15 +68,11 @@ else
 
 $conn = new mysqli("reviaco.os", "root", "root", $username);
 
-$result = $conn->query("SELECT name, native_name, activity_name, description FROM apps");
-
-$outp = "[";
+$result = $conn->query("SELECT native_name FROM apps WHERE Name LIKE '$App_Name'
+");
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "[") {$outp .= ",";}
-    $outp .= '{"name":"'   . $rs["name"]        . '",';
-    $outp .= '"description":"'. $rs["description"]     . '"}'; 
+echo($rs["type"]);
 }
-$outp .="]";
 
 $conn->close();
 
