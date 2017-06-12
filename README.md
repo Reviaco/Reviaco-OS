@@ -20,7 +20,7 @@ It can run:
 
 # What is the language which is used in programming Reviaco OS ?!!! 
 
-Reviaco OS is generally based on Web languages ( HTML, CSS, JS, PHP )  and it can interact with Linux using exec() PHP commands & NodeJS modules and it can control the windows position and behavior using wmctrl.    
+Reviaco OS is generally based on Web languages ( HTML, CSS, JS, PHP )  and it can interact with Linux using exec() PHP commands & NodeJS modules and it can control the windows positions and behaviors using wmctrl and xdotool.
 
 # What will Reviaco OS be based on?!!! 
 
