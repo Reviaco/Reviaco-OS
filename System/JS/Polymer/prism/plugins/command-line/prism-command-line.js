@@ -45,7 +45,7 @@ Prism.hooks.add('complete', function (env) {
 		lines = lines.join('<span data-prompt="' + promptText + '"></span>');
 	} else {
 		var user = getAttribute('data-user', 'user');
-		var host = getAttribute('data-host', 'reviaco.os');
+		var host = getAttribute('data-host', 'localhost');
 		lines = lines.join('<span data-user="' + user + '" data-host="' + host + '"></span>');
 	}
 

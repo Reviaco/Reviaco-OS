@@ -18,7 +18,7 @@ _[Demo and API docs](https://elements.polymer-project.org/elements/platinum-http
 ##&lt;platinum-https-redirect&gt;
 
 The `<platinum-https-redirect>` element redirects the current page to HTTPS, unless the page is
-loaded from a web server running on `reviaco.os`.
+loaded from a web server running on `localhost`.
 
 Using [HTTP Strict Transport Security](https://en.wikipedia.org/wiki/HTTP_Strict_Transport_Security)
 (HSTS) can be used to enforce HTTPS for an entire

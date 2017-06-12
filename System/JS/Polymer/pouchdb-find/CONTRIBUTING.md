@@ -24,9 +24,9 @@ This will run the tests in Node using LevelDB:
 
     npm test
 
-You can specify an alternate CouchDB server other than `https://reviaco.os:5984`:
+You can specify an alternate CouchDB server other than `http://localhost:5984`:
 
-    COUCH_HOST=https://reviaco.os:6984 npm test
+    COUCH_HOST=http://localhost:6984 npm test
 
 You can also check for 100% code coverage using:
 
@@ -40,7 +40,7 @@ You can filter the tests by running:
 
 Run `npm run dev` and then point your favorite browser to [http://127.0.0.1:8001/test/index.html](http://127.0.0.1:8001/test/index.html).
 
-The query param `?grep=mysearch` will search for tests matching `mysearch`. The query param `couchHost=https://reviaco.os:6984` will use a custom CouchDB server.
+The query param `?grep=mysearch` will search for tests matching `mysearch`. The query param `couchHost=http://localhost:6984` will use a custom CouchDB server.
 
 ### Automated browser tests
 

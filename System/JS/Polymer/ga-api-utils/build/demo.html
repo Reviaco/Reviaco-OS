@@ -27,7 +27,7 @@ gapi.analytics.ready(function() {
   // Run the demo once the user is authorized.
   gapi.analytics.auth.on('success', gaApiUtilsDemo);
 
-  // This client ID will work at https://reviaco.os:8080.
+  // This client ID will work at http://localhost:8080.
   // To run this demo on other hosts or ports, you must use your own client ID.
   gapi.analytics.auth.authorize({
     container: 'embed-api-auth-container',

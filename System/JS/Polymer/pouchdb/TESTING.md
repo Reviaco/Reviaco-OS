@@ -23,12 +23,16 @@ or you can run:
 
     $ npm run dev
 
-and open [http://127.0.0.1:8000/tests/integration/index.html](http://127.0.0.1:8000/tests/integration/index.html) in your browser of choice. The performance tests are located @ [https://reviaco.os:8000/tests/performance/index.html](https://reviaco.os:8000/tests/performance/index.html).
+and open [http://127.0.0.1:8000/tests/integration/index.html](http://127.0.0.1:8000/tests/integration/index.html) in your browser of choice. The performance tests are located @ [http://localhost:8000/tests/performance/index.html](http://localhost:8000/tests/performance/index.html).
 
 You can also test against phantomjs, but you'll need to install phantomjs yourself:
 
     $ npm install phantomjs-prebuilt
     $ CLIENT=selenium:phantomjs npm test
+
+To test a specific plugin in the browser run:
+
+    $ TYPE=find PLUGINS=pouchdb-find npm run dev
 
 ### Unit tests
 
@@ -82,6 +86,12 @@ the 5MB limit.
 
     $ TYPE=mapreduce npm test
 
+#### Run the pouchdb-find tests
+
+These are similar to the map/reduce tests:
+
+    $ TYPE=find PLUGINS=pouchdb-find npm test
+
 ### Testing against PouchDB server
 
 [pouchdb-server](https://github.com/nick-thompson/pouchdb-server) is a project that uses [express-pouchdb](https://github.com/nick-thompson/express-pouchdb) to run a CouchDB-compliant server backed by PouchDB.
@@ -97,7 +107,7 @@ If you would like to modify pouchdb-server while testing, then git clone the exp
 
 Then in the PouchDB project, run:
 
-    COUCH_HOST=https://reviaco.os:6984 npm run dev
+    COUCH_HOST=http://localhost:6984 npm run dev
 
 This works because `npm run dev` does not start up the pouchdb-server itself (only `npm test` does).
 
@@ -141,17 +151,21 @@ You can also test against node-websql:
 
     PERF=1 ADAPTER=websql npm test
 
+You can also override the default number of iterations:
+
+    PERF=1 ITERATIONS=10 npm t
+
 ### Performance tests in the browser
 
 When you run `npm run dev`, performance tests are available at:
 
-    https://reviaco.os:8000/tests/performance/index.html
+    http://localhost:8000/tests/performance/index.html
 
 You can specify a particular version of PouchDB or a particular adapter by doing e.g.:
 
-    https://reviaco.os:8000/tests/performance/index.html?src=http://site.com/path/to/pouchdb.js
-    https://reviaco.os:8000/tests/performance/index.html?adapter=websql
-    https://reviaco.os:8000/tests/performance/index.html?adapter=idb&src=//site.com/pouchdb.js
+    http://localhost:8000/tests/performance/index.html?src=http://site.com/path/to/pouchdb.js
+    http://localhost:8000/tests/performance/index.html?adapter=websql
+    http://localhost:8000/tests/performance/index.html?adapter=idb&src=//site.com/pouchdb.js
 
 All of the browser plugin adapters (i.e. `fruitdown`, `memory`, and `localstorage`) are also available this way.
 
@@ -159,6 +173,10 @@ You can also specify particular tests by using `grep=`, e.g.:
 
     http://127.0.0.1:8000/tests/performance/index.html?grep=basics
     http://127.0.0.1:8000/tests/performance/index.html?grep=basic-inserts
+
+You can also override the default number of iterations using `iterations=`:
+
+    http://127.0.0.1:8000/tests/performance/index.html?grep=basic-insert&interations=10
 
 ### Ad-hoc tests
 
@@ -196,18 +214,26 @@ To test these adapters, you can run e.g.
 
 Or append them as query params in the browser:
 
-    https://reviaco.os:8000/tests/index.html?adapters=memory
+    http://localhost:8000/tests/index.html?adapters=memory
 
 The `adapters` list is a comma-separated list that will be used for `PouchDB.preferredAdapters`.  So e.g. if you want to test `websql` in Chrome, you can do:
 
-    https://reviaco.os:8000/tests/index.html?adapters=websql
+    http://localhost:8000/tests/index.html?adapters=websql
 
 Or even make the `preferredAdapters` list anything you want:
 
     # loads websql, then memory, then idb, then localstorage
-    https://reviaco.os:8000/tests/index.html?adapters=websql,memory,idb,localstorage
+    http://localhost:8000/tests/index.html?adapters=websql,memory,idb,localstorage
 
 Keep in mind that `preferredAdapters` only applies to non-http, non-https adapters.
+
+You can also inject (comma-separated) plugins into any test:
+
+    PLUGINS=pouchdb-find npm test
+
+Or as a query param:
+
+    http://localhost:8000/tests/index.html?plugins=pouchdb-find
 
 ### Installing a CouchDB server
 

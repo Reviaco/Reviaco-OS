@@ -1,8 +1,27 @@
+/*! @license Firebase v4.1.2
+Build: rev-4a4cc92
+Terms: https://firebase.google.com/terms/ */
+
+/**
+* Copyright 2017 Google Inc.
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*   http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
 /**
  * @fileoverview Firebase namespace and Firebase App API.
- * Version: 3.6.7
+ * Version: 4.1.2
  *
- * Copyright 2016 Google Inc. All Rights Reserved.
+ * Copyright 2017 Google Inc. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,8 +51,8 @@ var firebase = {};
  *
  * See
  * {@link
- *   https://firebase.google.com/docs/web/setup#initialize_the_sdk
- *   Initialize the SDK} and
+ *   https://firebase.google.com/docs/web/setup#add_firebase_to_your_app
+ *   Add Firebase to your app} and
  * {@link
  *   https://firebase.google.com/docs/web/setup#initialize_multiple_apps
  *   Initialize multiple apps} for detailed documentation.
@@ -140,7 +159,6 @@ firebase.app.App.prototype.name;
  *
  * @example
  * var app = firebase.initializeApp(config);
- * console.log(app.options.credential === config.credential);  // true
  * console.log(app.options.databaseURL === config.databaseURL);  // true
  *
  * @type {!Object}
@@ -259,55 +277,3 @@ firebase.Promise.reject = function(error) {};
  * @return {!firebase.Promise<!Array<*>>}
  */
 firebase.Promise.all = function(values) {};
-
-
-
-/**
- *
- * FirebaseError is a subclass of the standard JavaScript Error object. In
- * addition to a message string, it contains a string-valued code.
- *
- * @interface
- */
-firebase.FirebaseError;
-
-/**
- * Error codes are strings using the following format:
- *
- *   "service/string-code"
- *
- * While the message for a given error can change, the code will remain the same
- * between backward-compatible versions of the Firebase SDK.
- *
- * @type {string}
- */
-firebase.FirebaseError.prototype.code;
-
-/**
- * An explanatory message for the error that just occurred.
- *
- * This message is designed to be helpful to you, the developer.  It
- * is not intended that you display it to the end user of your application
- * (as it will generally not convey meaningful information to them).
- *
- * @type {string}
- */
-firebase.FirebaseError.prototype.message;
-
-/**
- * The name of the class of Errors.
- * @type {string}
- */
-firebase.FirebaseError.prototype.name;
-
-/**
- * A string value containing the execution backtrace when the error originally
- * occurred.
- *
- * This information can be useful to you and can be sent to
- * {@link https://firebase.google.com/support/ Firebase Support} to help
- * explain the cause of an error.
- *
- * @type {string}
- */
-firebase.FirebaseError.prototype.stack;
