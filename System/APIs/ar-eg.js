@@ -1,15 +1,15 @@
-(function($) {
+(function ($) {
 
-$.fn.extend({
-    animateCss: function (animationName) {
-        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
-        this.addClass('animated ' + animationName).one(animationEnd, function() {
-            $(this).removeClass('animated ' + animationName);
-        });
-    }
-});
+    $.fn.extend({
+        animateCss: function (animationName) {
+            var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+            this.addClass('animated ' + animationName).one(animationEnd, function () {
+                $(this).removeClass('animated ' + animationName);
+            });
+        }
+    });
 
-    $.fn.كلام = function(options) {
+    $.fn.كلام = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -25,7 +25,7 @@ $.fn.extend({
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var out = '<p id="' + name + '"></p>';
             $('Eطبق_السلطة').append(out);
@@ -67,11 +67,11 @@ $.fn.extend({
                 } else if (settings.اللون == 'اخضر_فاتح') {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
-                $('#' + name + '').css('color', settings.اللون);
-}
+                    $('#' + name + '').css('color', settings.اللون);
+                }
             }
 
-                        if (settings.شكل_الخط) {
+            if (settings.شكل_الخط) {
 
                 $('#' + name + '').css('font-style', settings.شكل_الخط);
             }
@@ -80,11 +80,11 @@ $.fn.extend({
 
             if (settings.الطخن) {
                 if (settings.الطخن == 'طخين') {
-$('#' + name + '').css('font-weight', 'bold');
-                   
+                    $('#' + name + '').css('font-weight', 'bold');
+
                 } else {
- $('#' + name + '').css('font-weight', settings.الطخن);
-}
+                    $('#' + name + '').css('font-weight', settings.الطخن);
+                }
             }
             if (settings.الحجم) {
                 $('#' + name + '').css('font-size', settings.الحجم);
@@ -99,10 +99,10 @@ $('#' + name + '').css('font-weight', 'bold');
                 if (settings.الحركة == 'بيطنطط') {
                     $('#' + name + '').animateCss('bounce');
                 } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+                    $('#' + name + '').animateCss(settings.الحركة);
+                }
             }
-if (settings.الشفافية) {
+            if (settings.الشفافية) {
                 $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
@@ -112,7 +112,7 @@ if (settings.الشفافية) {
 
     };
 
-    $.fn.زرار = function(options) {
+    $.fn.زرار = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -131,7 +131,7 @@ if (settings.الشفافية) {
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var out = '<paper-button id="' + name + '"></paper-button>';
             $('Eطبق_السلطة').append(out);
@@ -173,34 +173,34 @@ if (settings.الشفافية) {
                 } else if (settings.لون_الخط == 'اخضر_فاتح') {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
-                $('#' + name + '').css('color', settings.لون_الخط);
-}
+                    $('#' + name + '').css('color', settings.لون_الخط);
+                }
             }
 
-                        if (settings.شكل_الخط) {
+            if (settings.شكل_الخط) {
 
                 $('#' + name + '').css('font-style', settings.شكل_الخط);
             }
-            
- if (settings.مقفول == 'ايوة') {
-     $('#' + name + '').attr('disabled','');
+
+            if (settings.مقفول == 'ايوة') {
+                $('#' + name + '').attr('disabled', '');
             }
-            
-             if (settings.مرفوع == 'ايوة') {
-     $('#' + name + '').attr('raised','');
+
+            if (settings.مرفوع == 'ايوة') {
+                $('#' + name + '').attr('raised', '');
             }
-            
-                         if (settings.سويتش == 'ايوة') {
-     $('#' + name + '').attr('toggles','');
+
+            if (settings.سويتش == 'ايوة') {
+                $('#' + name + '').attr('toggles', '');
             }
-            
+
             if (settings.الطخن) {
                 if (settings.الطخن == 'طخين') {
-$('#' + name + '').css('font-weight', 'bold');
-                   
+                    $('#' + name + '').css('font-weight', 'bold');
+
                 } else {
- $('#' + name + '').css('font-weight', settings.الطخن);
-}
+                    $('#' + name + '').css('font-weight', settings.الطخن);
+                }
             }
             if (settings.الحجم) {
                 $('#' + name + '').css('font-size', settings.الحجم);
@@ -215,10 +215,10 @@ $('#' + name + '').css('font-weight', 'bold');
                 if (settings.الحركة == 'بيطنطط') {
                     $('#' + name + '').animateCss('bounce');
                 } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+                    $('#' + name + '').animateCss(settings.الحركة);
+                }
             }
-if (settings.الشفافية) {
+            if (settings.الشفافية) {
                 $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
@@ -227,8 +227,8 @@ if (settings.الشفافية) {
         });
 
     };
-   
-    $.fn.ايكونة = function(options) {
+
+    $.fn.ايكونة = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -242,7 +242,7 @@ if (settings.الشفافية) {
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var icon = settings.الايكونة;
             var out = '<iron-icon id="' + name + '" icon="' + icon + '"></iron-icon>';
@@ -284,11 +284,11 @@ if (settings.الشفافية) {
                 } else if (settings.لون_الايكونة == 'اخضر_فاتح') {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
-                $('#' + name + '').css('color', settings.لون_الايكونة);
-}
+                    $('#' + name + '').css('color', settings.لون_الايكونة);
+                }
             }
 
-                        
+
             if (settings.الحجم) {
                 $('#' + name + '').css('font-size', settings.الحجم);
             }
@@ -302,10 +302,10 @@ if (settings.الشفافية) {
                 if (settings.الحركة == 'بيطنطط') {
                     $('#' + name + '').animateCss('bounce');
                 } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+                    $('#' + name + '').animateCss(settings.الحركة);
+                }
             }
-if (settings.الشفافية) {
+            if (settings.الشفافية) {
                 $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
@@ -314,9 +314,9 @@ if (settings.الشفافية) {
         });
 
     };
-    $.fn.زرار_بأيكونة = function(options) {
+    $.fn.زرار_بأيكونة = function (options) {
 
-                // Establish our default settings
+        // Establish our default settings
         var settings = $.extend({
             لون_الايكونة: null,
             الايكونة: null,
@@ -328,7 +328,7 @@ if (settings.الشفافية) {
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var icon = settings.الايكونة;
             var out = '<paper-icon-button id="' + name + '" icon="' + icon + '"></paper-icon-button>';
@@ -370,11 +370,11 @@ if (settings.الشفافية) {
                 } else if (settings.لون_الايكونة == 'اخضر_فاتح') {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
-                $('#' + name + '').css('color', settings.لون_الايكونة);
-}
+                    $('#' + name + '').css('color', settings.لون_الايكونة);
+                }
             }
 
-                        
+
             if (settings.الحجم) {
                 $('#' + name + '').css('font-size', settings.الحجم);
             }
@@ -388,10 +388,10 @@ if (settings.الشفافية) {
                 if (settings.الحركة == 'بيطنطط') {
                     $('#' + name + '').animateCss('bounce');
                 } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+                    $('#' + name + '').animateCss(settings.الحركة);
+                }
             }
-if (settings.الشفافية) {
+            if (settings.الشفافية) {
                 $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
@@ -399,7 +399,7 @@ if (settings.الشفافية) {
             }
         });
     };
-    $.fn.سيكشن = function(options) {
+    $.fn.سيكشن = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -418,7 +418,7 @@ if (settings.الشفافية) {
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var out = '<paper-card id="' + name + '"><div id="الحاجات_اللى_جوة_السيكشن" class="card-content"></div></paper-card>';
             $('Eطبق_السلطة').append(out);
@@ -460,16 +460,16 @@ if (settings.الشفافية) {
                 } else if (settings.الخلفية == 'اخضر_فاتح') {
                     $('#' + name + '').css('background', '#8BC34A');
                 } else {
-                $('#' + name + '').css('background', settings.الخلفية);
-}
+                    $('#' + name + '').css('background', settings.الخلفية);
+                }
             }
 
 
-            
-             if (settings.مصدر_الصورة) {
+
+            if (settings.مصدر_الصورة) {
                 $('#' + name + '').attr('image', settings.مصدر_الصورة);
             }
-            
+
 
             if (settings.العرض) {
                 $('#' + name + '').css('width', settings.العرض);
@@ -481,10 +481,10 @@ if (settings.الشفافية) {
                 if (settings.الحركة == 'بيطنطط') {
                     $('#' + name + '').animateCss('bounce');
                 } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+                    $('#' + name + '').animateCss(settings.الحركة);
+                }
             }
-if (settings.الشفافية) {
+            if (settings.الشفافية) {
                 $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
@@ -493,9 +493,9 @@ if (settings.الشفافية) {
         });
 
     };
-    
-    
-    $.fn.التوضيح = function(options) {
+
+
+    $.fn.التوضيح = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -513,7 +513,7 @@ if (settings.الشفافية) {
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var out = '<paper-tooltip id="' + name + '" for="' + settings.الام + '"></paper-tooltip>';
             $('Eطبق_السلطة').append(out);
@@ -555,22 +555,22 @@ if (settings.الشفافية) {
                 } else if (settings.لون_الخط == 'اخضر_فاتح') {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
-                $('#' + name + '').css('color', settings.لون_الخط);
-}
+                    $('#' + name + '').css('color', settings.لون_الخط);
+                }
             }
 
-                        if (settings.شكل_الخط) {
+            if (settings.شكل_الخط) {
 
                 $('#' + name + '').css('font-style', settings.شكل_الخط);
             }
-            
+
             if (settings.الطخن) {
                 if (settings.الطخن == 'طخين') {
-$('#' + name + '').css('font-weight', 'bold');
-                   
+                    $('#' + name + '').css('font-weight', 'bold');
+
                 } else {
- $('#' + name + '').css('font-weight', settings.الطخن);
-}
+                    $('#' + name + '').css('font-weight', settings.الطخن);
+                }
             }
             if (settings.الحجم) {
                 $('#' + name + '').css('font-size', settings.الحجم);
@@ -585,25 +585,21 @@ $('#' + name + '').css('font-weight', 'bold');
                 if (settings.الحركة == 'بيطنطط') {
                     $('#' + name + '').animateCss('bounce');
                 } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+                    $('#' + name + '').animateCss(settings.الحركة);
+                }
             }
-             if (settings.المكان == 'على_اللمين') {
-     $('#' + name + '').attr('position','right');
-             }
-                 else if (settings.المكان == 'على_الشمال') {
-     $('#' + name + '').attr('position','left');
-                 }
-                     else if (settings.المكان == 'من_فوق') {
-     $('#' + name + '').attr('position','top');
-                     }
-                         else if (settings.المكان == 'من_تحت') {
-     $('#' + name + '').attr('position','bottom');
-                         }
-                             else {
-                                 
+            if (settings.المكان == 'على_اللمين') {
+                $('#' + name + '').attr('position', 'right');
+            } else if (settings.المكان == 'على_الشمال') {
+                $('#' + name + '').attr('position', 'left');
+            } else if (settings.المكان == 'من_فوق') {
+                $('#' + name + '').attr('position', 'top');
+            } else if (settings.المكان == 'من_تحت') {
+                $('#' + name + '').attr('position', 'bottom');
+            } else {
+
             }
-if (settings.الشفافية) {
+            if (settings.الشفافية) {
                 $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
@@ -612,7 +608,7 @@ if (settings.الشفافية) {
         });
 
     };
-    $.fn.بلتة_الوان = function(options) {
+    $.fn.بلتة_الوان = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -623,7 +619,7 @@ if (settings.الشفافية) {
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var out = '<paper-swatch-picker id="' + name + '" color="{{selectedColor}}"></paper-swatch-picker>';
             $('Eطبق_السلطة').append(out);
@@ -664,11 +660,11 @@ if (settings.الشفافية) {
                 } else if (settings.لون_الخط == 'اخضر_فاتح') {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
-                $('#' + name + '').css('color', settings.لون_الخط);
-}
+                    $('#' + name + '').css('color', settings.لون_الخط);
+                }
             }
 
-                      
+
             if (settings.العرض) {
                 $('#' + name + '').css('width', settings.العرض);
             }
@@ -679,10 +675,10 @@ if (settings.الشفافية) {
                 if (settings.الحركة == 'بيطنطط') {
                     $('#' + name + '').animateCss('bounce');
                 } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+                    $('#' + name + '').animateCss(settings.الحركة);
+                }
             }
-if (settings.الشفافية) {
+            if (settings.الشفافية) {
                 $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
@@ -691,7 +687,7 @@ if (settings.الشفافية) {
         });
 
     };
-    $.fn.البتاع_اللى_بتحمل = function(options) {
+    $.fn.البتاع_اللى_بتحمل = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -703,7 +699,7 @@ if (settings.الشفافية) {
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var out = '<paper-spinner id="' + name + '"></paper-spinner>';
             $('Eطبق_السلطة').append(out);
@@ -744,17 +740,17 @@ if (settings.الشفافية) {
                 } else if (settings.لون_الخط == 'اخضر_فاتح') {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
-                $('#' + name + '').css('color', settings.لون_الخط);
-}
+                    $('#' + name + '').css('color', settings.لون_الخط);
+                }
             }
 
-                        
-            
-                         if (settings.بيحمل == 'ايوة') {
-     $('#' + name + '').attr('active','');
+
+
+            if (settings.بيحمل == 'ايوة') {
+                $('#' + name + '').attr('active', '');
             }
-            
-            
+
+
             if (settings.العرض) {
                 $('#' + name + '').css('width', settings.العرض);
             }
@@ -765,10 +761,10 @@ if (settings.الشفافية) {
                 if (settings.الحركة == 'بيطنطط') {
                     $('#' + name + '').animateCss('bounce');
                 } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+                    $('#' + name + '').animateCss(settings.الحركة);
+                }
             }
-if (settings.الشفافية) {
+            if (settings.الشفافية) {
                 $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
@@ -777,10 +773,10 @@ if (settings.الشفافية) {
         });
 
     };
-    $.fn.شريط_التحميل = function(options) {
+    $.fn.شريط_التحميل = function (options) {
 
         // Establish our default settings
-                var settings = $.extend({
+        var settings = $.extend({
             الاسم: null,
             العرض: null,
             الطول: null,
@@ -789,7 +785,7 @@ if (settings.الشفافية) {
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var out = '<paper-progress id="' + name + '"></paper-progress>';
             $('Eطبق_السلطة').append(out);
@@ -830,11 +826,11 @@ if (settings.الشفافية) {
                 } else if (settings.لون_الخط == 'اخضر_فاتح') {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
-                $('#' + name + '').css('color', settings.لون_الخط);
-}
+                    $('#' + name + '').css('color', settings.لون_الخط);
+                }
             }
-            
-            
+
+
             if (settings.العرض) {
                 $('#' + name + '').css('width', settings.العرض);
             }
@@ -845,10 +841,10 @@ if (settings.الشفافية) {
                 if (settings.الحركة == 'بيطنطط') {
                     $('#' + name + '').animateCss('bounce');
                 } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+                    $('#' + name + '').animateCss(settings.الحركة);
+                }
             }
-if (settings.الشفافية) {
+            if (settings.الشفافية) {
                 $('#' + name + '').css('-webkit-filter', 'opacity(' + settings.الشفافية + '%)');
             }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
@@ -857,8 +853,8 @@ if (settings.الشفافية) {
         });
 
     };
-    
-$.fn.صورة = function(options) {
+
+    $.fn.صورة = function (options) {
 
         // Establish our default settings
         var settings = $.extend({
@@ -873,13 +869,13 @@ $.fn.صورة = function(options) {
             لما_يخلص_تحميل: null
         }, options);
 
-        return this.each(function() {
+        return this.each(function () {
             var name = settings.الاسم;
             var source = settings.المصدر;
             var out = '<img id="' + name + '" src="' + source + '"></img>';
             $('Eطبق_السلطة').append(out);
 
-            
+
             if (settings.عرض_الصورة) {
                 $('#' + name + '').attr('width', settings.عرض_الصورة);
             }
@@ -895,11 +891,11 @@ $.fn.صورة = function(options) {
             if (settings.الطول) {
                 $('#' + name + '').css('height', settings.الطول);
             }
-               if (settings.الحركة == 'بيطنطط') {
-                    $('#' + name + '').animateCss('bounce');
-                } else {
-$('#' + name + '').animateCss(settings.الحركة);
-}
+            if (settings.الحركة == 'بيطنطط') {
+                $('#' + name + '').animateCss('bounce');
+            } else {
+                $('#' + name + '').animateCss(settings.الحركة);
+            }
             if ($.isFunction(settings.لما_يخلص_تحميل)) {
                 settings.لما_يخلص_تحميل.call(this);
             }

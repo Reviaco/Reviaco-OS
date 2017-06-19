@@ -81,7 +81,6 @@ function get_users_interval() {
   var users_settings = '<div class="users">';
 
   for (i = 0; i < arr.length; i++) {
-   console.log('ahmed');
    users_settings += '<paper-icon-item id="' + arr[i].username + '" class="user"><div class="avatar blue" item-icon></div><paper-item-body two-line><div>' + arr[i].username + '</div><div secondary>Jan 9 2014</div></paper-item-body><paper-icon-button icon="star" alt="favourite this!"></paper-icon-button></paper-icon-item>';
 
   }
