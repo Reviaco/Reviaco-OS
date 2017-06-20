@@ -1,4 +1,46 @@
 var put = $('body');
+var lang = 0;
+var yesTranslations = ['yes', 'yup', 'oui', 'نعم', 'ايوه', 'はい', '是', '是'];
+var noTranslations = ['no', 'nope', 'non', 'لا', 'لأ', 'いいえ', '沒有', '没有'];
+var blackTranslations = ['black', 'black', 'noir', 'اسود', 'اسود', '黒', '黑色', '黑色'];
+var redTranslations = ['red', 'red', 'rouge', 'احمر', 'احمر', '赤', '紅', '红'];
+var blueTranslations = ['blue', 'blue', 'bleu', 'ازرق', 'ازرق', '青', '藍色', '蓝色'];
+var cyanTranslations = ['cyan', 'cyan', 'cyan', 'سماوى', 'لبنى', 'シアン', '青色', '青色'];
+var grayTranslations = ['gray', 'gray', 'gris', 'رصاصى', 'فرانى', 'グレー', '灰色', '灰色'];
+var greenTranslations = ['green', 'green', 'vert', 'اخضر', 'اخضر', '緑', '綠色', '绿色'];
+var whiteTranslations = ['white', 'white', 'blanc', 'ابيض', 'ابيض', '白', '白色', '白色'];
+var orangeTranslations = ['orange', 'orange', 'orange', 'برتقالى', 'برتقانى', 'オレンジ', '橙子', '橙子'];
+var yellowTranslations = ['yellow', 'yellow', 'jaune', 'اصفر', 'اصفر', '黄', '黃色', '黄色'];
+var brownTranslations = ['brown', 'brown', 'marron', 'بنى', 'بنى', '褐色', '棕色', '棕色'];
+var tealTranslations = ['teal', 'teal', 'sarcelle', 'تركواز', 'تركواز', 'ティール', '水鴨', '水鸭'];
+var pinkTranslations = ['pink', 'pink', 'rose', 'زهرى', 'بمبى', 'ピンク', '粉', '粉'];
+var lightGreenTranslations = ['light green', 'light green', 'Vert clair', 'اخضر فاتح', 'اخضر فاتح', 'ライトグリーン', '淺綠色', '浅绿色'];
+var colorTranslations = ['colour', 'color', 'couleur', 'اللون', 'اللون', 'カラー', '顏色', '颜色'];
+var pinTranslations = ['pin', 'pin', 'épingle', 'الدبوس', 'الدبوس', 'ピン', '銷', '销'];
+var animationTranslations = ['aniamtion', 'aniamtion', 'animation', 'الحركة', 'الحركة', 'アニメーション', '動畫', '动画'];
+var commandsTranslations = ['commands', 'commands', 'commandes', 'الأوامر', 'الأوامر', 'コマンド', '命令', '命令'];
+var sliderTranslations = ['slider', 'slider', 'curseur', 'دبوس', 'دبوس', 'スライダー', '滑塊', '滑块'];
+var buttonTranslations = ['button', 'button', 'curseur', 'زر', 'زرار', 'スライダー', '滑塊', '滑块'];
+var databaseCenterTranslations = ['database_center', 'pin', 'épingle', 'مركز_قاعدة_البيانات', 'مركز_الداتا_بيز', 'ピン', '銷', '销'];
+var FABTranslations = ['FAB', 'FAB', 'épingle', 'دبوس', 'دبوس', 'ピン', '銷', '销'];
+var textFnTranslations = ['text0', 'text0', 'épingle', 'نص', 'كلام', 'ピン', '銷', '销'];
+var buttonWithAnIconTranslations = ['button_with_an_icon', 'button_with_an_icon', 'épingle', 'زر_بأيقونة', 'زرار_بأيكونة', 'ピン', '銷', '销'];
+var iconTranslations = ['icon', 'icon', 'épingle', 'ايقونة', 'ايكونة', 'ピン', '銷', '销'];
+var imageTranslations = ['image', 'image', 'épingle', 'صورة', 'صورة', 'ピン', '銷', '销'];
+var videoTranslations = ['video', 'video', 'épingle', 'فيديو', 'فيديو', 'ピン', '銷', '销'];
+var audioTranslations = ['audio', 'audio', 'épingle', 'صوت', 'صوت', 'ピン', '銷', '销'];
+var textboxTranslations = ['text box', 'text box', 'épingle', 'صندوق_النص', 'مكان_الكتابة', 'ピン', '銷', '销'];
+var sectionTranslations = ['section', 'section', 'épingle', 'دبوس', 'دبوس', 'ピン', '銷', '销'];
+var checkboxTranslations = ['checkbox', 'checkbox', 'épingle', 'دبوس', 'دبوس', 'ピン', '銷', '销'];
+var backgroundTranslations = ['background', 'background', 'épingle', 'الخلفية', 'الخلفية', 'ピン', '銷', '销'];
+var textTranslations = ['text', 'text', 'épingle', 'النص', 'الكلام', 'ピン', '銷', '销'];
+var widthTranslations = ['width', 'width', 'épingle', 'دبوس', 'دبوس', 'ピン', '銷', '销'];
+var lengthTranslations = ['length', 'length', 'épingle', 'دبوس', 'دبوس', 'ピン', '銷', '销'];
+var locationTranslations = ['location', 'location', 'épingle', 'المكان', 'المكان', 'ピン', '銷', '销'];
+var locationFromLeftTranslations = ['location from the left', 'location from the left', 'épingle', 'المكان_من_اليمين', 'المكان_من_اللمين', 'ピン', '銷', '销'];
+var locationFromRightTranslations = ['location from the right', 'location from the right', 'épingle', 'المكان_من_الشمال', 'المكان_من_الشمال', 'ピン', '銷', '销'];
+var locationFromTopTranslations = ['location from the top', 'location from the top', 'épingle', 'المكان_من_فوق', 'المكان_من_فوق', 'ピン', '銷', '销'];
+var locationFromBottomTranslations = ['location from the bottom', 'location from the bottom', 'épingle', 'المكان_من_تحت', 'المكان_من_تحت', 'ピン', '銷', '销'];
 
 (function ($) {
     $.fn.extend({
@@ -11,31 +53,31 @@ var put = $('body');
     });
 
     function setFontColour(elementName, colour) {
-        if (colour == 'black') {
+        if (colour == blackTranslations[lang]) {
             $('#' + elementName + '').css('color', '#000000');
-        } else if (colour == 'red') {
+        } else if (colour == redTranslations[lang]) {
             $('#' + elementName + '').css('color', '#F44336');
-        } else if (colour == 'blue') {
+        } else if (colour == blueTranslations[lang]) {
             $('#' + elementName + '').css('color', '#2196F3');
-        } else if (colour == 'cyan') {
+        } else if (colour == cyanTranslations[lang]) {
             $('#' + elementName + '').css('color', '#00BCD4');
-        } else if (colour == 'gray') {
+        } else if (colour == grayTranslations[lang]) {
             $('#' + elementName + '').css('color', '#9E9E9E');
-        } else if (colour == 'green') {
+        } else if (colour == greenTranslations[lang]) {
             $('#' + elementName + '').css('color', '#4CAF50');
-        } else if (colour == 'white') {
+        } else if (colour == whiteTranslations[lang]) {
             $('#' + elementName + '').css('color', '#FFFFFF');
-        } else if (colour == 'orange') {
+        } else if (colour == orangeTranslations[lang]) {
             $('#' + elementName + '').css('color', '#FF9800');
-        } else if (colour == 'yellow') {
+        } else if (colour == yellowTranslations[lang]) {
             $('#' + elementName + '').css('color', '#FFEB3B');
-        } else if (colour == 'brown') {
+        } else if (colour == brownTranslations[lang]) {
             $('#' + elementName + '').css('color', '#795548');
-        } else if (colour == 'teal') {
+        } else if (colour == tealTranslations[lang]) {
             $('#' + elementName + '').css('color', '#009688');
-        } else if (colour == 'pink') {
+        } else if (colour == pinkTranslations[lang]) {
             $('#' + elementName + '').css('color', '#E91E63');
-        } else if (colour == 'lightGreen') {
+        } else if (colour == lightGreenTranslations[lang]) {
             $('#' + elementName + '').css('color', '#8BC34A');
         } else {
             $('#' + elementName + '').css('color', colour);
@@ -43,31 +85,31 @@ var put = $('body');
     }
 
     function setBG(elementName, background) {
-        if (background == 'black') {
+        if (background == blackTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#000000');
-        } else if (background == 'red') {
+        } else if (background == redTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#F44336');
-        } else if (background == 'blue') {
+        } else if (background == blueTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#2196F3');
-        } else if (background == 'cyan') {
+        } else if (background == cyanTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#00BCD4');
-        } else if (background == 'gray') {
+        } else if (background == grayTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#9E9E9E');
-        } else if (background == 'green') {
+        } else if (background == greenTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#4CAF50');
-        } else if (background == 'white') {
+        } else if (background == whiteTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#FFFFFF');
-        } else if (background == 'orange') {
+        } else if (background == orangeTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#FF9800');
-        } else if (background == 'yellow') {
+        } else if (background == yellowTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#FFEB3B');
-        } else if (background == 'brown') {
+        } else if (background == brownTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#795548');
-        } else if (background == 'teal') {
+        } else if (background == tealTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#009688');
-        } else if (background == 'pink') {
+        } else if (background == pinkTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#E91E63');
-        } else if (background == 'lightGreen') {
+        } else if (background == lightGreenTranslations[lang]) {
             $('#' + elementName + '').css('background-color', '#8BC34A');
         } else if (background.charAt(0) == '#') {
             $('#' + elementName + '').css('background-color', background);
@@ -80,155 +122,155 @@ var put = $('body');
         if (animation == 'jumping') {
             $('#' + elementName + '').animateCss('bounce');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('flash');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('pulse');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rubberBand');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('shake');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('headShake');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('swing');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('tada');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('wobble');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('jello');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceIn');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceInDown');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceInLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceInRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceInUp');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceOut');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceOutDown');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceOutLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceOutRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('bounceOutUp');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeIn');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeInDown');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeInDownBig');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeInLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeInLeftBig');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeInRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeInRightBig');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeInUp');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeInUpBig');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeOut');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeOutDown');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeOutDownBig');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeOutLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeOutLeftBig');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeOutRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeOutRightBig');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeOutUp');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('fadeOutUpBig');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('flipInX');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('flipInY');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('flipOutX');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('flipOutY');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('lightSpeedIn');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('lightSpeedOut');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateIn');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateInDownLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateInDownRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateInUpLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateInUpRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateOut');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateOutDownLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateOutDownRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateOutUpLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rotateOutUpRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('hinge');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('jackInTheBox');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rollIn');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('rollOut');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomIn');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomInDown');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomInLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomInRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomInUp');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomOut');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomOutDown');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomOutLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomOutRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('zoomOutUp');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('slideInDown');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('slideInLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('slideInRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('slideInUp');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('slideOutDown');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('slideOutLeft');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('slideOutRight');
         } else if (animation == 'jumping') {
-            $('#' + elementName + '').animateCss('bounce');
+            $('#' + elementName + '').animateCss('slideOutUp');
         } else {
             $('#' + elementName + '').animateCss(animation);
         }
@@ -269,11 +311,62 @@ var put = $('body');
                             $('#' + targetName + '').remove();
                         });
                     }
-                } else if (commands[i].split('when clicked, ')[1].split(' ')[0] == 'redirect') {
+                } else if (commands[i].split('when clicked, ')[1].split(' ')[0] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[1] == 'redirect to') {
                     var targetURL = commands[i].split('redirect to ')[1];
                     $('#' + elementName + '').click(function () {
                         window.location = targetURL;
                     });
+                } else if (commands[i].split('when clicked, ')[1].split(' ')[0] == 'play') {
+                    var targetElement = commands[i].split('play ')[1];
+                    $('#' + elementName + '').click(function () {
+                        $('#' + targetElement + '').play();
+                    });
+                } else if (commands[i].split('when clicked, ')[1].split(' ')[0] == 'pause') {
+                    var targetElement = commands[i].split('pause ')[1];
+                    $('#' + elementName + '').click(function () {
+                        $('#' + targetElement + '').pause();
+                    });
+                } else if (commands[i].split('when clicked, ')[1].split(' ')[0] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[1] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[2] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[3] == 'set its value to') {
+                    if (commands[i].split('set its value to ')[1].split(' ')[0] + ' ' + commands[i].split('set its value to ')[1].split(' ')[1] + ' ' + commands[i].split('set its value to ')[1].split(' ')[2] == 'the value of') {
+                        var newVal = $('#' + commands[i].split('set its value to the value of ')[1] + '').val();
+                        $('#' + elementName + '').click(function () {
+                            $('#' + elementName + '').val(newVal);
+                        });
+                    } else {
+                        var newVal = commands[i].split('set its value to ')[1];
+                        $('#' + elementName + '').click(function () {
+                            $('#' + targetName + '').val(newVal);
+                        });
+                    }
+
+                } else if (commands[i].split('when clicked, ')[1].split(' ')[0] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[1] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[2] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[3] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[5] == 'set the value of to') {
+                    var targetElement = commands[i].split('when clicked, ')[1].split(' ')[4];
+                    var resourse = commands[i].split('set the value of ' + targetElement + ' to the value of ')[1];
+                    if (commands[i].split('set the value of ' + targetElement + ' to ')[1].split(' ')[0] + ' ' + commands[i].split('set the value of ' + targetElement + ' to ')[1].split(' ')[1] + ' ' + commands[i].split('set the value of ' + targetElement + ' to ')[1].split(' ')[2] == 'the value of') {
+                        $('#' + elementName + '').click(function () {
+                            $('#' + targetElement + '').val($('#' + resourse + '').val());
+                        });
+                    } else {
+                        var newVal = commands[i].split('set the value of ' + targetElement + ' to ')[1];
+                        $('#' + elementName + '').click(function () {
+                            $('#' + targetElement + '').val(newVal);
+                        });
+
+                    }
+                } else if (commands[i].split('when clicked, ')[1].split(' ')[0] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[1] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[2] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[3] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[4] + ' ' + commands[i].split('when clicked, ')[1].split(' ')[6] == 'set the time position of to') {
+                    var targetElement = commands[i].split('when clicked, ')[1].split(' ')[5];
+                    var resourse = commands[i].split('set the value of ' + targetElement + ' to the value of ')[1];
+                    if (commands[i].split('set the time position of ' + targetElement + ' to ')[1].split(' ')[0] + ' ' + commands[i].split('set the time position of ' + targetElement + ' to ')[1].split(' ')[1] + ' ' + commands[i].split('set the time position of ' + targetElement + ' to ')[1].split(' ')[2] == 'the value of') {
+                        $('#' + elementName + '').click(function () {
+                            $('#' + targetElement + '').currentTime = $('#' + resourse + '').val();
+                        });
+                    } else {
+                        var newTimePosition = commands[i].split('set the time position of ' + targetElement + ' to ')[1];
+                        $('#' + elementName + '').click(function () {
+                            $('#' + targetElement + '').currentTime = newTimePosition;
+                        });
+
+                    }
                 }
 
             } else if (commands[i].split('when the mouse pointer moved on it, ')[0] != commands[i]) {
@@ -559,28 +652,28 @@ var put = $('body');
                         window.location = targetURL;
                     });
                 }
+            } else {
+
             }
 
         }
     }
 
-
-
     $.fn.text0 = function (options) {
         // Establish our default settings
         var settings = $.extend({
             text: 'It seems that you have typed nothing',
-            colour: null,
+            [colorTranslations[lang]]: null,
             size: null,
             name: null,
             width: null,
             length: null,
             thickness: null,
             fontStyle: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             background: null,
             transparency: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -620,7 +713,20 @@ var put = $('body');
             }
         });
     };
-    $.fn.button = function (options) {
+
+    $.fn[databaseCenterTranslations[lang]] = function (options) {
+        // Establish our default settings
+        var settings = $.extend({
+            name: null,
+            [animationTranslations[lang]]: null
+        }, options);
+        return this.each(function () {
+            var name = settings.name;
+            var out = '<p id="' + name + '"></p>';
+            $('contents').append(out);
+        });
+    };
+    $.fn[buttonTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             text: 'It seems that you have typed nothing',
@@ -634,10 +740,10 @@ var put = $('body');
             disabled: null,
             raised: null,
             switchedOn: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             background: null,
             transparency: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -650,13 +756,13 @@ var put = $('body');
             if (settings.fontStyle) {
                 $('#' + name + '').css('font-style', settings.fontStyle);
             }
-            if (settings.disabled == 'yes') {
+            if (settings.disabled == yesTranslations[lang]) {
                 $('#' + name + '').attr('disabled', '');
             }
-            if (settings.raised == 'yes') {
+            if (settings.raised == yesTranslations[lang]) {
                 $('#' + name + '').attr('raised', '');
             }
-            if (settings.switchedOn == 'yes') {
+            if (settings.switchedOn == yesTranslations[lang]) {
                 $('#' + name + '').attr('toggles', '');
             }
             if (settings.thickness) {
@@ -686,7 +792,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.icon = function (options) {
+    $.fn[iconTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             iconColour: null,
@@ -695,10 +801,10 @@ var put = $('body');
             name: null,
             width: null,
             length: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             background: null,
             transparency: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -706,31 +812,31 @@ var put = $('body');
             var out = '<iron-icon id="' + name + '" icon="' + icon + '"></iron-icon>';
             $('contents').append(out);
             if (settings.iconColour) {
-                if (settings.iconColour == 'black') {
+                if (settings.iconColour == blackTranslations[lang]) {
                     $('#' + name + '').css('color', '#000000');
-                } else if (settings.iconColour == 'red') {
+                } else if (settings.iconColour == redTranslations[lang]) {
                     $('#' + name + '').css('color', '#F44336');
-                } else if (settings.iconColour == 'blue') {
+                } else if (settings.iconColour == blueTranslations[lang]) {
                     $('#' + name + '').css('color', '#2196F3');
-                } else if (settings.iconColour == 'cyan') {
+                } else if (settings.iconColour == cyanTranslations[lang]) {
                     $('#' + name + '').css('color', '#00BCD4');
-                } else if (settings.iconColour == 'gray') {
+                } else if (settings.iconColour == grayTranslations[lang]) {
                     $('#' + name + '').css('color', '#9E9E9E');
-                } else if (settings.iconColour == 'green') {
+                } else if (settings.iconColour == greenTranslations[lang]) {
                     $('#' + name + '').css('color', '#4CAF50');
-                } else if (settings.iconColour == 'white') {
+                } else if (settings.iconColour == whiteTranslations[lang]) {
                     $('#' + name + '').css('color', '#FFFFFF');
-                } else if (settings.iconColour == 'orange') {
+                } else if (settings.iconColour == orangeTranslations[lang]) {
                     $('#' + name + '').css('color', '#FF9800');
-                } else if (settings.iconColour == 'yellow') {
+                } else if (settings.iconColour == yellowTranslations[lang]) {
                     $('#' + name + '').css('color', '#FFEB3B');
-                } else if (settings.iconColour == 'brown') {
+                } else if (settings.iconColour == brownTranslations[lang]) {
                     $('#' + name + '').css('color', '#795548');
-                } else if (settings.iconColour == 'teal') {
+                } else if (settings.iconColour == tealTranslations[lang]) {
                     $('#' + name + '').css('color', '#009688');
-                } else if (settings.iconColour == 'pink') {
+                } else if (settings.iconColour == pinkTranslations[lang]) {
                     $('#' + name + '').css('color', '#E91E63');
-                } else if (settings.iconColour == 'lightGreen') {
+                } else if (settings.iconColour == lightGreenTranslations[lang]) {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
                     $('#' + name + '').css('color', settings.iconColour);
@@ -756,7 +862,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.buttonWithAnIcon = function (options) {
+    $.fn[buttonWithAnIconTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             iconColour: null,
@@ -765,10 +871,10 @@ var put = $('body');
             name: null,
             width: null,
             length: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             background: null,
             transparency: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -776,31 +882,31 @@ var put = $('body');
             var out = '<paper-icon-button id="' + name + '" icon="' + icon + '"></paper-icon-button>';
             $('contents').append(out);
             if (settings.iconColour) {
-                if (settings.iconColour == 'black') {
+                if (settings.iconColour == blackTranslations[lang]) {
                     $('#' + name + '').css('color', '#000000');
-                } else if (settings.iconColour == 'red') {
+                } else if (settings.iconColour == redTranslations[lang]) {
                     $('#' + name + '').css('color', '#F44336');
-                } else if (settings.iconColour == 'blue') {
+                } else if (settings.iconColour == blueTranslations[lang]) {
                     $('#' + name + '').css('color', '#2196F3');
-                } else if (settings.iconColour == 'cyan') {
+                } else if (settings.iconColour == cyanTranslations[lang]) {
                     $('#' + name + '').css('color', '#00BCD4');
-                } else if (settings.iconColour == 'gray') {
+                } else if (settings.iconColour == grayTranslations[lang]) {
                     $('#' + name + '').css('color', '#9E9E9E');
-                } else if (settings.iconColour == 'green') {
+                } else if (settings.iconColour == greenTranslations[lang]) {
                     $('#' + name + '').css('color', '#4CAF50');
-                } else if (settings.iconColour == 'white') {
+                } else if (settings.iconColour == whiteTranslations[lang]) {
                     $('#' + name + '').css('color', '#FFFFFF');
-                } else if (settings.iconColour == 'orange') {
+                } else if (settings.iconColour == orangeTranslations[lang]) {
                     $('#' + name + '').css('color', '#FF9800');
-                } else if (settings.iconColour == 'yellow') {
+                } else if (settings.iconColour == yellowTranslations[lang]) {
                     $('#' + name + '').css('color', '#FFEB3B');
-                } else if (settings.iconColour == 'brown') {
+                } else if (settings.iconColour == brownTranslations[lang]) {
                     $('#' + name + '').css('color', '#795548');
-                } else if (settings.iconColour == 'teal') {
+                } else if (settings.iconColour == tealTranslations[lang]) {
                     $('#' + name + '').css('color', '#009688');
-                } else if (settings.iconColour == 'pink') {
+                } else if (settings.iconColour == pinkTranslations[lang]) {
                     $('#' + name + '').css('color', '#E91E63');
-                } else if (settings.iconColour == 'lightGreen') {
+                } else if (settings.iconColour == lightGreenTranslations[lang]) {
                     $('#' + name + '').css('color', '#8BC34A');
                 } else {
                     $('#' + name + '').css('color', settings.iconColour);
@@ -826,7 +932,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.section = function (options) {
+    $.fn[sectionTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             text: 'It seems that you have typed nothing',
@@ -837,10 +943,10 @@ var put = $('body');
             length: null,
             thickness: null,
             fontStyle: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             background: null,
             transparency: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -866,7 +972,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.tooltip = function (options) {
+    $.fn[tooltipTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             text: 'It seems that you have typed nothing',
@@ -879,10 +985,10 @@ var put = $('body');
             fontStyle: null,
             emitter: null,
             direction: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             background: null,
             transparency: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -933,16 +1039,16 @@ var put = $('body');
             }
         });
     };
-    $.fn.coloursPalette = function (options) {
+    $.fn[colorsPaletteTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             name: null,
             width: null,
             length: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             background: null,
             transparency: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -968,17 +1074,17 @@ var put = $('body');
             }
         });
     };
-    $.fn.loadingSpinner = function (options) {
+    $.fn[loadingSpinnerTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             name: null,
             width: null,
             length: null,
             loading: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             background: null,
             transparency: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -990,7 +1096,7 @@ var put = $('body');
             if (settings.background) {
                 setBG(name, settings.background);
             }
-            if (settings.loading == 'yes') {
+            if (settings.loading == yesTranslations[lang]) {
                 $('#' + name + '').attr('active', '');
             }
             if (settings.width) {
@@ -1007,17 +1113,17 @@ var put = $('body');
             }
         });
     };
-    $.fn.loadingBar = function (options) {
+    $.fn[loadingBarTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             name: null,
             width: null,
             length: null,
             loading: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             background: null,
             transparency: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1043,7 +1149,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.image = function (options) {
+    $.fn[imageTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             title: null,
@@ -1053,10 +1159,10 @@ var put = $('body');
             name: null,
             width: null,
             length: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             transparency: null,
             background: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1089,7 +1195,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.notificationCount = function (options) {
+    $.fn[notificationCountTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             text: 'It seems that you have typed nothing',
@@ -1102,10 +1208,10 @@ var put = $('body');
             length: null,
             thickness: null,
             fontStyle: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             transparency: null,
             background: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1153,7 +1259,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.checkbox = function (options) {
+    $.fn[checkboxTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             text: null,
@@ -1169,10 +1275,10 @@ var put = $('body');
             length: null,
             thickness: null,
             fontStyle: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             transparency: null,
             background: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1187,10 +1293,10 @@ var put = $('body');
             if (settings.background) {
                 setBG(name, settings.background);
             }
-            if (settings.disabled == 'yes') {
+            if (settings.disabled == yesTranslations[lang]) {
                 $('#' + name + '').attr('disabled', '');
             }
-            if (settings.checked == 'yes') {
+            if (settings.checked == yesTranslations[lang]) {
                 $('#' + name + '').attr('checked', '');
             }
             if (settings.ripple) {
@@ -1226,7 +1332,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.dialogBox = function (options) {
+    $.fn[dialogBoxTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             title: null,
@@ -1242,10 +1348,10 @@ var put = $('body');
             length: null,
             thickness: null,
             fontStyle: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             transparency: null,
             background: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1256,7 +1362,7 @@ var put = $('body');
             }
             if (settings.body) {
                 for (i = 0; i < body.length; i++) {
-                    if (settings.scrollable == 'yes') {
+                    if (settings.scrollable == yesTranslations[lang]) {
                         out += '<paper-dialog-scrollable><p>' + body[i] + '</p></paper-dialog-scrollable>';
                     } else {
                         out += '<p>' + body[i] + '</p>';
@@ -1314,7 +1420,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.dropdown = function (options) {
+    $.fn[dropdownTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             title: null,
@@ -1329,10 +1435,10 @@ var put = $('body');
             length: null,
             thickness: null,
             fontStyle: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             transparency: null,
             background: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1358,10 +1464,10 @@ var put = $('body');
             if (settings.fontStyle) {
                 $('#' + name + '').css('font-style', settings.fontStyle);
             }
-            if (settings.disabled == 'yes') {
+            if (settings.disabled == yesTranslations[lang]) {
                 $('#' + name + '').attr('disabled', '');
             }
-            if (settings.ripple == 'no') {
+            if (settings.ripple == noTranslations[lang]) {
                 $('#' + name + '').attr('noink', '');
             }
             if (settings.thickness) {
@@ -1394,7 +1500,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.fab = function (options) {
+    $.fn[FABTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             description: null,
@@ -1411,21 +1517,21 @@ var put = $('body');
             length: null,
             thickness: null,
             fontStyle: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             transparency: null,
             background: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
             var out = '<paper-fab ';
-            if (settings.mini == 'yes') {
+            if (settings.mini == yesTranslations[lang]) {
                 out += 'mini ';
             }
-            if (settings.disabled == 'yes') {
+            if (settings.disabled == yesTranslations[lang]) {
                 out += 'disabled ';
             }
-            if (settings.ripple == 'no') {
+            if (settings.ripple == noTranslations[lang]) {
                 out += 'noink ';
             }
             if (settings.text) {
@@ -1445,10 +1551,10 @@ var put = $('body');
             if (settings.fontStyle) {
                 $('#' + name + '').css('font-style', settings.fontStyle);
             }
-            if (settings.disabled == 'yes') {
+            if (settings.disabled == yesTranslations[lang]) {
                 $('#' + name + '').attr('disabled', '');
             }
-            if (settings.ripple == 'no') {
+            if (settings.ripple == noTranslations[lang]) {
                 $('#' + name + '').attr('noink', '');
             }
             if (settings.thickness) {
@@ -1481,7 +1587,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.textbox = function (options) {
+    $.fn[textboxTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             type: null,
@@ -1504,14 +1610,14 @@ var put = $('body');
             length: null,
             thickness: null,
             fontStyle: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             transparency: null,
             background: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
-            if (settings.dynamicSize == 'yes') {
+            if (settings.dynamicSize == yesTranslations[lang]) {
                 var out = '<paper-textarea ';
             } else {
                 var out = '<paper-input '
@@ -1539,13 +1645,13 @@ var put = $('body');
             if (settings.min) {
                 out += 'minlength="' + settings.min + '" ';
             }
-            if (settings.disabled == 'yes') {
+            if (settings.disabled == yesTranslations[lang]) {
                 out += 'disabled ';
             }
-            if (settings.counter == 'yes') {
+            if (settings.counter == yesTranslations[lang]) {
                 out += 'char-counter ';
             }
-            if (settings.ripple == 'no') {
+            if (settings.ripple == noTranslations[lang]) {
                 out += 'noink ';
             }
             if (settings.text) {
@@ -1578,10 +1684,10 @@ var put = $('body');
                     }
                 }
             }
-            if (settings.clearButton == 'yes') {
+            if (settings.clearButton == yesTranslations[lang]) {
                 out += '<paper-icon-button suffix onclick="clearInput()" icon="clear" alt="clear" title="clear"></paper-icon-button>';
             }
-            if (settings.dynamicSize == 'yes') {
+            if (settings.dynamicSize == yesTranslations[lang]) {
                 out += '</paper-textarea>';
             } else {
                 out += '</paper-input>'
@@ -1593,10 +1699,10 @@ var put = $('body');
             if (settings.fontStyle) {
                 $('#' + name + '').css('font-style', settings.fontStyle);
             }
-            if (settings.disabled == 'yes') {
+            if (settings.disabled == yesTranslations[lang]) {
                 $('#' + name + '').attr('disabled', '');
             }
-            if (settings.ripple == 'no') {
+            if (settings.ripple == noTranslations[lang]) {
                 $('#' + name + '').attr('noink', '');
             }
             if (settings.thickness) {
@@ -1629,7 +1735,7 @@ var put = $('body');
             }
         });
     };
-    $.fn.slider = function (options) {
+    $.fn[sliderTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
             title: null,
@@ -1639,7 +1745,7 @@ var put = $('body');
             progress: null,
             prevalue: null,
             valueBox: null,
-            pin: null,
+            [pinTranslations[lang]]: null,
             disabled: null,
             fontColour: null,
             size: null,
@@ -1648,10 +1754,10 @@ var put = $('body');
             length: null,
             thickness: null,
             fontStyle: null,
-            animation: null,
+            [animationTranslations[lang]]: null,
             transparency: null,
             background: null,
-            commands: null
+            [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1672,13 +1778,13 @@ var put = $('body');
             if (settings.step) {
                 out += 'step="' + settings.step + '" ';
             }
-            if (settings.disabled == 'yes') {
+            if (settings.disabled == yesTranslations[lang]) {
                 out += 'disabled ';
             }
-            if (settings.pin == 'yes') {
+            if (settings.pin == yesTranslations[lang]) {
                 out += 'pin ';
             }
-            if (settings.valueBox == 'yes') {
+            if (settings.valueBox == yesTranslations[lang]) {
                 out += 'editable ';
             }
             out += 'id="' + name + '">';
@@ -1690,10 +1796,10 @@ var put = $('body');
             if (settings.fontStyle) {
                 $('#' + name + '').css('font-style', settings.fontStyle);
             }
-            if (settings.disabled == 'yes') {
+            if (settings.disabled == yesTranslations[lang]) {
                 $('#' + name + '').attr('disabled', '');
             }
-            if (settings.ripple == 'no') {
+            if (settings.ripple == noTranslations[lang]) {
                 $('#' + name + '').attr('noink', '');
             }
             if (settings.thickness) {
