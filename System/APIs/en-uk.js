@@ -21,7 +21,7 @@ var animationTranslations = ['aniamtion', 'aniamtion', 'animation', 'الحرك�
 var commandsTranslations = ['commands', 'commands', 'commandes', 'الأوامر', 'الأوامر', 'コマンド', '命令', '命令'];
 var sliderTranslations = ['slider', 'slider', 'curseur', 'دبوس', 'دبوس', 'スライダー', '滑塊', '滑块'];
 var buttonTranslations = ['button', 'button', 'curseur', 'زر', 'زرار', 'スライダー', '滑塊', '滑块'];
-var databaseCenterTranslations = ['database_center', 'pin', 'épingle', 'مركز_قاعدة_البيانات', 'مركز_الداتا_بيز', 'ピン', '銷', '销'];
+var databaseCenterTranslations = ['database_center', 'database_center', 'épingle', 'مركز_قاعدة_البيانات', 'مركز_الداتا_بيز', 'ピン', '銷', '销'];
 var FABTranslations = ['FAB', 'FAB', 'épingle', 'دبوس', 'دبوس', 'ピン', '銷', '销'];
 var textFnTranslations = ['text0', 'text0', 'épingle', 'نص', 'كلام', 'ピン', '銷', '销'];
 var buttonWithAnIconTranslations = ['button_with_an_icon', 'button_with_an_icon', 'épingle', 'زر_بأيقونة', 'زرار_بأيكونة', 'ピン', '銷', '销'];
@@ -34,8 +34,8 @@ var sectionTranslations = ['section', 'section', 'épingle', 'دبوس', 'دبو
 var checkboxTranslations = ['checkbox', 'checkbox', 'épingle', 'دبوس', 'دبوس', 'ピン', '銷', '销'];
 var backgroundTranslations = ['background', 'background', 'épingle', 'الخلفية', 'الخلفية', 'ピン', '銷', '销'];
 var textTranslations = ['text', 'text', 'épingle', 'النص', 'الكلام', 'ピン', '銷', '销'];
-var widthTranslations = ['width', 'width', 'épingle', 'دبوس', 'دبوس', 'ピン', '銷', '销'];
-var lengthTranslations = ['length', 'length', 'épingle', 'دبوس', 'دبوس', 'ピン', '銷', '销'];
+var widthTranslations = ['width', 'width', 'épingle', 'العرض', 'العرض', 'ピン', '銷', '销'];
+var lengthTranslations = ['length', 'length', 'épingle', 'الطول', 'الطول', 'ピン', '銷', '销'];
 var locationTranslations = ['location', 'location', 'épingle', 'المكان', 'المكان', 'ピン', '銷', '销'];
 var locationFromLeftTranslations = ['location from the left', 'location from the left', 'épingle', 'المكان_من_اليمين', 'المكان_من_اللمين', 'ピン', '銷', '销'];
 var locationFromRightTranslations = ['location from the right', 'location from the right', 'épingle', 'المكان_من_الشمال', 'المكان_من_الشمال', 'ピン', '銷', '销'];
@@ -662,18 +662,12 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
     $.fn.text0 = function (options) {
         // Establish our default settings
         var settings = $.extend({
-            text: 'It seems that you have typed nothing',
-            [colorTranslations[lang]]: null,
+            [textTranslations[lang]]: 'It seems that you have typed nothing', [colorTranslations[lang]]: null,
             size: null,
-            name: null,
-            width: null,
-            length: null,
-            thickness: null,
-            fontStyle: null,
-            [animationTranslations[lang]]: null,
-            background: null,
-            transparency: null,
-            [commandsTranslations[lang]]: null
+                name: null, [widthTranslations[lang]]: null, [lengthTranslations[lang]]: null,
+                thickness: null,
+                fontStyle: null, [animationTranslations[lang]]: null, [backgroundTranslations[lang]]: null,
+                transparency: null, [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -729,21 +723,16 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
     $.fn[buttonTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
-            text: 'It seems that you have typed nothing',
+            [textTranslations[lang]]: 'It seems that you have typed nothing',
             fontColour: null,
-            size: null,
-            name: null,
-            width: null,
-            length: null,
-            thickness: null,
-            fontStyle: null,
-            disabled: null,
-            raised: null,
-            switchedOn: null,
-            [animationTranslations[lang]]: null,
-            background: null,
-            transparency: null,
-            [commandsTranslations[lang]]: null
+                size: null,
+                name: null, [widthTranslations[lang]]: null, [lengthTranslations[lang]]: null,
+                thickness: null,
+                fontStyle: null,
+                disabled: null,
+                raised: null,
+                switchedOn: null, [animationTranslations[lang]]: null, [backgroundTranslations[lang]]: null,
+                transparency: null, [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -799,10 +788,10 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
             icon: null,
             size: null,
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             [animationTranslations[lang]]: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             transparency: null,
             [commandsTranslations[lang]]: null
         }, options);
@@ -869,10 +858,10 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
             icon: null,
             size: null,
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             [animationTranslations[lang]]: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             transparency: null,
             [commandsTranslations[lang]]: null
         }, options);
@@ -935,18 +924,13 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
     $.fn[sectionTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
-            text: 'It seems that you have typed nothing',
+            [textTranslations[lang]]: 'It seems that you have typed nothing',
             fontColour: null,
-            size: null,
-            name: null,
-            width: null,
-            length: null,
-            thickness: null,
-            fontStyle: null,
-            [animationTranslations[lang]]: null,
-            background: null,
-            transparency: null,
-            [commandsTranslations[lang]]: null
+                size: null,
+                name: null, [widthTranslations[lang]]: null, [lengthTranslations[lang]]: null,
+                thickness: null,
+                fontStyle: null, [animationTranslations[lang]]: null, [backgroundTranslations[lang]]: null,
+                transparency: null, [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -975,20 +959,15 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
     $.fn[tooltipTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
-            text: 'It seems that you have typed nothing',
+            [textTranslations[lang]]: 'It seems that you have typed nothing',
             fontColour: null,
-            size: null,
-            name: null,
-            width: null,
-            length: null,
-            thickness: null,
-            fontStyle: null,
-            emitter: null,
-            direction: null,
-            [animationTranslations[lang]]: null,
-            background: null,
-            transparency: null,
-            [commandsTranslations[lang]]: null
+                size: null,
+                name: null, [widthTranslations[lang]]: null, [lengthTranslations[lang]]: null,
+                thickness: null,
+                fontStyle: null,
+                emitter: null,
+                direction: null, [animationTranslations[lang]]: null, [backgroundTranslations[lang]]: null,
+                transparency: null, [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1043,10 +1022,10 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
         // Establish our default settings
         var settings = $.extend({
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             [animationTranslations[lang]]: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             transparency: null,
             [commandsTranslations[lang]]: null
         }, options);
@@ -1078,11 +1057,11 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
         // Establish our default settings
         var settings = $.extend({
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             loading: null,
             [animationTranslations[lang]]: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             transparency: null,
             [commandsTranslations[lang]]: null
         }, options);
@@ -1117,11 +1096,11 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
         // Establish our default settings
         var settings = $.extend({
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             loading: null,
             [animationTranslations[lang]]: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             transparency: null,
             [commandsTranslations[lang]]: null
         }, options);
@@ -1157,11 +1136,11 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
             imageWidth: null,
             imageLength: null,
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             [animationTranslations[lang]]: null,
             transparency: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
@@ -1198,20 +1177,15 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
     $.fn[notificationCountTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
-            text: 'It seems that you have typed nothing',
+            [textTranslations[lang]]: 'It seems that you have typed nothing',
             icon: null,
-            target: null,
-            fontColour: null,
-            size: null,
-            name: null,
-            width: null,
-            length: null,
-            thickness: null,
-            fontStyle: null,
-            [animationTranslations[lang]]: null,
-            transparency: null,
-            background: null,
-            [commandsTranslations[lang]]: null
+                target: null,
+                fontColour: null,
+                size: null,
+                name: null, [widthTranslations[lang]]: null, [lengthTranslations[lang]]: null,
+                thickness: null,
+                fontStyle: null, [animationTranslations[lang]]: null,
+                transparency: null, [backgroundTranslations[lang]]: null, [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1262,23 +1236,18 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
     $.fn[checkboxTranslations[lang]] = function (options) {
         // Establish our default settings
         var settings = $.extend({
-            text: null,
+            [textTranslations[lang]]: null,
             description: null,
-            thickness: null,
-            disabled: null,
-            checked: null,
-            ripple: null,
-            fontColour: null,
-            size: null,
-            name: null,
-            width: null,
-            length: null,
-            thickness: null,
-            fontStyle: null,
-            [animationTranslations[lang]]: null,
-            transparency: null,
-            background: null,
-            [commandsTranslations[lang]]: null
+                thickness: null,
+                disabled: null,
+                checked: null,
+                ripple: null,
+                fontColour: null,
+                size: null,
+                name: null, [widthTranslations[lang]]: null, [lengthTranslations[lang]]: null,
+                thickness: null,
+                fontStyle: null, [animationTranslations[lang]]: null,
+                transparency: null, [backgroundTranslations[lang]]: null, [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
             var name = settings.name;
@@ -1344,13 +1313,13 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
             fontColour: null,
             size: null,
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             thickness: null,
             fontStyle: null,
             [animationTranslations[lang]]: null,
             transparency: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
@@ -1431,13 +1400,13 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
             fontColour: null,
             size: null,
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             thickness: null,
             fontStyle: null,
             [animationTranslations[lang]]: null,
             transparency: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
@@ -1505,7 +1474,7 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
         var settings = $.extend({
             description: null,
             icon: null,
-            text: null,
+            [textTranslations[lang]]: null,
             ripple: null,
             mini: null,
             disabled: null,
@@ -1513,13 +1482,13 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
             fontColour: null,
             size: null,
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             thickness: null,
             fontStyle: null,
             [animationTranslations[lang]]: null,
             transparency: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
@@ -1606,13 +1575,13 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
             fontColour: null,
             size: null,
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             thickness: null,
             fontStyle: null,
             [animationTranslations[lang]]: null,
             transparency: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
@@ -1750,13 +1719,13 @@ var locationFromBottomTranslations = ['location from the bottom', 'location from
             fontColour: null,
             size: null,
             name: null,
-            width: null,
-            length: null,
+            [widthTranslations[lang]]: null,
+            [lengthTranslations[lang]]: null,
             thickness: null,
             fontStyle: null,
             [animationTranslations[lang]]: null,
             transparency: null,
-            background: null,
+            [backgroundTranslations[lang]]: null,
             [commandsTranslations[lang]]: null
         }, options);
         return this.each(function () {
